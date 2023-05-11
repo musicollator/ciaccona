@@ -285,7 +285,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
             var clip = new clipboard(`#gb-puzzle${i}-svg`);
 
             clip.on('success', function (e) {
-                / * 
+                / *
                 console.info('Action:', e.action);
                 console.info('Text:', e.text);
                 console.info('Trigger:', e.trigger);

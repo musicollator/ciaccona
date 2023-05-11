@@ -1,0 +1,209 @@
+<div>
+    <style>
+        #thePuzzle {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+            position: relative;
+            display: block;
+            height: var(--height);
+            width: var(--width);
+            /* height: 98.8438px; */
+        }
+
+        .ligne {
+            width: 100%;
+            height: calc(var(--height) / var(--yn));
+            background-color: transparent;
+            overflow: visible;
+            transform: scale(.5);
+            transform-origin: top left;
+        }
+
+        .colonne {
+            width: calc(var(--width) / var(--xn));
+            height: calc(var(--height) / var(--yn));
+            position: relative;
+            background-color: transparent;
+            overflow: visible;
+        }
+
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Scaling_of_SVG_backgrounds */
+        .background {
+            position: absolute;
+            top: var(--marginY);
+            right: var(--marginX);
+            bottom: var(--marginY);
+            left: var(--marginX);
+            transform-origin: var(--toX) var(--toY);
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+            overflow: visible;
+        }
+
+        .background path {
+            stroke: #C8B273;
+            stroke-width: 2;
+            fill: none;
+            fill-opacity: 0;
+        }
+
+        .background:hover path {
+            stroke: gray;
+        }
+
+        .background:hover {
+            z-index: 12;
+        }
+
+        .background.top.left {
+            transform-origin: var(--toXleft) var(--toYtop);
+        }
+
+        .background.top {
+            transform-origin: var(--toX) var(--toYtop);
+            top: 0;
+        }
+
+        .background.right {
+            right: 0;
+        }
+
+        .background.bottom {
+            bottom: 0;
+        }
+
+        .background.left {
+            transform-origin: var(--toXleft) var(--toY);
+            left: 0;
+        }
+    </style>
+    <div id="thePuzzle" class="d-flex flex-column">
+        <div id="gutter-sizer" class="gutter-sizer" style="width: 0px;"></div>
+        <div id="row0" class="ligne _0 d-flex">
+            <div id="row0col0" class="colonne draggable" data-index="0" style="position: absolute; left: 0px; top: 0px; touch-action: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="0 0 101.4575 98.85">
+                    <defs>
+                        <clipPath id="clipPath-0">
+                            <path id="path-0" transform="translate(0 0)"
+                                d="M 0 0 L 101.4575 0  C 104.29 19.77 80.56 33.01 106.94 28.02 C 133.33 23.03 133.33 74.44 106.94 53.72 C 80.56 33.01 114.37 79.08 101.46 98.85 L 0 98.85 L 0 0">
+                            </path>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div id="_row0col0" class="qwe background top  bottom left"
+                    style="clip-path: url(&quot;#clipPath-0&quot;); transform: scale(1); background-image: url(&quot;/svg/2bars.svg&quot;); background-position: 0px 0px;">
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="background" width="101.4575" height="98.85" transform="translate(50.72875 49.425)" viewBox="0 0 101.4575 98.85">
+                    <path id="path2-0" style=""
+                        d="M 0 0 L 101.4575 0  C 104.29 19.77 80.56 33.01 106.94 28.02 C 133.33 23.03 133.33 74.44 106.94 53.72 C 80.56 33.01 114.37 79.08 101.46 98.85 L 0 98.85 L 0 0">
+                    </path>
+                    <!-- stroke-dasharray="5" -->
+                </svg>
+            </div>
+            <div id="row0col1" class="colonne draggable" data-index="1" style="position: absolute; left: 101.453px; top: 0px; touch-action: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="101.4575 0 101.4575 98.85">
+                    <defs>
+                        <clipPath id="clipPath-1">
+                            <path id="path-1" transform="translate(-50.27125 0)"
+                                d="M 101.4575 0 L 202.915 0  C 206.13 19.77 185.66 49.32 212.05 45.66 C 238.43 42 238.43 93.41 212.05 71.37 C 185.66 49.32 194.04 79.08 202.92 98.85 L 101.4575 98.85 C 114.37 79.08 80.56 33.01 106.94 53.72 C 133.33 74.44 133.33 23.03 106.94 28.02 C 80.56 33.01 104.29 19.77 101.46 0">
+                            </path>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div id="_row0col1" class="qwe background top  bottom "
+                    style="clip-path: url(&quot;#clipPath-1&quot;); transform: scale(1); background-image: url(&quot;/svg/2bars.svg&quot;); background-position: -50.2713px 0px;">
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="background" width="101.4575" height="98.85" transform="translate(50.72875 49.425)"
+                    viewBox="101.4575 0 101.4575 98.85">
+                    <path id="path2-1" style=""
+                        d="M 101.4575 0 L 202.915 0  C 206.13 19.77 185.66 49.32 212.05 45.66 C 238.43 42 238.43 93.41 212.05 71.37 C 185.66 49.32 194.04 79.08 202.92 98.85 L 101.4575 98.85 C 114.37 79.08 80.56 33.01 106.94 53.72 C 133.33 74.44 133.33 23.03 106.94 28.02 C 80.56 33.01 104.29 19.77 101.46 0">
+                    </path>
+                    <!-- stroke-dasharray="5" -->
+                </svg>
+            </div>
+            <div id="row0col2" class="colonne draggable" data-index="2" style="position: absolute; left: 202.906px; top: 0px; touch-action: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="202.915 0 101.4575 98.85">
+                    <defs>
+                        <clipPath id="clipPath-2">
+                            <path id="path-2" transform="translate(-151.27125 0)"
+                                d="M 202.915 0 L 304.3725 0  C 304.73 19.77 299.3 52.53 325.68 32.49 C 352.06 12.45 352.06 63.86 325.68 58.19 C 299.3 52.53 311.25 79.08 304.37 98.85 L 202.915 98.85 C 194.04 79.08 185.66 49.32 212.05 71.37 C 238.43 93.41 238.43 42 212.05 45.66 C 185.66 49.32 206.13 19.77 202.92 0">
+                            </path>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div id="_row0col2" class="qwe background top  bottom "
+                    style="clip-path: url(&quot;#clipPath-2&quot;); transform: scale(1); background-image: url(&quot;/svg/2bars.svg&quot;); background-position: -152.271px 0px;">
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="background" width="101.4575" height="98.85" transform="translate(50.72875 49.425)"
+                    viewBox="202.915 0 101.4575 98.85">
+                    <path id="path2-2" style=""
+                        d="M 202.915 0 L 304.3725 0  C 304.73 19.77 299.3 52.53 325.68 32.49 C 352.06 12.45 352.06 63.86 325.68 58.19 C 299.3 52.53 311.25 79.08 304.37 98.85 L 202.915 98.85 C 194.04 79.08 185.66 49.32 212.05 71.37 C 238.43 93.41 238.43 42 212.05 45.66 C 185.66 49.32 206.13 19.77 202.92 0">
+                    </path>
+                    <!-- stroke-dasharray="5" -->
+                </svg>
+            </div>
+            <div id="row0col3" class="colonne draggable" data-index="3" style="position: absolute; left: 304.359px; top: 0px; touch-action: none;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" viewBox="304.3725 0 101.4575 98.85">
+                    <defs>
+                        <clipPath id="clipPath-3">
+                            <path id="path-3" transform="translate(-253.27125 0)"
+                                d="M 304.3725 0 L 405.83 0  L 405.83 98.85 L 304.3725 98.85 C 311.25 79.08 299.3 52.53 325.68 58.19 C 352.06 63.86 352.06 12.45 325.68 32.49 C 299.3 52.53 304.73 19.77 304.37 0">
+                            </path>
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div id="_row0col3" class="qwe background top right bottom "
+                    style="clip-path: url(&quot;#clipPath-3&quot;); transform: scale(1); background-image: url(&quot;/svg/2bars.svg&quot;); background-position: -253.271px 0px;">
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="background" width="101.4575" height="98.85" transform="translate(50.72875 49.425)"
+                    viewBox="304.3725 0 101.4575 98.85">
+                    <path id="path2-3" style=""
+                        d="M 304.3725 0 L 405.83 0  L 405.83 98.85 L 304.3725 98.85 C 311.25 79.08 299.3 52.53 325.68 58.19 C 352.06 63.86 352.06 12.45 325.68 32.49 C 299.3 52.53 304.73 19.77 304.37 0">
+                    </path>
+                    <!-- stroke-dasharray="5" -->
+                </svg>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const gutter = 130;
+    const _2bars = {
+        xn: 4,
+        yn: 1,
+        width:  405.83,              // 1325.363006591797, // 
+        height: 98.85,               // 98.43204498291016, // 
+    }
+    const _ = _2bars
+    _.scale = 1
+    _.total = _.xn * _.yn
+    const marginX = _.width / (_.xn * 2)
+    const marginY = _.height / (_.yn * 2)
+
+    const thePuzzle = document.getElementById('thePuzzle')
+    if (_.backgroundColor) {
+        thePuzzle.style.backgroundColor = _.backgroundColor
+    }
+    const cssStroke = _.stroke ? `stroke: ${_.stroke};` : ''
+
+    document.documentElement.style.setProperty('--gutter', `${gutter}px`)
+    document.documentElement.style.setProperty('--width', `${_.width}px`)
+    document.documentElement.style.setProperty('--height', `${_.height}px`)
+    document.documentElement.style.setProperty('--xn', `${_.xn}`)
+    document.documentElement.style.setProperty('--yn', `${_.yn}`)
+    document.documentElement.style.setProperty('--marginX', `${-marginX}px`)
+    document.documentElement.style.setProperty('--marginY', `${-marginY}px`)
+
+    const _toX = (_.width / (_.xn));
+    const _toY = (_.height / (_.yn));
+    const _toXleft = _toX - marginX;
+    const _toYtop = _toY - marginY;
+    document.documentElement.style.setProperty('--toX', `${_toX}px`)
+    document.documentElement.style.setProperty('--toY', `${_toY}px`)
+    document.documentElement.style.setProperty('--toXleft', `${_toXleft}px`)
+    document.documentElement.style.setProperty('--toYtop', `${_toYtop}px`)
+
+</script>
