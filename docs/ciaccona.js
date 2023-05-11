@@ -89,6 +89,7 @@ const allPromises = new Map()
 const RESIZE = "RESIZE", PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 
 // 1. promise resolves when 1) windows is loaded, then 2) all SVGs for scores have been loaded and resized
+/*
 allPromises.set(
     RESIZE,
     windowLoaded.then((result) => {
@@ -119,7 +120,7 @@ allPromises.set(
             })
     })
 )
-
+*/
 // 2. promises resolves when 1) timings for this artist have been loeaded, then 2) video player is ready
 if (fullameNoSpaceLowercaseNoDiacritics) {
 

@@ -44,6 +44,10 @@ rename all _xxx\d.js files to _xxx4.js
 for file in *; do echo $file; done
 for file in *; do echo $(echo $file | sed -e 's/[0-9]/10/g'); done
 # then go
-for file in *; do mv $file $(echo $file | sed -e 's/[0-9]/10/g'); done
+for file in *; do mv $file $(echo $file | sed -e 's/_o/bwv-1004_5_viewboxed-/g'); done
 
 for file in *; do echo md5sum $file; done
+for file in *; do echo $file; done
+for file in _*; do echo $(echo $file | sed -e 's/_o/bwv-1004_5_viewboxed-/g'); done
+
+echo '_o29.svg' | sed -e 's/_o\([0-9]+\)/bwv-1004_5_bboxed-$1/g'
