@@ -3,7 +3,7 @@
   "version": "0.10.4",
   "description": "super app",
   "main": "index.js",
-  "repository": "https://github.com/cthiebaud/ciaccona",
+  "repository": "https://github.com/musicollator/ciaccona",
   "author": "Christophe Thiebaud",
   "license": "MIT",
   "dependencies": {
