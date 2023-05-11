@@ -1,9 +1,9 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
-import codec from "/js/structure.js?v=0.13.3"
-import { colorArray } from "/js/colors.js?v=0.13.3"
-import { loadArtists } from "/js/artists.js?v=0.13.3"
-import { shuffleArray, generateElement } from "/js/utils.js?v=0.13.3"
-import { jigsawGenerator } from '/js/jigsawShield.js?v=0.13.3'
+import codec from "/js/structure.js?v=1.0.0"
+import { colorArray } from "/js/colors.js?v=1.0.0"
+import { loadArtists } from "/js/artists.js?v=1.0.0"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.0"
+import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.0'
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 

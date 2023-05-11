@@ -1,6 +1,6 @@
-import codec from "/js/structure.js?v=0.13.3"
-import config from "/js/config.js?v=0.13.3"
-import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=0.13.3'
+import codec from "/js/structure.js?v=1.0.0"
+import config from "/js/config.js?v=1.0.0"
+import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=1.0.0'
 
 if (variationParam < 0 || codec.variationsCount <= variationParam) variationParam = undefined
 if (variationParam) {
