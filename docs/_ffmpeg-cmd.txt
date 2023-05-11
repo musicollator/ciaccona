@@ -24,3 +24,15 @@ ffmpeg \
 
 ffmpeg -i logo_aintno.mov -y logo_aintno.mp4
 
+
+ffmpeg -i openmozart.mov -vcodec h264 -an openmozart.mp4
+
+ffmpeg -i openmozart.mp4 -s 960x1116 -c copy openmozart-half.mp4
+
+ffmpeg -i openmozart-half.mp4 -c copy -t 60 openmozart-half_size-one_minute.mp4
+
+1920
+2232
+
+960
+
