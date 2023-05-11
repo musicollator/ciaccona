@@ -382,6 +382,7 @@
     <script async type="module">
         import hammerjs from "https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/+esm"
         import config from "/js/config.js?v=1.0.0"
+        if (pane) config.pane = pane
 
         // transform packery event into promise
         const allesIstVollbracht = new Promise((resolve) => {
@@ -392,16 +393,22 @@
         })
 
         function setOrTogglePane(newPane) {
-            if (typeof newPane === 'undefined' || !(newPane === 0 || newPane === 1)) {
-                if (config.pane === 0) {
-                    config.pane = 1
+            if (typeof newPane === 'undefined' || newPane === null) {
+                // toggle
+                if (config.pane === 'left') {
+                    config.pane = 'right'
                 } else {
-                    config.pane = 0
+                    config.pane = 'left'
                 }
+            } else if (newPane === 'left' || newPane === 'right') {
+                // set
+                config.pane = newPane
             } else {
-                config.pane = newPane % 2
+                // do nothing
+                return
             }
-            if (config.pane === 0) {
+
+            if (config.pane === 'left') {
                 document.getElementById('right').style.visibility = 'hidden'
                 // document.getElementById('right').style.display = 'none'
                 document.getElementById('left').style.visibility = 'visible'
@@ -423,37 +430,38 @@
             }
         }
 
-        const hammerRight = new Hammer(document.getElementById('right'), {});
-        hammerRight.on('swipeleft', function (ev) {
-            setOrTogglePane(1)
+        const hammer = new hammerjs(document.getElementById('theContainerCol'), {});
+        hammer.on('swipeleft', function (ev) {
+            setOrTogglePane('right')
         });
-        const hammerLeft = new Hammer(document.getElementById('left'), {});
-        hammerLeft.on('swiperight', function (ev) {
-            setOrTogglePane(0)
+        hammer.on('swiperight', function (ev) {
+            setOrTogglePane('left')
         });
 
         window.addEventListener("ciacconaLoaded", (event) => {
-            console.log("ciaccona.html fully loaded and parsed");
-            console.log('shout calcBrickWidth event ...')
+            console.log('ciaccona.html ready, shout calcBrickWidth event ...')
             window.dispatchEvent(new Event('calcBrickWidth'));
+            /*
             document.querySelectorAll('#gb-ciaccona a').forEach(a => {
                 a.setAttribute('href', '#')
                 a.addEventListener('click', ev => {
-                    setOrTogglePane(0)
+                    setOrTogglePane('left')
                 })
             })
+            */
         });
 
         window.addEventListener("artistsLoaded", (event) => {
-            console.log("index.html fully loaded and parsed");
-            console.log('shout calcItemWidth event ...')
+            console.log("artists.html, shout calcItemWidth event ...");
             window.dispatchEvent(new Event('calcItemWidth'));
+            /*
             document.querySelectorAll('#li-ciaccona a').forEach(a => {
                 a.setAttribute('href', '#')
                 a.addEventListener('click', ev => {
-                    setOrTogglePane(1)
+                    setOrTogglePane('right')
                 })
             })
+            */
         });
 
         console.log('waiting for allesIstVollbracht event ...')

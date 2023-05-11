@@ -284,7 +284,6 @@ const Ω = {
         artistE.querySelector('a#youtube-url').setAttribute('href', artist['▶'].youtubeTrueUrl ? artist['▶'].youtubeTrueUrl : artist['▶'].youtubeUrl)
         artistE.querySelector('a#youtube-url').setAttribute('target', artist['▶'].id)
         artistE.querySelector('a#social').setAttribute('href', artist.social)
-        artistE.querySelectorAll('a#puzzle').forEach(e => e.setAttribute('href', `artists.html?a=${e.dataset.a}`))
     },
 
     beforeCreatePlayer: (videoId) => {

@@ -20,6 +20,8 @@
         #thePuzzle {
             width: calc(var(--width) + var(--xn) * var(--gutter));
             height: calc(var(--height) + var(--yn) * var(--gutter));
+            /* width: 550px;
+            height: 550px; */
             margin: auto;
             background-color: lightgray;
         }
@@ -39,6 +41,7 @@
             overflow: visible;
         }
 
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/Scaling_of_SVG_backgrounds */
         .background {
             position: absolute;
             top: var(--marginY);
@@ -49,7 +52,6 @@
             background-color: transparent;
             background-repeat: no-repeat;
             background-size: cover;
-
             overflow: visible;
         }
 
@@ -105,9 +107,9 @@
         import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
         import animejs from '/lib/anime-3.2.1.es.min.js'
         import { shuffleArray, generateElement, normalizeVraiment } from '/js/utils.js'
-        import codec from "/js/structure.js?v=1.0.0"
-        import { loadArtists } from "/js/artists.js?v=1.0.0"
-        import { jigsawGenerator as jg, JigsawShield } from '/js/jigsawShield.js?v=1.0.0'
+        import codec from "/js/structure.js?v=0.13.3"
+        import { loadArtists } from "/js/artists.js?v=0.13.3"
+        import { jigsawGenerator, JigsawShield } from '/js/jigsawShield.js?v=0.13.3'
 
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop)
@@ -123,22 +125,15 @@
             shuffle = true
         }
 
+        const gutter = 50
+        document.getElementById('gutter-sizer').style.width = `${gutter}px`
+
         const _default = {
             xn: 8,
             yn: 4,
             width: 1200,
             height: 630,
             transitionDuration: '0.667s',
-        }
-        const _artists = {
-            xn: 6,
-            yn: 6,
-            tabsize: .045,
-            jitter: .025,
-            width: 1200,
-            height: 630,
-            gutter: 0,
-            scale: 1,
         }
         const _manot = {
             xn: 6,
@@ -164,14 +159,30 @@
             delayShuffle: i => 0,
             delayOrder: (i, count) => Math.round(bez(normalizeVraiment(i, 0, count - 1, 0, 1)) * 24000)
         }
-        const _ = _artists
-        const gutter = _.gutter ?? 0;
-        document.getElementById('gutter-sizer').style.width = `${gutter}px`
-
-        _.scale = _.scale ?? 1;
+        const _2bars = {
+            xn: 4,
+            yn: 1,
+            width:   405.83,              // 
+            height:  98.85,               // 
+            image:   "/svg/2bars.svg",    // 
+            stroke: 'silver',
+            backgroundColor: 'transparent',
+        }
+        const _8bars = {
+            xn: 16,
+            yn: 1,
+            width:   1325.363006591797, // 
+            height:  98.43204498291016, // 
+            image:   "/svg/8bars.svg",  // 
+            stroke: 'lightgray',
+            backgroundColor: 'transparent',
+        }
+        const _ = _8bars
+        _.scale = 1
         _.total = _.xn * _.yn
-        const marginX = 20 /* _.width  / (_.xn * 3) */
-        const marginY = 20 /* _.height / (_.yn * 6) */
+        const marginX = _.width / (_.xn * 2)
+        const marginY = _.height / (_.yn * 2)
+
         const thePuzzle = document.getElementById('thePuzzle')
         if (_.backgroundColor) {
             thePuzzle.style.backgroundColor = _.backgroundColor
@@ -186,19 +197,19 @@
         document.documentElement.style.setProperty('--marginX', `${-marginX}px`)
         document.documentElement.style.setProperty('--marginY', `${-marginY}px`)
 
-        const _toX = (_.width / (_.xn)  /* */);
-        const _toY = (_.height / (_.yn)  /* */);
-        const _toXleft = _toX - marginX /* */;
-        const _toYtop = _toY - marginY /* */;
+        const _toX = (_.width / (_.xn));
+        const _toY = (_.height / (_.yn));
+        const _toXleft = _toX - marginX;
+        const _toYtop = _toY - marginY;
         document.documentElement.style.setProperty('--toX', `${_toX}px`)
         document.documentElement.style.setProperty('--toY', `${_toY}px`)
         document.documentElement.style.setProperty('--toXleft', `${_toXleft}px`)
         document.documentElement.style.setProperty('--toYtop', `${_toYtop}px`)
 
-        let jigsawGenerator = jg
+        let jigsawGenerator2 = jigsawGenerator
 
         const changeIt = () => {
-            jigsawGenerator = new JigsawShield(_)
+            jigsawGenerator2 = new JigsawShield(_)
             thePuzzle.querySelectorAll(':not(#gutter-sizer)').forEach(e => e.remove())
             let vi = 0
             for (let yi = 0; yi < _.yn; yi++) {
@@ -206,7 +217,7 @@
                 thePuzzle.append(row)
                 for (let xi = 0; xi < _.xn; xi++) {
 
-                    const j = jigsawGenerator.getJigsawItem(vi)
+                    const j = jigsawGenerator2.getJigsawItem(vi)
                     const topTrans = yi === 0 ? 0 : marginY
                     const leftTrans = xi === 0 ? 0 : marginX
                     const xTrans = parseInt(j.viewBox.replaceAll(/^([\.\d\-]+).*$/g, "$1"))
@@ -225,34 +236,30 @@
         <defs>
             <clipPath id="clipPath-${vi}" >
                 <path id="path-${vi}" 
-                      transform="translate(${-xTrans + leftTrans} ${-yTrans + topTrans})"
+                      transform="translate(${-xTrans + leftTrans} ${-yTrans + topTrans})" 
                       d="${j.path}"/> 
-            </clipPath> <!--   -->
+            </clipPath>
         </defs>
     </svg>                    
     <div id="_row${yi}col${xi}" 
-         class="background ${topClass} ${rightClass} ${bottomClass} ${leftClass}" 
-         style="clip-path: url(#clipPath-${vi}); -webkit-clip-path: url(#clipPath-${vi}); transform: scale(${_.scale})"><!-- -->
+         class="qwe background ${topClass} ${rightClass} ${bottomClass} ${leftClass}" 
+         style="clip-path: url(#clipPath-${vi}); -webkit-clip-path: url(#clipPath-${vi}); transform: scale(${_.scale}) ">
     </div>
     <svg xmlns="http://www.w3.org/2000/svg" 
-    class="background" 
-    width="${_.width / _.xn}" height="${_.height / _.yn}" 
-    transform="translate(${marginX} ${marginY})" 
-    viewBox="${j.viewBox}">
-    <path id="path2-${vi}" 
-    style="${cssStroke}"
-    d="${j.path}"/> 
-    </svg>
-    <!--
-    -->
-    <!-- stroke-dasharray="5" -->
+         class="background" 
+         width="${_.width / _.xn}" height="${_.height / _.yn}" 
+         transform="translate(${marginX} ${marginY})" 
+         viewBox="${j.viewBox}">
+            <path id="path2-${vi}" 
+                  style="${cssStroke}"
+                  d="${j.path}"/> 
+            <!-- stroke-dasharray="5" -->
+    </svg>                    
 </div>`)
 
                     row.append(col)
                     vi++
-                    // if (codec.variationsCount - 1 <= vi) break
                 }
-                // if (codec.variationsCount - 1 <= vi) break
             }
         }
 
@@ -270,24 +277,21 @@
                     let yi = Math.floor(i / _.xn)
                     const id = `_row${yi}col${xi}`
                     const cell = document.getElementById(id)
-                    console.log(cell)
-                    if (cell != null) {
-                        const offsetX = Math.round(normalizeVraiment(xi, 0, _.xn - 1, 0, _.width * (_.xn - 1) / _.xn))
-                        const offsetY = Math.round(normalizeVraiment(yi, 0, _.yn - 1, 0, _.height * (_.yn - 1) / _.yn))
-                        const borderX = xi === 0 ? 0 : marginX;
-                        const borderY = yi === 0 ? 0 : marginY;
-                        const artist = coerceArtist ?? a.fullnameNoSpaceLowercaseNoDiacritics
-                        const variation = coerceVariation ?? (shuffledV[i] % codec.variationsCount)
+                    const offsetX = Math.round(normalizeVraiment(xi, 0, _.xn - 1, 0, _.width * (_.xn - 1) / _.xn))
+                    const offsetY = Math.round(normalizeVraiment(yi, 0, _.yn - 1, 0, _.height * (_.yn - 1) / _.yn))
+                    const borderX = xi === 0 ? 0 : marginX;
+                    const borderY = yi === 0 ? 0 : marginY;
+                    const artist = coerceArtist ?? a.fullnameNoSpaceLowercaseNoDiacritics
+                    const variation = coerceVariation ?? shuffledV[i]
 
-                        if (_.image) {
-                            cell.style.backgroundImage = `url(${_.image})`
-                        } else {
-                            cell.style.backgroundImage = `url(https://musicollator.github.io/ciaccona-stationary/artists/${artist}/${artist}-${variation}.jpg)`
-                        }
-                        // cell.style.backgroundPosition = `-${offsetX - borderX}px -${offsetY - borderY}px`
-                        cell.style.backgroundPosition = `center center`
-
+                    if (_.image) {
+                        cell.style.backgroundImage = `url(${_.image})`
+                    } else {
+                        cell.style.backgroundImage = `url(https://musicollator.github.io/ciaccona-stationary/artists/${artist}/${artist}-${variation}.webp)`
                     }
+                    cell.style.backgroundPosition = `-${offsetX - borderX}px -${offsetY - borderY}px`
+                    // console.log(i * 100 / (_.xn -1))
+                    // cell.style.backgroundPosition = `${i * 100 / (_.xn-1)}% center`
                 }
                 i++
             })

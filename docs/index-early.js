@@ -3,7 +3,7 @@ import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=1.0.0'
 // list item width
 function calcItemWidth() {
     const listE = document.querySelector('.artists#list')
-    console.log('.ARTISTS #LIST', listE)
+    // console.log('.ARTISTS #LIST', listE)
     if (listE) {
         const containerWidth = listE.getBoundingClientRect().width
         const gutter_sizer = 0.0125;
@@ -37,4 +37,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
     calcItemWidth()
 }, { once: true });
 
-theTrickToViewportUnitsOnMobile(true, () => calcItemWidth())
+theTrickToViewportUnitsOnMobile(false /* no console.log */, () => calcItemWidth())

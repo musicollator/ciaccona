@@ -14,7 +14,7 @@ if (fullameNoSpaceLowercaseNoDiacritics == null) { // using ==, undefined and nu
 // brick width
 function calcBrickWidth() {
     const gridE = document.querySelector('.ciaccona#grid')
-    console.log('.CIACCONA #GRID', gridE)
+    // console.log('.CIACCONA #GRID', gridE)
     if (gridE) {
         const containerWidth = gridE.getBoundingClientRect().width
         const gridBricksPerRow = 1 + Math.floor(containerWidth / 400)
@@ -36,4 +36,4 @@ window.addEventListener("DOMContentLoaded", (event) => {
     calcBrickWidth()
 }, { once: true });
 
-theTrickToViewportUnitsOnMobile(true, () => calcBrickWidth())
+theTrickToViewportUnitsOnMobile(false /* no console.log */, () => calcBrickWidth())

@@ -265,7 +265,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
                  data-clipboard-text="${thisURL.origin}/?a=${fullameNoSpaceLowercaseNoDiacritics ? fullameNoSpaceLowercaseNoDiacritics : ''}&v=${i}"
                  title="copy link to clipboard"
                  -->
-                <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
+                 <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
             </svg>
             <div id="gb-variation${i}" 
                 class="fw-bold text-center" 

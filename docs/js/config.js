@@ -7,8 +7,7 @@ class Config {
     #playing = false
     #startBarOfLastSelectedVariation = 0
     #autoplay = false
-    #countViews = { active: true, views: 0 }
-    #pane = 0
+    #pane = 'left'
 
     #inConstructor = true
 
@@ -27,9 +26,6 @@ class Config {
 
         // 
         this.autoplay = getCookie('autoplay')
-
-        // 
-        this.countViews = getCookie('countViews')
 
         // 
         this.pane = getCookie('pane')
@@ -160,50 +156,19 @@ class Config {
     }
 
     // 
-    get countViews() {
-        return this.#countViews.active
-    }
-
-    set countViews(isCountViewsActive) {
-        if (typeof isCountViewsActive !== 'undefined' && (isCountViewsActive === null || isCountViewsActive === 'false' || isCountViewsActive === false)) {
-            isCountViewsActive = false
-        } else {
-            isCountViewsActive = true
-        }
-
-        if (isCountViewsActive !== this.#countViews.active) {
-            this.#countViews.active = isCountViewsActive
-            if (!this.#inConstructor) {
-                if (this.#countViews.isCountViewsActive === true) {
-                    removeCookie('countViews')
-                } else {
-                    setCookie('countViews', 'false', 365)
-                }
-            }
-        }
-    }
-    get views() {
-        return this.#countViews.active ? this.#countViews.views : -1;
-    }
-    set views(views) {
-        this.#countViews.views = views
-    }
-
-    // 
     get pane() {
         return this.#pane
     }
     set pane(pane) {
         if (typeof pane === 'undefined') {
-            pane = 0
+            pane = 'left'
         } else {
-            pane = parseInt(pane)
-            if (!(pane === 1 || pane === 0)) return
+            if (!(pane === 'left' || pane === 'right')) return
         }
         if (pane !== this.#pane) {
             this.#pane = pane
             if (!this.#inConstructor) {
-                if (!this.#pane || this.#pane === 0) {
+                if (!this.#pane || this.#pane === 'left') {
                     removeCookie('pane')
                 } else {
                     setCookie('pane', this.#pane)

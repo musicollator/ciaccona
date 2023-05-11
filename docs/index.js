@@ -117,7 +117,7 @@ loadArtists().then((artists) => {
     window.dispatchEvent(event);
 
     readyToPack.then((result) => {
-        console.log("let's pack")
+        console.log("about to create packery ...")
         const thePackery = new packeryLayout('#list', {
             itemSelector: ".list-item", // #theContainer #theContainerCol .artists#list 
             percentPosition: false,
@@ -134,15 +134,10 @@ loadArtists().then((artists) => {
 
         setListener()
 
-        function forceRedraw() {
-            document.querySelectorAll('.list-item:not(#li-ciaccona)').forEach(E => {
-                const i = E.children[0].dataset.index
-                const newChild = generateElement(template(data[i]))
-                E.replaceChild(newChild, E.children[0])
-            })
+        function displayArtist() {
             const artistBadge = document.getElementById('li-artist')
             if (coerceArtist) {
-                artistBadge.style.display = 'inherit'
+                artistBadge.style.display = 'block'
                 artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerceArtist).fullname
                 document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
             } else {
@@ -150,6 +145,17 @@ loadArtists().then((artists) => {
                 artistBadge.querySelector('.fullname').innerHTML = ''
                 document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'inherit')
             }
+        }
+
+        displayArtist()
+
+        function forceRedraw() {
+            document.querySelectorAll('.list-item:not(#li-ciaccona)').forEach(E => {
+                const i = E.children[0].dataset.index
+                const newChild = generateElement(template(data[i]))
+                E.replaceChild(newChild, E.children[0])
+            })
+            displayArtist()
             setListener()
         }
 

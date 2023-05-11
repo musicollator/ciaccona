@@ -39,7 +39,7 @@ class Codec {
             }
         }
         this.#barsCount = bar
-        console.log('we have', this.#barsCount, 'bars')
+        // console.log('we have', this.#barsCount, 'bars')
     }
     variation2bar = (v) => {
         if (v < 0 || this.#variations.length <= v) {

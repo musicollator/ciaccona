@@ -48,6 +48,7 @@ let no_plyr_event = params.no_plyr_event ?? undefined
 let test = params.test ?? undefined
 let coerceArtist = params.a ?? undefined
 let coerceVariation = params.v ?? undefined
+let pane = params.p ?? undefined
 let shuffle = params.shuffle ?? undefined
 if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {
     shuffle = false
@@ -55,11 +56,13 @@ if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' ||
     shuffle = true
 }
 
-if (!validFullamesNoSpaceLowercaseNoDiacritics.includes(fullameNoSpaceLowercaseNoDiacritics)) {
-    console.log(`invalid name: ${fullameNoSpaceLowercaseNoDiacritics}`)
-    fullameNoSpaceLowercaseNoDiacritics = undefined
-} else if (fullameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
-    fullameNoSpaceLowercaseNoDiacritics = 'moi'
+if (typeof fullameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+    if (!validFullamesNoSpaceLowercaseNoDiacritics.includes(fullameNoSpaceLowercaseNoDiacritics)) {
+        console.log(`invalid fullameNoSpaceLowercaseNoDiacritics: ${fullameNoSpaceLowercaseNoDiacritics}`)
+        fullameNoSpaceLowercaseNoDiacritics = undefined
+    } else if (fullameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
+        fullameNoSpaceLowercaseNoDiacritics = 'moi'
+    }
 }
 
 // transform packery event into promise
@@ -67,7 +70,7 @@ const readyToIsotope = new Promise((resolve) => {
     window.addEventListener('readyToIsotope', (event) => {
         console.log("... heard readyToIsotope event");
         resolve(event)
-    }, { once: true })
+    })
 })
 
 // transform packery event into promise
@@ -75,5 +78,5 @@ const readyToPack = new Promise((resolve) => {
     window.addEventListener('readyToPack', (event) => {
         console.log("... heard readyToPack event");
         resolve(event)
-    }, { once: true })
+    })
 })        

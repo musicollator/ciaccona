@@ -63,7 +63,7 @@ var _loadContent = function (data, index, container, subset, appendData) {
         } else {
             if (typeof element !== 'undefined' && element !== null) {
                 if (element.tagName !== 'META') {
-                    console.log(element.tagName)
+                    // console.log(element.tagName)
                     document.querySelector(container).appendChild(element);
                 }
             }
