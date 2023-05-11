@@ -1,0 +1,146 @@
+/* https://youtu.be/TAA89nkEuhw */
+#theContainer {
+  // background-color: #4e493e !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 100%;
+  overflow-y: scroll;
+  #theContainerCol {
+    margin: 0;
+    padding: 0;
+    #list {
+      visibility: inherit;
+      .list-item {
+        position: relative;
+        width: var(--liw, 400px);
+        height: var(--lih, 200px);
+        max-width: var(--liw, 400px);
+        max-height: var(--lih, 200px);
+        padding: 0;
+        margin: 0;
+        overflow: visible;
+        .list-artist {
+          align-items: flex-end;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          transition: background-image 0.5s linear;
+          border-style: solid;
+          border-width: 0.333px;
+          display: flex;
+          justify-content: space-between;
+          visibility: inherit;
+          border-radius: 0 6rem 6rem 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          overflow: visible;
+          // cursor: pointer;
+          // cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-.5 0 8 8"%3E%3Cpath fill-rule="evenodd" d="M0 0v8l7-4z"/%3E%3C/svg%3E') 16 16, auto;
+          cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 24 24"%3E%3Cpath fill="%23fff" stroke="%23000" stroke-linejoin="round" stroke-width="1.5" d="M8 6v12l10-6L8 6Z"/%3E%3C/svg%3E') 16 16,auto;
+        }
+      }
+      .list-artist#li-ciaccona {
+        background-color: transparent;
+        border: none;
+        overflow: hidden;
+      }
+      &.artists {
+        // background-color: #3e3a32 !important;
+        height: fit-content;
+      }
+    }
+  }
+  .large {
+    .grabber {
+      display: none;
+    }
+    width: var(--2liw, 800px) !important;
+    height: var(--2lih, 400px) !important;
+    border-radius: 0 12rem 12rem 0 !important;
+  }
+  .grabber {
+    cursor: grab;
+    font-size: 12pt;
+    font-family: var(--bs-font-monospace) !important;
+    background-image: url(/svg/cursor-hand-grab-svgrepo-com.svg);
+    background-repeat: no-repeat;
+    width: 3rem;
+    height: 3rem;
+    color: #d3d3d3;
+    font-size: 12px;
+    line-height: 4rem;
+    padding-left: 0.3rem;
+  }
+  .note {
+    cursor: pointer;
+    font-family: var(--bs-font-monospace) !important;
+    background-image: url(/svg/music-note-svgrepo-com2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2.5rem;
+    height: 2.5rem;
+    color: #d3d3d3;
+    padding-right: 0.3rem;
+  }
+  .puzzle {
+    cursor: pointer;
+    width: 3rem;
+    height: 3rem;
+    position: relative;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    fill: none;
+    stroke: aliceblue;
+    stroke-width: 4px;
+  }
+  .gutter-sizer {
+    width: var(--gs);
+  }
+  .hero {
+    color: #c8b273;
+    display: flex;
+    isolation: isolate;
+    filter: grayscale(0.1667);
+    div.hide-name {
+      &:first-child {
+        color: transparent;
+      }
+    }
+  }
+  .hero-intro {
+    position: relative;
+    padding: 0px 0.333rem;
+    cursor: pointer;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #57728b;
+      mix-blend-mode: multiply;
+      border-radius: 0 0 1rem 0;
+    }
+  }
+  .hero-intro.vert {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    line-height: 10.672px;
+    width: 1.667rem;
+    height: 100%;
+    &::after {
+      border-radius: 0;
+    }
+  }
+}

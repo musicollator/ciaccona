@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <script src="https://cdn.jsdelivr.net/npm/moment@latest/moment.min.js"></script>
+
+    <!-- Include Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- https://github.com/handlebars-lang/handlebars.js/blob/master/FAQ.md -->
+    <script id="head-template" type="text/x-handlebars-template"><!DOCTYPE html>
+<html>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <scr{{!}}ipt async src="https://www.googletagmanager.com/gtag/js?id=G-DJBNRY1Z9M"></scr{{!}}ipt>
+    <scr{{!}}ipt>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-DJBNRY1Z9M');    
+    </scr{{!}}ipt>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="Bach, JSBach, BWV1004, Partita, Ciaconna, Chaconne, {{artist}}">
+    <meta name="author" content="Christophe Thiebaud">
+
+    <!-- HTML Meta Tags -->
+    <title>{{title}}</title>
+    <meta name="description" content="{{{description}}}">
+
+    <!-- Facebook Meta Tags -->
+    <meta property="fb:app_id" content="176898451849553">
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:site_name" content="ciaccona.cthiebaud.com">
+    <meta property="og:url" content="{{url}}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{{description}}}">
+    <meta property="og:image" content="{{image}}">
+    <meta property="og:image:url" content="{{image}}">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="628">
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@cthiebaud">
+    <meta property="twitter:domain" content="ciaccona.cthiebaud.com">
+    <meta property="twitter:url" content="{{url}}">
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{{description}}}">
+    <meta name="twitter:image" content="{{image}}">
+    <scr{{!}}ipt>
+        window.location.href = "/ciaccona.html?a={{key}}"
+    </scr{{!}}ipt>
+</head>
+</html>
+</script>
+    <!-- 
+    {{#if twitter}}#{{fullnameNoSpace}}{{/if}}
+    
+    {{#if twitter}}@{{twitter}}{{else}}#{{fullnameNoSpace}}{{/if}}
+-->
+
+    <script id="twitter-template" type="text/x-handlebars-template">
+Listen to {{fullname}}{{#if twitter}} ({{twitter}}){{/if}} performing the #Ciaccona from #JSBach's partita in D minor for solo violin #BWV1004, collated with 32+ other performers:
+
+#Chaconne #Bach {{hashtag}}
+
+https://ciaccona.cthiebaud.com/video/{{filename}}
+
+-------------
+</script>
+
+    <script id="youtube-template" type="text/x-handlebars-template">{{fullname}}:
+https://ciaccona.cthiebaud.com/video/{{filename}} 
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+
+    <script type="module">
+        import jquery from 'https://cdn.jsdelivr.net/npm/jquery@3.6.4/+esm'
+        import { loadArtists } from "/js/artists.js?v=0.13.3"
+
+        loadArtists().then((artists) => {
+
+            const source = document.getElementById("head-template").innerHTML;
+            const template = Handlebars.compile(source);
+            const BreakException = {};
+            const count = artists.size() - 1
+            let i = 1
+            const sorted = artists.artists.sort((a, b) => b.fullname - a.fullname)
+            const instances = []
+            sorted.forEach((artist) => {
+                if (artist.fullnameNoSpaceLowercaseNoDiacritics !== 'ksenijakomljenovic') {
+                    return
+                }
+                /*
+                const instantiated = template({
+                    fullname: artist.fullname, 
+                    hashtag: `#${artist.fullnameNoSpace}`, 
+                    twitter: artist.twitter ? `@${artist.twitter}` : undefined, 
+                    filename: `${artist.fullnameNoSpaceLowercaseNoDiacritics}.html`
+                    
+                },)
+                instances.push(instantiated)
+                console.log(instantiated)
+                */
+                /*
+                */
+                // if (1 < i++) throw BreakException;
+
+                console.log(artist.fullname, artist['▶'].viewsPerMonth, artist['▶'].youtubeUrl)
+                const key = artist.fullnameNoSpaceLowercaseNoDiacritics
+                const results = template({
+                    key: key,
+                    artist: artist.fullname,
+                    videoID: artist['▶'].id,
+                    title: `Ciaccona - ${artist.fullname}`,
+                    url: `https://ciaccona.cthiebaud/video/${key}.html`,
+                    description: `${artist.fullname} performing the Chaconne from Johann Sebastian Bach's Partita in D minor for solo violin (BWV 1004), collated with ${count}+ other performers.`,
+                    image: `https://ciaccona.cthiebaud.com/screenshots/${key}.jpg`,
+                });
+                console.log(results)
+                // console.log('pushed', key)
+                setTimeout(() => {
+                    const blob = new Blob([results], { type: "text/plain;charset=utf-8" });
+                    const path = `_${key}.html`
+                    saveAs(blob, path);
+                    console.log('saved', key, 'to', path)
+                }, 300 * i++)
+                /*     
+                */
+                // throw BreakException;
+            })
+            /*
+            var blob = new Blob(instances, { type: "text/plain;charset=utf-8" });
+            saveAs(blob, `__qwe.txt`);
+            console.log('saved __qwe.txt')
+            */
+        })
+    </script>
+</head>
+
+</html>
+<!-- 
+<script>
+    /*
+    const qwe = jsYaml.load(artistsAsYAMLText)
+    // console.log(qwe)
+    const today = moment('Apr 8, 2023')
+    const res = []
+    const oneMonth = moment.duration(1, 'months')
+    Object.keys(qwe).forEach((k) => {
+
+        const firstVid = qwe[k]['▶'][0]
+        const yt = firstVid.youtubeUrl
+        const views = firstVid.views
+        const started = moment(firstVid.started)
+        const diff = today.diff(started)
+        const durationInMonths = moment.duration(diff).asMonths()
+        // console.log(k, asd, durationInMonths)
+        // console.log(k, yt, )
+
+        // console.log(k, yt, views, Math.floor(duration.asMonths()), Math.floor(views / Math.floor(duration.asMonths())))
+        res.push({
+            artist: k,
+            video: yt,
+            views: views,
+            started: started,
+            viewsPerMonth: Math.floor(views / durationInMonths)
+        })
+    })
+    res.sort((a, b) => {
+        return b.viewsPerMonth - a.viewsPerMonth;
+        // return a.started.diff(b.started)
+    })
+    const ff = new Intl.NumberFormat('fr-FR')
+
+    const s = `${"artist".padEnd(26)} | video since | ${"total views".padStart(11)} | ${"per month".padStart(10)}`
+    console.log(s)
+    console.log("---------------------------+-------------+-------------+-----------")
+    res.forEach((r) => {
+        const s = `${r.artist.padEnd(26)} |    ${r.started.format('MMM YYYY')} | ${ff.format(r.views).padStart(11)} | ${ff.format(r.viewsPerMonth).padStart(10)}`
+        console.log(s)
+    })
+    */
+</script>
+-->

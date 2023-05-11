@@ -1,0 +1,82 @@
+body.structure:not(.video-player) {
+  background-color: white;
+}
+body.performers:not(.video-player) {
+  background-color: #4e493e;
+}
+body.video-player {
+  background-color: black !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.fullparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.fullscreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  width: calc(var(--vw, 1vw) * 100);
+}
+
+.magnificent-card {
+  font-family: "Cinzel", serif;
+  font-size: 24px;
+  outline: 1px solid gray;
+  outline-offset: -2px;
+  background-clip: content-box;
+  text-align: center;
+  /* background-color: rgba(255, 255, 255, 0.5); 
+  background-color: white;
+  color: #121212;*/
+  border-radius: 1rem;
+  backdrop-filter: blur(1px);
+  display: flex;
+}
+
+.artists .magnificent-card {
+  background-color: white;
+  color: #121212;
+}
+
+.ciaccona .magnificent-card {
+  background-color: #4e493e;
+  color: white;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .plyr .plyr__video-embed iframe {
+    /* height = 100 * (9 / 16) = 56.25 */
+    height: 56.25vw;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .plyr .plyr__video-embed iframe {
+    /* width = 100 / (9 / 16) = 177.777777 */
+    width: calc(var(--vh, 1vh) * 177.78);
+  }
+}
+
+.d-flex[style*="display:none"],
+.d-flex[style*="display: none"] {
+  display: none !important;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: transparent !important;
+}

@@ -1,0 +1,161 @@
+
+.artists {
+  background-color: #4e493e !important;
+  height: fit-content;
+}
+
+.artists a {
+  text-decoration: none;
+}
+
+.artists .magnificent-card {
+  font-family: "Cinzel", serif;
+  font-size: 24px;
+  outline: 1px solid gray;
+  outline-offset: -2px;
+  background-clip: content-box;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  color: #121212;
+  backdrop-filter: blur(1px);
+  display: flex;
+}
+
+.artists #theContainerCol #list .list-item {
+  position: relative;
+  width: var(--liw, 400px);
+  height: var(--lih, 200px);
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.artists #theContainerCol #list .list-item .list-artist {
+  align-items: flex-end;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: background-image 0.5s linear;
+  border-style: solid;
+  border-width: 0.333px;
+  display: flex;
+  justify-content: space-between;
+  visibility: inherit;
+  border-radius: 0 6rem 6rem 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.artists #theContainerCol #list .list-artist#li-ciaccona {
+  background-color: transparent;
+  border: none;
+  overflow: hidden;
+}
+
+.artists .large .grabber {
+  display: none;
+}
+
+.artists .grabber {
+  cursor: grab;
+  font-size: 12pt;
+  font-family: var(--bs-font-monospace) !important;
+  background-image: url(/svg/cursor-hand-grab-svgrepo-com.svg);
+  background-repeat: no-repeat;
+  width: 3rem;
+  height: 3rem;
+  color: #d3d3d3;
+  font-size: 12px;
+  line-height: 4rem;
+  padding-left: 0.3rem;
+}
+
+.artists .note {
+  cursor: pointer;
+  font-family: var(--bs-font-monospace) !important;
+  background-image: url(/svg/music-note-svgrepo-com2.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #d3d3d3;
+  padding-right: 0.3rem;
+}
+
+.artists a.puzzle {
+  /*
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    */
+  cursor: pointer;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  fill: none;
+  stroke: aliceblue;
+  stroke-width: 4px;
+}
+
+.artists .large {
+  width: var(--2liw, 800px) !important;
+  height: var(--2lih, 400px) !important;
+  border-radius: 0 12rem 12rem 0 !important;
+}
+
+.artists .gutter-sizer {
+  width: 1.25%;
+}
+
+/* https://youtu.be/TAA89nkEuhw */
+.artists .hero {
+  color: #c8b273;
+  display: flex;
+  isolation: isolate;
+  filter: grayscale(0.1667);
+}
+
+.artists .hero div.hide-name:first-child {
+  color: #57728b;
+  mix-blend-mode: multiply;
+}
+
+.artists .hero-intro {
+  position: relative;
+  padding: 0px 0.333rem;
+}
+
+.artists .hero-intro.vert {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  line-height: 10.672px;
+  width: 1.667rem;
+  height: 100%;
+}
+
+.artists .hero-intro.vert::after {
+  border-radius: 0;
+}
+
+.artists .hero-intro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #57728b;
+  mix-blend-mode: multiply;
+  border-radius: 0 0 1rem 0;
+}
+
+.artists .force-redraw::before {
+  content: "";
+}

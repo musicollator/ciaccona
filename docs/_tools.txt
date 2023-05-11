@@ -1,0 +1,49 @@
+https://www.timeanddate.com/stopwatch/
+https://csvjson.com/csv2json
+https://onlinepngtools.com/create-transparent-png
+https://realfavicongenerator.net/
+https://hexcolorpedia.com/
+https://www.onlinemictest.com/tuners/pitch-detector/
+https://www.flutopedia.com/pitch_to_frequency.htm
+https://cards-dev.twitter.com/validator
+https://developers.facebook.com/tools/debug/
+https://www.linkedin.com/post-inspector/inspect
+https://www.flutopedia.com/pitch_to_frequency.htm
+https://pagespeed.web.dev/
+
+https://youmightnotneedjquery.com/
+
+
+const XXXXXXXX = {
+    offset: { minutes: 0, seconds: 0 },
+    adjust: { seconds: 0, milliseconds: 0 },
+    start: "00000000",
+    bars: []
+}
+
+^(\d),
+^(\d\d),
+
+0$1,
+
+\s+"#": "*\d+"*,\n\s+"Label": ".*",\n\s+"Interval": ".*",\n\s+"Total": ".*",\n
+
+for file in _*; do mv $file $(echo $file | sed -e 's/^.//'); done
+
+// look for javascript and css files imports
+["'](\/js\/)*([\/_\-a-z]+)--\d\.(js|css|yaml)["']
+"$1$2--9.$3"
+
+look for version number
+([\?"']v=*0\.13\.)[\d\.]+(["'#])
+replace with 
+$11$2
+
+rename all _xxx\d.js files to _xxx4.js
+# check first
+for file in *; do echo $file; done
+for file in *; do echo $(echo $file | sed -e 's/[0-9]/10/g'); done
+# then go
+for file in *; do mv $file $(echo $file | sed -e 's/[0-9]/10/g'); done
+
+for file in *; do echo md5sum $file; done

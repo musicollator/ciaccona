@@ -1,0 +1,26 @@
+ffmpeg -i ventoux5.mov -vcodec h264 -acodec mp2 ventoux5.mp4
+
+ffmpeg \
+    -i video.mp4 -i audio.wav \
+    -c:v copy \
+    -map 0:v -map 1:a \
+    -y video_et_audio.mp4 
+
+cwebp -q 0 adolfbusch-0.png -o adolfbusch-0-q0.webp
+ffmpeg -i adolfbusch-0.png -qscale:v 8 adolfbusch-0.jpg
+ffmpeg -i adolfbusch-0.jpg -loglevel debug
+
+for d in *; do ( cd $d && (for f in *.(png)(N); do cwebp -q 0 ${f} -o ${f%%.*}.webp; done)) done
+
+for d in *; do ( cd $d && (for f in *.(png)(N); do ffmpeg -i ${f} -qscale:v 8 ${f%%.*}.jpg; done)) done
+
+-itsoffset -2.046 
+ffmpeg -i logo.mov -vcodec h264 -acodec mp2 logo.mp4
+ffmpeg \
+    -i logo.mp4 -i aintno.wav \
+    -c:v copy \
+    -map 0:v -map 1:a \
+    -y logo_aintno0.mp4 
+
+ffmpeg -i logo_aintno.mov -y logo_aintno.mp4
+

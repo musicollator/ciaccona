@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Puzzle</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 4rem 0;
+            background-color: transparent;
+        }
+
+        #thePuzzle {
+            width: calc(var(--width) + var(--xn) * var(--gutter));
+            height: calc(var(--height) + var(--yn) * var(--gutter));
+            margin: auto;
+            background-color: lightgray;
+        }
+
+        .ligne {
+            width: 100%;
+            height: calc(var(--height) / var(--yn));
+            background-color: transparent;
+            overflow: visible;
+        }
+
+        .colonne {
+            width: calc(var(--width) / var(--xn));
+            height: calc(var(--height) / var(--yn));
+            position: relative;
+            background-color: transparent;
+            overflow: visible;
+        }
+
+        .background {
+            position: absolute;
+            top: var(--marginY);
+            right: var(--marginX);
+            bottom: var(--marginY);
+            left: var(--marginX);
+            transform-origin: var(--toX) var(--toY);
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            overflow: visible;
+        }
+
+        .background path {
+            stroke: #C8B273;
+            stroke-width: 2;
+            fill: none;
+            fill-opacity: 0;
+        }
+
+        .background:hover path {
+            stroke: gray;
+        }
+
+        .background:hover {
+            z-index: 12;
+        }
+
+        .background.top.left {
+            transform-origin: var(--toXleft) var(--toYtop);
+        }
+
+        .background.top {
+            transform-origin: var(--toX) var(--toYtop);
+            top: 0;
+        }
+
+        .background.right {
+            right: 0;
+        }
+
+        .background.bottom {
+            bottom: 0;
+        }
+
+        .background.left {
+            transform-origin: var(--toXleft) var(--toY);
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="thePuzzle" class="d-flex flex-column">
+            <div id="gutter-sizer" class="gutter-sizer" style="width: 2px"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
+        import Draggabilly from 'https://cdn.jsdelivr.net/npm/draggabilly@3.0.0/+esm'
+        import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
+        import animejs from '/lib/anime-3.2.1.es.min.js'
+        import { shuffleArray, generateElement, normalizeVraiment } from '/js/utils.js'
+        import codec from "/js/structure.js?v=0.13.3"
+        import { loadArtists } from "/js/artists.js?v=0.13.3"
+        import JigsawShield from '/js/jigsawShield.js?v=0.13.3'
+
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop)
+        })
+        let test = params.test ?? undefined
+        let coerceArtist = params.a ?? undefined
+        let coerceVariation = params.v ? parseInt(params.v) : undefined
+        if (isNaN(coerceVariation) || coerceVariation < 0 || codec.variationsCount <= coerceVariation) coerceVariation = undefined
+        let shuffle = params.shuffle ?? undefined
+        if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {
+            shuffle = false
+        } else {
+            shuffle = true
+        }
+
+        const _default = {
+            xn: 8,
+            yn: 4,
+            width: 1200,
+            height: 630,
+            transitionDuration: '0.667s',
+        }
+        const _artists = {
+            xn: 6,
+            yn: 6,
+            tabsize: .045,
+            jitter: .025,
+            width: 1200,
+            height: 630,
+            gutter: 0,
+            scale: 1,
+        }
+        const _manot = {
+            xn: 6,
+            yn: 6,
+            width: 480,
+            height: 480,
+            image: "/images/manot.jpg",
+            backgroundColor: 'aliceblue',
+            stroke: 'lightblue',
+            delayShuffle: i => i * 50,
+            delayOrder: i => i * 50,
+        }
+        const bez = bezierEasing(1 / 3, 2 / 3, 3 / 4, 1 / 4)
+        const _ventoux2 = {
+            xn: 7,
+            yn: 4,
+            width: 1046,
+            height: 626,
+            image: "/images/ventoux2.png",
+            backgroundColor: 'white',
+            stroke: '#d5a392',
+            transitionDuration: '0.4s',
+            delayShuffle: i => 0,
+            delayOrder: (i, count) => Math.round(bez(normalizeVraiment(i, 0, count - 1, 0, 1)) * 24000)
+        }
+        const _ = _artists
+        const gutter = _.gutter ?? 0;
+        document.getElementById('gutter-sizer').style.width = `${gutter}px`
+
+        _.scale = _.scale ?? 1;
+        _.total = _.xn * _.yn
+        const marginX = 20 /* _.width  / (_.xn * 3) */
+        const marginY = 20 /* _.height / (_.yn * 6) */
+        const thePuzzle = document.getElementById('thePuzzle')
+        if (_.backgroundColor) {
+            thePuzzle.style.backgroundColor = _.backgroundColor
+        }
+        const cssStroke = _.stroke ? `stroke: ${_.stroke};` : ''
+
+        document.documentElement.style.setProperty('--gutter', `${gutter}px`)
+        document.documentElement.style.setProperty('--width', `${_.width}px`)
+        document.documentElement.style.setProperty('--height', `${_.height}px`)
+        document.documentElement.style.setProperty('--xn', `${_.xn}`)
+        document.documentElement.style.setProperty('--yn', `${_.yn}`)
+        document.documentElement.style.setProperty('--marginX', `${-marginX}px`)
+        document.documentElement.style.setProperty('--marginY', `${-marginY}px`)
+
+        const _toX = (_.width / (_.xn)  /* */);
+        const _toY = (_.height / (_.yn)  /* */);
+        const _toXleft = _toX - marginX /* */;
+        const _toYtop = _toY - marginY /* */;
+        document.documentElement.style.setProperty('--toX', `${_toX}px`)
+        document.documentElement.style.setProperty('--toY', `${_toY}px`)
+        document.documentElement.style.setProperty('--toXleft', `${_toXleft}px`)
+        document.documentElement.style.setProperty('--toYtop', `${_toYtop}px`)
+
+        let jigsawGenerator = new JigsawShield(_)
+
+        const changeIt = () => {
+            jigsawGenerator = new JigsawShield(_)
+            thePuzzle.querySelectorAll(':not(#gutter-sizer)').forEach(e => e.remove())
+            let vi = 0
+            for (let yi = 0; yi < _.yn; yi++) {
+                const row = generateElement(`<div id="row${yi}" class="ligne _${yi} d-flex"></div>`)
+                thePuzzle.append(row)
+                for (let xi = 0; xi < _.xn; xi++) {
+
+                    const j = jigsawGenerator.getJigsawItem(vi)
+                    const topTrans = yi === 0 ? 0 : marginY
+                    const leftTrans = xi === 0 ? 0 : marginX
+                    const xTrans = parseInt(j.viewBox.replaceAll(/^([\.\d\-]+).*$/g, "$1"))
+                    const yTrans = parseInt(j.viewBox.replaceAll(/^[\.\d\-]+\s+([\.\d\-]+).*$/g, "$1"))
+                    const topClass = yi === 0 ? 'top' : ''
+                    const rightClass = xi === (_.xn - 1) ? 'right' : ''
+                    const bottomClass = yi === (_.yn - 1) ? 'bottom' : ''
+                    const leftClass = xi === 0 ? 'left' : ''
+
+
+                    const col = generateElement(`
+<div id="row${yi}col${xi}" class="colonne draggable" data-index="${vi}">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         width="0" height="0" 
+         viewBox="${j.viewBox}">
+        <defs>
+            <clipPath id="clipPath-${vi}" >
+                <path id="path-${vi}" 
+                      transform="translate(${-xTrans + leftTrans} ${-yTrans + topTrans})"
+                      d="${j.path}"/> 
+            </clipPath> <!--   -->
+        </defs>
+    </svg>                    
+    <div id="_row${yi}col${xi}" 
+         class="background ${topClass} ${rightClass} ${bottomClass} ${leftClass}" 
+         style="clip-path: url(#clipPath-${vi}); -webkit-clip-path: url(#clipPath-${vi}); transform: scale(${_.scale})"><!-- -->
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" 
+    class="background" 
+    width="${_.width / _.xn}" height="${_.height / _.yn}" 
+    transform="translate(${marginX} ${marginY})" 
+    viewBox="${j.viewBox}">
+    <path id="path2-${vi}" 
+    style="${cssStroke}"
+    d="${j.path}"/> 
+    </svg>
+    <!--
+    -->
+    <!-- stroke-dasharray="5" -->
+</div>`)
+
+                    row.append(col)
+                    vi++
+                    // if (codec.variationsCount - 1 <= vi) break
+                }
+                // if (codec.variationsCount - 1 <= vi) break
+            }
+        }
+
+        changeIt()
+
+        let shuffledV = shuffleArray(Array.from(Array(_.xn * _.yn), (_, index) => index + 1))
+        let theArtists
+        const doIt = (artists) => {
+            theArtists = artists
+            const array = coerceArtist ? artists.artists : shuffleArray(artists.artists)
+            let i = 0
+            array.forEach(a => {
+                if (i < _.xn * _.yn) {
+                    let xi = i % _.xn
+                    let yi = Math.floor(i / _.xn)
+                    const id = `_row${yi}col${xi}`
+                    const cell = document.getElementById(id)
+                    console.log(cell)
+                    if (cell != null) {
+                        const offsetX = Math.round(normalizeVraiment(xi, 0, _.xn - 1, 0, _.width * (_.xn - 1) / _.xn))
+                        const offsetY = Math.round(normalizeVraiment(yi, 0, _.yn - 1, 0, _.height * (_.yn - 1) / _.yn))
+                        const borderX = xi === 0 ? 0 : marginX;
+                        const borderY = yi === 0 ? 0 : marginY;
+                        const artist = coerceArtist ?? a.fullnameNoSpaceLowercaseNoDiacritics
+                        const variation = coerceVariation ?? (shuffledV[i] % codec.variationsCount)
+
+                        if (_.image) {
+                            cell.style.backgroundImage = `url(${_.image})`
+                        } else {
+                            cell.style.backgroundImage = `url(https://musicollator.github.io/ciaccona-stationary/artists/${artist}/${artist}-${variation}.jpg)`
+                        }
+                        // cell.style.backgroundPosition = `-${offsetX - borderX}px -${offsetY - borderY}px`
+                        cell.style.backgroundPosition = `center center`
+
+                    }
+                }
+                i++
+            })
+
+        }
+
+        loadArtists().then(doIt)
+
+        var pckry = new packeryLayout(thePuzzle, {
+            itemSelector: '.colonne',
+            gutter: '.gutter-sizer',
+            transitionDuration: _.transitionDuration ?? '0.4s'
+        });
+
+        pckry.getItemElements().forEach(function (itemElem) {
+            var draggie = new Draggabilly(itemElem);
+            pckry.bindDraggabillyEvents(draggie);
+        });
+
+        let shuffled = false
+        function toggleShuffleTiles() {
+            let delay
+            // shuffle items
+            if (!shuffled) {
+                pckry.items = shuffleArray(pckry.items)
+                shuffled = true
+                delay = _.delayShuffle ?? (i => 0)
+            } else {
+                delay = _.delayOrder ?? (i => 0)
+                pckry.items = pckry.items.sort((a, b) => a.element.getAttribute('data-index') - b.element.getAttribute('data-index'))
+                shuffled = false
+            }
+            // stagger transition
+            pckry._resetLayout();
+            document.querySelectorAll('.colonne').forEach(e => e.style.zIndex = 1)
+            pckry.items.forEach(function (item, i) {
+                setTimeout(function () {
+                    item.element.style.zIndex = 10 + i
+                    pckry.layoutItems([item]);
+                }, delay(i, pckry.items.length));
+            });
+        }
+
+        const handleEsc = (event) => {
+            const isCombinedKey = (event.ctrlKey || event.altKey || event.shiftKey);
+            if (isCombinedKey) {
+                return
+            } else if (event.key === 'Escape') {
+                toggleShuffleTiles()
+            } else if (event.key === 'Enter') {
+                if (typeof coerceVariation !== 'undefined') {
+                    coerceVariation = (coerceVariation + 1) % codec.variationsCount
+                }
+                changeIt()
+                pckry.reloadItems()
+                pckry.layout()
+                doIt(theArtists)
+            }
+        }
+        document.addEventListener('keydown', handleEsc);
+    </script>
+</body>
+
+</html>
