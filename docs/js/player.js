@@ -286,9 +286,11 @@ export default function createPlayer(selector, timings, ignore_all_events) {
                 INIT_EVENT_HANDLERS()
 
                 let theStartingBar = timings.bars[0]
-                let theLastStartingBarIndex = config.startBarOfLastSelectedVariation
-                if (theLastStartingBarIndex != null) {
-                    theStartingBar = timings.bars[theLastStartingBarIndex]
+                if (config.autoplay) {
+                    const theLastStartingBarIndex = config.startBarOfLastSelectedVariation
+                    if (theLastStartingBarIndex != null) {
+                        theStartingBar = timings.bars[theLastStartingBarIndex]
+                    }
                 }
                 console.log("Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar["Time Recorded"], "), thanks.")
                 _plyer.currentTime = theStartingBar.duration.asMilliseconds() / 1000

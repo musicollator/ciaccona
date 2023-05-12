@@ -208,17 +208,20 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
             console.log("change isotope filter to hide artist name")
             isotopeResult.arrange({ filter: ':not(.artist)' })
 
-            // select last variation
-            let theLastStartingBarIndex = config.startBarOfLastSelectedVariation
-            const varation = codec.bar2variation(theLastStartingBarIndex)
-            const e = document.getElementById(`gb${varation}`)
-            if (e) {
-                e.classList.add('selected')
-                e.scrollIntoView({ behavior: "smooth", block: "center" })
-            }
         } else {
             console.log("change isotope filter to show artist name")
             isotopeResult.arrange({ filter: '*' })
+            
+            // select last variation
+            if (config.autoplay) {
+                let theLastStartingBarIndex = config.startBarOfLastSelectedVariation
+                const varation = codec.bar2variation(theLastStartingBarIndex)
+                const e = document.getElementById(`gb${varation}`)
+                if (e) {
+                    e.classList.add('selected')
+                    e.scrollIntoView({ behavior: "smooth", block: "center" })
+                }
+            }
         }
     } else {
         console.log("some issue with isotope ?")
