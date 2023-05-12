@@ -9,14 +9,14 @@ import MagnificentTitle from "/js/magnificent-title.js?v=1.0.0"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
-const template = (data) => `
+const template = (data, first) => `
 <div id="li-artist${data.v}" 
      class="list-artist hero"  
      data-index="${data.index}" 
      data-a="${data.a}" 
      data-v="${data.v}" 
      style="background-image: ${data.bg}; overflow:hidden;">
-    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; visibility: hidden;" >
+    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; ${first ? 'visibility: hidden;' : ''}" >
         <div class="hero-intro flex-shrink-1; align-self-start;" 
              title="Pin or unpin ${data.firstname} ${data.lastname}"
              style="padding-right: 0.5rem;">
@@ -27,7 +27,7 @@ const template = (data) => `
              ${data.lastname}
         </div>
     </div>
-    <a class="puzzle flex-shrink-1" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}" style="visibility: hidden;">
+    <a class="puzzle flex-shrink-1" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}" style="${first ? 'visibility: hidden;' : ''}">
         <svg xmlns="http://www.w3.org/2000/svg" 
             id="gb-puzzle${data.v}-svg" 
             style="overflow: visible; transform: scale(.667);"
@@ -99,7 +99,7 @@ loadArtists().then((artists) => {
     arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)
     data.forEach(d => {
-        list.innerHTML += `<div class="list-item">${template(d)}</div>`
+        list.innerHTML += `<div class="list-item">${template(d, true)}</div>`
     })
 
     var listArtistElements = document.querySelectorAll('.list-artist')
