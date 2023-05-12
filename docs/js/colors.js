@@ -214,7 +214,20 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
 
         const svgOffsetX = codec.svgOffsetX(i)
 
-        const templateVariations =
+        const templatePuzzle = fullameNoSpaceLowercaseNoDiacritics ? `<svg xmlns="http://www.w3.org/2000/svg" 
+                 id="gb-puzzle${i}-svg" 
+                 class="clipboard-puzzle"
+                 width="80%" height="60%" 
+                 style="visibility: inherit; overflow: visible; transform: scale(.667);" 
+                 viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
+                 <!-- 
+                 data-clipboard-text="${thisURL.origin}/?a=${fullameNoSpaceLowercaseNoDiacritics ? fullameNoSpaceLowercaseNoDiacritics : ''}&v=${i}"
+                 title="copy link to clipboard"
+                 -->
+                 <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
+            </svg>` : ''
+        
+            const templateVariations =
             `
 <div id="gb${i}" data-sort="${twoZeroPad(i)}" data-variation="${i}" class="${tonality ? tonality + ' ' : ''}grid-brick hasScore" style="${bgstripeAlpha}; border-color: #${c2.borderColor};">
     <div class="brick hasScore font-monospace d-flex align-items-center justify-content-between" style="${bgstripe}; ${i === codec.variationsCount - 1 ? 'border-radius: 0;' : ''} " data-bar="${barFrom}" data-variation="${i}" >
@@ -241,30 +254,21 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
             </div>
             <div class="pb-1">${barTo}</div>
         </div>
-        <div class="" style="width: 3rem; height: 5rem; position:relative; overflow: visible;">
-            <svg xmlns="http://www.w3.org/2000/svg" 
-                 id="gb-puzzle${i}-svg" 
-                 class="clipboard-puzzle"
-                 width="80%" height="60%" 
-                 style="visibility: inherit; overflow: visible; transform: scale(.667);" 
-                 viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
-                 <!-- 
-                 data-clipboard-text="${thisURL.origin}/?a=${fullameNoSpaceLowercaseNoDiacritics ? fullameNoSpaceLowercaseNoDiacritics : ''}&v=${i}"
-                 title="copy link to clipboard"
-                 -->
-                 <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
-            </svg>
+        <div class="d-flex flex-column justify-content-evenly" style="width: 3rem; overflow: visible;">
+            ${templatePuzzle}
             <div id="gb-variation${i}" 
-                class="fw-bold text-center" 
+                class="fw-bold" 
                 data-a="${fullameNoSpaceLowercaseNoDiacritics}"
                 data-v="${i}"
-                style="position:absolute; bottom: 0.125rem; right:0; left: -0.667rem; color: #${c2.textColor};">
+                style="color: #${c2.textColor}; padding: .333rem;">
                 ${i === 0 || i === codec.variationsCount - 1 ? "&nbsp;" : i}
             </div>
         </div>
     </div>
 </div>
 `
+
+        // const instanciatedPuzzle = generateElement(templatePuzzle)
         const instanciatedVariation = generateElement(templateVariations)
         /*
         const jigsawPiece = instanciatedVariation.querySelector(`#gb-puzzle${i}-svg`)
