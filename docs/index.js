@@ -1,11 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import codec from "/js/structure.js?v=1.0.0"
-import { colorArray } from "/js/colors.js?v=1.0.0"
-import { loadArtists } from "/js/artists.js?v=1.0.0"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.0"
-import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.0'
-import MagnificentTitle from "/js/magnificent-title.js?v=1.0.0"
+import codec from "/js/structure.js?v=1.0.1"
+import { colorArray } from "/js/colors.js?v=1.0.1"
+import { loadArtists } from "/js/artists.js?v=1.0.1"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1"
+import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.1'
+import MagnificentTitle from "/js/magnificent-title.js?v=1.0.1"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -83,8 +83,8 @@ loadArtists().then((artists) => {
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    const liArtist = `<div id="artist-badge" class="p-2" style="white-space: nowrap; display:none;">
-    <span class="fullname" style="color: #d0d0d0; font-size: 1.4rem;"></span>
+    const liArtist = `<div id="artist-badge" class="p-2" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
+    <span class="fullname" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
     <!--
     <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
     </a>
@@ -94,7 +94,7 @@ loadArtists().then((artists) => {
 </div>
 `
 
-    list.innerHTML += new MagnificentTitle('list-item', 1).templateForTheme + liArtist
+    list.innerHTML += new MagnificentTitle('list-item', 1, liArtist).templateForTheme
 
     arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)
@@ -146,12 +146,12 @@ loadArtists().then((artists) => {
             const artistBadge = document.getElementById('artist-badge')
             if (artistBadge) {
                 if (coerceArtist) {
-                    artistBadge.style.display = 'block'
+                    artistBadge.style.visibility = 'inherit'
                     artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerceArtist).fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
                 } else {
-                    artistBadge.style.display = 'none'
-                    artistBadge.querySelector('.fullname').innerHTML = ''
+                    artistBadge.style.visibility = 'hidden'
+                    artistBadge.querySelector('.fullname').innerHTML = '&nbsp;'
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'inherit')
                 }
             }

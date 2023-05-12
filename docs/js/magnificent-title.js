@@ -1,7 +1,7 @@
 class MagnificentTitle {
     templateForTheme
     where
-    constructor(clazz, where) {
+    constructor(clazz, where, incl) {
         this.clazz = clazz
         this.where = where && 1 <= where && where <= 3 ? where : 0 // 1, 2, 3
         // where can be left middle right
@@ -18,8 +18,7 @@ class MagnificentTitle {
             <path d="m15.329 5.06-1.454 1.348L16.303 9H7.937v2h8.366l-2.428 2.544 1.454 1.362L20 9.958ZM10 0v4H8V2H2v16h6v-2h2v4H0V0Z"/>
         </svg>`
         this.templateForTheme =
-            `
-<div id="magnificent-title-ciaccona" class="${this.clazz} d-flex align-items-center" data-sort="-1">
+`<div id="magnificent-title-ciaccona" class="${this.clazz} d-flex justify-content-center flex-column" data-sort="-1">
     <div class="d-flex justify-content-center" style="width: 100%;">
         <div class="magnificent-card">
             <a id="pane-artists" data-pane="left" href="/" aria-label="Artists...">
@@ -33,6 +32,7 @@ class MagnificentTitle {
             </a>
         </div>
     </div>
+    ${incl ? incl : ''}
 </div>`
     }
 }
