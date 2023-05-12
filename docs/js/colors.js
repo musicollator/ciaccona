@@ -4,6 +4,7 @@ import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
 import codec from "/js/structure.js?v=1.0.0"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.0'
 import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=1.0.0"
+import MagnificienTitle from "/js/magnificent-title.js?v=1.0.0"
 
 function getColorArray(transparencyParam) {
     let _first_color_ = [
@@ -143,22 +144,8 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
     const _colors_ = colorArray // getColorArray(fullameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
 
     const temporaryContainer = generateElement("<template>");
-    const templateForTheme =
-        `
-<div id="gb-ciaccona" data-sort="-1" class="grid-brick" style="height:96px; margin:0;">
-    <div class="d-flex brick align-items-center justify-content-center" >
-        <a class="magnificent-card p-2" href="/" aria-label="Artists...">
-            &nbsp;
-            <svg id="arrow_out_left" class="align-self-center" style="width:32px; height:32px;" viewBox="0 0 20 20">
-                <path fill="#e0e0e0c0" d="m4.671 5.06 1.454 1.348L3.697 9h8.366v2H3.697l2.428 2.544-1.454 1.362L0 9.958ZM10 0v4h2V2h6v16h-6v-2h-2v4h10V0Z"/>
-            </svg>
-            &nbsp;
-            <div style="margin: auto; font-size: 28px;">Ciaccona</div>
-            &nbsp;
-        </a>
-    </div>
-</div>`
-    temporaryContainer.appendChild(generateElement(templateForTheme));
+    
+    temporaryContainer.appendChild(generateElement(new MagnificienTitle('grid-brick', fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme));
 
     const templateForArtist =
         `

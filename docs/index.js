@@ -4,6 +4,7 @@ import { colorArray } from "/js/colors.js?v=1.0.0"
 import { loadArtists } from "/js/artists.js?v=1.0.0"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.0"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.0'
+import MagnificienTitle from "/js/magnificent-title.js?v=1.0.0"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -81,8 +82,21 @@ loadArtists().then((artists) => {
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    list.innerHTML += `
-    <div id="li-ciaccona" 
+    const liArtist = `<div id="artist-badge" class="p-2" style="white-space: nowrap; display:none;">
+    <span class="fullname" style="color: #d0d0d0; font-size: 1.4rem;"></span>
+    <!--
+    <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
+    </a>
+    <a id="social" class="share btn btn-lihjt icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share...">
+    </a>
+    --!
+</div>
+`
+
+    list.innerHTML += new MagnificienTitle('list-item', 1).templateForTheme + liArtist
+    /*
+    `
+    <div id="magnificent-title-ciaccona" 
         class="list-item d-flex align-items-center justify-content-around flex-column" 
         <div>
         <a class="magnificent-card p-2" href="/ciaccona.html" aria-label="Ciaccona...">
@@ -95,18 +109,9 @@ loadArtists().then((artists) => {
             </svg>
             &nbsp;
         </a>
-        <div id="li-artist" class="p-2" style="white-space: nowrap; display:none;">
-            <span class="fullname" style="color: #d0d0d0; font-size: 1.4rem;"></span>
-            <!--
-            <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
-            </a>
-            <a id="social" class="share btn btn-lihjt icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share...">
-            </a>
-            --!
-        </div>
         </div>
     </div>`
-
+    */
     arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)
     data.forEach(d => {
@@ -134,23 +139,37 @@ loadArtists().then((artists) => {
 
         setListener()
 
+        const artistBadge = document.getElementById('artist-badge')
+        if (artistBadge) {
+            artistBadge.addEventListener('click', (event) => {
+                event.stopPropagation()
+                event.preventDefault()
+                coerceArtist = undefined
+                data = generateData(arrayOfArtists)
+                forceRedraw()
+            })
+        }
+
+
         function displayArtist() {
-            const artistBadge = document.getElementById('li-artist')
-            if (coerceArtist) {
-                artistBadge.style.display = 'block'
-                artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerceArtist).fullname
-                document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
-            } else {
-                artistBadge.style.display = 'none'
-                artistBadge.querySelector('.fullname').innerHTML = ''
-                document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'inherit')
+            const artistBadge = document.getElementById('artist-badge')
+            if (artistBadge) {
+                if (coerceArtist) {
+                    artistBadge.style.display = 'block'
+                    artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerceArtist).fullname
+                    document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
+                } else {
+                    artistBadge.style.display = 'none'
+                    artistBadge.querySelector('.fullname').innerHTML = ''
+                    document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'inherit')
+                }
             }
         }
 
         displayArtist()
 
         function forceRedraw() {
-            document.querySelectorAll('.list-item:not(#li-ciaccona)').forEach(E => {
+            document.querySelectorAll('.list-item:not(#magnificent-title-ciaccona)').forEach(E => {
                 const i = E.children[0].dataset.index
                 const newChild = generateElement(template(data[i]))
                 E.replaceChild(newChild, E.children[0])
@@ -188,13 +207,6 @@ loadArtists().then((artists) => {
                 } else {
                     coerceArtist = event.currentTarget.parentNode.parentNode.dataset.a
                 }
-                data = generateData(arrayOfArtists)
-                forceRedraw()
-            }))
-            document.querySelectorAll('#li-artist').forEach(E => E.addEventListener('click', (event) => {
-                event.stopPropagation()
-                event.preventDefault()
-                coerceArtist = undefined
                 data = generateData(arrayOfArtists)
                 forceRedraw()
             }))

@@ -42,7 +42,7 @@ function selectAndScrollToVariation(source, variation, options) {
     const selector = `.grid-brick#gb${variation}`
     let scrollToSelector = selector
     if (variation === 0) {
-        scrollToSelector = '.grid-brick#gb-ciaccona'
+        scrollToSelector = '.grid-brick#magnificent-title-ciaccona'
     }
 
     document.querySelectorAll('.grid-brick.hasScore').forEach(el => {

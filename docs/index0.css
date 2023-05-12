@@ -52,12 +52,6 @@
   cursor: pointer;
 }
 
-.artists #theContainerCol #list .list-artist#li-ciaccona {
-  background-color: transparent;
-  border: none;
-  overflow: hidden;
-}
-
 .artists .large .grabber {
   display: none;
 }

@@ -37,24 +37,34 @@ a {
   font-size: 24px;
   outline: 1px solid gray;
   outline-offset: -2px;
-  background-clip: content-box;
+  /* background-clip: content-box; */
   text-align: center;
-  /* background-color: rgba(255, 255, 255, 0.5); 
-  background-color: white;
-  color: #121212;*/
-  border-radius: 1rem;
-  backdrop-filter: blur(1px);
-  display: flex;
-}
-
-.artists .magnificent-card {
   background-color: white;
   color: #121212;
+  border-radius: .5rem;
+  backdrop-filter: blur(1px);
+  flex-wrap: nowrap;
+  height: 50px;
+  display: flex;
+  padding: 1rem .5rem;
 }
 
-.ciaccona .magnificent-card {
-  background-color: #4e493e;
-  color: white;
+.magnificent-card * {
+  align-self: center !important;
+}
+
+.magnificent-card .magnificient-arrow {
+  width:32px; 
+  height:32px;
+  fill: #12121280;
+}
+
+.magnificent-card .magnificient-arrow.left {
+  margin-right: .5rem;
+}
+
+.magnificent-card .magnificient-arrow.right {
+  margin-left: .5rem;
 }
 
 @media (min-aspect-ratio: 16/9) {
