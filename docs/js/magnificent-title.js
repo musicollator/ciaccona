@@ -1,4 +1,4 @@
-class MagnificienTitle {
+class MagnificentTitle {
     templateForTheme
     where
     constructor(clazz, where) {
@@ -22,12 +22,12 @@ class MagnificienTitle {
 <div id="magnificent-title-ciaccona" class="${this.clazz} d-flex align-items-center" data-sort="-1">
     <div class="d-flex justify-content-center" style="width: 100%;">
         <div class="magnificent-card">
-            <a href="/" aria-label="Artists...">
+            <a id="pane-artists" data-pane="left" href="/" aria-label="Artists...">
                 ${this.where == 2 ? this.arrow_in_left : ''}
                 ${this.where == 3 ? this.arrow_out_left : ''}
             </a>
             <div style="user-select: none; font-size: 28px;">Ciaccona</div>
-            <a href="/ciaccona.html" aria-label="Ciaccona...">
+            <a id="pane-ciaccona" data-pane="right" href="/ciaccona.html" aria-label="Ciaccona...">
                 ${this.where == 1 ? this.arrow_in_right : ''}
                 ${this.where == 3 ? this.arrow_out_right : ''}
             </a>
@@ -40,4 +40,4 @@ class MagnificienTitle {
         </div>
  
         */
-export default MagnificienTitle
+export default MagnificentTitle

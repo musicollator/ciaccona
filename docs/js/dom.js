@@ -125,7 +125,7 @@ const Ω = {
             console.log('BEGIN show about')
             document.querySelector('#config-menu a#about > label').innerHTML = "&check; About"
 
-            ;[...document.getElementsByTagName('body')].forEach(e => e.classList.add('about'))
+            // ;[...document.getElementsByTagName('body')].forEach(e => e.classList.add('about'))
 
             style(document.querySelector('div#logoLeft'), this.animations[this.a].fore)
             style(document.querySelector('div#logoRight'), this.animations[this.a].back)
@@ -204,7 +204,7 @@ const Ω = {
                         document.querySelector('div#logoLeft').style.display = 'none'
                         document.querySelector('div#logoRight').style.display = 'none'
 
-                        ;[...document.getElementsByTagName('body')].forEach(e => e.classList.remove('about'))
+                        // ;[...document.getElementsByTagName('body')].forEach(e => e.classList.remove('about'))
 
                         console.log('FIN hide about')
                     }

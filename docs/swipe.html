@@ -292,12 +292,6 @@
                 <ul class="dropdown-menu" aria-labelledby="configMenuLink">
                     <form class="px-4 py-3">
 
-                        <div class="dropdown-item d-flex p-0">
-                            <a id="ciaccona" class="ms-auto" href="ciaccona.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Ciaccona">
-                                <label><img src="svg/2bars.svg" style="height:48px"></label>
-                            </a>
-                        </div>
-                        <hr class="dropdown-divider">
                         <div class="label">Show Score …</div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="firstBar" id="firstBarChecked">
@@ -362,12 +356,12 @@
             </div>
             <div id="theContainerCol" class="col">
                 <div class='both'>
-                    <div id="left" class="fullparent">
+                    <div id="left" class="fullparent" style="opacity: 0;">
                         <div id="list" class="artists" style="color:white; margin: .5rem 0;">
                             <div class="gutter-sizer"></div>
                         </div>
                     </div>
-                    <div id="right" class="fullparent">
+                    <div id="right" class="fullparent" style="opacity: 0;">
                         <div id="grid" class="ciaccona">
                         </div>
                     </div>
@@ -383,6 +377,9 @@
         import hammerjs from "https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/+esm"
         import config from "/js/config.js?v=1.0.0"
         if (pane) config.pane = pane
+
+        // console.log(config.pane)
+        document.getElementById(config.pane).style.opacity = 1
 
         // transform packery event into promise
         const allesIstVollbracht = new Promise((resolve) => {
@@ -441,33 +438,24 @@
         window.addEventListener("ciacconaLoaded", (event) => {
             console.log('ciaccona.html ready, shout calcBrickWidth event ...')
             window.dispatchEvent(new Event('calcBrickWidth'));
-            /*
-            document.querySelectorAll('#magnificent-title-ciaccona a').forEach(a => {
-                a.setAttribute('href', '#')
-                a.addEventListener('click', ev => {
-                    setOrTogglePane('left')
-                })
-            })
-            */
         });
 
         window.addEventListener("artistsLoaded", (event) => {
             console.log("artists.html, shout calcItemWidth event ...");
             window.dispatchEvent(new Event('calcItemWidth'));
-            /*
-            document.querySelectorAll('#magnificent-title-ciaccona a').forEach(a => {
-                a.setAttribute('href', '#')
-                a.addEventListener('click', ev => {
-                    setOrTogglePane('right')
-                })
-            })
-            */
         });
 
         console.log('waiting for allesIstVollbracht event ...')
         Promise.allSettled([allesIstVollbracht]).then((results) => {
             console.log('ALLES IST VOLLBRACHT !!!')
             setOrTogglePane(config.pane)
+            document.querySelectorAll('#right, #left').forEach(E => E.style.opacity = 1)
+            document.querySelectorAll('#magnificent-title-ciaccona a').forEach(a => {
+                a.setAttribute('href', '#')
+                a.addEventListener('click', ev => {
+                    setOrTogglePane(a.dataset.pane)
+                })
+            })
         })
 
     </script>
