@@ -267,8 +267,6 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
     </div>
 </div>
 `
-
-        // const instanciatedPuzzle = generateElement(templatePuzzle)
         const instanciatedVariation = generateElement(templateVariations)
         /*
         const jigsawPiece = instanciatedVariation.querySelector(`#gb-puzzle${i}-svg`)
