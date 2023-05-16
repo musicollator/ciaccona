@@ -97,6 +97,10 @@
     fill: none;
     stroke: aliceblue;
     stroke-width: 4px;
+    background-color: #ffffff60;
+    &.pushed {
+      background-color: #00000060;
+    }
   }
   .gutter-sizer {
     width: var(--gs);
@@ -121,19 +125,23 @@
       position: absolute;
       inset: 0;
       z-index: -1;
-      background: #57728b;
       mix-blend-mode: multiply;
-      border-radius: 0 0 1rem 0;
+      background-color: steelblue;
+      /* border-radius: 0 0 1rem 0; */
     }
-  }
-  .hero-intro.vert {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    line-height: 10.672px;
-    width: 1.667rem;
-    height: 100%;
-    &::after {
-      border-radius: 0;
+    &.vert {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      line-height: 10.672px;
+      width: 1.667rem;
+      height: 100%;
+      &::after {
+        border-radius: 0;
+      }
+    }
+    &.pushed::after {
+      background: #B47846; // #57728b;
+      // mix-blend-mode: normal;
     }
   }
 }

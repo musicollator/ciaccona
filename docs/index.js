@@ -66,8 +66,8 @@ function generateData() {
             bg: bg(coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics, coerceVariation || vi % codec.variationsCount),
             jigsaw: j,
             hideName: coerceArtist ? ' hide-name' : '',
-            fill: colors[coerceVariation || vi % codec.variationsCount].puzzleColor_T,
-            stroke: colors[coerceVariation || vi % codec.variationsCount].textColor_T,
+            fill: colors[coerceVariation || vi % codec.variationsCount].puzzleColor,
+            stroke: colors[coerceVariation || vi % codec.variationsCount].textColor,
             pinUnpinVariationTitle: vi == 0 ? "theme" : vi == codec.variationsCount - 1 ? "final chord" : `variation n°${vi}`,
         }
         data.push(datum)
@@ -141,8 +141,13 @@ loadArtists().then((artists) => {
             })
         }
 
-
         function displayArtist() {
+            if (coerceVariation) {
+                document.querySelectorAll('.list-artist .puzzle').forEach(e => e.classList.add('pushed'))
+            }
+            if (coerceArtist) {
+                document.querySelectorAll('.list-artist .hero-intro').forEach(e => e.classList.add('pushed'))
+            }
             const artistBadge = document.getElementById('artist-badge')
             if (artistBadge) {
                 if (coerceArtist) {
@@ -186,6 +191,7 @@ loadArtists().then((artists) => {
                     coerceVariation = undefined
                 } else {
                     coerceVariation = event.currentTarget.parentNode.dataset.v
+                    coerceArtist = undefined
                 }
                 data = generateData(arrayOfArtists)
                 forceRedraw()
@@ -197,6 +203,7 @@ loadArtists().then((artists) => {
                     coerceArtist = undefined
                 } else {
                     coerceArtist = event.currentTarget.parentNode.parentNode.dataset.a
+                    coerceVariation = undefined
                 }
                 data = generateData(arrayOfArtists)
                 forceRedraw()
