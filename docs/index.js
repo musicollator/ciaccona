@@ -94,7 +94,7 @@ loadArtists().then((artists) => {
 </div>
 `
 
-    list.innerHTML += new MagnificentTitle('list-item', 1, liArtist).templateForTheme
+    list.appendChild(new MagnificentTitle('list-item', 1, liArtist).templateForTheme)
 
     arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)

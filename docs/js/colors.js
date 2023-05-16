@@ -145,7 +145,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
 
     const temporaryContainer = generateElement("<template>");
     
-    temporaryContainer.appendChild(generateElement(new MagnificentTitle('grid-brick', fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme));
+    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
 
     const templateForArtist =
         `

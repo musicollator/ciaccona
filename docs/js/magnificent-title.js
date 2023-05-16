@@ -1,9 +1,11 @@
+import { generateElement } from "/js/utils.js?v=1.0.1"
+
 class MagnificentTitle {
     templateForTheme
     where
     constructor(clazz, where, incl) {
         this.clazz = clazz
-        this.where = where && 1 <= where && where <= 3 ? where : 0 // 1, 2, 3
+        this.where = where && (where === 1 || where === 2 || where === 3) ? where : 0 // 1, 2, 3
         // where can be left middle right
         this.arrow_out_left = `<svg id="arrow_out_left" class="magnificient-arrow left" viewBox="0 0 20 20">
             <path d="m4.671 5.06 1.454 1.348L3.697 9h8.366v2H3.697l2.428 2.544-1.454 1.362L0 9.958ZM10 0v4h2V2h6v16h-6v-2h-2v4h10V0Z"/>
@@ -17,27 +19,38 @@ class MagnificentTitle {
         this.arrow_out_right = `<svg id="arrow_out_right" class="magnificient-arrow right" viewBox="0 0 20 20">
             <path d="m15.329 5.06-1.454 1.348L16.303 9H7.937v2h8.366l-2.428 2.544 1.454 1.362L20 9.958ZM10 0v4H8V2H2v16h6v-2h2v4H0V0Z"/>
         </svg>`
-        this.templateForTheme =
-`<div id="magnificent-title-ciaccona" class="${this.clazz} d-flex justify-content-center flex-column" data-sort="-1">
+        this.templateForTheme = generateElement(
+            `<div id="magnificent-title-ciaccona" class="${this.clazz} d-flex justify-content-center flex-column" data-sort="-1">
     <div class="d-flex justify-content-center" style="width: 100%;">
         <div class="magnificent-card">
-            <a id="pane-artists" data-pane="left" href="/" aria-label="Artists...">
-                ${this.where == 2 ? this.arrow_in_left : ''}
-                ${this.where == 3 ? this.arrow_out_left : ''}
+            <a id="pane-artists" data-pane="left" href="/" aria-label="Artists..." style="white-space: nowrap">
+                ${this.where === 2 ? this.arrow_in_left : ''}
+                ${this.where === 3 ? this.arrow_out_left : ''}
             </a>
-            <div style="user-select: none; font-size: 28px;">Ciaccona</div>
             <a id="pane-ciaccona" data-pane="right" href="/ciaccona.html" aria-label="Ciaccona...">
-                ${this.where == 1 ? this.arrow_in_right : ''}
-                ${this.where == 3 ? this.arrow_out_right : ''}
+                ${this.where === 1 ? this.arrow_in_right : ''}
+                ${this.where === 3 ? this.arrow_out_right : ''}
             </a>
         </div>
     </div>
     ${incl ? incl : ''}
-</div>`
+</div>`)
+        const title = t =>generateElement(`<div style="display: inline-block; user-select: none; font-size: 28px;">${t}</div>`)
+        switch (this.where) {
+            case 1:
+                this.templateForTheme.querySelector('#pane-ciaccona').prepend(title('Ciaccona'))
+                break;
+            case 2:
+                this.templateForTheme.querySelector('#pane-artists').append(title('Ciaccona'))
+                break;
+            case 3:
+                this.templateForTheme.querySelector('#pane-artists').append(title('Ciac'))
+                this.templateForTheme.querySelector('#pane-ciaccona').prepend(title('cona'))
+                break;
+            default:
+                break;
+        }
+
     }
 }
-/*
-        </div>
- 
-        */
 export default MagnificentTitle
