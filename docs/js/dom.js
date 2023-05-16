@@ -1,7 +1,7 @@
 import animejs from '/lib/anime-3.2.1.es.min.js'
-import config from "/js/config.js?v=1.0.3"
-import codec from "/js/structure.js?v=1.0.3"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.3"
+import config from "/js/config.js?v=1.0.4"
+import codec from "/js/structure.js?v=1.0.4"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.4"
 
 const Ω = {
     animateUnveilScores: () => {
