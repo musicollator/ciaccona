@@ -357,11 +357,11 @@ span.d {
   margin-left: 0.3rem;
 }
 .my-menu {
-  > .dropdown,  
-  > button {  
+  > * {  
     position: absolute;
     background: transparent;
     z-index: 20;
+    margin: 0.3rem;
     label {
       white-space: nowrap;
     }
@@ -374,14 +374,13 @@ span.d {
 }
 .my-menu#videos-menu {
   > .dropdown {
-    left: 0;
-    margin: 0.3rem 0 0.3rem 0.3rem;
+    margin: 0.3rem 0.3rem 0.3rem 0;
   }
 }
 .my-menu#config-menu {
   > .dropdown {
     right: 0;
-    margin: 0.3rem 0.3rem 0.3rem 0;
+    margin: 0.3rem 0 0.3rem 0.3rem;
   }
 }
 /* .clipboard-puzzle {
