@@ -195,7 +195,7 @@ const setBrickClickEvent = (_plyer, timings) => {
         b.addEventListener('click', handleBrickClick, true)
 
         b.addEventListener("scrollend", (event) => {
-            console.log(b.scrollLeft)
+            // console.log(b.scrollLeft)
             if (b.scrollLeft === 0 && !_plyer.playing) {
                 const bar = parseInt(b.parentNode.dataset.bar)
                 const theBar = timings.bars[bar]
