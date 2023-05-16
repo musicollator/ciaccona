@@ -96,5 +96,9 @@
 .icon-flute {
   background-image: url("index.svg?v=1.0.4#flute-view");
 }
+.icon-cimbalom {
+  background-image: url("svg/cimbalom.svg");
+  background-size: 200%;
+}
 
 

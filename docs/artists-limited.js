@@ -68,12 +68,29 @@ loadArtists().then((artists) => {
         }
         return a.instrument.localeCompare(b.instrument)
     })
+
+    const iconMap = {
+        '1Violin': 'icon-violin',
+        '2Double_Bass': 'icon-violin',
+        '3String_Trio': 'icon-violin',
+        '4Plucked_Strings': 'icon-ukulele',
+        '5Keyboard': 'icon-keyboard',
+        '6Harp': 'icon-harp',
+        '7Cimbalom': 'icon-cimbalom',
+        '8Flute': 'icon-flute',
+        '9Marimba': 'icon-xylophone ',
+    }
+
     data = generateData()
     let previousInstrument = "_"
     data.forEach(d => {
         if (d.instrument !== previousInstrument) {
             const instr = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;')
-            list.innerHTML += `<div class="list-item" style="height: 32px; line-height: 40px; color: aliceblue; border-top: 1px aliceblue solid;">${instr}</div>`
+            list.innerHTML += 
+`<div class="list-item" style="height: 40px; line-height: 40px; background-color: #00000080; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%); color: #c8b273; border-top: .5px #c8b273 solid;">
+    <span class="b2 icon-base ${iconMap[d.instrument]}" ></span>
+    <span style="float: right;">${instr}</span>
+</div>`
 
             previousInstrument = d.instrument
         }
