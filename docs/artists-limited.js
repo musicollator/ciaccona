@@ -110,11 +110,9 @@ loadArtists().then((artists) => {
 
         function setListener() {
             document.querySelectorAll('.list-artist').forEach(element => element.addEventListener('click', (event) => {
-                if (event.currentTarget === event.target) {
-                    event.stopPropagation()
-                    event.preventDefault()
-                    window.location = `/ciaccona.html?a=${event.target.dataset.a}`
-                }
+                event.stopPropagation()
+                event.preventDefault()
+                window.location = `/ciaccona.html?a=${event.currentTarget.dataset.a}`
             }))
         }
     })
