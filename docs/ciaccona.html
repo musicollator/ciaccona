@@ -165,10 +165,12 @@
                     aria-controls="offcanvasExample">
                 </a>
 
-                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: #4e493e; width: 360px;">
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: #4e493e40; width: 364px;">
                     <div class="offcanvas-body left">
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        <div id="list" class="artists">
+                        <div style="width: 100%;"> 
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" style="float: right;"></button>
+                        </div>
+                        <div id="list" class="artists" style="margin-top: 2rem;">
                             <div class="gutter-sizer"></div>
                         </div>
                     </div>
@@ -397,12 +399,6 @@
                                 Auto-play Next Video
                             </label>
                         </div>
-                        <!-- 
-                        <hr class="dropdown-divider">
-                        <div style="width:100%; display: flex; justify-content: center;">
-                            <button id="resizeScores" type="button" class="btn btn-light">Resize Scores</button>
-                        </div>
-                        -->
                         <hr class="dropdown-divider">
                         <div class="dropdown-item d-flex p-0">
                             <a id="performers" class="ms-auto" href="performers.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Performers">
