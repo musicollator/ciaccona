@@ -47,7 +47,19 @@ let variationParam = params.v ? parseInt(params.v) : undefined
 let no_plyr_event = params.no_plyr_event ?? undefined
 let test = params.test ?? undefined
 let coerceArtist = params.a ?? undefined
-let coerceVariation = params.v ?? undefined
+let coerceVariation = undefined
+try {
+    if (typeof params.v !== 'undefined') {
+        coerceVariation = parseInt(params.v)
+        if (isNaN(coerceVariation)) {
+            coerceVariation = undefined
+        }
+        console.log(`query string parameter v='${params.v}' converted to global variable coerceVariation=${coerceVariation}`)
+    }
+} catch (error) {
+    console.log(`query string parameter v is not a number: v=${params.v}`)
+    coerceVariation = undefined
+}
 let pane = params.p ?? undefined
 let shuffle = params.shuffle ?? undefined
 if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {

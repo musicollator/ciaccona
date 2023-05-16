@@ -299,7 +299,7 @@ export default function createPlayer(selector, timings, ignore_all_events) {
                 INIT_EVENT_HANDLERS()
 
                 let theStartingBar = timings.bars[0]
-                if (config.autoplay) {
+                if (config.autoplay || typeof coerceVariation !== 'undefined') {
                     const theLastStartingBarIndex = config.startBarOfLastSelectedVariation
                     if (theLastStartingBarIndex != null) {
                         theStartingBar = timings.bars[theLastStartingBarIndex]

@@ -2,9 +2,9 @@ import codec from "/js/structure.js?v=1.0.2"
 import config from "/js/config.js?v=1.0.2"
 import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=1.0.2'
 
-if (variationParam < 0 || codec.variationsCount <= variationParam) variationParam = undefined
-if (variationParam) {
-    config.startBarOfLastSelectedVariation = codec.variation2bar(variationParam)
+if (coerceVariation < 0 || codec.variationsCount <= coerceVariation) coerceVariation = undefined
+if (coerceVariation) {
+    config.startBarOfLastSelectedVariation = codec.variation2bar(coerceVariation)
 }
 if (fullameNoSpaceLowercaseNoDiacritics == null) { // using ==, undefined and null are equal
     // r.à.z.
