@@ -52,22 +52,22 @@ function generateData() {
         if (a.fullnameNoSpaceLowercaseNoDiacritics === 'moi') {
             return;
         }
-        const j = jigsawGenerator.getJigsawItem(vi + 1)
+        const v = typeof coerceVariation === 'undefined' ? vi % codec.variationsCount : coerceVariation
+        const j = jigsawGenerator.getJigsawItem(v + 1)
         const transX = parseInt(j.viewBox.replaceAll(/^([\.\d\-]+).*$/g, "$1"))
         const transY = parseInt(j.viewBox.replaceAll(/^[\.\d\-]+\s+([\.\d\-]+).*$/g, "$1"))
         const artistLastnameNoBreakingSpaces = a.lastname.replaceAll(/\s/gi, '&nbsp;');
         const datum = {
             index: vi,
             a: coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics,
-            v: coerceVariation || vi % codec.variationsCount,
-            puzzleHRef: coerceVariation ? '/' : `?v=${vi % codec.variationsCount}`,
+            v: v,
             firstname: a.firstname,
             lastname: artistLastnameNoBreakingSpaces,
-            bg: bg(coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics, coerceVariation || vi % codec.variationsCount),
+            bg: bg(coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics, v),
             jigsaw: j,
             hideName: coerceArtist ? ' hide-name' : '',
-            fill: colors[coerceVariation || vi % codec.variationsCount].puzzleColor,
-            stroke: colors[coerceVariation || vi % codec.variationsCount].textColor,
+            fill: colors[v].puzzleColor,
+            stroke: colors[v].textColor,
             pinUnpinVariationTitle: vi == 0 ? "theme" : vi == codec.variationsCount - 1 ? "final chord" : `variation n°${vi}`,
         }
         data.push(datum)
@@ -142,15 +142,15 @@ loadArtists().then((artists) => {
         }
 
         function displayArtist() {
-            if (coerceVariation) {
+            if (typeof coerceVariation !== 'undefined') {
                 document.querySelectorAll('.list-artist .puzzle').forEach(e => e.classList.add('pushed'))
             }
-            if (coerceArtist) {
+            if (typeof coerceArtist !== 'undefined') {
                 document.querySelectorAll('.list-artist .hero-intro').forEach(e => e.classList.add('pushed'))
             }
             const artistBadge = document.getElementById('artist-badge')
             if (artistBadge) {
-                if (coerceArtist) {
+                if (typeof coerceArtist !== 'undefined') {
                     artistBadge.style.visibility = 'inherit'
                     artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerceArtist).fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
@@ -166,7 +166,7 @@ loadArtists().then((artists) => {
 
         function forceRedraw() {
             document.querySelectorAll('.list-item:not(#magnificent-title-ciaccona)').forEach(E => {
-                const i = E.children[0].dataset.index
+                const i = parseInt(E.children[0].dataset.index)
                 const newChild = generateElement(template(data[i]))
                 E.replaceChild(newChild, E.children[0])
             })
@@ -187,10 +187,10 @@ loadArtists().then((artists) => {
             document.querySelectorAll('.list-artist .puzzle').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                if (coerceVariation) {
+                if (typeof coerceVariation !== 'undefined') {
                     coerceVariation = undefined
                 } else {
-                    coerceVariation = event.currentTarget.parentNode.dataset.v
+                    coerceVariation = parseInt(event.currentTarget.parentNode.dataset.v)
                     coerceArtist = undefined
                 }
                 data = generateData(arrayOfArtists)
@@ -199,7 +199,7 @@ loadArtists().then((artists) => {
             document.querySelectorAll('.list-artist .hero-intro').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                if (coerceArtist) {
+                if (typeof coerceArtist !== 'undefined') {
                     coerceArtist = undefined
                 } else {
                     coerceArtist = event.currentTarget.parentNode.parentNode.dataset.a
