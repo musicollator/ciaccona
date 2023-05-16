@@ -1,5 +1,6 @@
 - firstname: Adolf
   lastname: Busch
+  instrument: 1Violin
   facebookPost: 
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid02M9Ty8TBRJErsm3kkMKLYadjkJNgom2PxrgxqNTjNksQX7RG4UxYWXv8gfaxe7E2dl
     sort: 5
@@ -15,6 +16,7 @@
     still: true
 - firstname: Amandine
   lastname: Beyer
+  instrument: 1Violin
   insta: amandinebeyer
   twitter: AmandineBeyerGI
   facebook: 
@@ -39,6 +41,7 @@
     - "https://www.amandinebeyer.com/"
 - firstname: Andrea
   lastname: De Vitis
+  instrument: 4Plucked_Strings
   insta: andreadevitis_classical_guitar
   twitter: itsDeVitis
   facebook: andreadevitisguitarist, andrea.devitis.classical.guitarist
@@ -57,6 +60,7 @@
   🕸: "http://www.andreadevitis.com/"
 - firstname: Anneleen
   lastname: Lenaerts
+  instrument: 6Harp
   insta: anneleenlenaerts
   twitter: AnnelLenaerts
   facebookPost: 
@@ -74,6 +78,7 @@
   🕸: "https://www.anneleenlenaerts.com/"
 - firstname: Bella
   lastname: Hristova
+  instrument: 1Violin
   insta: bellahristovaviolin
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0X2cc3Zkwqeumx2q77QCA41ZvLZZqVFcvYeRKE3uyHdFhcVXHzhLhxu2Y8E21MzUAl
@@ -90,6 +95,7 @@
   🕸: "https://www.bellahristova.com/"
 - firstname: Chiara
   lastname: Massini
+  instrument: 5Keyboard
   twitter: Chiara2110
   facebook: chiaramassini.wien
   youtube: Chiara2110
@@ -109,6 +115,7 @@
   🕸: "http://www.chiaramassini.com/"
 - firstname: Christian
   lastname: Tetzlaff
+  instrument: 1Violin
   excerpt: https://fb.watch/k1YArRWbRr/
   facebookPost: 
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0HHojnnaedHk2wRkLxJeePsoeQiEFfc9kVnaicvr3fYhzdX6Vn75BW7QfVR1mMnFal
@@ -126,6 +133,7 @@
   🕸: "https://www.christian-tetzlaff.de/"
 - firstname: Clara-Jumi
   lastname: Kang
+  instrument: 1Violin
   facebook: clarajumikang1
   insta: clarajumikang
   twitter: clarajumikang
@@ -145,6 +153,7 @@
   🕸: "https://www.clarajumikang.com/"
 - firstname: Ksenija
   lastname: Komljenović
+  instrument: 9Marimba
   flag: 🇫🇷
   ▶:
     id: _Gi8De8d-Zw
@@ -154,6 +163,7 @@
     length: 16′23″
 - firstname: Florentin
   lastname: Ginot
+  instrument: 2Double_Bass
   twitter: FlorentinGinot
   facebook: florentin.ginot
   facebookPost:  
@@ -171,6 +181,7 @@
   🕸: "https://florentinginot.com/"
 - firstname: Genzoh
   lastname: Takehisa
+  instrument: 5Keyboard
   insta: genzoh_takehisa
   twitter: genzohtakehisa
   facebook: GenzohTakehisa9
@@ -193,6 +204,7 @@
   🕸: "http://www.genzoh.jp"
 - firstname: Hilary
   lastname: Hahn
+  instrument: 1Violin
   insta: violincase
   twitter: violincase
   tiktok: hilaryhahnofficial
@@ -215,6 +227,7 @@
     still: true
 - firstname: Isabelle
   lastname: Faust
+  instrument: 1Violin
   twitter: ImpSim
   facebook: profile.php?id=100086356568098
   excerpt: https://www.facebook.com/permalink.php?story_fbid=pfbid0zEFYRV7HikAJkT9yokUQKyMXnXasZyprtMLPoaW2H9kqKcvJStUjM92JGsrrNUSJl&id=110656821801841
@@ -234,6 +247,8 @@
   🕸: "https://www.impresariat-simmenauer.de/en/artist/isabelle-faust/"
 - firstname: Jeanne
   lastname: Lamon
+  completeName: Jeanne Lamon, Chloe Kim, Christina Mahler
+  instrument: 2String_Trio
   facebookPost: 
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0K57uMkCYhm7Qv29PwJJWkS6TQZVtPz9WhNaFv32iG8JtnGPegeNFiw2zCuxdt8bEl
     sort: 10
@@ -248,6 +263,7 @@
     a4: 419
 - firstname: Julia
   lastname: Fischer
+  instrument: 1Violin
   insta: juliafischer_official
   facebook: julia.fischer.page
   flag: 🇩🇪
@@ -263,6 +279,7 @@
   🕸: "https://www.juliafischer.com/"
 - firstname: Lisa
   lastname: Jacobs
+  instrument: 1Violin
   insta: lisajacobsviolin
   twitter: lisajacobs85
   facebookPost:
@@ -280,6 +297,7 @@
   🕸: "https://lisajacobs.nl/"
 - firstname: Liza
   lastname: Ferschtman
+  instrument: 1Violin
   insta: lizaferschtmanviolin
   linkedin: liza-ferschtman-75b834121
   wikipedia: https://en.wikipedia.org/wiki/Liza_Ferschtman
@@ -299,6 +317,7 @@
   🕸: "https://lizaferschtman.nl/"
 - firstname: Marta
   lastname: Femenía
+  instrument: 8Flute
   insta: marta.femenia
   facebook: /profile.php?id=100005049648263
   flag: 🇪🇸
@@ -313,6 +332,7 @@
   🕸: "http://www.martafemenia.com/"
 - firstname: Martin
   lastname: Baker
+  instrument: 5Keyboard
   twitter: MartinBaker
   flag: 🇬🇧
   facebookPost:  
@@ -329,6 +349,7 @@
   🕸: "https://twitter.com/MartinBaker"
 - firstname: Michael
   lastname: Leontchik
+  instrument: 7Cimbalom
   tiktok: michaelleontchik
   facebook: mleontchik
   flag: 🇧🇾
@@ -342,6 +363,7 @@
     a4: 440
 - firstname: Midori
   lastname: Gotō
+  instrument: 1Violin
   facebook: https://www.facebook.com/GoToMidori
   wikipedia: https://en.wikipedia.org/wiki/Midori_(violinist)
   facebookPost:  
@@ -359,6 +381,7 @@
   🕸: "https://www.midori-violin.com/"
 - firstname: Miguel
   lastname: Rincón
+  instrument: 4Plucked_Strings
   insta: migueliuto_
   twitter: Migueliuto79
   flag: 🇪🇸
@@ -373,6 +396,7 @@
   🕸: "https://miguelrincon.net/"
 - firstname: Mika
   lastname: Stoltzman
+  instrument: 9Marimba
   insta: chick_and_me_
   twitter: MikaStoltzman
   linkedin: mika-stoltzman-b6109a6a
@@ -396,6 +420,7 @@
   🕸: "https://mikarimba-stoltzman.com/"
 - firstname: Moran
   lastname: Wasser
+  instrument: 4Plucked_Strings
   facebookPost:  
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0Jqh6Ve3Ub89kjLKy1QNPfFfj2doC4XUUVNA4C8xEg7hXGVWoUWZUwYc6uD5827gTl
     sort: 17
@@ -411,6 +436,7 @@
   🕸: "https://www.youtube.com/@moranwasser"
 - firstname: Petra
   lastname: Poláčková
+  instrument: 4Plucked_Strings
   insta: petraguitarpolackova
   facebook: petra.guitar.polackova
   youtube: Petra51234
@@ -429,6 +455,7 @@
   🕸: "http://www.petrapolackova.com/en/"
 - firstname: Polina
   lastname: Osetinskaya
+  instrument: 5Keyboard
   insta: polinaosetinskaya
   facebook: https://www.facebook.com/search/top?q=polina%20osetinskaya
   wikipedia: https://fr.wikipedia.org/wiki/Polina_Osetinskaya
@@ -448,6 +475,7 @@
   🕸: "https://osetinskaya.com/"
 - firstname: Rachel
   lastname: Podger
+  instrument: 1Violin
   insta: rachelpodgerofficial
   twitter: RachPodger
   linkedin: rachel-podger-22807a4
@@ -468,6 +496,7 @@
   🕸: "https://www.rachelpodger.com/"
 - firstname: Rachell Ellen
   lastname: Wong
+  instrument: 1Violin
   twitter: rachellviolin
   flag: 🇺🇸
   ▶:
@@ -481,6 +510,7 @@
   🕸: "https://www.rachellwong.com/"
 - firstname: Raphaella
   lastname: Smits
+  instrument: 4Plucked_Strings
   facebook: https://www.facebook.com/raphaella.smitsii
   insta: raphaellasmitsii
   facebookPost:
@@ -498,6 +528,7 @@
   🕸: https://www.rsmits.com/
 - firstname: Sigiswald
   lastname: Kuijken
+  instrument: 1Violin
   linkedin: sigiswald-kuijken-32aab149
   flag: 🇧🇪
   ▶:
@@ -511,6 +542,7 @@
   🕸: "https://lapetitebande.be/en/"
 - firstname: Veronika
   lastname: Eberle
+  instrument: 1Violin
   insta: veronikaeberle
   twitter: veronika_eberle
   facebook: veronikaeberleofficial
@@ -530,6 +562,7 @@
   🕸: "https://www.instagram.com/veronikaeberle/"
 - firstname: Veronique
   lastname: De Raedemaeker
+  instrument: 1Violin
   insta: veronique.deraedemaeker
   youtube: veroniquederaedemaeker
   facebook: veronique.deraedemaeker
@@ -548,6 +581,7 @@
   🕸: "https://veroniquederaedemaeker.com/"
 - firstname: Virginie
   lastname: Robilliard
+  instrument: 1Violin
   flag: 🇫🇷
   ▶:
     id: KWcGsRKbe-U
@@ -560,6 +594,7 @@
   🕸: "https://virginierobilliard.com/"
 - firstname: Von
   lastname: Hansen
+  instrument: 9Marimba
   insta: vonhansenmusic
   facebook: von.hansen.50
   flag: 🇺🇸
@@ -574,6 +609,7 @@
   🕸: "https://vonhansenmusic.com/"
 - firstname: Yun
   lastname: Park
+  instrument: 9Marimba
   insta: playp49
   facebook: yunparkpercussion
   flag: 🇰🇷
@@ -589,6 +625,7 @@
 
 - firstname: ''
   lastname: Moi
+  instrument: 4Plucked_Strings
   insta: cthiebaud
   twitter: cthiebaud
   linkedin: cthiebaud
