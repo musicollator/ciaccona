@@ -73,6 +73,10 @@ const hideLoading = (hasPlayer) => {
         loadingE.style.display = 'none'
         console.log('loading dismissed')
 
+        console.log('shout readyToPack event...')
+        window.dispatchEvent(new Event('readyToPack'));
+
+
         console.log('shout allesistvollbracht event...')
         window.dispatchEvent(new Event('allesistvollbracht'));
     }

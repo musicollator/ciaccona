@@ -93,6 +93,7 @@
     <!-- my styles -->
     <link href="/global.css?v=1.0.3" rel="stylesheet">
     <link href="/ciaccona.css?v=1.0.3" rel="stylesheet">
+    <link href="/index.css?v=1.0.3" rel="stylesheet">
     <link href="/index.svg.css?v=1.0.3" rel="stylesheet">
 </head>
 
@@ -155,14 +156,28 @@
         </div>
         <div id="spinner" class="spinner-border m-2" role="status">
         </div>
-        <!-- div id="spinner" class="m-2" style="width:150px; height: 150px;" role="status">
-            <object  
-                data="svg/BachsiegelColorWheel2.svg" 
-                type="image/svg+xml"></object>
-        </!-->
     </div>
     <main id="theContainer" class="container-xxl flex-shrink-0">
 
+        <div id="videos-menu" class="my-menu" style="display:none;">
+            <span class="dropdown dropstart">
+                <a class="btn btn-light text-muted icon-base icon-violin2" style="width: 50px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                    aria-controls="offcanvasExample">
+                </a>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: #4e493e; width: 360px;">
+                    <div class="offcanvas-body left">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <div id="list" class="artists" style="color:white; margin: .5rem 0;">
+                            <div class="gutter-sizer"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </span>
+        </div>
+
+        <!-- 
         <div id="videos-menu" class="btn-group dropend my-menu" style="display:none;">
             <span class="dropdown dropend">
                 <a class="btn btn-light text-muted icon-base icon-youtube2" style="width: 50px;" href="#" role="button" id="videoMenuLink" data-bs-toggle="dropdown"
@@ -339,6 +354,7 @@
             </span>
 
         </div>
+        -->
 
         <div id="config-menu" class="btn-group dropstart my-menu" style="display:none;">
             <span class="dropdown dropstart">
@@ -347,14 +363,6 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="configMenuLink">
                     <form class="px-4 py-3">
-                        <!--
-                        <div class="dropdown-item d-flex p-0">
-                            <a id="ciaccona" class="ms-auto" href="ciaccona.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Ciaccona">
-                                <label><img src="svg/2bars.svg" style="height:48px"></label>
-                            </a>
-                        </div>
-                        <hr class="dropdown-divider">
-                        -->
                         <div class="label">Show Score …</div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="firstBar" id="firstBarChecked">
@@ -426,7 +434,7 @@
 
     <script src="/lib/bootstrap.bundle-5.2.3.min.js"></script>
     <script async type="module" src="/ciaccona.js?v=1.0.3"></script>
-
+    <script async type="module" src="/artists-limited.js?v=1.0.3"></script>
 
 </body>
 
