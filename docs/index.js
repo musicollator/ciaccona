@@ -5,7 +5,7 @@ import { colorArray } from "/js/colors.js?v=1.0.4"
 import { loadArtists } from "/js/artists.js?v=1.0.4"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.4"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.4'
-import MagnificentTitle from "/js/magnificent-title.js?v=1.0.4"
+import MagnificentTitle from "/js/magnificent-title.js?v=1.0.4.5"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 

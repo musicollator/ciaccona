@@ -24,12 +24,10 @@ class MagnificentTitle {
     <div class="d-flex justify-content-center" style="width: 100%;">
         <div class="magnificent-card">
             <a id="pane-artists" data-pane="left" href="/" aria-label="Artists..." style="white-space: nowrap">
-                ${this.where === 2 ? this.arrow_in_left : ''}
-                ${this.where === 3 ? this.arrow_out_left : ''}
+                ${this.where !== 1 ? this.arrow_out_left : ''}
             </a>
             <a id="pane-ciaccona" data-pane="right" href="/ciaccona.html" aria-label="Ciaccona...">
-                ${this.where === 1 ? this.arrow_in_right : ''}
-                ${this.where === 3 ? this.arrow_out_right : ''}
+                ${this.where !== 2 ? this.arrow_in_right : ''}
             </a>
         </div>
     </div>

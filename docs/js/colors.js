@@ -4,7 +4,7 @@ import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
 import codec from "/js/structure.js?v=1.0.4"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=1.0.4'
 import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=1.0.4"
-import MagnificentTitle from "/js/magnificent-title.js?v=1.0.4"
+import MagnificentTitle from "/js/magnificent-title.js?v=1.0.4.5"
 
 function getColorArray(transparencyParam) {
     let _first_color_ = [
