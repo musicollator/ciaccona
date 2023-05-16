@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
     <!-- Lightweight, robust, elegant syntax highlighting -->
     <link rel="stylesheet" href="/lib/prism-1.29.0.css">
-    <link  rel="stylesheet" href="/lib/prism-okaidia.css"/>
+    <!-- link  rel="stylesheet" href="/lib/prism-okaidia.css"/ -->
 
     <style>
     </style>
@@ -67,7 +67,7 @@
             window.location = document.referrer
         });
 
-        jquery("code#thanks").load("/_thanks.yaml?v=1.0.4", function (response, status, xhr) {
+        jquery("code#thanks").load("/_thanks.yaml?v=1.0.4.6", function (response, status, xhr) {
             if (status == "success") {
                 Prism.highlightElement(this)
                 jquery('#credits').show()
