@@ -131,6 +131,12 @@ loadArtists().then((artists) => {
                 event.preventDefault()
                 window.location = `/ciaccona.html?a=${event.currentTarget.dataset.a}`
             }))
+            const offcanvasElementList = document.querySelectorAll('.offcanvas')
+            const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))  
+            document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
+                offcanvasList.forEach(oc => oc.hide())
+            }))
+
         }
     })
 })
