@@ -3,7 +3,7 @@ import config from "/js/config.js?v=1.0.4"
 import codec from "/js/structure.js?v=1.0.4"
 import { createColoredBadges } from "/js/colors.js?v=1.0.4"
 import createTimings from "/js/timings.js?v=1.0.4"
-import createPlayer from "/js/player.js?v=1.0.4"
+import createPlayer from "/js/player.js?v=1.0.4.3"
 import Ω from "/js/dom.js?v=1.0.4"
 
 // transform windows loaded event into promise
