@@ -127,12 +127,12 @@ a {
 }
 */
 
-.ciaccona #theContainer #theContainerCol #grid .grid-brick.hasScore:not(.selected) {
+.ciaccona #theContainer #theContainerCol #grid .grid-brick.has-score:not(.selected) {
   background-color: transparent !important;
   background-image: none !important;
 }
 
-/* #theContainerCol #grid .grid-brick.hasScore.Δ:not(.selected) {
+/* #theContainerCol #grid .grid-brick.has-score.Δ:not(.selected) {
   background-color: rgba(192, 192, 192, 0.4) !important;
 } */
 
@@ -173,7 +173,7 @@ a {
   height: 100%;
 }
 
-.ciaccona #theContainer #theContainerCol #grid .grid-brick.hasScore .brick .score {
+.ciaccona #theContainer #theContainerCol #grid .grid-brick.has-score .brick .score {
   cursor: pointer;
 }
 
@@ -181,7 +181,7 @@ a {
   border-radius: 0 !important;
 }
 
-.ciaccona #theContainer #theContainerCol #grid .grid-brick.hasScore.selected .brick :not(:first-child) {
+.ciaccona #theContainer #theContainerCol #grid .grid-brick.has-score.selected .brick :not(:first-child) {
   display: none !important;
 }
 
@@ -195,22 +195,22 @@ a {
   overflow-x: hidden;
 }
 
-.ciaccona #theContainer #theContainerCol #grid .grid-brick.hasScore.selected .brick .score {
+.ciaccona #theContainer #theContainerCol #grid .grid-brick.has-score.selected .brick .score {
   border-radius: 0 !important;
   background-color: #aaaaaa40 !important;
   width: 100% !important;
   overflow-x: scroll;
 }
 
-.ciaccona #theContainer #theContainerCol #grid .grid-brick.hasScore .brick .score {
+.ciaccona #theContainer #theContainerCol #grid .grid-brick.has-score .brick .score {
   visibility: inherit !important;
 }
 
-.ciaccona #theContainer #theContainerCol #grid .grid-brick.hasScore .brick .score.init {
+.ciaccona #theContainer #theContainerCol #grid .grid-brick.has-score .brick .score.init {
   visibility: hidden !important;
 }
 
-.ciaccona #theContainer #theContainerCol #grid.selectedBrick .grid-brick.hasScore:not(.selected) .brick .score {
+.ciaccona #theContainer #theContainerCol #grid.selectedBrick .grid-brick.has-score:not(.selected) .brick .score {
   visibility: hidden !important;
 }
 

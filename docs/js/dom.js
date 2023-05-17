@@ -305,7 +305,9 @@ const Ω = {
 
         Ω.setClickHandlers(iso)
 
-        document.querySelectorAll('.brick.hasScore .score').forEach(score => score.addEventListener('click', e => {
+        document.querySelectorAll('.brick.has-score .score').forEach(score => score.addEventListener('click', e => {
+            e.preventDefault()
+            e.stopPropagation()
             const brick = e.currentTarget.parentNode
             const hadClass = brick.parentNode.classList.contains('selected')
             document.querySelectorAll('.grid-brick.selected .score').forEach(score => score.scrollLeft = 0)

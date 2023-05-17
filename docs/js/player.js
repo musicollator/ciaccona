@@ -45,7 +45,7 @@ function selectAndScrollToVariation(source, variation, options) {
         scrollToSelector = '.grid-brick#magnificent-title-ciaccona'
     }
 
-    document.querySelectorAll('.grid-brick.hasScore').forEach(el => {
+    document.querySelectorAll('.grid-brick.has-score').forEach(el => {
         el.classList.remove('selected');
         el.classList.remove('goodbye');
         el.classList.remove('hello');
@@ -64,7 +64,7 @@ function unplay_and_unselect(keepSelect) {
     document.querySelectorAll('.grid-brick.goodbye').forEach(el => el.classList.remove('goodbye'))
     document.querySelectorAll('.grid-brick.hello').forEach(el => el.classList.remove('hello'))
     if (!keepSelect) {
-        document.querySelectorAll('.grid-brick.selected.hasScore').forEach(el => {
+        document.querySelectorAll('.grid-brick.selected.has-score').forEach(el => {
             el.classList.remove('selected');
             el.querySelector('.score').pageXOffset = 0
             el.querySelector('.score').scrollLeft = 0
@@ -191,7 +191,7 @@ const setBrickClickEvent = (_plyer, timings) => {
 
     }
 
-    document.querySelectorAll(".brick.hasScore .score").forEach((b) => {
+    document.querySelectorAll(".brick.has-score .score").forEach((b) => {
         b.addEventListener('click', handleBrickClick, true)
 
         b.addEventListener("scrollend", (event) => {

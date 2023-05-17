@@ -7,7 +7,7 @@
   background-image: none !important;
 }
 */
-/* #theContainerCol #grid .grid-brick.hasScore.Δ:not(.selected) {
+/* #theContainerCol #grid .grid-brick.has-score.Δ:not(.selected) {
   background-color: rgba(192, 192, 192, 0.4) !important;
 } */
 /* last, signature .grid_brick */
@@ -65,6 +65,7 @@
             border-radius: 0 3rem 3rem 0;
             width: 100%;
             height: 100%;
+            user-select: none; 
             .score {
               position: relative;
               height: 100%;
@@ -92,7 +93,7 @@
             }
           }
         }
-        .grid-brick.hasScore {
+        .grid-brick.has-score {
           &:not(.selected) {
             background-color: transparent !important;
             background-image: none !important;
@@ -119,7 +120,7 @@
             border-radius: 0 !important;
           }
         }
-        .grid-brick.hasScore.selected {
+        .grid-brick.has-score.selected {
           .brick {
             > *:not(:first-child) {
               display: none !important;
@@ -155,7 +156,7 @@
           overscroll-behavior: none;
         }
         &.selectedBrick {
-          .grid-brick.hasScore {
+          .grid-brick.has-score {
             &:not(.selected) {
               .brick {
                 .score {

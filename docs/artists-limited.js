@@ -136,6 +136,9 @@ loadArtists().then((artists) => {
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
                 offcanvasList.forEach(oc => oc.hide())
             }))
+            document.querySelectorAll('.brick.has-score').forEach(element => element.addEventListener('click', (event) => {
+                offcanvasList.forEach(oc => oc.show())
+            }))
 
         }
     })
