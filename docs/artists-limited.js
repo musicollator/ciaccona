@@ -101,7 +101,7 @@ loadArtists().then((artists) => {
     const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
     });
     imgLoad.on('progress', function (instance, image) {
-        image.element.querySelectorAll('.list-artist *').forEach(E => E.style.visibility = 'inherit')
+        image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
     });
 
     const event = new Event("artistsLoaded");
