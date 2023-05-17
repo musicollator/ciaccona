@@ -17,7 +17,6 @@ const template = (data, first) => `
      data-v="${data.v}" 
      style="background-image: ${data.abg}; overflow:visible;">
     <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden; ${first ? 'visibility: hidden;' : ''}" >
-    <!--
         <div class="hero-intro flex-shrink-1; align-self-start;" 
              title="Pin or unpin ${data.firstname} ${data.lastname}"
              style="padding-right: 0.5rem;">
@@ -27,7 +26,6 @@ const template = (data, first) => `
              title="Pin or unpin ${data.firstname} ${data.lastname}">
              ${data.lastname}
         </div>
-        -->
     </div>
     <div class="flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; overflow: visible; ${first ? 'visibility: hidden;' : ''}">
         <a class="puzzle-limited" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}">
