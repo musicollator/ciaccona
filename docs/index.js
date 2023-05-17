@@ -15,8 +15,8 @@ const template = (data, first) => `
      data-index="${data.index}" 
      data-a="${data.a}" 
      data-v="${data.v}" 
-     style="background-image: ${data.bg}; overflow:hidden;">
-    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; ${first ? 'visibility: hidden;' : ''}" >
+     style="background-image: ${data.bg}; overflow:visible;">
+    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden; ${first ? 'visibility: hidden;' : ''}" >
         <div class="hero-intro flex-shrink-1; align-self-start;" 
              title="Pin or unpin ${data.firstname} ${data.lastname}"
              style="padding-right: 0.5rem;">
@@ -27,25 +27,48 @@ const template = (data, first) => `
              ${data.lastname}
         </div>
     </div>
-    <a class="puzzle flex-shrink-1" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}" style="${first ? 'visibility: hidden;' : ''}">
-        <svg xmlns="http://www.w3.org/2000/svg" 
-            id="gb-puzzle${data.v}-svg" 
-            style="overflow: visible; transform: scale(.667);"
-            viewBox="${data.jigsaw.viewBox}">
-            <path stroke="#${data.stroke ? data.stroke : 'C8B273'}" 
-                stroke-width="3" 
-                fill="#${data.fill ? data.fill : '57728ba0'}" 
-                d="${data.jigsaw.path}" style=""></path>
-        </svg>
-    </a>
+    <div class="flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; overflow: visible;">
+        <a class="puzzle-limited" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}" style="${first ? 'visibility: hidden;' : ''}">
+            <svg xmlns="http://www.w3.org/2000/svg" 
+                id="gb-puzzle${data.v}-svg" 
+                style="overflow: visible; transform: scale(.667);"
+                viewBox="${data.jigsaw.viewBox}">
+                <path stroke="#${data.stroke ? data.stroke : 'C8B273'}" 
+                    stroke-width="3" 
+                    fill="#${data.fill ? data.fill : '57728ba0'}" 
+                    d="${data.jigsaw.path}" style=""></path>
+            </svg>
+        </a>
+        <div class="fw-bold font-monospace" style="margin-left: auto; margin-right: auto; font-size: larger;">
+        ${data.number}
+        </div>
+    </div>
 </div>`
+
+
+/*
+    <!--
+    <div class="d-flex flex-column justify-content-evenly" style="width: 3rem; overflow: visible;">
+        <svg xmlns="http://www.w3.org/2000/svg" id="gb-puzzle1-svg" class="clipboard-puzzle" width="80%" height="60%" style="visibility: inherit; overflow: visible; transform: scale(.667);" viewBox="0 240 120 120">
+                <!-- 
+                data-clipboard-text="https://ciaccona.cthiebaud.com/?a=amandinebeyer&v=1"
+                title="copy link to clipboard"
+                -->
+                <path stroke="#ffffff80" stroke-width="3" fill="#d2cf1880" d="M 0,240 C 24 234.25 51.09 254.46 44.34 235.32 C 37.59 216.18 75.87 216.18 63.48 235.32 C 51.09 254.46 96 233.55 120 240  L 120 360 C 96 357.34 47.52 373.52 62.85 354.38 C 78.18 335.24 39.9 335.24 43.71 354.38 C 47.52 373.52 24 364.97 0 360 L 0 240"></path>
+        </svg>
+        <div id="gb-variation1" class="fw-bold" data-a="amandinebeyer" data-v="1" style="color: #ffffff80; padding: .333rem;">
+            1
+        </div>
+    </div>
+    -->
+*/
 
 let data = []
 let artists2
-let arrayOfArtists = []
+// let arrayOfArtists = []
 const colors = colorArray;
 
-function generateData() {
+function generateData(arrayOfArtists) {
     data = []
     let vi = 0
     arrayOfArtists.forEach(a => {
@@ -59,6 +82,7 @@ function generateData() {
         const artistLastnameNoBreakingSpaces = a.lastname.replaceAll(/\s/gi, '&nbsp;');
         const datum = {
             index: vi,
+            number: v === 0 || 34 <= v ? '' : v,
             a: coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics,
             v: v,
             firstname: a.firstname,
@@ -83,7 +107,7 @@ loadArtists().then((artists) => {
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    const liArtist = `<div id="artist-badge" class="p-2" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
+    const artistBadge = `<div id="artist-badge" class="p-2" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
     <span class="fullname" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
     <!--
     <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
@@ -94,9 +118,9 @@ loadArtists().then((artists) => {
 </div>
 `
 
-    list.appendChild(new MagnificentTitle('list-item', 1, liArtist).templateForTheme)
+    list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
-    arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
+    let arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)
     data.forEach(d => {
         list.innerHTML += `<div class="list-item">${template(d, true)}</div>`
@@ -143,7 +167,7 @@ loadArtists().then((artists) => {
 
         function displayArtist() {
             if (typeof coerceVariation !== 'undefined') {
-                document.querySelectorAll('.list-artist .puzzle').forEach(e => e.classList.add('pushed'))
+                document.querySelectorAll('.list-artist .puzzle-limited').forEach(e => e.classList.add('pushed'))
             }
             if (typeof coerceArtist !== 'undefined') {
                 document.querySelectorAll('.list-artist .hero-intro').forEach(e => e.classList.add('pushed'))
@@ -184,13 +208,13 @@ loadArtists().then((artists) => {
                     window.location = `/ciaccona.html?a=${event.target.dataset.a}&v=${event.target.dataset.v}`
                 }
             }))
-            document.querySelectorAll('.list-artist .puzzle').forEach(E => E.addEventListener('click', (event) => {
+            document.querySelectorAll('.list-artist .puzzle-limited').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
                 if (typeof coerceVariation !== 'undefined') {
                     coerceVariation = undefined
                 } else {
-                    coerceVariation = parseInt(event.currentTarget.parentNode.dataset.v)
+                    coerceVariation = parseInt(event.currentTarget.parentNode.parentNode.dataset.v)
                     coerceArtist = undefined
                 }
                 data = generateData(arrayOfArtists)
@@ -242,7 +266,7 @@ $list.on('fitComplete', function (item) {
     orderItems()
     $list.packery('shiftLayout');
 })
-$list.on('click', '.list-artist .puzzle', function (event) {
+$list.on('click', '.list-artist .puzzle-limited', function (event) {
     event.stopPropagation()
     event.preventDefault()
     const target = event.currentTarget.parentNode;

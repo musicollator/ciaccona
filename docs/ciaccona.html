@@ -22,16 +22,6 @@
     <title>Ciaccona - </title>
     <meta name="description" content="32 + 1 performances of Johann Sebastian Bach's Ciaccona from Partita in D minor for solo violin BWV1004">
 
-    <!-- try to convince browser to reload as much as possible -->
-    <!-- https://stackoverflow.com/a/26818602/1070215 -->
-    <!-- USELESS, IF NOT HARMFULL
-        <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0" />
-        <meta http-equiv="cache-control" content="max-age=0" />
-        <meta http-equiv="expires" content="0" />
-        <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-        <meta http-equiv="pragma" content="no-cache" />
-    -->
-
     <!-- https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -157,6 +147,7 @@
         <div id="spinner" class="spinner-border m-2" role="status">
         </div>
     </div>
+
     <main id="theContainer" class="container-xxl flex-shrink-0">
 
         <div id="videos-menu" class="my-menu" style="display:none;">
@@ -178,185 +169,6 @@
 
             </span>
         </div>
-
-        <!-- 
-        <div id="videos-menu" class="btn-group dropend my-menu" style="display:none;">
-            <span class="dropdown dropend">
-                <a class="btn btn-light text-muted icon-base icon-youtube2" style="width: 50px;" href="#" role="button" id="videoMenuLink" data-bs-toggle="dropdown"
-                    aria-expanded="false" aria-label="Performers...">
-                </a>
-
-                <ul class="dropdown-menu" aria-labelledby="videoMenuLink">
-                    <li><a class="dropdown-item d-flex" href="#" data-name-no-space-lowercase-no-diacritics="amandinebeyer" aria-label="Amandine Beyer">
-                            <img style="width: 32px;" src="index.svg?v=1.0.5#violin-view">
-                            <div class="flex-grow-1" style="text-align: right;"><span class="c"></span><span>Amandine Beyer</span><span class="d">12′51″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="adolfbusch" aria-label="Adolf Busch">
-                            <div><span class="c">&check;</span><span>Adolf Busch</span><span class="d">13′48″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="veroniquederaedemaeker"
-                            aria-label="Veronique De Raedemaeker">
-                            <div><span class="c">&check;</span><span>Veronique De Raedemaeker</span><span class="d">15′46″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="veronikaeberle" aria-label="Veronika Eberle">
-                            <div><span class="c">&check;</span><span>Veronika Eberle</span><span class="d">13′41″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="isabellefaust" aria-label="Isabelle Faust">
-                            <div><span class="c">&check;</span><span>Isabelle Faust</span><span class="d">12′28″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="lizaferschtman" aria-label="Liza Ferschtman">
-                            <div><span class="c">&check;</span><span>Liza Ferschtman</span><span class="d">13′29″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="juliafischer" aria-label="Julia Fischer">
-                            <div><span class="c">&check;</span><span>Julia Fischer</span><span class="d">15′41″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="midorigoto" aria-label="Midori Gotō">
-                            <div><span class="c">&check;</span><span>Midori Gotō</span><span class="d">13′47″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="hilaryhahn" aria-label="Hilary Hahn">
-                            <div><span class="c">&check;</span><span>Hilary Hahn</span><span class="d">17′50″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="bellahristova" aria-label="Bella Hristova">
-                            <div><span class="c">&check;</span><span>Bella Hristova</span><span class="d">13′46″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="lisajacobs" aria-label="Lisa Jacobs">
-                            <div><span class="c">&check;</span><span>Lisa Jacobs</span><span class="d">14′58″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="clara-jumikang" aria-label="Clara-Jumi Kang">
-                            <div><span class="c">&check;</span><span>Clara-Jumi Kang</span><span class="d">11′39″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="sigiswaldkuijken"
-                            aria-label="Sigiswald Kuijken">
-                            <div><span class="c">&check;</span><span>Sigiswald Kuijken</span><span class="d">11′39″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="rachelpodger" aria-label="Rachel Podger">
-                            <div><span class="c">&check;</span><span>Rachel Podger</span><span class="d">13′29″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="virginierobilliard"
-                            aria-label="Virginie Robilliard">
-                            <div><span class="c">&check;</span><span>Virginie Robilliard</span><span class="d">13′45″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="christiantetzlaff"
-                            aria-label="Christian Tetzlaff">
-                            <div><span class="c">&check;</span><span>Christian Tetzlaff</span><span class="d">14′07″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="rachellellenwong"
-                            aria-label="Rachell Ellen Wong">
-                            <div><span class="c">&check;</span><span>Rachell Ellen Wong</span><span class="d">14′05″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="jeannelamon" style="max-height: inherit;"
-                            aria-label="Jeanne Lamon">
-                            <img style="width: 24px;" src="index.svg?v=1.0.5#violin-view">
-                            <img style="width: 24px;" src="index.svg?v=1.0.5#violin-view">
-                            <img style="width: 24px;" src="index.svg?v=1.0.5#violin-view">
-
-                            <div style="display: flex;">
-                                <span class="c">&check;</span>
-                                <span class="d-flex flex-column" style="text-align: right;">
-                                    <span>Jeanne Lamon</span>
-                                    <span>Chloe Kim</span>
-                                    <span>Christina Mahler</span>
-                                </span>
-                                <span class="d">14′49″</span>
-                            </div>
-
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="florentinginot" aria-label="Florentin Ginot">
-                            <span style="font-size:10px; font-weight: bold; top: -.5rem; left:-.5rem; position: relative; background-color: transparent">*big*</span>
-                            <img style="width: 40px; top: -.5rem; left: -1.5rem; position: relative; " src="index.svg?v=1.0.5#violin-view">
-                            <div><span class="c">&check;</span><span>Florentin Ginot</span><span class="d">14′49″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="andreadevitis" aria-label="Andrea De Vitis">
-                            <img style="width: 32px;" src="index.svg?v=1.0.5#ukulele-view">
-                            <div><span class="c">&check;</span><span>Andrea De Vitis</span><span class="d">14′10″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="petrapolackova" aria-label="Petra Poláčková">
-                            <div><span class="c">&check;</span><span>Petra Poláčková</span><span class="d">13′28″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="miguelrincon" aria-label="Miguel Rincón">
-                            <div><span class="c">&check;</span><span>Miguel Rincón</span><span class="d">10′48″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="raphaellasmits" aria-label="Raphaella Smits">
-                            <div><span class="c">&check;</span><span>Raphaella Smits</span><span class="d">14′21″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="moranwasser" aria-label="Moran Wasser">
-                            <div><span class="c">&check;</span><span>Moran Wasser</span><span class="d">12′17″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="moi" aria-label="Moi">
-                            <div><span class="c">&check;</span><span>Moi</span><span class="d">14′42″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="martinbaker" aria-label="Martin Baker">
-                            <img style="width: 40px;" src="index.svg?v=1.0.5#keyboard-view">
-                            <div><span class="c">&check;</span><span>Martin Baker</span><span class="d">18′18″</span></div>
-                        </a>
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="chiaramassini" aria-label="Chiara Massini">
-                            <div><span class="c">&check;</span><span>Chiara Massini</span><span class="d">12′31″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="polinaosetinskaya"
-                            aria-label="Polina Osetinskaya">
-                            <div><span class="c">&check;</span><span>Polina Osetinskaya</span><span class="d">15′00″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="genzohtakehisa" aria-label="Genzoh Takehisa">
-                            <div><span class="c">&check;</span><span>Genzoh Takehisa</span><span class="d">12′22″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="anneleenlenaerts"
-                            aria-label="Anneleen Lenaerts">
-                            <img style="width: 32px; top: -.6rem; left: -.3rem; position: relative;" src="index.svg?v=1.0.5#harp-view">
-                            <div><span class="c">&check;</span><span>Anneleen Lenaerts</span><span class="d">14′16″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="michaelleontchik"
-                            aria-label="Michael Leontchik">
-                            <img src="svg/cimbalom.svg?v=1.0.5" style="top: -0.5rem; left: -1rem; position: relative; filter: grayscale(1);">
-                            <div><span class="c">&check;</span><span>Michael Leontchik</span><span class="d">13′43″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="martafemenia" aria-label="Marta Femenía">
-                            <img style="width: 32px; top: -.6rem; left: -.3rem; position: relative;" src="index.svg?v=1.0.5#flute-view">
-                            <div><span class="c">&check;</span><span>Marta Femenía</span><span class="d">15′36″</span></div>
-                        </a></li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="vonhansen" aria-label="Von Hansen">
-                            <img style="width: 32px; top: -.6rem; left: -.3rem; position: relative;" src="index.svg?v=1.0.5#xylophone-view">
-                            <div><span class="c">&check;</span><span>Von Hansen</span><span class="d">14′47″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="ksenijakomljenovic"
-                            aria-label="Ksenija Komljenović">
-                            <div><span class="c">&check;</span><span>Ksenija Komljenović</span><span class="d">16′23″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="yunpark" aria-label="Yun Park<">
-                            <div><span class="c">&check;</span><span>Yun Park</span><span class="d">12′31″</span></div>
-                        </a></li>
-                    <li><a class="dropdown-item d-flex justify-content-between" href="#" data-name-no-space-lowercase-no-diacritics="mikastoltzman" aria-label="Mika Stoltzman">
-                            <div><span class="c">&check;</span><span>Mika Stoltzman</span><span class="d">16′48″</span></div>
-                        </a></li>
-                </ul>
-            </span>
-
-        </div>
-        -->
 
         <div id="config-menu" class="btn-group dropstart my-menu" style="display:none;">
             <span class="dropdown dropstart">
@@ -428,6 +240,7 @@
                 </div>
             </div>
         </div>
+        
     </main>
 
     <script src="/lib/bootstrap.bundle-5.2.3.min.js"></script>

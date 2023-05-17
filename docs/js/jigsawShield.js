@@ -22,9 +22,25 @@ class JigsawShield {
             const randomTabsize = normalizeVraiment(Math.random(), 0, 1, .07, .15)
             const randomJitter = normalizeVraiment(Math.random(), 0, 1, .03, .15)
 
-            let xn = parseInt(config?.xn ?? document.documentElement.style.getPropertyValue('--bpr') ?? 4)
+            let brickPerRowFromDocument = parseInt(document.documentElement.style.getPropertyValue('--bpr'))
+            if (isNaN(brickPerRowFromDocument)) {
+                brickPerRowFromDocument = parseInt(document.documentElement.style.getPropertyValue('--lipr'))
+                if (isNaN(brickPerRowFromDocument)) {
+                    brickPerRowFromDocument = undefined
+                }
+            }
+ 
+            let brickPerColFromDocument = parseInt(document.documentElement.style.getPropertyValue('--bpc'))
+            if (isNaN(brickPerColFromDocument)) {
+                brickPerColFromDocument = parseInt(document.documentElement.style.getPropertyValue('--lipc'))
+                if (isNaN(brickPerColFromDocument)) {
+                    brickPerColFromDocument = undefined
+                }
+            }
+
+            let xn = parseInt(config?.xn ?? brickPerRowFromDocument ?? 4)
             if (isNaN(xn) || xn < 0) xn = 4
-            let yn = parseInt(config?.yn ?? document.documentElement.style.getPropertyValue('--bpc') ?? 9)
+            let yn = parseInt(config?.yn ?? brickPerColFromDocument ?? 9)
             if (isNaN(yn) || yn < 0) yn = 9
 
             console.log('[jigsaw] seed', randomSeed, 'tabsize', randomTabsize, 'jitter', randomJitter)
