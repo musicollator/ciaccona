@@ -56,7 +56,7 @@ loadArtists().then((artists) => {
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    arrayOfArtists = artists.artists.toSorted((a, b) => {
+    arrayOfArtists = artists.artists.sort((a, b) => {
         if (a.instrument === b.instrument) {
             if (a.lastname === 'Moi') {
                 return 1
