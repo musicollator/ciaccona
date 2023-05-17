@@ -138,21 +138,16 @@
       z-index: -1;
       mix-blend-mode: multiply;
       background-color: steelblue;
-      /* border-radius: 0 0 1rem 0; */
     }
     &.vert {
       writing-mode: vertical-lr;
       text-orientation: upright;
       line-height: 10.672px;
       width: 1.667rem;
-      height: 100%;
-      &::after {
-        border-radius: 0;
-      }
+      padding-bottom: 0.5rem;
     }
     &.pushed::after {
-      background: #b47846; // #57728b;
-      // mix-blend-mode: normal;
+      background: #b47846;
     }
   }
 }
