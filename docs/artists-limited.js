@@ -1,8 +1,8 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import codec from "/js/structure.js?v=1.1.0"
-import { loadArtists } from "/js/artists.js?v=1.1.0"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.1.0"
+import codec from "/js/structure.js?v=1.1.1"
+import { loadArtists } from "/js/artists.js?v=1.1.1"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.1.1"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
