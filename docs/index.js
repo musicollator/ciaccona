@@ -1,7 +1,7 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import codec from "/js/structure.js?v=1.1.0"
-import { colorArray } from "/js/colors.js?v=1.1.0"
+import { colorArray } from "/js/colors.js?v=1.1.0.1"
 import { loadArtists } from "/js/artists.js?v=1.1.0"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.1.0"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=1.1.0'
