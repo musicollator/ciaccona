@@ -4,6 +4,8 @@ import codec from "/js/structure.js?v=1.1.1"
 import { loadArtists } from "/js/artists.js?v=1.1.1"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.1.1"
 
+let localCoerceVariation = undefined
+
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
 const template = (data, first) => `
@@ -133,13 +135,22 @@ loadArtists().then((artists) => {
             }))
             const offcanvasElementList = document.querySelectorAll('.offcanvas')
             const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))  
+            offcanvasElementList.forEach(element => {
+                element.addEventListener('show.bs.offcanvas', event => {
+                    if (localCoerceVariation) {
+                        document.querySelectorAll('.list-artist').forEach(la => {
+                            la.style.backgroundImage = bg(la.dataset.a, localCoerceVariation)
+                        })
+                    }
+                })
+            })
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
                 offcanvasList.forEach(oc => oc.hide())
             }))
             document.querySelectorAll('.brick.has-score').forEach(element => element.addEventListener('click', (event) => {
+                localCoerceVariation = element.dataset.variation
                 offcanvasList.forEach(oc => oc.show())
             }))
-
         }
     })
 })

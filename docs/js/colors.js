@@ -145,8 +145,8 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
         { w: 347 }, // 31
         { w: 396 }, // 32
         { w: 295 }, // 33
-        { w: 340 }, // 34
-        { w: 0 }    // 35
+        { w: 220 }, // 34
+        { w: 0 }    // 35 (should never happen)
     ]
 
     const _colors_ = colorArray // getColorArray(fullameNoSpaceLowercaseNoDiacritics ? .400 : undefined)

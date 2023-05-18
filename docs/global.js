@@ -49,7 +49,7 @@ let test = params.test ?? undefined
 let coerceArtist = params.a ?? undefined
 let coerceVariation = undefined
 try {
-    if (typeof params.v !== 'undefined') {
+    if (typeof params.v !== 'undefined' && params.v !== null) {
         coerceVariation = parseInt(params.v)
         if (isNaN(coerceVariation)) {
             coerceVariation = undefined
