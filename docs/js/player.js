@@ -160,6 +160,8 @@ const setBrickClickEvent = (_plyer, timings) => {
         // DOM element has bar index in data
         const thisBar = parseInt(this.parentNode.dataset.bar)
 
+        const thisVariation = this.parentNode.dataset.variation
+        const selector = `.grid-brick#gb${thisVariation}`
         if (config.startBarOfLastSelectedVariation === thisBar) {
             // just toggle play state
             if (isPlaying) {
@@ -167,11 +169,10 @@ const setBrickClickEvent = (_plyer, timings) => {
             } else {
                 _plyer.play()
             }
+            // deselect
+            document.querySelector(selector)?.classList.remove('selected')
         } else {
             // immediate feedback
-            const thisVariation = this.dataset.variation
-            const selector = `.grid-brick#gb${thisVariation}`
-
             document.querySelector(selector)?.classList.add('selected')
             document.querySelector('.grid-brick.gbPlaying')?.classList.add('goodbye')
 
@@ -210,6 +211,7 @@ const setBrickClickEvent = (_plyer, timings) => {
 export default function createPlayer(selector, timings, ignore_all_events) {
     return new Promise((resolve, reject) => {
         let _plyer = new plyr(selector, {
+            origin: window.location.origin
         })
 
         function INIT_EVENT_HANDLERS() {

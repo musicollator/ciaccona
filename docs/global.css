@@ -70,14 +70,14 @@ a {
 @media (min-aspect-ratio: 16/9) {
   .plyr .plyr__video-embed iframe {
     /* height = 100 * (9 / 16) = 56.25 */
-    height: 56.25vw;
+    height: 56.25vw !important;
   }
 }
 
 @media (max-aspect-ratio: 16/9) {
   .plyr .plyr__video-embed iframe {
     /* width = 100 / (9 / 16) = 177.777777 */
-    width: calc(var(--vh, 1vh) * 177.78);
+    width: calc(var(--vh, 1vh) * 177.78) !important;
   }
 }
 

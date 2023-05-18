@@ -321,16 +321,15 @@ const Ω = {
                 config.startBarOfLastSelectedVariation = startBar
             }
         }))
-
         document.querySelectorAll('.grid-brick .score').forEach(score => score.addEventListener("scroll", (event) => {
 
             const score = event.currentTarget;
             const obj = event.currentTarget.parentNode;
             if (score.scrollLeft <= 0) {
                 score.style['border-radius'] = "0 3rem 3rem 0"
-            } else if (obj.clientWidth <= score.scrollLeft + score.clientWidth) {
+            } /* else if (obj.clientWidth <= score.scrollLeft + score.clientWidth) {
                 score.style['border-radius'] = "3rem 0 0 3rem"
-            } else {
+            } */ else {
                 score.style['border-radius'] = "3rem 3rem 3rem 3rem"
             }
         }))

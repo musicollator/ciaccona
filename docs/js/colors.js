@@ -6,6 +6,13 @@ import { jigsawGenerator } from '/js/jigsawShield.js?v=1.1.0'
 import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=1.1.0"
 import MagnificentTitle from "/js/magnificent-title.js?v=1.1.0"
 
+function _T(hex6color, transparency) {
+    if (hex6color.length !== 6) return hex6color
+    if (!(/[0-9A-Fa-f]{6}/g.test(hex6color))) return hex6color
+    if (typeof transparency === 'undefined') transparency = '80'
+    return `${hex6color}${transparency}`
+}
+
 function getColorArray(transparencyParam) {
     let _first_color_ = [
         { rgb: "f3f3f2", p_rgb: "f2f1f0", sim: 97, pantone: "P 179-1 C", name: "Bleached Silk" }
@@ -84,6 +91,7 @@ function getColorArray(transparencyParam) {
 
         // some transparency to show video behind
         s.p_rgb_original = new tinycolor(s.p_rgb)
+        /*
         if (transparencyParam) {
             s.p_rgb_T = tinycolor(s.p_rgb_original).setAlpha(transparencyParam).toString("hex8").slice(1)
             s.textColor_T = tinycolor(s.textColor).setAlpha(transparencyParam).toString("hex8").slice(1)
@@ -91,6 +99,7 @@ function getColorArray(transparencyParam) {
             s.stripeColor_T = tinycolor(s.stripeColor).setAlpha(transparencyParam).toString("hex8").slice(1)
             s.borderColor_T = tinycolor(s.borderColor).setAlpha(transparencyParam).toString("hex8").slice(1)
         }
+        */
     }
     return _colors_
 }
@@ -170,19 +179,21 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
         
         if (fullameNoSpaceLowercaseNoDiacritics) {
             c2 = {
-                p_rgb: c.p_rgb_T,
-                textColor: c.textColor_T,
-                puzzleColor: c.puzzleColor_T,
-                stripeColor: c.stripeColor_T,
-                borderColor: c.borderColor_T,
+                p_rgb: _T(c.p_rgb),
+                p_rgbAlpha: c.p_rgbAlpha,
+                textColor:   _T(c.textColor),
+                puzzleColor: _T(c.puzzleColor),
+                stripeColor: _T(c.stripeColor),
+                borderColor: _T(c.borderColor),
             }
         } else {
             c2 = {
                 p_rgb: c.p_rgb,
+                p_rgbAlpha: c.p_rgbAlpha,
                 textColor: c.textColor,
                 puzzleColor: c.puzzleColor,
                 stripeColor: c.stripeColor,
-                borderColor: c.borderColor_T,
+                borderColor: _T(c.borderColor),
             }
         }
 
