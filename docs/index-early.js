@@ -1,4 +1,4 @@
-import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=1.1.1'
+import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=2.0.0'
 
 // list item width
 function calcItemWidth() {

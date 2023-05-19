@@ -1,9 +1,9 @@
 import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
 import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
-import config from "/js/config.js?v=1.1.1"
-import codec from "/js/structure.js?v=1.1.1"
-import { binaryRangeSearch } from "/js/utils.js?v=1.1.1"
-import { theArtists, theArtist } from "/js/artists.js?v=1.1.1"
+import config from "/js/config.js?v=2.0.0"
+import codec from "/js/structure.js?v=2.0.0"
+import { binaryRangeSearch } from "/js/utils.js?v=2.0.0"
+import { theArtists, theArtist } from "/js/artists.js?v=2.0.0"
 
 class Timings {
 
