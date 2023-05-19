@@ -89,10 +89,10 @@ let previousInstrument = "_"
 data.forEach(d => {
     if (d.instrument !== previousInstrument) {
         const instr = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;')
-        list.innerHTML +=
-            `<div class="list-item" style="height: 40px; line-height: 40px; background-color: #00000080; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%); color: #c8b273; border-top: .5px #c8b273 solid;">
-    <span class="b2 icon-base ${iconMap[d.instrument]}" ></span>
-    <span style="float: right;">${instr}</span>
+        list.innerHTML += `
+<div class="list-item divider d-flex justify-content-between">
+    <div class="icon-base ${iconMap[d.instrument]}" style="margin-top: .3rem;"></div>
+    <div>${instr}</div>
 </div>`
 
         previousInstrument = d.instrument
@@ -126,39 +126,40 @@ readyToPack.then((result) => {
 
     thePackery.layout()
 
-    setListener()
+    setEventListeners()
 
-    function setListener() {
+    function setEventListeners() {
+        // https://getbootstrap.com/docs/5.2/components/offcanvas/#via-javascript
         const offcanvasElementList = document.querySelectorAll('.offcanvas')
         const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
-        document.querySelectorAll('.list-artist').forEach(element => element.addEventListener('click', (event) => {
-            event.stopPropagation()
-            event.preventDefault()
-            // https://github.com/sampotts/plyr#the-source-setter
-            createTimings(event.currentTarget.dataset.a).then((artist) => {
-                Ω.showArtist(artist)
-                console.log('ABOUT TO CHANGE VIDEO', artist['▶'].youtubeUrl)
-                config.plyrPlayer.source = {
-                    type: 'video',
-                    sources: [
-                        {
-                            src: artist['▶'].youtubeUrl,
-                            provider: 'youtube',
-                        },
-                    ],
-                };
+        document.querySelectorAll('.list-artist').forEach(element => {
+            element.addEventListener('click', (event) => {
+                event.stopPropagation()
+                event.preventDefault()
+                // https://github.com/sampotts/plyr#the-source-setter
+                createTimings(event.currentTarget.dataset.a).then((artist) => {
+                    Ω.showArtist(artist)
+                    // console.log('ABOUT TO CHANGE VIDEO', artist['▶'].youtubeUrl)
+                    config.plyrPlayer.source = {
+                        type: 'video',
+                        sources: [
+                            {
+                                src: artist['▶'].youtubeUrl,
+                                provider: 'youtube',
+                            },
+                        ],
+                    };
+                })
+                offcanvasList.forEach(oc => oc.hide())
+
+                // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
+                const url = new URL(location);
+                url.searchParams.set("a", event.currentTarget.dataset.a);
+                history.pushState({}, "", url);
             })
-            offcanvasList.forEach(oc => oc.hide())
-
-            // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
-            const url = new URL(location);
-            url.searchParams.set("a", event.currentTarget.dataset.a);
-            history.pushState({}, "", url);
-
-            // window.location = `/ciaccona.html?a=${event.currentTarget.dataset.a}`
-        }))
+        })
         offcanvasElementList.forEach(element => {
-            element.addEventListener('show.bs.offcanvas', event => {
+            element.addEventListener('show.bs.offcanvas', (event) => {
                 if (localCoerceVariation) {
                     document.querySelectorAll('.list-artist').forEach(la => {
                         la.style.backgroundImage = bg(la.dataset.a, localCoerceVariation)

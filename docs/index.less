@@ -3,9 +3,9 @@
   visibility: inherit;
   .list-item {
     position: relative;
-    width: var(--liw, 334px);
+    width: var(--liw, 300px);
     height: var(--lih, 100px);
-    max-width: var(--liw, 334px);
+    max-width: var(--liw, 300px);
     max-height: var(--lih, 100px);
     padding: 0;
     margin: 0;
@@ -33,8 +33,14 @@
         auto;
     }
   }
+  .list-item.divider {
+    height: 44px;
+    line-height: 48px;
+    background-color: #D3C18F;//#c8b273;
+    color: #322E28;
+    padding: 0 .3rem;
+  }
   &.artists {
-    // background-color: #3e3a32 !important;
     height: fit-content;
   }
 }
