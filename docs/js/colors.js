@@ -155,21 +155,6 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
     
     temporaryContainer.appendChild(new MagnificentTitle('grid-brick', fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
 
-    const templateForArtist =
-        `
-<div id="gb-artist" data-sort="-2" class="grid-brick artist" style="${!fullameNoSpaceLowercaseNoDiacritics ? 'display: none;' : ''}; height:96px; margin:0;">
-    <div class="d-flex brick align-items-center justify-content-center" style="border-radius: 0; height: 100%;">
-        <div class="p-2" style="white-space: nowrap;">
-            <span class="fullname" style="color: #d0d0d0">${fullameNoSpaceLowercaseNoDiacritics}</span>
-            <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
-            </a>
-            <a id="social" class="share btn btn-lihjt icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share...">
-            </a>
-        </div>
-    </div>
-</div>`
-    temporaryContainer.appendChild(generateElement(templateForArtist));
-
     const twoZeroPad = (num) => String(num).padStart(2, '0')
     let i = 0;
     let barFrom = 0

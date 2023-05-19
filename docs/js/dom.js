@@ -256,18 +256,20 @@ const Ω = {
     },
 
     showArtist: (artist) => {
-        const artistE = document.querySelector('.grid-brick.artist#gb-artist')
-        if (!artistE) return
+        const badgeArtist = document.querySelector('.artist#badge-artist')
+        if (!badgeArtist) return
+
+        badgeArtist.style.visibility = "visible"
 
         const fullname = artist.fullname === "Christophe Thiebaud" ? "Moi" : artist.fullname;
 
         document.querySelector('head title').innerHTML = `Ciaccona - ${artist.fullname}`
-        // document.querySelector('#loading #message').innerHTML = fullname
-        artistE.style.visibility = 'inherit'
-        artistE.querySelector('.fullname').innerHTML = fullname
-        artistE.querySelector('a#youtube-url').setAttribute('href', artist['▶'].youtubeTrueUrl ? artist['▶'].youtubeTrueUrl : artist['▶'].youtubeUrl)
-        artistE.querySelector('a#youtube-url').setAttribute('target', artist['▶'].id)
-        artistE.querySelector('a#social').setAttribute('href', artist.social)
+
+        badgeArtist.style.visibility = 'inherit'
+        badgeArtist.querySelector('.fullname').innerHTML = fullname
+        badgeArtist.querySelector('a#youtube-url').setAttribute('href', artist['▶'].youtubeTrueUrl ? artist['▶'].youtubeTrueUrl : artist['▶'].youtubeUrl)
+        badgeArtist.querySelector('a#youtube-url').setAttribute('target', artist['▶'].id)
+        badgeArtist.querySelector('a#social').setAttribute('href', artist.social)
     },
 
     beforeCreatePlayer: (videoId) => {

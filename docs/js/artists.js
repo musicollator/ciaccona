@@ -40,6 +40,25 @@ class Artist {
     }
 }
 
+class Artists {
+    artists = []
+    #mapNameNoSpaceLowercaseNoDiacritics2Artist = new Map()
+    dump = () => {
+        this.artists.forEach((a) => {
+            console.log(a)
+        })
+    }
+    addArtist = (a) => {
+        this.#mapNameNoSpaceLowercaseNoDiacritics2Artist.set(a.fullnameNoSpaceLowercaseNoDiacritics, a)
+        this.artists.push(a)
+    }
+    getArtistFromNameNoSpaceLowercaseNoDiacritics = (nameNoSpaceLowercaseNoDiacritics) => {
+        return this.#mapNameNoSpaceLowercaseNoDiacritics2Artist.get(nameNoSpaceLowercaseNoDiacritics)
+    }
+    size = () => this.artists.length
+    sort = (f) => this.artists.sort(f)
+}
+
 let ARTISTS
 
 function loadArtists() {
@@ -78,30 +97,8 @@ function loadArtists() {
     })
 }
 
-class Artists {
-    artists = []
-    #mapNameNoSpaceLowercaseNoDiacritics2Artist = new Map()
-    dump = () => {
-        this.artists.forEach((a) => {
-            console.log(a)
-        })
-    }
-    addArtist = (a) => {
-        this.#mapNameNoSpaceLowercaseNoDiacritics2Artist.set(a.fullnameNoSpaceLowercaseNoDiacritics, a)
-        this.artists.push(a)
-    }
-    getArtistFromNameNoSpaceLowercaseNoDiacritics = (nameNoSpaceLowercaseNoDiacritics) => {
-        return this.#mapNameNoSpaceLowercaseNoDiacritics2Artist.get(nameNoSpaceLowercaseNoDiacritics)
-    }
-    size = () => this.artists.length
-    sort = (f) => this.artists.sort(f)
-
-    get them() {
-        loadArtists().then(artists => artists)
-    }
-}
-
 const theArtists = await loadArtists().then(artists => artists)
+
 let theArtist
 
 export { theArtists, theArtist, theDayWhenIReadTheVideoMeters }
