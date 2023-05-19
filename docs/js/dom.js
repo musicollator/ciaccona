@@ -227,22 +227,6 @@ const Ω = {
     setClickHandlers: (iso) => {
         const url = new URL(window.location)
 
-        /*
-        document.querySelectorAll('.gb-puzzle').forEach(e => e.addEventListener('click', e => {
-            let a = e.currentTarget.dataset.a
-            if (a === 'undefined') a = undefined
-            const v = e.currentTarget.dataset.v
-            if (a && v) {
-                window.location = `/puzzle/puzzles.html?a=${a}&v=${v}`
-            } else if (a) {
-                window.location = `/puzzle/artists.html?a=${a}`
-            } else if (v) {
-                window.location = `/puzzle/artists.html?v=${v}`
-            } else {
-                window.location = '/puzzle/artists.html'
-            }
-        }))
-        */
         document.querySelectorAll('a[data-name-no-space-lowercase-no-diacritics]').forEach((elem) => {
             const nameNoSpaceLowercaseNoDiacritics = elem.dataset.nameNoSpaceLowercaseNoDiacritics
             if (nameNoSpaceLowercaseNoDiacritics === '') {
