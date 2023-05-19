@@ -83,10 +83,10 @@ https://ciaccona.cthiebaud.com/video/{{filename}}
 
     <script type="module">
         import jquery from 'https://cdn.jsdelivr.net/npm/jquery@3.6.4/+esm'
-        import { loadArtists } from "/js/artists.js?v=1.1.1"
+        import { theArtists } from "/js/artists.js?v=1.1.1"
 
-        loadArtists().then((artists) => {
-
+        {
+            const artists = theArtists
             const source = document.getElementById("head-template").innerHTML;
             const template = Handlebars.compile(source);
             const BreakException = {};

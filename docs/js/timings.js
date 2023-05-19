@@ -1,8 +1,9 @@
 import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
 import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
+import config from "/js/config.js?v=1.1.1"
 import codec from "/js/structure.js?v=1.1.1"
 import { binaryRangeSearch } from "/js/utils.js?v=1.1.1"
-import { loadArtists } from "/js/artists.js?v=1.1.1"
+import { theArtists, theArtist } from "/js/artists.js?v=1.1.1"
 
 class Timings {
 
@@ -90,35 +91,29 @@ class Timings {
 
 function createTimings(fullameNoSpaceLowercaseNoDiacritics) {
     return new Promise((resolve, reject) => {
-        loadArtists().then((artists) => {
+        let artistObject = theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(fullameNoSpaceLowercaseNoDiacritics)
+        if (!artistObject) {
+            reject(`no artist associated with : < ${fullameNoSpaceLowercaseNoDiacritics} >`)
+            return
+        }
 
-            let artistObject = artists.getArtistFromNameNoSpaceLowercaseNoDiacritics(fullameNoSpaceLowercaseNoDiacritics)
-            if (!artistObject) {
-                reject(`no artist associated with : < ${fullameNoSpaceLowercaseNoDiacritics} >`)
-                return
+        const timingsURL = artistObject['▶'].timingsUrl
+        const javascriptizedId = artistObject['▶'].javascriptizedId
+        console.log('script loading', timingsURL)
+
+        fetch(timingsURL, { cache: "no-store" }).then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error fetching ${timingsURL}! Status: ${response.status}`);
             }
-
-            const timingsURL = artistObject['▶'].timingsUrl
-            const javascriptizedId = artistObject['▶'].javascriptizedId
-            console.log('script loading', timingsURL)
-
-            fetch(timingsURL, {cache: "no-store"}).then((response) => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error fetching ${timingsURL}! Status: ${response.status}`);
-                }
-                return response.text()
-            }).then((timingsAstext) => {
-                eval?.(timingsAstext)
-                const data = eval(javascriptizedId)
-                const timings = new Timings(artistObject, data)
-                resolve(timings)
-            }).catch((error) => {
-                console.log("script loading error", timingsURL, error);
-                reject(error)
-            })
-    
+            return response.text()
+        }).then((timingsAstext) => {
+            eval?.(timingsAstext)
+            const data = eval(javascriptizedId)
+            artistObject.timings = new Timings(artistObject, data)
+            config.artistAndTimings = artistObject.timings
+            resolve(artistObject.timings)
         }).catch((error) => {
-            console.log('loadArtists error', error)
+            console.log("script loading error", timingsURL, error);
             reject(error)
         })
     })

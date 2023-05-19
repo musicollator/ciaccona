@@ -1,7 +1,7 @@
 import jsYaml from 'https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/+esm'
 import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
 import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
-        
+
 const theDayWhenIReadTheVideoMeters = moment('2023-05-15T00:00:00Z')
 class Artist {
     constructor(a) {
@@ -11,7 +11,7 @@ class Artist {
         this.fullname = [a.firstname, a.lastname].filter(Boolean).join(' ');
         this.fullnameNoSpace = this.fullname.replace(/\s/gi, '')
         // https://stackoverflow.com/a/37511463/1070215
-        this.fullnameNoSpaceLowercaseNoDiacritics = this.fullnameNoSpace.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '') 
+        this.fullnameNoSpaceLowercaseNoDiacritics = this.fullnameNoSpace.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')
 
         this.thisUrl = `/video/${this.fullnameNoSpaceLowercaseNoDiacritics}.html`
         this.social = `https://www.facebook.com/sharer/sharer.php?u=https://ciaccona.cthiebaud.com${this.thisUrl}`
@@ -40,6 +40,44 @@ class Artist {
     }
 }
 
+let ARTISTS
+
+function loadArtists() {
+    console.log('loading artists ...')
+    return new Promise((resolve, reject) => {
+        if (ARTISTS) {
+            console.log('loaded artists from cache', ARTISTS)
+            resolve(ARTISTS)
+        }
+
+        console.log('fetching artists ...')
+        const urlArtistsYAML = "/_artists.yaml"
+        const artistsRequest = new Request(urlArtistsYAML);
+        const artists = new Artists()
+
+        fetch(artistsRequest, { cache: "no-store" }).then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error fetching ${urlArtistsYAML}! Status: ${response.status}`);
+            }
+            return response.text()
+        }).then((artistsAsYAMLText) => {
+
+            const artistsAsJSONObject = jsYaml.load(artistsAsYAMLText)
+            artistsAsJSONObject.forEach((a) => {
+                artists.addArtist(new Artist(a))
+            })
+
+            console.log('# artists', artists.size())
+
+            ARTISTS = artists
+            resolve(artists)
+        }).catch((error) => {
+            console.log("script loading error", urlArtistsYAML, error);
+            reject(error)
+        })
+    })
+}
+
 class Artists {
     artists = []
     #mapNameNoSpaceLowercaseNoDiacritics2Artist = new Map()
@@ -57,34 +95,13 @@ class Artists {
     }
     size = () => this.artists.length
     sort = (f) => this.artists.sort(f)
+
+    get them() {
+        loadArtists().then(artists => artists)
+    }
 }
 
-function loadArtists() {
-    return new Promise((resolve, reject) => {
-        const urlArtistsYAML = "/_artists.yaml"
-        const artistsRequest = new Request(urlArtistsYAML);
-        const artists = new Artists()
+const theArtists = await loadArtists().then(artists => artists)
+let theArtist
 
-        fetch(artistsRequest, {cache: "no-store"}).then((response) => {
-            if (!response.ok) {
-                throw new Error(`HTTP error fetching ${urlArtistsYAML}! Status: ${response.status}`);
-            }
-            return response.text()
-        }).then((artistsAsYAMLText) => {
-
-            const artistsAsJSONObject = jsYaml.load(artistsAsYAMLText)
-            artistsAsJSONObject.forEach((a) => {
-                artists.addArtist(new Artist(a))
-            })
-
-            console.log('# artists', artists.size())
-
-            resolve(artists)
-        }).catch((error) => {
-            console.log("script loading error", urlArtistsYAML, error);
-            reject(error)
-        })
-    })
-}
-
-export { loadArtists, theDayWhenIReadTheVideoMeters}
+export { theArtists, theArtist, theDayWhenIReadTheVideoMeters }

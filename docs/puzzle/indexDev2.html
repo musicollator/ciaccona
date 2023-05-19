@@ -108,7 +108,7 @@
         import animejs from '/lib/anime-3.2.1.es.min.js'
         import { shuffleArray, generateElement, normalizeVraiment } from '/js/utils.js'
         import codec from "/js/structure.js?v=0.13.3"
-        import { loadArtists } from "/js/artists.js?v=0.13.3"
+        import { theArtists } from "/js/artists.js?v=0.13.3"
         import { jigsawGenerator, JigsawShield } from '/js/jigsawShield.js?v=0.13.3'
 
         const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -297,8 +297,8 @@
             })
 
         }
-
-        loadArtists().then(doIt)
+        const qwe = theArtists
+        doIt
 
         var pckry = new packeryLayout(thePuzzle, {
             itemSelector: '.colonne',

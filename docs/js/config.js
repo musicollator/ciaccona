@@ -9,6 +9,9 @@ class Config {
     #autoplay = false
     #pane = 'left'
 
+    #plyrPlayer
+    #artistAndTimings
+
     #inConstructor = true
 
     constructor() {
@@ -176,6 +179,23 @@ class Config {
             }
         }
     }
+
+    // 
+    get plyrPlayer() {
+        return this.#plyrPlayer
+    }
+    set plyrPlayer(plyrPlayer) {
+        this.#plyrPlayer = plyrPlayer
+    }
+
+    // 
+    get artistAndTimings() {
+        return this.#artistAndTimings
+    }
+    set artistAndTimings(artistAndTimings) {
+        this.#artistAndTimings = artistAndTimings
+    }
+
 }
 
 const config = new Config()

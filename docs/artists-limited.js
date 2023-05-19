@@ -1,8 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
+import config from "/js/config.js?v=1.1.1"
 import codec from "/js/structure.js?v=1.1.1"
-import { loadArtists } from "/js/artists.js?v=1.1.1"
+import { theArtists } from "/js/artists.js?v=1.1.1"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.1.1"
+import createTimings from "/js/timings.js?v=1.1.1"
+import Ω from "/js/dom.js?v=1.1.1"
 
 let localCoerceVariation = undefined
 
@@ -24,7 +27,6 @@ const template = (data, first) => `
 </div>`
 
 let data = []
-let artists2
 let arrayOfArtists = []
 
 function generateData() {
@@ -51,106 +53,126 @@ function generateData() {
     return data;
 }
 
-loadArtists().then((artists) => {
-    artists2 = artists
+const list = document.getElementById('list')
 
-    const list = document.getElementById('list')
+list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    list.querySelectorAll('.list-artist').forEach(E => E.remove())
-
-    arrayOfArtists = artists.artists.sort((a, b) => {
-        if (a.instrument === b.instrument) {
-            if (a.lastname === 'Moi') {
-                return 1
-            } else if (b.lastname === 'Moi') {
-                return -1
-            } else {
-                return a.lastname.localeCompare(b.lastname)
-            }
+arrayOfArtists = theArtists.artists.sort((a, b) => {
+    if (a.instrument === b.instrument) {
+        if (a.lastname === 'Moi') {
+            return 1
+        } else if (b.lastname === 'Moi') {
+            return -1
+        } else {
+            return a.lastname.localeCompare(b.lastname)
         }
-        return a.instrument.localeCompare(b.instrument)
-    })
-
-    const iconMap = {
-        '1Violin': 'icon-violin',
-        '2Double_Bass': 'icon-violin',
-        '3String_Trio': 'icon-violin',
-        '4Plucked_Strings': 'icon-ukulele',
-        '5Keyboard': 'icon-keyboard',
-        '6Harp': 'icon-harp',
-        '7Cimbalom': 'icon-cimbalom',
-        '8Flute': 'icon-flute',
-        '9Marimba': 'icon-xylophone ',
     }
+    return a.instrument.localeCompare(b.instrument)
+})
 
-    data = generateData()
-    let previousInstrument = "_"
-    data.forEach(d => {
-        if (d.instrument !== previousInstrument) {
-            const instr = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;')
-            list.innerHTML += 
-`<div class="list-item" style="height: 40px; line-height: 40px; background-color: #00000080; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%); color: #c8b273; border-top: .5px #c8b273 solid;">
+const iconMap = {
+    '1Violin': 'icon-violin',
+    '2Double_Bass': 'icon-violin',
+    '3String_Trio': 'icon-violin',
+    '4Plucked_Strings': 'icon-ukulele',
+    '5Keyboard': 'icon-keyboard',
+    '6Harp': 'icon-harp',
+    '7Cimbalom': 'icon-cimbalom',
+    '8Flute': 'icon-flute',
+    '9Marimba': 'icon-xylophone ',
+}
+
+data = generateData()
+
+let previousInstrument = "_"
+
+data.forEach(d => {
+    if (d.instrument !== previousInstrument) {
+        const instr = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;')
+        list.innerHTML +=
+            `<div class="list-item" style="height: 40px; line-height: 40px; background-color: #00000080; background: linear-gradient(180deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%); color: #c8b273; border-top: .5px #c8b273 solid;">
     <span class="b2 icon-base ${iconMap[d.instrument]}" ></span>
     <span style="float: right;">${instr}</span>
 </div>`
 
-            previousInstrument = d.instrument
-        }
-        list.innerHTML += `<div class="list-item">${template(d, true)}</div>`
-    })
-
-    var listArtistElements = document.querySelectorAll('.list-artist')
-    const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
-    });
-    imgLoad.on('progress', function (instance, image) {
-        image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
-    });
-
-    const event = new Event("artistsLoaded");
-    window.dispatchEvent(event);
-
-    readyToPack.then((result) => {
-        console.log("about to create packery ...")
-        const thePackery = new packeryLayout('#list', {
-            itemSelector: ".list-item",
-            percentPosition: false,
-            initLayout: false,
-            gutter: '#list .gutter-sizer',
-            resize: true
-        })
-
-        thePackery.on('layoutComplete', function () {
-            console.log("Packery layout complete");
-        })
-
-        thePackery.layout()
-
-        setListener()
-
-        function setListener() {
-            document.querySelectorAll('.list-artist').forEach(element => element.addEventListener('click', (event) => {
-                event.stopPropagation()
-                event.preventDefault()
-                window.location = `/ciaccona.html?a=${event.currentTarget.dataset.a}`
-            }))
-            const offcanvasElementList = document.querySelectorAll('.offcanvas')
-            const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))  
-            offcanvasElementList.forEach(element => {
-                element.addEventListener('show.bs.offcanvas', event => {
-                    if (localCoerceVariation) {
-                        document.querySelectorAll('.list-artist').forEach(la => {
-                            la.style.backgroundImage = bg(la.dataset.a, localCoerceVariation)
-                        })
-                    }
-                })
-            })
-            document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
-                offcanvasList.forEach(oc => oc.hide())
-            }))
-            document.querySelectorAll('.brick.has-score').forEach(element => element.addEventListener('click', (event) => {
-                localCoerceVariation = element.dataset.variation
-                offcanvasList.forEach(oc => oc.show())
-            }))
-        }
-    })
+        previousInstrument = d.instrument
+    }
+    list.innerHTML += `<div class="list-item">${template(d, true)}</div>`
 })
+
+var listArtistElements = document.querySelectorAll('.list-artist')
+const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
+});
+imgLoad.on('progress', function (instance, image) {
+    image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
+});
+
+const event = new Event("artistsLoaded");
+window.dispatchEvent(event);
+
+readyToPack.then((result) => {
+    console.log("about to create packery ...")
+    const thePackery = new packeryLayout('#list', {
+        itemSelector: ".list-item",
+        percentPosition: false,
+        initLayout: false,
+        gutter: '#list .gutter-sizer',
+        resize: true
+    })
+
+    thePackery.on('layoutComplete', function () {
+        console.log("Packery layout complete");
+    })
+
+    thePackery.layout()
+
+    setListener()
+
+    function setListener() {
+        const offcanvasElementList = document.querySelectorAll('.offcanvas')
+        const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+        document.querySelectorAll('.list-artist').forEach(element => element.addEventListener('click', (event) => {
+            event.stopPropagation()
+            event.preventDefault()
+            // https://github.com/sampotts/plyr#the-source-setter
+            createTimings(event.currentTarget.dataset.a).then((artist) => {
+                Ω.showArtist(artist)
+                console.log('ABOUT TO CHANGE VIDEO', artist['▶'].youtubeUrl)
+                config.plyrPlayer.source = {
+                    type: 'video',
+                    sources: [
+                        {
+                            src: artist['▶'].youtubeUrl,
+                            provider: 'youtube',
+                        },
+                    ],
+                };
+            })
+            offcanvasList.forEach(oc => oc.hide())
+
+            // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
+            const url = new URL(location);
+            url.searchParams.set("a", event.currentTarget.dataset.a);
+            history.pushState({}, "", url);
+
+            // window.location = `/ciaccona.html?a=${event.currentTarget.dataset.a}`
+        }))
+        offcanvasElementList.forEach(element => {
+            element.addEventListener('show.bs.offcanvas', event => {
+                if (localCoerceVariation) {
+                    document.querySelectorAll('.list-artist').forEach(la => {
+                        la.style.backgroundImage = bg(la.dataset.a, localCoerceVariation)
+                    })
+                }
+            })
+        })
+        document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
+            offcanvasList.forEach(oc => oc.hide())
+        }))
+        document.querySelectorAll('.brick.has-score').forEach(element => element.addEventListener('click', (event) => {
+            localCoerceVariation = element.dataset.variation
+            offcanvasList.forEach(oc => oc.show())
+        }))
+    }
+})
+

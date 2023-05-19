@@ -266,7 +266,7 @@
     </script>
 
     <script async type="module">
-        import { loadArtists, theDayWhenIReadTheVideoMeters } from "/js/artists.js?v=1.1.1"
+        import { theArtists, theDayWhenIReadTheVideoMeters } from "/js/artists.js?v=1.1.1"
 
         document.getElementById("go-back").addEventListener("click", () => {
             window.location = document.referrer
@@ -295,14 +295,14 @@
         const source = document.getElementById("artist-template").innerHTML;
         const template = Handlebars.compile(source);
 
-        loadArtists().then((artists) => {
-            artists.artists.forEach(a => {
+        {
+            theArtists.artists.forEach(a => {
                 a.reverseFullname = [a.lastname, a.firstname].filter(Boolean).join(', ');
             })
-            const sorted = artists.artists.sort(sortMoiAlwaysFirst)
+            const sorted = theArtists.artists.sort(sortMoiAlwaysFirst)
             const bodyContent = template(sorted)
             theBody.innerHTML = bodyContent
-        })
+        }
 
     </script>
 

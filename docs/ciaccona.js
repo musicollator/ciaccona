@@ -107,16 +107,16 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
 
     allPromises.set(
         PLAYER,
-        createTimings(fullameNoSpaceLowercaseNoDiacritics).then((artist) => {
+        createTimings(fullameNoSpaceLowercaseNoDiacritics).then((artistAndTimings) => {
 
             // we have more info bout the artist
-            Ω.showArtist(artist)
+            Ω.showArtist(artistAndTimings)
 
             // big buffer of everything that needs to be done BEFORE creating the player
-            const selectorPlyr = Ω.beforeCreatePlayer(artist['▶'].id)
+            const selectorPlyr = Ω.beforeCreatePlayer(artistAndTimings['▶'].id)
 
             // go create
-            return createPlayer(selectorPlyr, artist, no_plyr_event)
+            return createPlayer(selectorPlyr, no_plyr_event)
         }).catch((error) => {
             console.error(error);
             document.getElementById('theContainerCol').classList.remove('push2right')

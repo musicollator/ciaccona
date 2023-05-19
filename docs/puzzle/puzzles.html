@@ -347,7 +347,7 @@
         import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
         import Draggabilly from 'https://cdn.jsdelivr.net/npm/draggabilly@3.0.0/+esm'
         import { shuffleArray } from "/js/utils.js?v=1.1.1"
-        import { loadArtists } from "/js/artists.js?v=1.1.1"
+        import { theArtists } from "/js/artists.js?v=1.1.1"
         import codec from "/js/structure.js?v=1.1.1"
 
         const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -384,9 +384,9 @@
             console.log('clicked!')
         }
 
-        loadArtists().then((artists) => {
+        {
 
-            const artistsWithVid = shuffleArray(artists.artists.filter(a => !a.v.still))
+            const artistsWithVid = shuffleArray(theArtists.artists.filter(a => !a.v.still))
             const artistsWithVidCount = artistsWithVid.length
             const variationsCount = codec.variationsCount
             const puzzlesCount = codec.variationsCount * artistsWithVid.length
