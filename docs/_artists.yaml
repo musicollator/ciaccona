@@ -154,7 +154,10 @@
 - firstname: Ksenija
   lastname: Komljenović
   instrument: 9Marimba
-  flag: 🇫🇷
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid0hqvNMa5D7NBKGLEzGKikB7UwjB7s4GDn5ERLMaKBnAjEmKJ5SKH2mg5HBmfqAYuPl
+    sort: 29
+  flag: 🇷🇸
   ▶:
     id: _Gi8De8d-Zw
     views: 6662
