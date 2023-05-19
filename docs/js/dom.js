@@ -252,7 +252,7 @@ const Ω = {
             }
         })
 
-        document.querySelectorAll('#firstBarChecked, #fullScoreChecked').forEach((elem) => {
+        document.querySelectorAll('#firstBarRadioButton, #fullScoreRadioButton').forEach((elem) => {
             elem.addEventListener('click', (e) => {
                 const scoreDisplay = e.currentTarget.dataset.scoreDisplay
                 config.scoreDisplay = scoreDisplay
@@ -260,7 +260,7 @@ const Ω = {
             })
         })
 
-        document.querySelectorAll('#allBricksChecked, #selectedBrickChecked').forEach((elem) => {
+        document.querySelectorAll('#allBricksRadioButton, #selectedBrickRadioButton').forEach((elem) => {
             elem.addEventListener('click', (e) => {
                 const scoreInBricks = e.currentTarget.dataset.scoreInBricks
                 config.scoreInBricks = scoreInBricks
@@ -288,7 +288,7 @@ const Ω = {
 
     beforeCreatePlayer: (videoId) => {
         const thePlayerWrapper = document.querySelector('#playerWrapper')
-        if (!thePlayerWrapper) return null
+        if (!thePlayerWrapper) throw new Error('no element at selector [ #playerWrapper ]')
 
         const idPlayer = "thePlayer"
 
@@ -296,7 +296,7 @@ const Ω = {
 
         const thePlayer = generateElement(`<div id="${idPlayer}" data-plyr-provider="youtube" data-plyr-embed-id="${videoId}">`)
 
-        document.querySelector('#playerWrapper').appendChild(thePlayer)
+        thePlayerWrapper.appendChild(thePlayer)
 
         return '#' + idPlayer
     },

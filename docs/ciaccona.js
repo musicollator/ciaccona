@@ -33,7 +33,6 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
         menuItem.classList.add('disabled')
         menuItem.querySelector('span.c').innerHTML = "&#10004;&nbsp;"
     }
-    // [...document.getElementsByTagName('body')].forEach(e => e.style['background-color'] = 'transparent')
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -47,19 +46,23 @@ if (autoplayChecked) {
     if (config.autoplay) autoplayChecked.checked = true
 }
 
-; (e => { if (e) e.innerHTML = config.views })(document.getElementById('views'));
+(grid => {
+    if (!grid) return
 
-; (grid => {
-    if (grid) {
-        const gridradioId = `${config.scoreDisplay}Checked`
-        document.getElementById(gridradioId).checked = true
-        grid.dataset.scoreDisplay = config.scoreDisplay
-
-        const gridradioId2 = `${config.scoreInBricks}Checked`
-        document.getElementById(gridradioId2).checked = true
-        grid.dataset.scoreInBricks = config.scoreInBricks
-
+    // omega seven
+    const Ω7 = (x, y, z) => {
+        const _ = document.getElementById(x)
+        if (_) { _[y] = z }
     }
+
+    const scoreDisplayRadioButtonId = `${config.scoreDisplay}RadioButton`
+    Ω7(scoreDisplayRadioButtonId, 'checked', true) // document.getElementById(scoreDisplayRadioButtonId).checked = true
+    grid.dataset.scoreDisplay = config.scoreDisplay
+
+    const scoreInBricksRadioButtonId = `${config.scoreInBricks}RadioButton`
+    Ω7(scoreInBricksRadioButtonId, 'checked', true) // document.getElementById(scoreInBricksRadioButtonId).checked = true
+    grid.dataset.scoreInBricks = config.scoreInBricks
+
 })(document.getElementById('grid'));
 
 
@@ -68,70 +71,39 @@ const hideLoading = (hasPlayer) => {
     if (hasPlayer) document.getElementById('playerWrapper').style.visibility = 'visible'
     const loadingE = document.getElementById('loading')
     if (loadingE) {
-        document.getElementById('config-menu').style.display = 'flex'
-        document.getElementById('videos-menu').style.display = 'flex'
+        document.querySelectorAll('#config-menu, #videos-menu').forEach(elem => elem.style.display = 'flex')
+
         loadingE.style.display = 'none'
         console.log('loading dismissed')
 
         console.log('shout readyToPack event...')
         window.dispatchEvent(new Event('readyToPack'));
 
-
         console.log('shout allesistvollbracht event...')
         window.dispatchEvent(new Event('allesistvollbracht'));
     }
 }
-
 
 const event = new Event("ciacconaLoaded");
 window.dispatchEvent(event);
 
 // everything
 const allPromises = new Map()
-// name of main promises, for bookkeeping
-const RESIZE = "RESIZE", PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
+// names of promises, for bookkeeping
+const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 
-// 1. promise resolves when 1) windows is loaded, then 2) all SVGs for scores have been loaded and resized
-/*
-allPromises.set(
-    RESIZE,
-    windowLoaded.then((result) => {
-        const SVGs = document.querySelectorAll('#grid .brick > .score > object')
-        if (SVGs.length === 0) {
-            throw new Error('no SVG to resize')
-        }
-        document.getElementById('resizeScores').addEventListener('click', () => {
-            resizeSVGs(
-                document.querySelectorAll('#grid .brick > .score > object'),
-                config.scoreDisplay !== 'fullScore'
-            )
-        });
-        return resizeSVGs(
-            SVGs,
-            config.scoreDisplay !== 'fullScore', // full width IS NOT checked -> true: honor X offset to hide clef signature, else full width IS checked -> false: no offset
-            (obj) => {
-                // console.log('done', obj.id)
-            }).then(result => {
-                if (config.scoreInBricks === 'allBricks') {
-                    Ω.animateUnveilScores()
-                } else {
-                    document.querySelectorAll('.score').forEach((score) => {
-                        score.classList.remove('init')
-                    })
-                }
-                return result
-            })
-    })
-)
-*/
-// 2. promises resolves when 1) timings for this artist have been loeaded, then 2) video player is ready
+// 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
 if (fullameNoSpaceLowercaseNoDiacritics) {
 
     [...document.getElementsByTagName('body')].forEach(e => {
         e.classList.add('video-player')
-    })
-    document.getElementById('theContainer').classList.remove('container-xxl')
-    document.getElementById('theContainer').classList.add('container-fluid')
+    });
+
+    (theContainer => {
+        if (!theContainer) return
+        theContainer.classList.remove('container-xxl')
+        theContainer.classList.add('container-fluid')
+    })(document.getElementById('theContainer'))
 
     allPromises.set(
         PLAYER,
@@ -140,18 +112,20 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
             // we have more info bout the artist
             Ω.showArtist(artist)
 
-            const selectorPlyr = Ω.beforeCreatePlayer(artist['▶'].id) // big buffer of everything that needs to be done BEFORE creating the player
+            // big buffer of everything that needs to be done BEFORE creating the player
+            const selectorPlyr = Ω.beforeCreatePlayer(artist['▶'].id)
 
+            // go create
             return createPlayer(selectorPlyr, artist, no_plyr_event)
         }).catch((error) => {
-            console.log(error);
+            console.error(error);
             document.getElementById('theContainerCol').classList.remove('push2right')
             throw error
         })
     )
 }
 
-// 3. create and flood color bricks into isotope
+// 2. create and flood color bricks into isotope
 allPromises.set(
     ISOTOPE,
     new Promise((resolve, reject) => {
@@ -178,7 +152,7 @@ allPromises.set(
     })
 )
 
-// when all these three are done
+// when all promises are done
 Promise.allSettled([...allPromises.values()]).then((results) => {
 
     // transform results in something more readable (well, really?)
@@ -214,7 +188,7 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
         } else {
             console.log("change isotope filter to show artist name")
             isotopeResult.arrange({ filter: '*' })
-            
+
             // select last variation
             if (config.autoplay) {
                 let theLastStartingBarIndex = config.startBarOfLastSelectedVariation
@@ -227,15 +201,14 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
             }
         }
     } else {
-        console.log("some issue with isotope ?")
-        hideLoading();
+        throw new Error("some issue with isotope ?")
     }
 
 }).catch((error) => {
 
     hideLoading();
 
-    alert(error)
+    console.error(error)
 
     return error
 })
