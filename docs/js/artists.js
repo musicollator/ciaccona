@@ -19,7 +19,7 @@ class Artist {
         const vid = this['▶']
         vid.youtubeUrl = `https://youtu.be/${vid.id}`
         if (vid.trueId) vid.youtubeTrueUrl = `https://youtu.be/${vid.trueId}`
-        vid.timingsUrl = `timings/${this.fullnameNoSpace}-${vid.id}.js`
+        vid.timingsUrl = `/timings/${this.fullnameNoSpace}-${vid.id}.js`
 
         const videoIdNoHyphen = vid.id.replace(/-/gi, '_')
         const videoIdNoHyphenNoStartingNumber = videoIdNoHyphen.replace(/^(\d.*)/i, '_$1')
@@ -35,8 +35,6 @@ class Artist {
             vid.durationMoment = moment.duration(vid.duration)
             vid.viewsPerMonth = Math.floor(vid.views / vid.durationMoment.asMonths())
         }
-        // plus simple que this['▶'] ...
-        this.v = vid
     }
 }
 
