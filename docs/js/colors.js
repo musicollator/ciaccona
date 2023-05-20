@@ -1,6 +1,5 @@
 import tinycolor from 'https://cdn.jsdelivr.net/npm/tinycolor2@1.6.0/+esm'
 import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
-// import clipboard from 'https://cdn.jsdelivr.net/npm/clipboard@2.0.11/+esm'
 import codec from "/js/structure.js?v=2.0.3"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=2.0.3'
 import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=2.0.3"
@@ -52,11 +51,9 @@ function getColorArray(transparencyParam) {
         { rgb: "4b57db", p_rgb: "275ea3", sim: 89, pantone: "10261 C", name: "Warm Blue" },
         { rgb: "bfd6d9", p_rgb: "bcd5d6", sim: 99, pantone: "5523 U", name: "Wind Speed" },
         { rgb: "889911", p_rgb: "9b9912", sim: 95, pantone: "391 CP", name: "Densetsu Green" },
-        /* { rgb: "123456", p_rgb: "183859", sim: 99, pantone: "P 108-16 C", name: "Incremental Blue" }, */
     ];
 
     let _last_color_ = [
-        /* { rgb: "000000", p_rgb: "232222", sim: 92, pantone: "Neutral Black C", name: "Bleached Silk" } */
         { rgb: "d8b998", p_rgb: "d8b998", sim: 92, pantone: "Pantone 13-1014 Tcx", name: "Mellow Buff" }
     ]
 
@@ -67,39 +64,27 @@ function getColorArray(transparencyParam) {
     // https://cubic-bezier.com/
     const easingVanishingContrast = bezierEasing(0, 1, 1, .4)
     const easingTheDarkerTheLighter = bezierEasing(0, 1.5, .166, .5)
-    // logFunc(() => easingTheDarkerTheLighter)
     let k = 0
     for (let s of _colors_) {
         const k0_1normalized = normalizeVraiment(k++, 0, _colors_.length, 0, 1)
         const contrastChange = (1 - easingVanishingContrast(k0_1normalized)) * 100
-        // console.log(s.p_rgb, tinycolor(s.p_rgb).isLight(), tinycolor(s.p_rgb).getLuminance())
         const luminance = tinycolor(s.p_rgb).getLuminance();
-        if (luminance > .333) { // tinycolor(s.p_rgb).isLight()
+        if (luminance > .333) {
             s.textColor = tinycolor(s.p_rgb).darken(contrastChange).toString("hex6").slice(1)
             s.puzzleColor = tinycolor(s.p_rgb).darken(15).toString("hex6").slice(1)
-            s.stripeColor = tinycolor(s.p_rgb).darken(5).toString("hex6").slice(1)
-            s.stripeColorAlpha = tinycolor(s.p_rgb).darken(5).setAlpha(transparency).toString("hex8").slice(1)
+            const stripe = tinycolor(s.p_rgb).darken(5)
+            s.stripeColor = stripe.toString("hex6").slice(1)
+            s.stripeColorAlpha = stripe.setAlpha(transparency).toString("hex8").slice(1)
         } else {
             s.textColor = tinycolor(s.p_rgb).lighten(contrastChange).toString("hex6").slice(1)
             s.puzzleColor = tinycolor(s.p_rgb).lighten(12).toString("hex6").slice(1)
-            s.stripeColor = tinycolor(s.p_rgb).lighten(5).toString("hex6").slice(1)
-            s.stripeColorAlpha = tinycolor(s.p_rgb).lighten(5).setAlpha(transparency).toString("hex8").slice(1)
+            const stripe = tinycolor(s.p_rgb).lighten(5)
+            s.stripeColor = stripe.toString("hex6").slice(1)
+            s.stripeColorAlpha = stripe.setAlpha(transparency).toString("hex8").slice(1)
         }
         const theDarkerTheLighter = easingTheDarkerTheLighter(luminance) * 100
         s.borderColor = tinycolor(s.p_rgb).lighten(theDarkerTheLighter).toString("hex6").slice(1)
         s.p_rgbAlpha = tinycolor(s.p_rgb).setAlpha(transparency).toString("hex8").slice(1)
-
-        // some transparency to show video behind
-        s.p_rgb_original = new tinycolor(s.p_rgb)
-        /*
-        if (transparencyParam) {
-            s.p_rgb_T = tinycolor(s.p_rgb_original).setAlpha(transparencyParam).toString("hex8").slice(1)
-            s.textColor_T = tinycolor(s.textColor).setAlpha(transparencyParam).toString("hex8").slice(1)
-            s.puzzleColor_T = tinycolor(s.puzzleColor).setAlpha(transparencyParam).toString("hex8").slice(1)
-            s.stripeColor_T = tinycolor(s.stripeColor).setAlpha(transparencyParam).toString("hex8").slice(1)
-            s.borderColor_T = tinycolor(s.borderColor).setAlpha(transparencyParam).toString("hex8").slice(1)
-        }
-        */
     }
     return _colors_
 }
@@ -152,7 +137,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
     const _colors_ = colorArray // getColorArray(fullameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
 
     const temporaryContainer = generateElement("<template>");
-    
+
     temporaryContainer.appendChild(new MagnificentTitle('grid-brick', fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
 
     const twoZeroPad = (num) => String(num).padStart(2, '0')
@@ -161,14 +146,15 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
     _colors_.forEach(function (c) {
 
         let c2
-        
+
         if (fullameNoSpaceLowercaseNoDiacritics) {
             c2 = {
                 p_rgb: _T(c.p_rgb),
                 p_rgbAlpha: c.p_rgbAlpha,
-                textColor:   _T(c.textColor),
+                textColor: _T(c.textColor),
                 puzzleColor: _T(c.puzzleColor),
                 stripeColor: _T(c.stripeColor),
+                stripeColorAlpha: c.stripeColorAlpha,
                 borderColor: _T(c.borderColor),
             }
         } else {
@@ -178,6 +164,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
                 textColor: c.textColor,
                 puzzleColor: c.puzzleColor,
                 stripeColor: c.stripeColor,
+                stripeColorAlpha: c.stripeColorAlpha,
                 borderColor: _T(c.borderColor),
             }
         }
@@ -209,20 +196,17 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
 
         const svgOffsetX = codec.svgOffsetX(i)
 
-        const templatePuzzle = fullameNoSpaceLowercaseNoDiacritics ? `<svg xmlns="http://www.w3.org/2000/svg" 
-                 id="gb-puzzle${i}-svg" 
-                 class="clipboard-puzzle"
-                 width="80%" height="60%" 
-                 style="visibility: inherit; overflow: visible; transform: scale(.667);" 
-                 viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
-                 <!-- 
-                 data-clipboard-text="${thisURL.origin}/?a=${fullameNoSpaceLowercaseNoDiacritics ? fullameNoSpaceLowercaseNoDiacritics : ''}&v=${i}"
-                 title="copy link to clipboard"
-                 -->
-                 <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
-            </svg>` : ''
-        
-            const templateVariations =
+        const templatePuzzle = fullameNoSpaceLowercaseNoDiacritics ? `
+<svg xmlns="http://www.w3.org/2000/svg" 
+        id="gb-puzzle${i}-svg" 
+        class="clipboard-puzzle"
+        width="80%" height="60%" 
+        style="visibility: inherit; overflow: visible; transform: scale(.667);" 
+        viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
+        <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
+</svg>` : ''
+
+        const templateVariations =
             `
 <div id="gb${i}" data-sort="${twoZeroPad(i)}" data-variation="${i}" class="${tonality ? tonality + ' ' : ''}grid-brick has-score" style="${bgstripeAlpha}; border-color: #${c2.borderColor};">
     <div class="brick has-score font-monospace d-flex align-items-center justify-content-between" style="${bgstripe}; ${i === codec.variationsCount - 1 ? 'border-radius: 0;' : ''} " data-bar="${barFrom}" data-variation="${i}" >
@@ -240,7 +224,6 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
                 ${tonality}
             </span>
         </div>
-        <!-- div class="flex-grow-1"></!-->
 
         <div class="d-flex flex-grow-1 flex-column justify-content-between" style="height:100%; text-align: right; ${i === codec.variationsCount - 1 ? "display:none;" : ""}font-size:1.1rem; padding: 0 .3rem; border-right: .5px solid #${c2.textColor}; color: #${c2.textColor}">
             <div class="pt-1">${barFrom + 1}</div>
@@ -263,21 +246,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
 </div>
 `
         const instanciatedVariation = generateElement(templateVariations)
-        /*
-        const jigsawPiece = instanciatedVariation.querySelector(`#gb-puzzle${i}-svg`)
-        if (jigsawPiece) {
-            var clip = new clipboard(`#gb-puzzle${i}-svg`);
 
-            clip.on('success', function (e) {
-                / *
-                console.info('Action:', e.action);
-                console.info('Text:', e.text);
-                console.info('Trigger:', e.trigger);
-                * /
-                e.clearSelection();
-            });
-        }
-        */
         temporaryContainer.appendChild(instanciatedVariation);
 
         // bumpers
@@ -286,18 +255,6 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
             i++
         }
     });
-
-    const oblivion =
-        `
-<div id="gb-bwv1004" data-sort="${twoZeroPad(i)}" class="grid-brick">
-    <div class="brick d-flex align-items-center justify-content-center">
-        <a class="magnificent-card p-2" href="artists.html" aria-label="Artists or Puzzle...">
-            &nbsp;BWV&nbsp;1004&nbsp;
-        </a>
-    </div>
-</div>
-`
-    // temporaryContainer.appendChild(generateElement(oblivion))
 
     const bricks = temporaryContainer.children
     if (bricks?.length) {
