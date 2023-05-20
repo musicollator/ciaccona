@@ -298,6 +298,7 @@
         {
             theArtists.artists.forEach(a => {
                 a.reverseFullname = [a.lastname, a.firstname].filter(Boolean).join(', ');
+                a.v = a['▶']
             })
             const sorted = theArtists.artists.sort(sortMoiAlwaysFirst)
             const bodyContent = template(sorted)
