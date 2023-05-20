@@ -1,10 +1,10 @@
 import isotopeLayout from 'https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/+esm'
-import config from "/js/config.js?v=2.0.2"
-import codec from "/js/structure.js?v=2.0.2"
-import { createColoredBadges } from "/js/colors.js?v=2.0.2"
-import createTimings from "/js/timings.js?v=2.0.2"
-import createPlayer from "/js/player.js?v=2.0.2"
-import Ω from "/js/dom.js?v=2.0.2"
+import config from "/js/config.js?v=2.0.3"
+import codec from "/js/structure.js?v=2.0.3"
+import { createColoredBadges } from "/js/colors.js?v=2.0.3"
+import createTimings from "/js/timings.js?v=2.0.3"
+import createPlayer from "/js/player.js?v=2.0.3"
+import Ω from "/js/dom.js?v=2.0.3"
 
 // transform windows loaded event into promise
 const windowLoaded = new Promise((resolve) => {

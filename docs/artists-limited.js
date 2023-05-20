@@ -1,11 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import config from "/js/config.js?v=2.0.2"
-import codec from "/js/structure.js?v=2.0.2"
-import { theArtists } from "/js/artists.js?v=2.0.2"
-import { shuffleArray, generateElement } from "/js/utils.js?v=2.0.2"
-import createTimings from "/js/timings.js?v=2.0.2"
-import Ω from "/js/dom.js?v=2.0.2"
+import config from "/js/config.js?v=2.0.3"
+import codec from "/js/structure.js?v=2.0.3"
+import { theArtists } from "/js/artists.js?v=2.0.3"
+import { shuffleArray, generateElement } from "/js/utils.js?v=2.0.3"
+import createTimings from "/js/timings.js?v=2.0.3"
+import Ω from "/js/dom.js?v=2.0.3"
 
 let localCoerceVariation = undefined
 
