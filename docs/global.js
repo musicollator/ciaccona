@@ -38,7 +38,7 @@ const validFullamesNoSpaceLowercaseNoDiacritics = [
     'vonhansen',
     'yunpark',
 ]
-const ver = "v2.0.4.4"
+const ver = "v2.1.0"
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop)
 })
