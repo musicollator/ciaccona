@@ -336,19 +336,21 @@ span.d {
 .my-nav-item {
   > * {
     background: transparent;
-    z-index: 20;
-    > label {
-      background-color: #00000080 !important;
+    z-index: 18;
+    label {
       white-space: nowrap;
       user-select: none;
     }
-    > a.btn {
-      background-color: #00000080 !important;
+    a.btn {
       padding-top: 0;
       padding-bottom: 0;
     }
   }
+  &:not(.artist) > * > a.btn {
+    background-color: #00000080 !important;
+  }
 }
+
 
 body:not(.video-player) #videos-menu {
   display: none !important;
