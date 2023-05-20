@@ -154,7 +154,7 @@
   }
   #theContainerCol.push2right {
     max-width: min(calc(var(--vw, 1vw) * 100), 24rem);
-    height: calc(var(--vh, 1vh) * 100 - 57px) !important;
+    height: calc(var(--vh, 1vh) * 100 - 60px) !important;
     overflow-y: scroll;
     margin: 0;
     padding: 0;
@@ -165,13 +165,6 @@
     }
   }
 }
-/*
-  &:not(.no-vid) {
-    #theContainer {
-      max-width: none !important;
-    }
-  } */
-
 .no-vid {
   background-color: transparent !important;
 }
@@ -344,7 +337,6 @@ span.d {
   > * {
     background: transparent;
     z-index: 20;
-    margin: 0.3rem;
     > label {
       background-color: #00000080 !important;
       white-space: nowrap;
@@ -367,7 +359,7 @@ body:not(.video-player) #videos-menu {
   z-index: 2;
   visibility: hidden;
   > div {
-    margin: 0.1rem 0 0 0;
+    margin: 0;
     padding: 0;
     background-color: #00000080;
     padding: 1px 0.3rem;

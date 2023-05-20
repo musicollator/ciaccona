@@ -71,7 +71,7 @@ const hideLoading = (hasPlayer) => {
     if (hasPlayer) document.getElementById('playerWrapper').style.visibility = 'visible'
     const loadingE = document.getElementById('loading')
     if (loadingE) {
-        document.querySelectorAll('#config-menu, #videos-menu').forEach(elem => elem.style.display = 'flex')
+        document.querySelectorAll('#config-menu, #videos-menu').forEach(elem => elem.style.visibility = 'visible')
 
         loadingE.style.display = 'none'
         console.log('loading dismissed')
