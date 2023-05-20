@@ -162,8 +162,10 @@ function generateData(arrayOfArtists) {
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    const artistBadge = `<div id="artist-badge" class="p-2" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
-    <span class="fullname" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
+    const artistBadge = `<div id="artist-badge" class="p-2 d-flex" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
+    <span class="fullname align-self-center" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
+    &nbsp;
+    <img class="align-self-center" src="index.svg?v=2.0.4#close-circle-view" style="width:32px; height:32px;">
     <!--
     <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
     </a>

@@ -82,7 +82,7 @@
 
     <!-- my styles -->
     <link href="/global.css?v=2.0.4" rel="stylesheet">
-    <link href="/ciaccona.css?v=2.0.4" rel="stylesheet">
+    <link href="/ciaccona.css?v=2.0.4.1" rel="stylesheet">
     <link href="/index.css?v=2.0.4" rel="stylesheet">
     <link href="/index.svg.css?v=2.0.4" rel="stylesheet">
 </head>
@@ -149,102 +149,103 @@
     </div>
 
     <main id="theContainer" class="container-xxl flex-shrink-0">
-        <div class="d-flex justify-content-between" style="height:0;" >
+        <div class="navbar d-flex justify-content-between" style="height:0;">
+            <div class="container-fluid">
 
-            <div id="videos-menu" class="my-menu" style="display:none;">
-                <span class="dropdown dropstart">
-                    <a class="btn btn-light text-muted icon-base icon-violin2" style="width: 50px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                        aria-controls="offcanvasExample">
-                    </a>
+                <div id="videos-menu" class="nav-item my-nav-item align-self-start" style="display:none;">
+                    <span class="dropdown dropstart">
+                        <a class="btn btn-light text-muted icon-base icon-violin2" style="width: 50px;" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                            aria-controls="offcanvasExample">
+                        </a>
 
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
-                        style="background-color: #4e493e; width: 320px;">
-                        <div class="offcanvas-body left" style="padding: 10px;">
-                            <div id="dismiss-offcanvas" style="width: 100%; height: 2rem; background-color: transparent">
-                                <button type="button" class="btn-close btn-close-white float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                            </div>
-                            <div id="list" class="artists" style="margin-top: .667rem;">
-                                <div class="gutter-sizer"></div>
+                        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+                            style="background-color: #4e493e; width: 320px;">
+                            <div class="offcanvas-body left" style="padding: 10px;">
+                                <div id="dismiss-offcanvas" style="width: 100%; height: 2rem; background-color: transparent">
+                                    <button type="button" class="btn-close btn-close-white float-end" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                </div>
+                                <div id="list" class="artists" style="margin-top: .667rem;">
+                                    <div class="gutter-sizer"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </span>
-            </div>
+                    </span>
+                </div>
 
-            <div id="badge-artist" class="artist flex-shrink-1">
-                <div class="btn btn-light text-muted d-flex align-items-center justify-content-center">
-                    <div class="">
-                        <span class="fullname text-light"></span>
+                <div id="badge-artist" class=" nav-item artist align-self-start flex-shrink-1">
+                    <div class="btn btn-light text-muted d-flex">
+                        <label class="fullname text-light"></label>
                         <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
                         </a>
                         <a id="social" class="share btn btn-lihjt icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share...">
                         </a>
                     </div>
                 </div>
-            </div>
 
 
-            <div id="config-menu" class="btn-group dropstart my-menu" style="display:none;">
-                <span class="dropdown dropstart">
-                    <a class="btn btn-light text-muted icon-base icon-treble_clef" style="width: 50px;" href="#" role="button" id="configMenuLink" data-bs-toggle="dropdown"
-                        aria-expanded="false" aria-label="Configure...">
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="configMenuLink">
-                        <form class="px-4 py-3">
-                            <div class="label">Show Score …</div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="firstBar" id="firstBarRadioButton">
-                                <label class="form-check-label" for="firstBarRadioButton">
-                                    1st Bar
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="fullScore" id="fullScoreRadioButton">
-                                <label class="form-check-label" for="fullScoreRadioButton">
-                                    As Much As Possible
-                                </label>
-                            </div>
-                            <div class="label">… for …</div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" data-score-in-bricks="allBricks" id="allBricksRadioButton">
-                                <label class="form-check-label" for="allBricksRadioButton">
-                                    All
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault2" data-score-in-bricks="selectedBrick" id="selectedBrickRadioButton">
-                                <label class="form-check-label" for="selectedBrickRadioButton">
-                                    Selected
-                                </label>
-                            </div>
-                            <div class="label">… Variation(s)</div>
-                            <hr class="dropdown-divider">
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="autoplayChecked">
-                                <label class="form-check-label align-top" for="autoplayChecked">
-                                    Auto-play Next Video
-                                </label>
-                            </div>
-                            <hr class="dropdown-divider">
-                            <div class="dropdown-item d-flex p-0">
-                                <a id="performers" class="ms-auto" href="performers.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Performers">
-                                    <label>Performers&hellip;</label>
-                                </a>
-                            </div>
-                            <div class="dropdown-item d-flex p-0">
-                                <a id="credits" class="ms-auto" href="credits.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Credits">
-                                    <label>Credits&hellip;</label>
-                                </a>
-                            </div>
-                            <div class="dropdown-item d-flex p-0">
-                                <a id="about" class="ms-auto" href="#" style="text-decoration: none;" aria-label="About">
-                                    <label>About</label>
-                                </a>
-                            </div>
-                        </form>
-                    </ul>
-                </span>
+                <div id="config-menu" class="nav-item btn-group dropstart my-nav-item align-self-start" style="display:none;">
+                    <span class="dropdown dropstart">
+                        <a class="btn btn-light text-muted icon-base icon-treble_clef" style="width: 50px;" href="#" role="button" id="configMenuLink" data-bs-toggle="dropdown"
+                            aria-expanded="false" aria-label="Configure...">
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="configMenuLink">
+                            <form class="px-4 py-3">
+                                <div class="label">Show Score …</div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="firstBar" id="firstBarRadioButton">
+                                    <label class="form-check-label" for="firstBarRadioButton">
+                                        1st Bar
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="fullScore" id="fullScoreRadioButton">
+                                    <label class="form-check-label" for="fullScoreRadioButton">
+                                        As Much As Possible
+                                    </label>
+                                </div>
+                                <div class="label">… for …</div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault2" data-score-in-bricks="allBricks" id="allBricksRadioButton">
+                                    <label class="form-check-label" for="allBricksRadioButton">
+                                        All
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault2" data-score-in-bricks="selectedBrick" id="selectedBrickRadioButton">
+                                    <label class="form-check-label" for="selectedBrickRadioButton">
+                                        Selected
+                                    </label>
+                                </div>
+                                <div class="label">… Variation(s)</div>
+                                <hr class="dropdown-divider">
+                                <div class="form-check">
+                                    <input type="checkbox" class="form-check-input" id="autoplayChecked">
+                                    <label class="form-check-label align-top" for="autoplayChecked">
+                                        Auto-play Next Video
+                                    </label>
+                                </div>
+                                <hr class="dropdown-divider">
+                                <div class="dropdown-item d-flex p-0">
+                                    <a id="performers" class="ms-auto" href="performers.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Performers">
+                                        <label>Performers&hellip;</label>
+                                    </a>
+                                </div>
+                                <div class="dropdown-item d-flex p-0">
+                                    <a id="credits" class="ms-auto" href="credits.html" style="text-decoration: none; margin-bottom:.3rem;" aria-label="Credits">
+                                        <label>Credits&hellip;</label>
+                                    </a>
+                                </div>
+                                <div class="dropdown-item d-flex p-0">
+                                    <a id="about" class="ms-auto" href="#" style="text-decoration: none;" aria-label="About">
+                                        <label>About</label>
+                                    </a>
+                                </div>
+                            </form>
+                        </ul>
+                    </span>
+                </div>
             </div>
+
         </div>
 
         <div id="theContainerRow" class="row justify-content-end" style="margin:0"> <!--  -->

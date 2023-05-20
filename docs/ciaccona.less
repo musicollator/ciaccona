@@ -340,14 +340,15 @@ span.d {
   font-size: 10px;
   margin-left: 0.3rem;
 }
-.my-menu {
+.my-nav-item {
   > * {
-    position: absolute;
     background: transparent;
     z-index: 20;
     margin: 0.3rem;
-    label {
+    > label {
+      background-color: #00000080 !important;
       white-space: nowrap;
+      user-select: none;
     }
     > a.btn {
       background-color: #00000080 !important;
@@ -357,20 +358,8 @@ span.d {
   }
 }
 
-body:not(.video-player) .my-menu#videos-menu {
+body:not(.video-player) #videos-menu {
   display: none !important;
-}
-
-.my-menu#videos-menu {
-  > .dropdown {
-    margin: 0.3rem 0.3rem 0.3rem 0;
-  }
-}
-.my-menu#config-menu {
-  > .dropdown {
-    right: 0;
-    margin: 0.3rem 0 0.3rem 0.3rem;
-  }
 }
 
 #badge-artist {
@@ -378,25 +367,23 @@ body:not(.video-player) .my-menu#videos-menu {
   z-index: 2;
   visibility: hidden;
   > div {
-    margin: 0.15rem 0 0 0;
+    margin: 0.1rem 0 0 0;
     padding: 0;
     background-color: #00000080;
-    > div {
-      padding: 1px 0.3rem;
-      > * {
-        margin: 0;
-        &:first-child {
-          padding: 0;
-        }
-        &:not(:first-child) {
-          padding: 0 0 0 0.5rem;
-        }
+    padding: 1px 0.3rem;
+    > * {
+      margin: 0;
+      &:first-child {
+        padding: 0;
       }
-      span.fullname {
-        cursor: default;
-        user-select: none;
-        font-size:larger;
+      &:not(:first-child) {
+        padding: 0 0 0 0.5rem;
       }
+    }
+    .fullname {
+      cursor: default;
+      user-select: none;
+      font-size: larger;
     }
   }
 }
