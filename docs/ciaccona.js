@@ -1,9 +1,9 @@
 import isotopeLayout from 'https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/+esm'
 import config from "/js/config.js?v=2.0.4"
 import codec from "/js/structure.js?v=2.0.4"
+import { togglePlayer } from "/js/playerSingleton.js?v=2.0.4"
 import { createColoredBadges } from "/js/colors.js?v=2.0.4"
-import createTimings from "/js/timings.js?v=2.0.4"
-import createPlayer from "/js/player.js?v=2.0.4"
+import { createPlayerSingleton, showPlayer} from "/js/playerSingleton.js?v=2.0.4"
 import Ω from "/js/dom.js?v=2.0.4"
 
 // transform windows loaded event into promise
@@ -18,6 +18,7 @@ document.getElementById('version').innerHTML = ver
 const about = new Ω.About()
 
 // tidyfication of menu items
+/*
 document.querySelectorAll('#videos-menu span.c').forEach((e) => e.innerHTML = "")
 if (fullameNoSpaceLowercaseNoDiacritics) {
     const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics="${fullameNoSpaceLowercaseNoDiacritics}"]`)
@@ -33,6 +34,19 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
         menuItem.classList.add('disabled')
         menuItem.querySelector('span.c').innerHTML = "&#10004;&nbsp;"
     }
+}
+*/
+
+{
+    (badgeArtistNameElement => {
+        if (!badgeArtistNameElement) return
+        badgeArtistNameElement.addEventListener('click', (event) => {
+            event.stopPropagation()
+            event.preventDefault()
+            togglePlayer()
+        })
+
+    })(document.querySelector('.artist#badge-artist .fullname'))
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -67,8 +81,10 @@ if (autoplayChecked) {
 
 
 // loading 
-const hideLoading = (hasPlayer) => {
-    if (hasPlayer) document.getElementById('playerWrapper').style.visibility = 'visible'
+const hideLoading = () => {
+
+    showPlayer()
+
     const loadingE = document.getElementById('loading')
     if (loadingE) {
         document.querySelectorAll('#config-menu, #videos-menu').forEach(elem => elem.style.visibility = 'visible')
@@ -95,33 +111,9 @@ const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 // 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
 if (fullameNoSpaceLowercaseNoDiacritics) {
 
-    [...document.getElementsByTagName('body')].forEach(e => {
-        e.classList.add('video-player')
-    });
-
-    (theContainer => {
-        if (!theContainer) return
-        theContainer.classList.remove('container-xxl')
-        theContainer.classList.add('container-fluid')
-    })(document.getElementById('theContainer'))
-
     allPromises.set(
         PLAYER,
-        createTimings(fullameNoSpaceLowercaseNoDiacritics).then((artistAndTimings) => {
-
-            // we have more info bout the artist
-            Ω.showArtist(artistAndTimings)
-
-            // big buffer of everything that needs to be done BEFORE creating the player
-            const selectorPlyr = Ω.beforeCreatePlayer(artistAndTimings['▶'].id)
-
-            // go create
-            return createPlayer(selectorPlyr, no_plyr_event)
-        }).catch((error) => {
-            console.error(error);
-            document.getElementById('theContainerCol').classList.remove('push2right')
-            throw error
-        })
+        createPlayerSingleton(fullameNoSpaceLowercaseNoDiacritics, no_plyr_event)
     )
 }
 
@@ -179,7 +171,7 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
 
     if (isotopeResult) {
         isotopeResult.on('arrangeComplete', function (filteredItems) {
-            hideLoading(playerResult);
+            hideLoading();
         })
         if (!playerResult) {
             console.log("change isotope filter to hide artist name")

@@ -1,11 +1,9 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import config from "/js/config.js?v=2.0.4"
 import codec from "/js/structure.js?v=2.0.4"
+import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.0.4"
 import { theArtists } from "/js/artists.js?v=2.0.4"
-import { shuffleArray, generateElement } from "/js/utils.js?v=2.0.4"
-import createTimings from "/js/timings.js?v=2.0.4"
-import Ω from "/js/dom.js?v=2.0.4"
+import { shuffleArray } from "/js/utils.js?v=2.0.4"
 
 console.log('artists-limited')
 
@@ -145,29 +143,21 @@ function generateData() {
                 element.addEventListener('click', (event) => {
                     event.stopPropagation()
                     event.preventDefault()
-                    // https://github.com/sampotts/plyr#the-source-setter
-                    createTimings(event.currentTarget.dataset.a).then((artist) => {
-                        Ω.showArtist(artist)
-                        // console.log('ABOUT TO CHANGE VIDEO', artist['▶'].youtubeUrl)
-                        config.plyrPlayer.source = {
-                            type: 'video',
-                            sources: [
-                                {
-                                    src: artist['▶'].youtubeUrl,
-                                    provider: 'youtube',
-                                },
-                            ],
-                        };
-                    })
-                    offcanvasList.forEach(oc => oc.hide())
 
-                    // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
-                    const url = new URL(location);
-                    url.searchParams.set("a", event.currentTarget.dataset.a);
-                    history.pushState({}, "", url);
+                    createPlayerSingleton(event.currentTarget.dataset.a).then(result => {
+                        const artistAndTimings = result.value
+
+                        offcanvasList.forEach(oc => oc.hide())
+
+                        // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
+                        const url = new URL(location);
+                        url.searchParams.set("a", artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics);
+                        history.pushState({}, "", url);
+
+                    })
                 })
             })
-            
+
             offcanvasElementList.forEach(element => {
                 element.addEventListener('show.bs.offcanvas', (event) => {
                     if (localCoerceVariation) {
@@ -177,11 +167,11 @@ function generateData() {
                     }
                 })
             })
-            
+
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
                 offcanvasList.forEach(oc => oc.hide())
             }))
-            
+
             document.querySelectorAll('.brick.has-score').forEach(element => element.addEventListener('click', (event) => {
                 localCoerceVariation = element.dataset.variation
                 offcanvasList.forEach(oc => oc.show())

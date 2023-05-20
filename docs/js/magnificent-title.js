@@ -27,24 +27,27 @@ class MagnificentTitle {
                 ${this.where !== 1 ? this.arrow_out_left : ''}
             </a>
             <a id="pane-ciaccona" data-pane="right" href="/ciaccona.html" aria-label="Ciaccona...">
-                ${this.where !== 2 ? this.arrow_in_right : ''}
+                ${this.where === 1 ? this.arrow_in_right : ''}
             </a>
         </div>
     </div>
     ${incl ? incl : ''}
 </div>`)
-        const title = t =>generateElement(`<div style="display: inline-block; user-select: none; font-size: 28px;">${t}</div>`)
+        const title = t => generateElement(`<div style="display: inline-block; user-select: none; font-size: 28px;">${t}</div>`)
         switch (this.where) {
             case 1:
                 this.templateForTheme.querySelector('#pane-ciaccona').prepend(title('Ciaccona'))
                 break;
             case 2:
+            case 3:
                 this.templateForTheme.querySelector('#pane-artists').append(title('Ciaccona'))
                 break;
+            /*
             case 3:
                 this.templateForTheme.querySelector('#pane-artists').append(title('Ciac'))
                 this.templateForTheme.querySelector('#pane-ciaccona').prepend(title('cona'))
                 break;
+            */
             default:
                 break;
         }

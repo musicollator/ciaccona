@@ -270,6 +270,7 @@ const Ω = {
         badgeArtist.querySelector('a#youtube-url').setAttribute('href', artist['▶'].youtubeTrueUrl ? artist['▶'].youtubeTrueUrl : artist['▶'].youtubeUrl)
         badgeArtist.querySelector('a#youtube-url').setAttribute('target', artist['▶'].id)
         badgeArtist.querySelector('a#social').setAttribute('href', artist.social)
+
     },
 
     beforeCreatePlayer: (videoId) => {
@@ -319,6 +320,15 @@ const Ω = {
                 score.style['border-radius'] = "3rem 3rem 3rem 3rem"
             }
         }))
+
+        // https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API
+        const resizeObserver = new ResizeObserver(entries => {
+            for (let entry of entries) {
+                iso.layout()
+            }
+        });
+        resizeObserver.observe(document.querySelector('#grid'));
+
     }
 }
 
