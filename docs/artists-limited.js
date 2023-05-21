@@ -156,13 +156,39 @@ function generateData() {
                 })
             })
 
-            offcanvasElementList.forEach(element => {
-                element.addEventListener('show.bs.offcanvas', (event) => {
-                    if (coerce.variation) {
+            offcanvasElementList.forEach(offcanvasElement => {
+                offcanvasElement.dataset.oldFill = offcanvasElement.style.backgroundColor
+                offcanvasElement.dataset.oldStroke = offcanvasElement.style.color
+                offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
+                    dividerElement.dataset.oldFill = dividerElement.style.backgroundColor
+                    dividerElement.dataset.oldStroke = dividerElement.style.color
+                })
+                offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+                    if (typeof coerce.variation !== 'undefined') {
+                        if (coerce.color) {
+                            offcanvasElement.style.backgroundColor = coerce.color.fill
+                            offcanvasElement.style.color = coerce.color.stroke
+                            offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
+                                dividerElement.dataset.oldFill = dividerElement.style.backgroundColor
+                                dividerElement.dataset.oldStroke = dividerElement.style.color
+                                dividerElement.style.backgroundColor = coerce.color.fill2
+                                dividerElement.style.color = coerce.color.stroke
+                            })
+                        }
                         document.querySelectorAll('.list-artist').forEach(la => {
                             la.style.backgroundImage = bg(la.dataset.a, coerce.variation)
                         })
                     }
+                })
+                offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
+                    coerce.color = undefined
+                    const offcan = document.getElementById('offcanvasExample')
+                    offcanvasElement.style.backgroundColor = offcanvasElement.dataset.oldFill
+                    offcanvasElement.style.color = offcanvasElement.dataset.oldStroke
+                    offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
+                        dividerElement.style.backgroundColor = dividerElement.dataset.oldFill
+                        dividerElement.style.color = dividerElement.dataset.oldStroke
+                    })
                 })
             })
 
@@ -174,6 +200,11 @@ function generateData() {
                 event.preventDefault()
                 event.stopPropagation()
                 coerce.variation = element.dataset.variation
+                coerce.color = {
+                    fill: element.dataset.fill,
+                    fill2: element.dataset.fill2,
+                    stroke: element.dataset.stroke,
+                }
                 offcanvasList.forEach(oc => oc.show())
             }))
         }

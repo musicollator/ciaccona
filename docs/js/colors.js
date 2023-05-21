@@ -215,6 +215,10 @@ function createColoredBadges(idContainer) {
 <svg xmlns="http://www.w3.org/2000/svg" 
         id="gb-puzzle${i}-svg" 
         class="clipboard-puzzle"
+        data-stroke="#${c2.textColor}"
+        data-fill="#${c2.p_rgb}"
+        data-fill2="#${c2.puzzleColor}"
+        data-variation="${i}"
         width="80%" height="60%" 
         style="visibility: inherit; overflow: visible; transform: scale(.667);" 
         viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
