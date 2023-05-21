@@ -52,6 +52,9 @@
         &:not(.gbPlaying) {
           border-color: transparent !important;
         }
+        &.gbPlaying {
+          border-color: gold !important;
+        }
         &:last-child {
           background-color: transparent !important;
           .brick {
@@ -94,7 +97,6 @@
         }
       }
       .grid-brick.has-score {
-        cursor: pointer;
         &:not(.selected) {
           background-color: transparent !important;
           background-image: none !important;
@@ -106,6 +108,9 @@
           }
           .score.init {
             visibility: hidden !important;
+          }
+          .select-variation {
+            cursor: pointer;
           }
         }
       }

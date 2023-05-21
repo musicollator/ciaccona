@@ -109,9 +109,11 @@ const feedbackOnCurrentTime = (source, currentTime, noSave, isPlaying, scrollToV
     const variation = config.artistAndTimings.bars[barIndex].variation
 
     // changement de variation 
+    /*
     if (coerce.variation != variation) {
         coerce.variation = variation
     }
+    */
 
     if (isPlaying) {
         horzScrollScore(variation, currentTime)
@@ -162,18 +164,16 @@ const setBrickClickEvent = (_plyer) => {
         // DOM element has bar index in data
         const thisBar = parseInt(this.parentNode.dataset.bar)
 
-        const thisVariation = this.parentNode.dataset.variation
-        const selector = `.grid-brick#gb${thisVariation}`
-        const isSelected = document.querySelector(selector)?.classList.contains('selected')
-        if (isSelected) {
-            // just toggle play state
-            if (isPlaying) {
-                _plyer.pause()
-                // deselect
-                document.querySelector(selector)?.classList.remove('selected')
-            } else {
-                _plyer.play()
-            }
+        coerce.variation = this.parentNode.dataset.variation
+        const selector = `.grid-brick#gb${coerce.variation}`
+        const thisOneIsPlaying = document.querySelector(selector)?.classList.contains('gbPlaying')
+        const thisOneIsSelected = document.querySelector(selector)?.classList.contains('selected')
+        if (isPlaying && thisOneIsPlaying) {
+            _plyer.pause()
+            document.querySelector(selector)?.classList.remove('gbPlaying')
+        } else if (!isPlaying && thisOneIsSelected) {
+            _plyer.play()
+            document.querySelector(selector)?.classList.add('gbPlaying')
         } else {
             // immediate feedback
             document.querySelector(selector)?.classList.add('selected')
@@ -183,7 +183,7 @@ const setBrickClickEvent = (_plyer) => {
 
             // get bar data from timings
             let startBar = config.artistAndTimings.bars[thisBar]
-            console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${thisVariation}, variation starts at bar ${startBar.index}`, event)
+            console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${coerce.variation}, variation starts at bar ${startBar.index}`, event)
 
             // seek to the duration
             _plyer.currentTime = startBar.duration.asMilliseconds() / 1000
@@ -192,7 +192,6 @@ const setBrickClickEvent = (_plyer) => {
                 _plyer.play()
             }
         }
-
     }
 
     document.querySelectorAll(".brick.has-score .score").forEach((b) => {

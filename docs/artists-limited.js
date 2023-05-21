@@ -142,10 +142,10 @@ function generateData() {
                     event.stopPropagation()
                     event.preventDefault()
 
+                    offcanvasList.forEach(oc => oc.hide())
+
                     createPlayerSingleton(event.currentTarget.dataset.a).then(result => {
                         const artistAndTimings = result.value
-
-                        offcanvasList.forEach(oc => oc.hide())
 
                         // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
                         const url = new URL(location);

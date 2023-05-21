@@ -88,10 +88,10 @@ class Coerce {
                 if (isNaN(this.#coerceVariation)) {
                     this.#coerceVariation = undefined
                 }
-                console.log(`query string parameter v='${variation}' converted to global variable coerceVariation=${this.#coerceVariation}`)
             } else {
                 this.#coerceVariation = undefined
             }
+            console.log(`global variable coerceVariation=${this.#coerceVariation}`)
         } catch (error) {
             console.log(`query string parameter v is not a number: v=${params.v}`)
             this.#coerceVariation = undefined
