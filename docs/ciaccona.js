@@ -50,7 +50,7 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-createColoredBadges('grid', fullameNoSpaceLowercaseNoDiacritics);
+createColoredBadges('grid');
 Ω.showScoreDisplay()
 Ω.showScoreInBricks()
 
@@ -109,11 +109,11 @@ const allPromises = new Map()
 const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 
 // 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
-if (fullameNoSpaceLowercaseNoDiacritics) {
+if (coerce.fullameNoSpaceLowercaseNoDiacritics) {
 
     allPromises.set(
         PLAYER,
-        createPlayerSingleton(fullameNoSpaceLowercaseNoDiacritics, no_plyr_event)
+        createPlayerSingleton(coerce.fullameNoSpaceLowercaseNoDiacritics, coerce.no_plyr_event)
     )
 }
 

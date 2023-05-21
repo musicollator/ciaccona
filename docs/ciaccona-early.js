@@ -2,15 +2,6 @@ import codec from "/js/structure.js?v=2.1.2"
 import config from "/js/config.js?v=2.1.2"
 import { theTrickToViewportUnitsOnMobile } from '/js/utils.js?v=2.1.2'
 
-if (coerceVariation < 0 || codec.variationsCount <= coerceVariation) coerceVariation = undefined
-if (coerceVariation) {
-    config.startBarOfLastSelectedVariation = codec.variation2bar(coerceVariation)
-}
-if (fullameNoSpaceLowercaseNoDiacritics == null) { // using ==, undefined and null are equal
-    // r.à.z.
-    config.playing = undefined
-}
-
 // brick width
 function calcBrickWidth() {
     const gridE = document.querySelector('.ciaccona#grid')

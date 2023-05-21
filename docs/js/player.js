@@ -221,7 +221,7 @@ export default function createPlayer(selector, ignore_all_events) {
 
         const onReady = () => {
             let theStartingBar = config.artistAndTimings.bars[0]
-            if (config.autoplay || typeof coerceVariation !== 'undefined') {
+            if (config.autoplay || typeof coerce.variation !== 'undefined') {
                 const theLastStartingBarIndex = config.startBarOfLastSelectedVariation
                 if (theLastStartingBarIndex != null) {
                     theStartingBar = config.artistAndTimings.bars[theLastStartingBarIndex]

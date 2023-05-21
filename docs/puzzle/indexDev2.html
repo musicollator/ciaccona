@@ -116,8 +116,8 @@
         })
         let test = params.test ?? undefined
         let coerceArtist = params.a ?? undefined
-        let coerceVariation = params.v ? parseInt(params.v) : undefined
-        if (isNaN(coerceVariation) || coerceVariation < 0 || codec.variationsCount <= coerceVariation) coerceVariation = undefined
+        let coerce.variation = params.v ? parseInt(params.v) : undefined
+        if (isNaN(coerce.variation) || coerce.variation < 0 || codec.variationsCount <= coerce.variation) coerce.variation = undefined
         let shuffle = params.shuffle ?? undefined
         if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {
             shuffle = false
@@ -282,7 +282,7 @@
                     const borderX = xi === 0 ? 0 : marginX;
                     const borderY = yi === 0 ? 0 : marginY;
                     const artist = coerceArtist ?? a.fullnameNoSpaceLowercaseNoDiacritics
-                    const variation = coerceVariation ?? shuffledV[i]
+                    const variation = coerce.variation ?? shuffledV[i]
 
                     if (_.image) {
                         cell.style.backgroundImage = `url(${_.image})`
@@ -342,8 +342,8 @@
             } else if (event.key === 'Escape') {
                 toggleShuffleTiles()
             } else if (event.key === 'Enter') {
-                if (typeof coerceVariation !== 'undefined') {
-                    coerceVariation = (coerceVariation + 1) % codec.variationsCount
+                if (typeof coerce.variation !== 'undefined') {
+                    coerce.variation = (coerce.variation + 1) % codec.variationsCount
                 }
                 changeIt()
                 pckry.reloadItems()

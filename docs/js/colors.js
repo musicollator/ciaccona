@@ -106,7 +106,7 @@ function getColorArray(transparencyParam) {
 
 const colorArray = getColorArray(.5);
 
-function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
+function createColoredBadges(idContainer) {
 
     const thisURL = new URL(window.location)
 
@@ -149,11 +149,11 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
         { w: 0 }    // 35 (should never happen)
     ]
 
-    const _colors_ = colorArray // getColorArray(fullameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
+    const _colors_ = colorArray // getColorArray(coerce.fullameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
 
     const temporaryContainer = generateElement("<template>");
 
-    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
+    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', coerce.fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
 
     const twoZeroPad = (num) => String(num).padStart(2, '0')
     let i = 0;
@@ -162,7 +162,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
 
         let c2
 
-        if (fullameNoSpaceLowercaseNoDiacritics) {
+        if (coerce.fullameNoSpaceLowercaseNoDiacritics) {
             c2 = {
                 p_rgb: _T(c.p_rgb),
                 p_rgbAlpha: c.p_rgbAlpha,
@@ -211,7 +211,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
 
         const svgOffsetX = codec.svgOffsetX(i)
 
-        const templatePuzzle = fullameNoSpaceLowercaseNoDiacritics ? `
+        const templatePuzzle = coerce.fullameNoSpaceLowercaseNoDiacritics ? `
 <svg xmlns="http://www.w3.org/2000/svg" 
         id="gb-puzzle${i}-svg" 
         class="clipboard-puzzle"
@@ -251,7 +251,7 @@ function createColoredBadges(idContainer, fullameNoSpaceLowercaseNoDiacritics) {
             ${templatePuzzle}
             <div id="gb-variation${i}" 
                 class="fw-bold" 
-                data-a="${fullameNoSpaceLowercaseNoDiacritics}"
+                data-a="${coerce.fullameNoSpaceLowercaseNoDiacritics}"
                 data-v="${i}"
                 style="color: #${c2.textColor}; padding: .333rem;">
                 ${i === 0 || i === codec.variationsCount - 1 ? "&nbsp;" : i}

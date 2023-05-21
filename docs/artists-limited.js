@@ -7,8 +7,6 @@ import { shuffleArray } from "/js/utils.js?v=2.1.2"
 
 console.log('artists-limited')
 
-let localCoerceVariation = undefined
-
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
 const iconMap = {
@@ -160,9 +158,9 @@ function generateData() {
 
             offcanvasElementList.forEach(element => {
                 element.addEventListener('show.bs.offcanvas', (event) => {
-                    if (localCoerceVariation) {
+                    if (coerce.variation) {
                         document.querySelectorAll('.list-artist').forEach(la => {
-                            la.style.backgroundImage = bg(la.dataset.a, localCoerceVariation)
+                            la.style.backgroundImage = bg(la.dataset.a, coerce.variation)
                         })
                     }
                 })
@@ -173,7 +171,7 @@ function generateData() {
             }))
 
             document.querySelectorAll('.brick.has-score').forEach(element => element.addEventListener('click', (event) => {
-                localCoerceVariation = element.dataset.variation
+                coerce.variation = element.dataset.variation
                 offcanvasList.forEach(oc => oc.show())
             }))
         }

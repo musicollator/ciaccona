@@ -124,7 +124,7 @@ function generateData(arrayOfArtists) {
         if (a.fullnameNoSpaceLowercaseNoDiacritics === 'moi') {
             return;
         }
-        const v = typeof coerceVariation === 'undefined' ? vi % codec.variationsCount : coerceVariation
+        const v = typeof coerce.variation === 'undefined' ? vi % codec.variationsCount : coerce.variation
         const j = jigsawGenerator.getJigsawItem(v + 1)
         const transX = parseInt(j.viewBox.replaceAll(/^([\.\d\-]+).*$/g, "$1"))
         const transY = parseInt(j.viewBox.replaceAll(/^[\.\d\-]+\s+([\.\d\-]+).*$/g, "$1"))
@@ -136,13 +136,13 @@ function generateData(arrayOfArtists) {
         const datum = {
             index: vi,
             number: v === 0 || 34 <= v ? '' : v,
-            a: coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics,
+            a: coerce.fullnameNoSpaceLowercaseNoDiacritics || a.fullnameNoSpaceLowercaseNoDiacritics,
             v: v,
             firstname: a.firstname,
             lastname: artistLastnameNoBreakingSpaces,
-            abg: abg(coerceArtist || a.fullnameNoSpaceLowercaseNoDiacritics, v),
+            abg: abg(coerce.fullnameNoSpaceLowercaseNoDiacritics || a.fullnameNoSpaceLowercaseNoDiacritics, v),
             jigsaw: j,
-            hideName: coerceArtist ? ' hide-name' : '',
+            hideName: coerce.fullnameNoSpaceLowercaseNoDiacritics ? ' hide-name' : '',
             fill: tonality ? `url(#pattern${v}_${pattern})` : `#${colors[v].puzzleColor}`,
             stroke: colors[v].textColor,
             pinUnpinVariationTitle: vi == 0 ? "theme" : vi == codec.variationsCount - 1 ? "final chord" : `variation n°${vi}`,
@@ -177,7 +177,7 @@ function generateData(arrayOfArtists) {
 
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
-    let arrayOfArtists = shuffle ? shuffleArray(artists.artists) : artists.artists
+    let arrayOfArtists = coerce.shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)
     data.forEach(d => {
         list.innerHTML += `<div class="list-item">${template(d, true)}</div>`
@@ -216,24 +216,24 @@ function generateData(arrayOfArtists) {
             artistBadge.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                coerceArtist = undefined
+                coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
                 data = generateData(arrayOfArtists)
                 forceRedraw()
             })
         }
 
         function displayArtist() {
-            if (typeof coerceVariation !== 'undefined') {
+            if (typeof coerce.variation !== 'undefined') {
                 document.querySelectorAll('.list-artist .puzzle-limited').forEach(e => e.classList.add('pushed'))
             }
-            if (typeof coerceArtist !== 'undefined') {
+            if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
                 document.querySelectorAll('.list-artist .hero-intro').forEach(e => e.classList.add('pushed'))
             }
             const artistBadge = document.getElementById('artist-badge')
             if (artistBadge) {
-                if (typeof coerceArtist !== 'undefined') {
+                if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
                     artistBadge.style.visibility = 'inherit'
-                    artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerceArtist).fullname
+                    artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics).fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
                 } else {
                     artistBadge.style.visibility = 'hidden'
@@ -263,7 +263,7 @@ function generateData(arrayOfArtists) {
                     event.stopPropagation()
                     event.preventDefault()
                     let whereDoIGo = `/ciaccona.html?a=${event.target.dataset.a}`
-                    if (typeof coerceVariation !== 'undefined' || typeof coerceArtist !== 'undefined') {
+                    if (typeof coerce.variation !== 'undefined' || typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
                         whereDoIGo += `&v=${event.target.dataset.v}`
                     }
                     window.location = whereDoIGo
@@ -272,11 +272,11 @@ function generateData(arrayOfArtists) {
             document.querySelectorAll('.list-artist .puzzle-limited').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                if (typeof coerceVariation !== 'undefined') {
-                    coerceVariation = undefined
+                if (typeof coerce.variation !== 'undefined') {
+                    coerce.variation = undefined
                 } else {
-                    coerceVariation = parseInt(event.currentTarget.parentNode.parentNode.dataset.v)
-                    coerceArtist = undefined
+                    coerce.variation = parseInt(event.currentTarget.parentNode.parentNode.dataset.v)
+                    coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
                 }
                 data = generateData(arrayOfArtists)
                 forceRedraw()
@@ -284,11 +284,11 @@ function generateData(arrayOfArtists) {
             document.querySelectorAll('.list-artist .hero-intro').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                if (typeof coerceArtist !== 'undefined') {
-                    coerceArtist = undefined
+                if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+                    coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
                 } else {
-                    coerceArtist = event.currentTarget.parentNode.parentNode.dataset.a
-                    coerceVariation = undefined
+                    coerce.fullnameNoSpaceLowercaseNoDiacritics = event.currentTarget.parentNode.parentNode.dataset.a
+                    coerce.variation = undefined
                 }
                 data = generateData(arrayOfArtists)
                 forceRedraw()

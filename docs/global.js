@@ -1,81 +1,117 @@
-const validFullamesNoSpaceLowercaseNoDiacritics = [
-    'moi',
-
-    'adolfbusch',
-    'amandinebeyer',
-    'andreadevitis',
-    'anneleenlenaerts',
-    'bellahristova',
-    'chiaramassini',
-    'christiantetzlaff',
-    'christophethiebaud',
-    'clara-jumikang',
-    'florentinginot',
-    'genzohtakehisa',
-    'hilaryhahn',
-    'isabellefaust',
-    'jeannelamon',
-    'juliafischer',
-    'ksenijakomljenovic',
-    'lisajacobs',
-    'lizaferschtman',
-    'martafemenia',
-    'martinbaker',
-    'michaelleontchik',
-    'midorigoto',
-    'miguelrincon',
-    'mikastoltzman',
-    'moranwasser',
-    'petrapolackova',
-    'polinaosetinskaya',
-    'rachellellenwong',
-    'rachelpodger',
-    'raphaellasmits',
-    'sigiswaldkuijken',
-    'veronikaeberle',
-    'veroniquederaedemaeker',
-    'virginierobilliard',
-    'vonhansen',
-    'yunpark',
-]
 const ver = "v2.1.2"
+
+class Coerce {
+    #validFullamesNoSpaceLowercaseNoDiacritics = [
+        'moi',
+
+        'adolfbusch',
+        'amandinebeyer',
+        'andreadevitis',
+        'anneleenlenaerts',
+        'bellahristova',
+        'chiaramassini',
+        'christiantetzlaff',
+        'christophethiebaud',
+        'clara-jumikang',
+        'florentinginot',
+        'genzohtakehisa',
+        'hilaryhahn',
+        'isabellefaust',
+        'jeannelamon',
+        'juliafischer',
+        'ksenijakomljenovic',
+        'lisajacobs',
+        'lizaferschtman',
+        'martafemenia',
+        'martinbaker',
+        'michaelleontchik',
+        'midorigoto',
+        'miguelrincon',
+        'mikastoltzman',
+        'moranwasser',
+        'petrapolackova',
+        'polinaosetinskaya',
+        'rachellellenwong',
+        'rachelpodger',
+        'raphaellasmits',
+        'sigiswaldkuijken',
+        'veronikaeberle',
+        'veroniquederaedemaeker',
+        'virginierobilliard',
+        'vonhansen',
+        'yunpark',
+    ]
+    #coerceVariation
+    #coerceArtist
+    #shuffle
+
+    no_plyr_event
+    pane
+
+    constructor(params) {
+        this.variation = params.v ?? undefined
+        this.fullameNoSpaceLowercaseNoDiacritics = params.a ?? undefined
+        
+        this.no_plyr_event = params.no_plyr_event ?? undefined
+        this.pane = params.p ?? undefined
+        this.shuffle = params.shuffle ?? undefined
+    }
+
+    //
+    get fullameNoSpaceLowercaseNoDiacritics() {
+        return this.#coerceArtist
+    }
+    set fullameNoSpaceLowercaseNoDiacritics(fullameNoSpaceLowercaseNoDiacritics) {
+        if (typeof fullameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+            if (!this.#validFullamesNoSpaceLowercaseNoDiacritics.includes(fullameNoSpaceLowercaseNoDiacritics)) {
+                console.log(`invalid fullameNoSpaceLowercaseNoDiacritics: ${fullameNoSpaceLowercaseNoDiacritics}`)
+                this.#coerceArtist = undefined
+            } else if (fullameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
+                this.#coerceArtist = 'moi'
+            } else {
+                this.#coerceArtist = fullameNoSpaceLowercaseNoDiacritics
+            }
+        }
+    }
+
+    // 
+    get variation() {
+        return this.#coerceVariation
+    }
+    set variation(variation) {
+        try {
+            if (typeof variation !== 'undefined' && variation !== null) {
+                this.#coerceVariation = parseInt(variation)
+                if (isNaN(this.#coerceVariation)) {
+                    this.#coerceVariation = undefined
+                }
+                console.log(`query string parameter v='${variation}' converted to global variable coerceVariation=${this.#coerceVariation}`)
+            } else {
+                this.#coerceVariation = undefined
+            }
+        } catch (error) {
+            console.log(`query string parameter v is not a number: v=${params.v}`)
+            this.#coerceVariation = undefined
+        }
+    }
+
+    //
+    get shuffle() {
+        return this.#shuffle
+    }
+    set shuffle(shuffle) {
+        if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {
+            this.#shuffle = false
+        } else {
+            this.#shuffle = true
+        }
+    }
+}
+
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop)
 })
-let fullameNoSpaceLowercaseNoDiacritics = params.a ?? undefined
-let variationParam = params.v ? parseInt(params.v) : undefined
-let no_plyr_event = params.no_plyr_event ?? undefined
-let test = params.test ?? undefined
-let coerceArtist = params.a ?? undefined
-let coerceVariation = undefined
-try {
-    if (typeof params.v !== 'undefined' && params.v !== null) {
-        coerceVariation = parseInt(params.v)
-        if (isNaN(coerceVariation)) {
-            coerceVariation = undefined
-        }
-        console.log(`query string parameter v='${params.v}' converted to global variable coerceVariation=${coerceVariation}`)
-    }
-} catch (error) {
-    console.log(`query string parameter v is not a number: v=${params.v}`)
-    coerceVariation = undefined
-}
-let pane = params.p ?? undefined
-let shuffle = params.shuffle ?? undefined
-if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {
-    shuffle = false
-} else {
-    shuffle = true
-}
-
-if (typeof fullameNoSpaceLowercaseNoDiacritics !== 'undefined') {
-    if (!validFullamesNoSpaceLowercaseNoDiacritics.includes(fullameNoSpaceLowercaseNoDiacritics)) {
-        console.log(`invalid fullameNoSpaceLowercaseNoDiacritics: ${fullameNoSpaceLowercaseNoDiacritics}`)
-        fullameNoSpaceLowercaseNoDiacritics = undefined
-    } else if (fullameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
-        fullameNoSpaceLowercaseNoDiacritics = 'moi'
-    }
-}
+const coerce = new Coerce(params)
 
 // transform packery event into promise
 const readyToIsotope = new Promise((resolve) => {

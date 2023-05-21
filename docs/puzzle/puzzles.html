@@ -354,7 +354,7 @@
             get: (searchParams, prop) => searchParams.get(prop)
         })
         let coerceArtist = params.a ?? undefined
-        let coerceVariation = params.v ?? undefined
+        let coerce.variation = params.v ?? undefined
 
         document.getElementById("go-back").addEventListener("click", () => {
             window.location = document.referrer
@@ -395,7 +395,7 @@
             document.getElementById('variationsCount').innerHTML = variationsCount
             document.getElementById('puzzlesCount').innerHTML = puzzlesCount
 
-            let v = coerceVariation ?? 0
+            let v = coerce.variation ?? 0
             let a = 0
             if (coerceArtist) {
                 for (a = 0; a < artistsWithVid.length; a++) {

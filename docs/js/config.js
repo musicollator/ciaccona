@@ -15,7 +15,7 @@ class Config {
 
     #inConstructor = true
 
-    constructor() {
+    constructor(coerce) {
         // 
         this.scoreDisplay = getCookie('scoreDisplay')
 
@@ -39,6 +39,17 @@ class Config {
 
 
         this.#inConstructor = false
+
+        if (coerce) {
+            if (coerce.variation < 0 || codec.variationsCount <= coerce.variation) coerce.variation = undefined
+            if (coerce.variation) {
+                this.startBarOfLastSelectedVariation = codec.variation2bar(coerce.variation)
+            }
+            if (coerce.fullameNoSpaceLowercaseNoDiacritics == null) { // using ==, undefined and null are equal
+                // r.à.z.
+                this.playing = undefined
+            }
+        }
     }
 
     // 

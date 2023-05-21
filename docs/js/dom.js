@@ -304,6 +304,7 @@ const Ω = {
             if (!hadClass) {
                 brick.parentNode.classList.add('selected')
                 const variation = brick.parentNode.dataset.variation
+                coerce.variation = variation
                 const startBar = codec.variation2bar(variation)
                 config.startBarOfLastSelectedVariation = startBar
             }
