@@ -156,7 +156,8 @@ class Config {
                 if (this.#autoplay === false) {
                     removeCookie('autoplay')
                 } else {
-                    setCookie('autoplay', 'true')
+                    const in10Minutes = 1 / 144;
+                    setCookie('autoplay', 'true', in10Minutes)
                 }
             }
         }
@@ -217,8 +218,8 @@ class Config {
                     removeCookie('shuffleReplicator')
                 } else {
                     // https://github.com/js-cookie/js-cookie/wiki/Frequently-Asked-Questions#expire-cookies-in-less-than-a-day
-                    const in30Minutes = 1 / 48;
-                    setCookie('shuffleReplicator', stringedshuffleReplicator, in30Minutes)
+                    const in10Minutes = 1 / 144;
+                    setCookie('shuffleReplicator', stringedshuffleReplicator, in10Minutes)
                 }
             }
         }
