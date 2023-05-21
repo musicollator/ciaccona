@@ -196,7 +196,7 @@ function generateData() {
                 offcanvasList.forEach(oc => oc.hide())
             }))
 
-            document.querySelectorAll('.brick.has-score .clipboard-puzzle').forEach(element => element.addEventListener('click', (event) => {
+            document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
                 event.preventDefault()
                 event.stopPropagation()
                 coerce.variation = element.dataset.variation
