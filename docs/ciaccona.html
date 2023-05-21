@@ -273,31 +273,35 @@
             const mess = document.getElementById('message')
             // Save the original method in a private variable
             const _privateLog = console.log;
+            const _privateError = console.error;
             // Redefine console.log method with a custom function
             console.log = function (message) {
-                // Here execute something with the given message or arguments variable
-                // alert("Our Custom Log Says: " + message);
-
-                /**
-                  Note: If you want to preserve the same action as the original method does
-                  then use the following line :
-            
-                  we use apply to invoke the method on console using the original arguments. 
-                  Simply calling _privateLog(message) would fail because LOG depends on the console
-                 */
                 Toastify({
                     text: [...arguments].join(' | '),
                     duration: 3000,
                     style: {
-                        gravity: "top",
-                        position: 'center',
                         zIndex: 2000,
                         backgroundColor: 'white',
                     }
                 }).showToast();
                 _privateLog.apply(console, arguments);
             };
+            console.error = function (message) {
+                Toastify({
+                    text: [...arguments].join(' | '),
+                    duration: 20000,
+                    gravity: "top",
+                    position: 'center',
+                    style: {
+                        zIndex: 2000,
+                        backgroundColor: 'red',
+                    }
+                }).showToast();
+                _privateError.apply(console, arguments);
+            };
         })();        
+
+        if (qwe) prout;
     </script>
     <script async type="module" src="/ciaccona.js?v=2.1.6.2"></script>
     <script async type="module" src="/artists-limited.js?v=2.1.6"></script>

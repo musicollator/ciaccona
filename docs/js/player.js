@@ -220,14 +220,16 @@ export default function createPlayer(selector, ignore_all_events) {
         config.plyrPlayer = _plyer
 
         const onReady = () => {
+            console.log("IN onReady()")
             let theStartingBar = config.artistAndTimings.bars[0]
             if (config.autoplay || typeof coerce.variation !== 'undefined') {
-                theStartingBar = config.artistAndTimings.bars[codec.variation2bar(coerce.variation)]
+                const qwe = typeof coerce.variation === 'undefined' ? 0 : coerce.variation;
+                theStartingBar = config.artistAndTimings.bars[codec.variation2bar(qwe)]
             }
             console.log("onReady: Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar["Time Recorded"], "), thanks.")
             _plyer.currentTime = theStartingBar.duration.asMilliseconds() / 1000
+            console.log("OUT onReady()")
         }
-
 
         function INIT_EVENT_HANDLERS() {
             /*
@@ -331,10 +333,14 @@ export default function createPlayer(selector, ignore_all_events) {
                 console.log("Plyr ready event LIMITED to onReady, as initialized is true")
                 onReady()
             } else {
+                console.log("about to setBrickClickEvent ...")
                 setBrickClickEvent(_plyer)
+                console.log("... setBrickClickEvent done!")
 
                 if (!ignore_all_events) {
+                    console.log("about to INIT_EVENT_HANDLERS ...")
                     INIT_EVENT_HANDLERS()
+                    console.log("... INIT_EVENT_HANDLERS done!")
 
                     onReady()
                 } else {
