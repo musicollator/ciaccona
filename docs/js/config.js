@@ -1,5 +1,5 @@
-import { getCookie, setCookie, removeCookie } from "/js/utils.js?v=2.1.1"
-import codec from "/js/structure.js?v=2.1.1"
+import { getCookie, setCookie, removeCookie } from "/js/utils.js?v=2.1.2"
+import codec from "/js/structure.js?v=2.1.2"
 
 class Config {
     #scoreDisplay = 'firstBar'
