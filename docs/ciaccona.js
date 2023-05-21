@@ -157,6 +157,8 @@ allPromises.set(
 // when all promises are done
 Promise.allSettled([...allPromises.values()]).then((results) => {
 
+    hideLoading()
+
     // transform results in something more readable (well, really?)
     const map = new Map(results
         .filter((result) => {
@@ -181,7 +183,7 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
 
     if (isotopeResult) {
         isotopeResult.on('arrangeComplete', function (filteredItems) {
-            hideLoading();
+            console.log('isotope arrangeComplete')
         })
         if (!playerResult) {
             console.log("change isotope filter to hide artist name")
