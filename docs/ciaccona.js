@@ -1,10 +1,10 @@
 import isotopeLayout from 'https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/+esm'
-import config from "/js/config.js?v=2.1.6"
-import codec from "/js/structure.js?v=2.1.6"
-import { togglePlayer } from "/js/playerSingleton.js?v=2.1.6"
-import { createColoredBadges } from "/js/colors.js?v=2.1.6"
-import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.1.6.2"
-import Ω from "/js/dom.js?v=2.1.6"
+import config from "/js/config.js?v=2.1.7"
+import codec from "/js/structure.js?v=2.1.7"
+import { togglePlayer } from "/js/playerSingleton.js?v=2.1.7"
+import { createColoredBadges } from "/js/colors.js?v=2.1.7"
+import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.1.7"
+import Ω from "/js/dom.js?v=2.1.7"
 
 // transform windows loaded event into promise
 const windowLoaded = new Promise((resolve) => {
