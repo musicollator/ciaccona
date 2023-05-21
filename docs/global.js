@@ -1,4 +1,4 @@
-const ver = "v2.1.6.1"
+const ver = "v2.1.6.2"
 
 class Coerce {
     #validFullamesNoSpaceLowercaseNoDiacritics = [
@@ -48,6 +48,7 @@ class Coerce {
 
     no_plyr_event
     pane
+    debug
 
     constructor(params) {
         this.variation = params.v ?? undefined
@@ -56,6 +57,7 @@ class Coerce {
         this.no_plyr_event = params.no_plyr_event ?? undefined
         this.pane = params.p ?? undefined
         this.shuffle = params.shuffle ?? undefined
+        this.debug = params.d ?? undefined
     }
 
     //

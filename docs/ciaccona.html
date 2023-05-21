@@ -69,7 +69,7 @@
     <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
 
     <!-- early scripts -->
-    <script src="global.js?v=2.1.6"></script>
+    <script src="global.js?v=2.1.6.2"></script>
     <script type="module" src="/ciaccona-early.js?v=2.1.6"></script>
 
     <!-- google font -->
@@ -160,7 +160,8 @@
                         style="background-color: #f2f1f0; width: 320px;">
                         <div class="offcanvas-body left" style="padding: 10px;">
                             <div id="dismiss-offcanvas" style="width: 100%; height: 2rem; background-color: transparent">
-                                <button id="close-offcanvas" type="button" class="btn btn-light icon-base icon-close-circle float-end" style="width: 32px; z-index: 10;" data-bs-dismiss="offcanvas" aria-label="Close">
+                                <button id="close-offcanvas" type="button" class="btn btn-light icon-base icon-close-circle float-end" style="width: 32px; z-index: 10;"
+                                    data-bs-dismiss="offcanvas" aria-label="Close">
                                 </button>
                             </div>
                             <div id="list" class="artists" style="margin-top: .667rem;">
@@ -173,8 +174,7 @@
 
             <div id="badge-artist" class="my-nav-item artist align-self-start flex-shrink-1" style="overflow: hidden;">
                 <div class="btn btn-light text-muted d-flex justify-content-between">
-                    <a id="eye" class="btn icon-base icon-eye_close text-muted" href="#" aria-label="Show / Hide Video"
-                        style="min-width:32px;">
+                    <a id="eye" class="btn icon-base icon-eye_close text-muted" href="#" aria-label="Show / Hide Video" style="min-width:32px;">
                     </a>
                     <label class="fullname text-light"></label>
                     <a id="youtube-url" class="btn icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video..."
@@ -250,7 +250,7 @@
 
         </div>
 
-        <div id="theContainerRow" class="row justify-content-end"> 
+        <div id="theContainerRow" class="row justify-content-end">
             <div id="playerWrapper" class="col video-container" data-plyr-provider="youtube" data-plyr-embed-id="" style="visibility: hidden">
             </div>
             <div id="theContainerCol" class="col" style="padding: 2rem 0 0 0">
@@ -262,7 +262,44 @@
     </main>
 
     <script src="/lib/bootstrap.bundle-5.2.3.min.js"></script>
-    <script async type="module" src="/ciaccona.js?v=2.1.6.1"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+    <script type="module">
+
+        // https://ourcodeworld.com/articles/read/104/how-to-override-the-console-methods-in-javascript
+        ; (function () {
+            if (typeof coerce.debug === 'undefined') return
+            const mess = document.getElementById('message')
+            // Save the original method in a private variable
+            const _privateLog = console.log;
+            // Redefine console.log method with a custom function
+            console.log = function (message) {
+                // Here execute something with the given message or arguments variable
+                // alert("Our Custom Log Says: " + message);
+
+                /**
+                  Note: If you want to preserve the same action as the original method does
+                  then use the following line :
+            
+                  we use apply to invoke the method on console using the original arguments. 
+                  Simply calling _privateLog(message) would fail because LOG depends on the console
+                 */
+                Toastify({
+                    text: [...arguments].join(' | '),
+                    duration: 3000,
+                    style: {
+                        gravity: "top",
+                        position: 'center',
+                        zIndex: 2000,
+                        backgroundColor: 'white',
+                    }
+                }).showToast();
+                _privateLog.apply(console, arguments);
+            };
+        })();        
+    </script>
+    <script async type="module" src="/ciaccona.js?v=2.1.6.2"></script>
     <script async type="module" src="/artists-limited.js?v=2.1.6"></script>
 
 </body>
