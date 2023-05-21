@@ -262,7 +262,11 @@ function generateData(arrayOfArtists) {
                 if (event.currentTarget === event.target) {
                     event.stopPropagation()
                     event.preventDefault()
-                    window.location = `/ciaccona.html?a=${event.target.dataset.a}&v=${event.target.dataset.v}`
+                    let whereDoIGo = `/ciaccona.html?a=${event.target.dataset.a}`
+                    if (typeof coerceVariation !== 'undefined' || typeof coerceArtist !== 'undefined') {
+                        whereDoIGo += `&v=${event.target.dataset.v}`
+                    }
+                    window.location = whereDoIGo
                 }
             }))
             document.querySelectorAll('.list-artist .puzzle-limited').forEach(E => E.addEventListener('click', (event) => {

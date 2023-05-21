@@ -1,5 +1,6 @@
 import tinycolor from 'https://cdn.jsdelivr.net/npm/tinycolor2@1.6.0/+esm'
 import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
+import config from "/js/config.js?v=2.1.0"
 import codec from "/js/structure.js?v=2.1.0"
 import { jigsawGenerator } from '/js/jigsawShield.js?v=2.1.0'
 import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=2.1.0"
@@ -57,7 +58,21 @@ function getColorArray(transparencyParam) {
         { rgb: "d8b998", p_rgb: "d8b998", sim: 92, pantone: "Pantone 13-1014 Tcx", name: "Mellow Buff" }
     ]
 
-    let _colors_ = _first_color_.concat(shuffleArray(_other_colors_))
+    let shuffledC
+    if (config.shuffleReplicator) {
+        shuffledC = config.shuffleReplicator
+    } else {
+        shuffledC = shuffleArray(Array.from(_other_colors_, (_, index) => index))
+        config.shuffleReplicator = shuffledC
+    }
+    let shuf = 0
+    for (let s of _other_colors_) {
+        s.shuf = shuffledC[shuf++]
+    }
+
+    _other_colors_.sort((a, b) => a.shuf - b.shuf)
+
+    let _colors_ = _first_color_.concat(_other_colors_)
     _colors_.push(_last_color_[0])
 
     const transparency = transparencyParam ?? .400

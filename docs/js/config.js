@@ -8,6 +8,7 @@ class Config {
     #startBarOfLastSelectedVariation = 0
     #autoplay = false
     #pane = 'left'
+    #shuffleReplicator = undefined
 
     #plyrPlayer
     #artistAndTimings
@@ -32,6 +33,9 @@ class Config {
 
         // 
         this.pane = getCookie('pane')
+
+        // 
+        this.shuffleReplicator = getCookie('shuffleReplicator')
 
 
         this.#inConstructor = false
@@ -175,6 +179,46 @@ class Config {
                     removeCookie('pane')
                 } else {
                     setCookie('pane', this.#pane)
+                }
+            }
+        }
+    }
+
+    // 
+    get shuffleReplicator() {
+        return this.#shuffleReplicator
+    }
+    set shuffleReplicator(shuffleReplicator) {
+        let stringedshuffleReplicator = shuffleReplicator
+        let arrayshuffleReplicator = shuffleReplicator
+        if (shuffleReplicator) {
+            if (Array.isArray(shuffleReplicator)) {
+                stringedshuffleReplicator = shuffleReplicator.toString()
+            } else if (typeof shuffleReplicator === 'string' || shuffleReplicator instanceof String) {
+                arrayshuffleReplicator = shuffleReplicator.split(',');
+            }
+        }
+        // https://www.30secondsofcode.org/js/s/array-comparison/
+        const equals = (a, b) => {
+            if (a === b) {
+                return true
+            }
+            if (!a || !b) {
+                return false
+            }
+
+            return a.length === b.length && a.every((v, i) => v === b[i])
+        }
+
+        if (!equals(arrayshuffleReplicator, this.#shuffleReplicator)) {
+            this.#shuffleReplicator = arrayshuffleReplicator
+            if (!this.#inConstructor) {
+                if (typeof this.#shuffleReplicator === 'undefined') {
+                    removeCookie('shuffleReplicator')
+                } else {
+                    // https://github.com/js-cookie/js-cookie/wiki/Frequently-Asked-Questions#expire-cookies-in-less-than-a-day
+                    const in30Minutes = 1 / 48;
+                    setCookie('shuffleReplicator', stringedshuffleReplicator, in30Minutes)
                 }
             }
         }
