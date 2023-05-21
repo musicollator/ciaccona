@@ -102,16 +102,15 @@ const feedbackOnCurrentTime = (source, currentTime, noSave, isPlaying, scrollToV
         console.log('no variation here', currentTime)
         unplay_and_unselect()
         if (doSave) {
-            config.startBarOfLastSelectedVariation = undefined
+            coerce.variation = undefined
         }
         return
     }
     const variation = config.artistAndTimings.bars[barIndex].variation
-    const startBarOfThisVariation = config.artistAndTimings.bars[barIndex].variationStartBarIndex
 
     // changement de variation 
-    if (config.startBarOfLastSelectedVariation != startBarOfThisVariation) {
-        config.startBarOfLastSelectedVariation = startBarOfThisVariation
+    if (coerce.variation != variation) {
+        coerce.variation = variation
     }
 
     if (isPlaying) {
@@ -151,7 +150,7 @@ const feedbackOnCurrentTime = (source, currentTime, noSave, isPlaying, scrollToV
 
 const setBrickClickEvent = (_plyer) => {
 
-    function handleBrickClick(event) {
+    function handleScoreClick(event) {
         event.stopImmediatePropagation()
 
         setTimeout(() => {
@@ -165,15 +164,16 @@ const setBrickClickEvent = (_plyer) => {
 
         const thisVariation = this.parentNode.dataset.variation
         const selector = `.grid-brick#gb${thisVariation}`
-        if (config.startBarOfLastSelectedVariation === thisBar) {
+        const isSelected = document.querySelector(selector)?.classList.contains('selected')
+        if (isSelected) {
             // just toggle play state
             if (isPlaying) {
                 _plyer.pause()
+                // deselect
+                document.querySelector(selector)?.classList.remove('selected')
             } else {
                 _plyer.play()
             }
-            // deselect
-            document.querySelector(selector)?.classList.remove('selected')
         } else {
             // immediate feedback
             document.querySelector(selector)?.classList.add('selected')
@@ -183,7 +183,7 @@ const setBrickClickEvent = (_plyer) => {
 
             // get bar data from timings
             let startBar = config.artistAndTimings.bars[thisBar]
-            console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation}, variation starts at bar ${startBar.index}`, event)
+            console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${thisVariation}, variation starts at bar ${startBar.index}`, event)
 
             // seek to the duration
             _plyer.currentTime = startBar.duration.asMilliseconds() / 1000
@@ -196,7 +196,7 @@ const setBrickClickEvent = (_plyer) => {
     }
 
     document.querySelectorAll(".brick.has-score .score").forEach((b) => {
-        b.addEventListener('click', handleBrickClick, true)
+        b.addEventListener('click', handleScoreClick, true)
 
         b.addEventListener("scrollend", (event) => {
             // console.log(b.scrollLeft)
@@ -222,10 +222,7 @@ export default function createPlayer(selector, ignore_all_events) {
         const onReady = () => {
             let theStartingBar = config.artistAndTimings.bars[0]
             if (config.autoplay || typeof coerce.variation !== 'undefined') {
-                const theLastStartingBarIndex = config.startBarOfLastSelectedVariation
-                if (theLastStartingBarIndex != null) {
-                    theStartingBar = config.artistAndTimings.bars[theLastStartingBarIndex]
-                }
+                theStartingBar = config.artistAndTimings.bars[codec.variation2bar(coerce.variation)]
             }
             console.log("onReady: Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar["Time Recorded"], "), thanks.")
             _plyer.currentTime = theStartingBar.duration.asMilliseconds() / 1000
@@ -278,7 +275,7 @@ export default function createPlayer(selector, ignore_all_events) {
             _plyer.on('ended', (event) => {
                 console.log("Plyr ended event", event.detail.plyr.embed.playerInfo)
                 config.playing = undefined
-                config.startBarOfLastSelectedVariation = undefined
+                coerce.variation = undefined
                 hidePlay()
             })
             _plyer.on('playing', (event) => {

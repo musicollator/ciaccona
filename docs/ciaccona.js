@@ -3,7 +3,7 @@ import config from "/js/config.js?v=2.1.3"
 import codec from "/js/structure.js?v=2.1.3"
 import { togglePlayer } from "/js/playerSingleton.js?v=2.1.3"
 import { createColoredBadges } from "/js/colors.js?v=2.1.3"
-import { createPlayerSingleton, showPlayer} from "/js/playerSingleton.js?v=2.1.3"
+import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.1.3"
 import Ω from "/js/dom.js?v=2.1.3"
 
 // transform windows loaded event into promise
@@ -181,11 +181,8 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
             console.log("change isotope filter to show artist name")
             isotopeResult.arrange({ filter: '*' })
 
-            // select last variation
-            if (config.autoplay) {
-                let theLastStartingBarIndex = config.startBarOfLastSelectedVariation
-                const varation = codec.bar2variation(theLastStartingBarIndex)
-                const e = document.getElementById(`gb${varation}`)
+            if (coerce.variation) {
+                const e = document.getElementById(`gb${coerce.variation}`)
                 if (e) {
                     e.classList.add('selected')
                     e.scrollIntoView({ behavior: "smooth", block: "center" })

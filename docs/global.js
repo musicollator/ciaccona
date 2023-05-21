@@ -42,6 +42,7 @@ class Coerce {
         'yunpark',
     ]
     #coerceVariation
+    #startBarOfLastSelectedVariation
     #coerceArtist
     #shuffle
 

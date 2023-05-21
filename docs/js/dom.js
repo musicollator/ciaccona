@@ -292,10 +292,13 @@ const Ω = {
 
         Ω.setClickHandlers(iso)
 
-        document.querySelectorAll('.brick.has-score .score').forEach(score => score.addEventListener('click', e => {
+        document.querySelectorAll('.brick.has-score, .brick.has-score .score').forEach(score => score.addEventListener('click', e => {
             e.preventDefault()
             e.stopPropagation()
-            const brick = e.currentTarget.parentNode
+            let brick = e.currentTarget
+            if (brick.classList.contains('score')) {
+                brick = e.currentTarget.parentNode
+            }
             const hadClass = brick.parentNode.classList.contains('selected')
             document.querySelectorAll('.grid-brick.selected .score').forEach(score => score.scrollLeft = 0)
             document.querySelectorAll('.grid-brick.selected').forEach(selected => selected.classList.remove('selected'))
@@ -305,8 +308,6 @@ const Ω = {
                 brick.parentNode.classList.add('selected')
                 const variation = brick.parentNode.dataset.variation
                 coerce.variation = variation
-                const startBar = codec.variation2bar(variation)
-                config.startBarOfLastSelectedVariation = startBar
             }
         }))
         document.querySelectorAll('.grid-brick .score').forEach(score => score.addEventListener("scroll", (event) => {

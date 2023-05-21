@@ -211,7 +211,7 @@ function createColoredBadges(idContainer) {
 
         const svgOffsetX = codec.svgOffsetX(i)
 
-        const templatePuzzle = coerce.fullameNoSpaceLowercaseNoDiacritics ? `
+        const templatePuzzle = `
 <svg xmlns="http://www.w3.org/2000/svg" 
         id="gb-puzzle${i}-svg" 
         class="clipboard-puzzle"
@@ -219,7 +219,7 @@ function createColoredBadges(idContainer) {
         style="visibility: inherit; overflow: visible; transform: scale(.667);" 
         viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
         <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
-</svg>` : ''
+</svg>`
 
         const templateVariations =
             `

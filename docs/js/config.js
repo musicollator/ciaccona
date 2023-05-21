@@ -5,7 +5,6 @@ class Config {
     #scoreDisplay = 'firstBar'
     #scoreInBricks = 'allBricks'
     #playing = false
-    #startBarOfLastSelectedVariation = 0
     #autoplay = false
     #pane = 'left'
     #shuffleReplicator = undefined
@@ -26,9 +25,6 @@ class Config {
         this.playing = getCookie('playing')
 
         // 
-        this.startBarOfLastSelectedVariation = getCookie('startBarOfLastSelectedVariation')
-
-        // 
         this.autoplay = getCookie('autoplay')
 
         // 
@@ -40,16 +36,6 @@ class Config {
 
         this.#inConstructor = false
 
-        if (coerce) {
-            if (coerce.variation < 0 || codec.variationsCount <= coerce.variation) coerce.variation = undefined
-            if (coerce.variation) {
-                this.startBarOfLastSelectedVariation = codec.variation2bar(coerce.variation)
-            }
-            if (coerce.fullameNoSpaceLowercaseNoDiacritics == null) { // using ==, undefined and null are equal
-                // r.à.z.
-                this.playing = undefined
-            }
-        }
     }
 
     // 
@@ -114,37 +100,6 @@ class Config {
                     removeCookie('playing')
                 } else {
                     setCookie('playing', 'true')
-                }
-            }
-        }
-    }
-
-    // 
-    get startBarOfLastSelectedVariation() {
-        return this.#startBarOfLastSelectedVariation
-    }
-    set startBarOfLastSelectedVariation(startBarOfLastSelectedVariation) {
-        let temp
-        if (!startBarOfLastSelectedVariation) {
-            temp = 0
-        } else {
-            temp = parseInt(startBarOfLastSelectedVariation)
-            if (isNaN(temp)) temp = 0
-        }
-        if (codec.bar2variation(temp) === -1) {
-            temp = 0
-        }
-
-        if (temp !== this.#startBarOfLastSelectedVariation) {
-            this.#startBarOfLastSelectedVariation = temp
-
-            if (!this.#inConstructor) {
-                if (this.#startBarOfLastSelectedVariation === 0) {
-                    removeCookie('startBarOfLastSelectedVariation')
-                } else {
-                    // https://github.com/js-cookie/js-cookie/wiki/Frequently-Asked-Questions#expire-cookies-in-less-than-a-day
-                    var in30Minutes = 1 / 48;
-                    setCookie('startBarOfLastSelectedVariation', this.#startBarOfLastSelectedVariation, in30Minutes)
                 }
             }
         }
