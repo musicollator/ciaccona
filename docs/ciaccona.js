@@ -38,15 +38,25 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
 */
 
 {
-    (badgeArtistNameElement => {
-        if (!badgeArtistNameElement) return
-        badgeArtistNameElement.addEventListener('click', (event) => {
+    (badgeArtistEyeElement => {
+        if (!badgeArtistEyeElement) return
+        badgeArtistEyeElement.addEventListener('click', (event) => {
             event.stopPropagation()
             event.preventDefault()
-            togglePlayer()
+            const isPlayerVisible = togglePlayer()
+            if (typeof isPlayerVisible !== 'undefined') {
+                if (isPlayerVisible) {
+                    badgeArtistEyeElement.classList.remove('icon-eye_open')
+                    badgeArtistEyeElement.classList.add('icon-eye_close')
+                } else {
+                    badgeArtistEyeElement.classList.remove('icon-eye_close')
+                    badgeArtistEyeElement.classList.add('icon-eye_open')
+                }
+            }
+
         })
 
-    })(document.querySelector('.artist#badge-artist .fullname'))
+    })(document.querySelector('.artist#badge-artist #eye'))
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 

@@ -69,6 +69,15 @@
 .icon-arrow_out_left {
   background-image: url("index.svg?v=2.1.5#arrow_out_left-view");  
 }
+.icon-eye_close {
+  background-image: url("index.svg?v=2.1.5#eye_close-view");  
+}
+.icon-eye_open {
+  background-image: url("index.svg?v=2.1.5#eye_open-view");  
+}
+.icon-arrow_out_right {
+  background-image: url("index.svg?v=2.1.5#arrow_out_right-view");  
+}
 .icon-bach_siel_full_left {
   background-image: url("index.svg?v=2.1.5#bach_siel_full_left-view");
 }

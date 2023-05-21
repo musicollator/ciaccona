@@ -171,12 +171,15 @@
             </div>
 
             <div id="badge-artist" class="my-nav-item artist align-self-start flex-shrink-1" style="overflow: hidden;">
-                <div class="btn btn-light text-muted d-flex">
-                    <label class="fullname text-light"></label>
-                    <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video..."
+                <div class="btn btn-light text-muted d-flex justify-content-between">
+                    <a id="eye" class="btn icon-base icon-eye_close text-muted" href="#" aria-label="Show / Hide Video"
                         style="min-width:32px;">
                     </a>
-                    <a id="social" class="share btn btn-lihjt icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share..." style="min-width:32px;">
+                    <label class="fullname text-light"></label>
+                    <a id="youtube-url" class="btn icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video..."
+                        style="min-width:32px;">
+                    </a>
+                    <a id="social" class="share btn icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share..." style="min-width:32px;">
                     </a>
                 </div>
             </div>
@@ -246,10 +249,10 @@
 
         </div>
 
-        <div id="theContainerRow" class="row justify-content-end" style="margin: 3rem 0 0 0"> 
+        <div id="theContainerRow" class="row justify-content-end"> 
             <div id="playerWrapper" class="col video-container" data-plyr-provider="youtube" data-plyr-embed-id="" style="visibility: hidden">
             </div>
-            <div id="theContainerCol" class="col">
+            <div id="theContainerCol" class="col" style="padding: 2rem 0 0 0">
                 <div id="grid" class="ciaccona">
                 </div>
             </div>

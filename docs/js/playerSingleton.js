@@ -5,13 +5,15 @@ import Ω from "/js/dom.js?v=2.1.5"
 
 
 function togglePlayer() {
-    if (!config.plyrPlayer) return
-    (playerWrapper => {
-        if (!playerWrapper) return
+    if (typeof config.plyrPlayer === 'undefined') return undefined;
+    return (playerWrapper => {
+        if (!playerWrapper) return undefined;
         if (playerWrapper.style.visibility === 'visible') {
             hidePlayer()
+            return false
         } else {
             showPlayer()
+            return true
         }
     })(document.getElementById('playerWrapper'))
 }
