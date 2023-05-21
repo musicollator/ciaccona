@@ -117,6 +117,7 @@ const Ω = {
             }
         }
         this.currentlyShowing = undefined
+        this.visibilities = {}
         this.showAbout = async () => {
             this.about = true
 
@@ -124,8 +125,6 @@ const Ω = {
 
             console.log('BEGIN show about')
             document.querySelector('#config-menu a#about > label').innerHTML = "&check; About"
-
-            // ;[...document.getElementsByTagName('body')].forEach(e => e.classList.add('about'))
 
             style(document.querySelector('div#logoLeft'), this.animations[this.a].fore)
             style(document.querySelector('div#logoRight'), this.animations[this.a].back)
@@ -144,12 +143,15 @@ const Ω = {
                         document.querySelector('header.header').style.display = 'flex'
                         document.querySelector('footer.footer').style.display = 'flex'
                         this.currentlyShowing = animejs({
-                            targets: ['#theContainerCol', '#playerWrapper'],
+                            targets: ['#theContainerCol', '#playerWrapper', '#offcanvasExample'],
                             opacity: 0,
                             speed: 600,
                             easing: 'linear',
                             complete: () => {
-                                document.querySelectorAll('#theContainerCol, #playerWrapper').forEach(e => e.style.visibility = 'hidden')
+                                document.querySelectorAll('#theContainerCol, #playerWrapper', '#offcanvasExample').forEach(e => {
+                                    this.visibilities[e.id] = e.style.visibility
+                                    e.style.visibility = 'hidden'
+                                })
                                 this.a = (this.a + 1) % this.animations.length
                                 this.currentlyShowing = undefined
                                 console.log('FIN show about')
@@ -172,10 +174,11 @@ const Ω = {
             document.querySelector('footer.footer').style.display = 'none'
 
             window.requestAnimationFrame((chrono) => {
-                document.querySelectorAll('#theContainerCol, #playerWrapper').forEach(e => e.style.visibility = 'visible')
-                document.querySelectorAll('#theContainerCol, #playerWrapper').forEach(e => e.style.opacity = '1')
+                document.querySelectorAll('#theContainerCol, #playerWrapper', '#offcanvasExample').forEach(e => {
+                    e.style.visibility = this.visibilities[e.id]
+                })
                 animejs({
-                    targets: ['#theContainerCol', '#playerWrapper'],
+                    targets: ['#theContainerCol', '#playerWrapper', '#offcanvasExample'],
                     opacity: 1,
                     speed: 600,
                     easing: 'linear',

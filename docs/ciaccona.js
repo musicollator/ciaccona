@@ -37,9 +37,21 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
 }
 */
 
-{
+function ouvreLesYeux() {
     (badgeArtistEyeElement => {
-        if (!badgeArtistEyeElement) return
+        if (!badgeArtistEyeElement) return;
+
+        (playerWrapper => {
+            if (!playerWrapper) return;
+            if (playerWrapper.style.visibility === 'visible') {
+                badgeArtistEyeElement.classList.remove('icon-eye_open')
+                badgeArtistEyeElement.classList.add('icon-eye_close')
+            } else {
+                badgeArtistEyeElement.classList.remove('icon-eye_close')
+                badgeArtistEyeElement.classList.add('icon-eye_open')
+            }
+        })(document.getElementById('playerWrapper'));
+
         badgeArtistEyeElement.addEventListener('click', (event) => {
             event.stopPropagation()
             event.preventDefault()
@@ -53,7 +65,6 @@ if (fullameNoSpaceLowercaseNoDiacritics) {
                     badgeArtistEyeElement.classList.add('icon-eye_open')
                 }
             }
-
         })
 
     })(document.querySelector('.artist#badge-artist #eye'))
@@ -179,6 +190,8 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
     const isotopeResult = map.get(ISOTOPE)
     const playerResult = map.get(PLAYER)
 
+    ouvreLesYeux()
+
     if (isotopeResult) {
         isotopeResult.on('arrangeComplete', function (filteredItems) {
             console.log('isotope arrangeComplete')
@@ -187,7 +200,6 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
         if (!playerResult) {
             console.log("change isotope filter to hide artist name")
             isotopeResult.arrange({ filter: ':not(.artist)' })
-
         } else {
             console.log("change isotope filter to show artist name")
             isotopeResult.arrange({ filter: '*' })

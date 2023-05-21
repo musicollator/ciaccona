@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.js"></script>
+<script type="module">
+
+    // https://ourcodeworld.com/articles/read/104/how-to-override-the-console-methods-in-javascript
+    ; (function () {
+        if (typeof coerce.debug === 'undefined') return
+        const mess = document.getElementById('message')
+        // Save the original method in a private variable
+        const _privateLog = console.log;
+        const _privateError = console.error;
+        // Redefine console.log method with a custom function
+        console.log = function (message) {
+            Toastify({
+                text: [...arguments].join(' | '),
+                duration: 3000,
+                style: {
+                    zIndex: 2000,
+                    backgroundColor: 'white',
+                }
+            }).showToast();
+            _privateLog.apply(console, arguments);
+        };
+        console.error = function (message) {
+            Toastify({
+                text: [...arguments].join(' | '),
+                duration: 20000,
+                gravity: "top",
+                position: 'center',
+                style: {
+                    zIndex: 2000,
+                    backgroundColor: 'red',
+                }
+            }).showToast();
+            _privateError.apply(console, arguments);
+        };
+    })();        
+
+</script>
