@@ -95,7 +95,7 @@ function loadArtists() {
     })
 }
 
-const theArtists = await loadArtists().then(artists => artists)
+const theArtists = await loadArtists()
 
 let theArtist
 

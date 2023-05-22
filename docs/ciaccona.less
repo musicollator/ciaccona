@@ -22,7 +22,6 @@
 /* https://stackoverflow.com/a/60192837/1070215 */
 /* --------------------------- */
 #theContainer {
-  z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
@@ -341,7 +340,7 @@ span.d {
 .my-nav-item {
   > * {
     background: transparent;
-    z-index: 18;
+    z-index: 3;
     label {
       white-space: nowrap;
       user-select: none;
@@ -355,12 +354,6 @@ span.d {
     background-color: #00000080 !important;
   }
 }
-
-/*
-body:not(.video-player) #videos-menu {
-  display: none !important;
-}
-*/
 
 #badge-artist {
   margin: 0;
