@@ -158,109 +158,153 @@ function createColoredBadges(idContainer) {
     const twoZeroPad = (num) => String(num).padStart(2, '0')
     let i = 0;
     let barFrom = 0
+    const styles = []
+    const kebabize = (str) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase())
+
+    _colors_.forEach(function (c) {
+        c.kebabName = kebabize(c.name.replaceAll(/ /gi, ''))
+        const clazz = c.kebabName
+        const backgroundColor = c.p_rgb
+        const backgroundColorAlpha = c.p_rgbAlpha
+        const bgstripe = `linear-gradient(135deg, 
+            #${c.stripeColor} 25%, 
+            #${c.p_rgb} 25%, 
+            #${c.p_rgb} 50%, 
+            #${c.stripeColor} 50%, 
+            #${c.stripeColor} 75%, 
+            #${c.p_rgb} 75%, 
+            #${c.p_rgb} 100%); 
+            background-size: 16.97px 16.97px;`
+        const bgstripeAlpha = `linear-gradient(135deg, 
+            #${_T(c.stripeColor)} 25%, 
+            #${_T(c.p_rgb)} 25%, 
+            #${_T(c.p_rgb)} 50%, 
+            #${_T(c.stripeColor)} 50%, 
+            #${_T(c.stripeColor)} 75%, 
+            #${_T(c.p_rgb)} 75%, 
+            #${_T(c.p_rgb)} 100%); 
+            background-size: 16.97px 16.97px;`
+
+        const templateStyle =
+            `.${clazz} {
+  background-color: #${backgroundColor};
+  border-color: #${c.borderColor};
+}
+.${clazz} .divider {
+  background-color: #${c.puzzleColor};
+  color: #${c.textColor};
+}
+.${clazz}-text {
+  color: #${c.textColor};
+}
+.${clazz}-path {
+  stroke: #${c.textColor};
+  stroke-width: 3;
+  fill: #${c.puzzleColor};
+}
+.Δ.${clazz},
+.Δ .${clazz} {
+  background-image: ${bgstripe};
+}
+body.video-player .${clazz} {
+  background-color: #${backgroundColorAlpha};
+}
+body.video-player .Δ.${clazz},
+body.video-player .Δ .${clazz} {
+  background-image: ${bgstripeAlpha};
+}
+body.video-player .${clazz}-path {
+  stroke: #${_T(c.textColor)};
+  fill: #${_T(c.puzzleColor)};
+}
+body.video-player .${clazz} .divider {
+  background-color: #${_T(c.puzzleColor)};
+}
+`
+        const style = templateStyle
+        styles.push(style)
+    })
+
+    document.getElementsByTagName('head')[0].appendChild(
+        generateElement(`<style>${styles.join("")}</style>`)
+    );
+
+    i = 0;
+    barFrom = 0
     _colors_.forEach(function (c) {
 
-        let c2
-
-        if (coerce.fullameNoSpaceLowercaseNoDiacritics) {
-            c2 = {
-                p_rgb: _T(c.p_rgb),
-                p_rgbAlpha: c.p_rgbAlpha,
-                textColor: _T(c.textColor),
-                puzzleColor: _T(c.puzzleColor),
-                stripeColor: _T(c.stripeColor),
-                stripeColorAlpha: c.stripeColorAlpha,
-                borderColor: _T(c.borderColor),
-            }
-        } else {
-            c2 = {
-                p_rgb: c.p_rgb,
-                p_rgbAlpha: c.p_rgbAlpha,
-                textColor: c.textColor,
-                puzzleColor: c.puzzleColor,
-                stripeColor: c.stripeColor,
-                stripeColorAlpha: c.stripeColorAlpha,
-                borderColor: _T(c.borderColor),
-            }
-        }
-
-        const tonality = codec.isMajor(i) ? "Δ" : "";
+        const tonality = codec.isMajor(i) ? "Δ" : "μ";
         const barsCount = codec.variation2barsCount(i)
         const warning = barsCount != 8 ? `(${barsCount})` : "";
         const barTo = barFrom + barsCount
-        const bg = `background-color: #${c2.p_rgb}`
-        const bgAlpha = `background-color: #${c2.p_rgbAlpha}`
-        const bgstripe = !tonality ? bg : `background-image: linear-gradient(135deg, 
-                #${c2.stripeColor} 25%, 
-                #${c2.p_rgb} 25%, 
-                #${c2.p_rgb} 50%, 
-                #${c2.stripeColor} 50%, 
-                #${c2.stripeColor} 75%, 
-                #${c2.p_rgb} 75%, 
-                #${c2.p_rgb} 100%); 
-                background-size: 16.97px 16.97px;`
-        const bgstripeAlpha = !tonality ? bgAlpha : `background-image: linear-gradient(135deg, 
-                #${c2.stripeColorAlpha} 25%, 
-                #${c2.p_rgbAlpha} 25%, 
-                #${c2.p_rgbAlpha} 50%, 
-                #${c2.stripeColorAlpha} 50%, 
-                #${c2.stripeColorAlpha} 75%, 
-                #${c2.p_rgbAlpha} 75%, 
-                #${c2.p_rgbAlpha} 100%); 
-                background-size: 16.97px 16.97px;`
-
         const svgOffsetX = codec.svgOffsetX(i)
-
-        const templatePuzzle = `
-<svg xmlns="http://www.w3.org/2000/svg" 
-        id="gb-puzzle${i}-svg" 
-        class="clipboard-puzzle"
-        width="80%" height="60%" 
-        style="visibility: inherit; overflow: visible; transform: scale(.667);" 
-        viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
-        <path stroke="#${c2.textColor}" stroke-width="3" fill="#${c2.puzzleColor}" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
-</svg>`
 
         const templateVariations =
             `
-<div id="gb${i}" data-sort="${twoZeroPad(i)}" data-variation="${i}" class="${tonality ? tonality + ' ' : ''}grid-brick has-score" style="${bgstripeAlpha}; border-color: #${c2.borderColor};">
-    <div id="b${i}" class="brick has-score font-monospace d-flex align-items-center justify-content-between" style="${bgstripe}; ${i === codec.variationsCount - 1 ? 'border-radius: 0;' : ''} " data-bar="${barFrom}" data-variation="${i}" >
-        <div class="score" style="width: ${(_widths_[i].w) - 120}px;" data-width="${(_widths_[i].w) - 120}">
-            <!-- bwv-1004_5_for_SVGs- -->
-            <object id="o${i}" 
-                    data="/scores/bwv-1004_5_viewboxed-${i + 1}.svg" 
+<div id="gb${i}" 
+     class="${tonality} ${c.kebabName} grid-brick has-score" 
+     data-sort="${twoZeroPad(i)}" 
+     data-bar="${barFrom}" 
+     data-variation="${i}"
+     aria-label="grid-brick ${i}">
+
+     <div id="b${i}" 
+         class="${c.kebabName} brick has-score font-monospace d-flex align-items-center justify-content-between" 
+         style="${i === codec.variationsCount - 1 ? 'border-radius: 0;' : ''} " 
+         data-bar="${barFrom}" 
+         data-variation="${i}"
+         aria-label="brick ${i}">
+
+         <div id="s${i}" 
+             class="score" 
+             style="width: ${(_widths_[i].w) - 120}px;" 
+             data-width="${(_widths_[i].w) - 120}"
+             aria-label="score ${i}">
+
+             <object id="o${i}" 
                     type="image/svg+xml"
                     style="pointer-events: none;" 
+                    data="/scores/bwv-1004_5_viewboxed-${i + 1}.svg" 
                     data-svg-offset-x = ${svgOffsetX}
                     aria-label="variation ${i}"> 
             </object>
 
-            <span class="Δ" style="${bgstripe}">
-                ${tonality}
+            <span class="Δ ${c.kebabName}">
+                ${tonality === 'Δ' ? tonality : ''}
             </span>
         </div>
 
-        <div class="d-flex flex-grow-1 flex-column justify-content-between" style="height:100%; text-align: right; ${i === codec.variationsCount - 1 ? "display:none;" : ""}font-size:1.1rem; padding: 0 .3rem; border-right: .5px solid #${c2.textColor}; color: #${c2.textColor}">
+        <div class="${c.kebabName}-text d-flex flex-grow-1 flex-column justify-content-between" 
+             style="height:100%; text-align: right; ${i === codec.variationsCount - 1 ? "display:none;" : ""}font-size:1.1rem; padding: 0 .3rem; border-right: .5px solid white;">
             <div class="pt-1">${barFrom + 1}</div>
-            <div style="${i === codec.variationsCount - 1 ? "display:none;" : ""}font-style: italic; font-size:.8rem; color: #${c2.textColor};">
+            <div style="${i === codec.variationsCount - 1 ? "display:none; " : ""}font-style: italic; font-size:.8rem;">
                 ${warning}
             </div>
             <div class="pb-1">${barTo}</div>
         </div>
-        <div class="select-variation d-flex flex-column justify-content-evenly" style="width: 3rem; overflow: visible;"
-             data-stroke="#${c2.textColor}"
-             data-fill="#${c2.p_rgb}"
-             data-fill2="#${c2.puzzleColor}"
+
+        <div class="select-variation d-flex flex-column justify-content-evenly" 
+             style="width: 3rem; overflow: visible;"
+             data-clazz="${c.kebabName}"
+             data-tonality="${tonality}"
              data-variation="${i}">
-            ${templatePuzzle}
+             <svg xmlns="http://www.w3.org/2000/svg" 
+                  id="gb-puzzle${i}-svg" 
+                  class="clipboard-puzzle"
+                  width="100%" height="100%" 
+                  style="visibility: inherit; overflow: visible; transform: scale(.667);" 
+                  viewBox="${jigsawGenerator.getJigsawViewBox(i + 1)}">
+                 <path class="${c.kebabName}-path" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
+            </svg>
             <div id="gb-variation${i}" 
-                class="fw-bold" 
-                data-a="${coerce.fullameNoSpaceLowercaseNoDiacritics}"
-                data-v="${i}"
-                style="color: #${c2.textColor}; padding: .333rem;">
+                 class="${c.kebabName}-text fw-bold" 
+                 data-a="${coerce.fullameNoSpaceLowercaseNoDiacritics}"
+                 data-v="${i}"
+                 style="padding: .333rem;">
                 ${i === 0 || i === codec.variationsCount - 1 ? "&nbsp;" : i}
             </div>
         </div>
+
     </div>
 </div>
 `

@@ -1,5 +1,5 @@
-import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
+import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import codec from "/js/structure.js?v=2.2.1"
 import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.1"
 import { theArtists } from "/js/artists.js?v=2.2.1"
@@ -157,22 +157,14 @@ function generateData() {
             })
 
             offcanvasElementList.forEach(offcanvasElement => {
-                offcanvasElement.dataset.oldFill = offcanvasElement.style.backgroundColor
-                offcanvasElement.dataset.oldStroke = offcanvasElement.style.color
                 offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                    dividerElement.dataset.oldFill = dividerElement.style.backgroundColor
-                    dividerElement.dataset.oldStroke = dividerElement.style.color
                 })
                 offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
                     if (typeof coerce.variation !== 'undefined') {
                         if (coerce.color) {
-                            offcanvasElement.style.backgroundColor = coerce.color.fill
-                            offcanvasElement.style.color = coerce.color.stroke
+                            offcanvasElement.classList.add(coerce.color.clazz)
+                            offcanvasElement.classList.add(coerce.color.tonality)
                             offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                                dividerElement.dataset.oldFill = dividerElement.style.backgroundColor
-                                dividerElement.dataset.oldStroke = dividerElement.style.color
-                                dividerElement.style.backgroundColor = coerce.color.fill2
-                                dividerElement.style.color = coerce.color.stroke
                             })
                         }
                         document.querySelectorAll('.list-artist').forEach(la => {
@@ -181,13 +173,12 @@ function generateData() {
                     }
                 })
                 offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
+                    if (coerce.color) {
+                        offcanvasElement.classList.remove(coerce.color.clazz)
+                        offcanvasElement.classList.remove(coerce.color.tonality)
+                    }
                     coerce.color = undefined
-                    const offcan = document.getElementById('offcanvasExample')
-                    offcanvasElement.style.backgroundColor = offcanvasElement.dataset.oldFill
-                    offcanvasElement.style.color = offcanvasElement.dataset.oldStroke
                     offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                        dividerElement.style.backgroundColor = dividerElement.dataset.oldFill
-                        dividerElement.style.color = dividerElement.dataset.oldStroke
                     })
                 })
             })
@@ -201,9 +192,8 @@ function generateData() {
                 event.stopPropagation()
                 coerce.variation = element.dataset.variation
                 coerce.color = {
-                    fill: element.dataset.fill,
-                    fill2: element.dataset.fill2,
-                    stroke: element.dataset.stroke,
+                    clazz: element.dataset.clazz,
+                    tonality: element.dataset.tonality,
                 }
                 offcanvasList.forEach(oc => oc.show())
             }))
