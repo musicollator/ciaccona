@@ -1,7 +1,7 @@
 import animejs from '/lib/anime-3.2.1.es.min.js'
 import config from "/js/config.js?v=2.1.9"
-import codec from "/js/structure.js?v=2.1.9"
 import { shuffleArray, generateElement } from "/js/utils.js?v=2.1.9"
+import brickClickHandler from "/js/brickClickHandler.js?v=2.1.9"
 
 const Ω = {
     animateUnveilScores: () => {
@@ -295,26 +295,10 @@ const Ω = {
 
         Ω.setClickHandlers(iso)
 
-        document.querySelectorAll('.brick.has-score').forEach(score => score.addEventListener('click', e => {
-            e.preventDefault()
-            e.stopPropagation()
-            let brick = e.currentTarget
-            if (brick.classList.contains('score')) {
-                brick = e.currentTarget.parentNode
-            }
-            const hadClass = brick.parentNode.classList.contains('selected')
-            const wasVisible = brick.parentNode.style.visibility === "visible"
-            document.querySelectorAll('.grid-brick.selected .score').forEach(score => score.scrollLeft = 0)
-            document.querySelectorAll('.grid-brick.selected').forEach(selected => selected.classList.remove('selected'))
-            document.querySelectorAll('.grid-brick.goodbye').forEach(goodbye => goodbye.classList.remove('goodbye'))
-            document.querySelectorAll('.grid-brick.hello').forEach(hello => hello.classList.remove('hello'))
-            if (!wasVisible) { 
-                brick.parentNode.style.visibility = "visible"
-                // brick.parentNode.classList.add('selected')
-            }
-        }))
+        document.querySelectorAll('.brick.has-score').forEach(brick => brick.addEventListener('click', brickClickHandler, true))
 
-        document.querySelectorAll('.grid-brick .score').forEach(score => score.addEventListener("scroll", (event) => {
+        /*
+        document.querySelectorAll('.grid-brick .brick .score').forEach(score => score.addEventListener("scroll", (event) => {
 
             const score = event.currentTarget;
             const obj = event.currentTarget.parentNode;
@@ -324,6 +308,7 @@ const Ω = {
                 score.style['border-radius'] = "3rem 3rem 3rem 3rem"
             }
         }))
+        */
 
         // https://developer.mozilla.org/en-US/docs/Web/API/Resize_Observer_API
         const resizeObserver = new ResizeObserver(entries => {

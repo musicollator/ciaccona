@@ -150,65 +150,25 @@ const feedbackOnCurrentTime = (source, currentTime, noSave, isPlaying, scrollToV
     }
 }
 
+/*
 const setBrickClickEvent = (_plyer) => {
 
-    function handleScoreClick(event) {
-        event.stopImmediatePropagation()
+document.querySelectorAll(".brick.has-score .score").forEach((b) => {
+    // b.addEventListener('click', handleScoreClick, true)
 
-        setTimeout(() => {
-            _plyer.muted = false
-        }, 200)
-
-        const isPlaying = _plyer.playing
-
-        // DOM element has bar index in data
-        const thisBar = parseInt(this.parentNode.dataset.bar)
-
-        coerce.variation = this.parentNode.dataset.variation
-        const selector = `.grid-brick#gb${coerce.variation}`
-        const thisOneIsPlaying = document.querySelector(selector)?.classList.contains('gbPlaying')
-        const thisOneIsSelected = document.querySelector(selector)?.classList.contains('selected')
-        if (isPlaying && thisOneIsPlaying) {
-            _plyer.pause()
-            document.querySelector(selector)?.classList.remove('gbPlaying')
-        } else if (!isPlaying && thisOneIsSelected) {
-            _plyer.play()
-            document.querySelector(selector)?.classList.add('gbPlaying')
-        } else {
-            // immediate feedback
-            document.querySelector(selector)?.classList.add('selected')
-            document.querySelector('.grid-brick.gbPlaying')?.classList.add('goodbye')
-
-            this.parentNode.classList.add('hello')
-
-            // get bar data from timings
-            let startBar = config.artistAndTimings.bars[thisBar]
-            console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${coerce.variation}, variation starts at bar ${startBar.index}`, event)
-
-            // seek to the duration
-            _plyer.currentTime = startBar.duration.asMilliseconds() / 1000
-
-            if (!isPlaying) {
-                _plyer.play()
-            }
+    b.addEventListener("scrollend", (event) => {
+        // console.log(b.scrollLeft)
+        if (b.scrollLeft === 0 && !_plyer.playing) {
+            const bar = parseInt(b.parentNode.dataset.bar)
+            const theBar = config.artistAndTimings.bars[bar]
+            console.log("scrollend: Dear plyr, I'd like you to seek at bar <", bar, ">, thanks.")
+            _plyer.currentTime = theBar.duration.asMilliseconds() / 1000
         }
-    }
 
-    document.querySelectorAll(".brick.has-score .score").forEach((b) => {
-        b.addEventListener('click', handleScoreClick, true)
-
-        b.addEventListener("scrollend", (event) => {
-            // console.log(b.scrollLeft)
-            if (b.scrollLeft === 0 && !_plyer.playing) {
-                const bar = parseInt(b.parentNode.dataset.bar)
-                const theBar = config.artistAndTimings.bars[bar]
-                console.log("scrollend: Dear plyr, I'd like you to seek at bar <", bar, ">, thanks.")
-                _plyer.currentTime = theBar.duration.asMilliseconds() / 1000
-            }
-
-        }, true);
-    })
+    }, true);
+})
 }
+*/
 
 export default function createPlayer(selector, ignore_all_events) {
     initialized = false
@@ -332,14 +292,10 @@ export default function createPlayer(selector, ignore_all_events) {
                 console.log("Plyr ready event LIMITED to onReady, as initialized is true")
                 onReady()
             } else {
-                console.log("about to setBrickClickEvent ...")
-                setBrickClickEvent(_plyer)
-                console.log("... setBrickClickEvent done!")
+                // setBrickClickEvent(_plyer)
 
                 if (!ignore_all_events) {
-                    console.log("about to INIT_EVENT_HANDLERS ...")
                     INIT_EVENT_HANDLERS()
-                    console.log("... INIT_EVENT_HANDLERS done!")
 
                     onReady()
                 } else {
