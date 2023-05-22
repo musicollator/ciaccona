@@ -1,6 +1,6 @@
-import codec from "/js/structure.js?v=2.2.18"
-import config from "/js/config.js?v=2.2.18"
-import { theTrickToViewportUnitsOnMobile } from "/js/utils.js?v=2.2.18"
+import codec from "/js/structure.js?v=2.2.19"
+import config from "/js/config.js?v=2.2.19"
+import { theTrickToViewportUnitsOnMobile } from "/js/utils.js?v=2.2.19"
 
 // brick width
 function calcBrickWidth() {
