@@ -122,18 +122,19 @@
       }
       .grid-brick.selected {
         .brick {
-          border-radius: 0 !important;
+          // border-radius: 0 !important;
         }
       }
       .grid-brick.has-score.selected {
+        // background-color: transparent !important;
         .brick {
-          > *:not(:first-child) {
+          > *:not(:first-child):not(:last-child) {
             display: none !important;
           }
           .score {
             border-radius: 0 !important;
             background-color: #aaaaaa40 !important;
-            width: 100% !important;
+            width: calc(100% - 45.08px) !important;
             overflow-x: scroll;
           }
         }

@@ -1,6 +1,5 @@
 import isotopeLayout from 'https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/+esm'
 import config from "/js/config.js?v=2.2.10"
-import codec from "/js/structure.js?v=2.2.10"
 import { togglePlayer } from "/js/playerSingleton.js?v=2.2.10"
 import { createColoredBadges } from "/js/colors.js?v=2.2.10"
 import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.10"
@@ -80,6 +79,8 @@ createColoredBadges('grid');
 const autoplayChecked = document.getElementById('autoplayChecked')
 if (autoplayChecked) {
     if (config.autoplay) autoplayChecked.checked = true
+} else {
+    console.log('NO AUTOPLAY CHECK BOX ?!')
 }
 
 (grid => {
