@@ -230,18 +230,15 @@ export default function createPlayer(selector, ignore_all_events) {
 
             _plyer.on('pause', (event) => {
                 console.log("Plyr pause event")
-                config.playing = false
                 hidePlay('pause')
             })
             _plyer.on('ended', (event) => {
                 console.log("Plyr ended event", event.detail.plyr.embed.playerInfo)
-                config.playing = undefined
                 coerce.variation = undefined
                 hidePlay()
             })
             _plyer.on('playing', (event) => {
                 console.log("Plyr playing event")
-                config.playing = true
                 showPlay(event.detail.plyr.currentTime)
                 feedbackOnCurrentTime('playing', event.detail.plyr.currentTime, undefined /* save variation */, _plyer.playing, true, { behavior: "smooth", block: "nearest" })
             })
@@ -268,12 +265,12 @@ export default function createPlayer(selector, ignore_all_events) {
                 feedbackOnCurrentTime('seeking', seekTime, true /* do not save variation */, _plyer.playing, true, { behavior: "instant", block: "center" })
             })
             _plyer.on('seeked', (event) => {
-                console.log("Plyr seeked event", 'begin', begin, 'config.playing', config.playing, '_plyer.playing', _plyer.playing)
+                console.log("Plyr seeked event", 'begin', begin, '_plyer.playing', _plyer.playing)
                 if (begin) {
                     console.log('set begin to FALSE')
                     begin = false
                     if (config.autoplay) {
-                        if (config.playing && !event.detail.plyr.playing) {
+                        if (!event.detail.plyr.playing) {
                             setTimeout(() => {
                                 event.detail.plyr.pause()
                                 event.detail.plyr.play()

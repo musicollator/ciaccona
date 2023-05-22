@@ -3,9 +3,8 @@ import codec from "/js/structure.js?v=2.2.11"
 
 class Config {
     #scoreDisplay = 'firstBar'
-    #scoreInBricks = 'allBricks'
-    #playing = false
-    #autoplay = false
+    #scoreInBricks = 'selectedBrick'
+    #autoplay = true
     #pane = 'left'
     #shuffleReplicator = undefined
 
@@ -20,9 +19,6 @@ class Config {
 
         // 
         this.scoreInBricks = getCookie('scoreInBricks')
-
-        // 
-        this.playing = getCookie('playing')
 
         // 
         this.autoplay = getCookie('autoplay')
@@ -41,7 +37,6 @@ class Config {
     reset() {
         this.scoreDisplay = undefined
         this.scoreInBricks = undefined
-        this.playing = undefined
         this.autoplay = undefined
         this.pane = undefined
         this.shuffleReplicator = undefined
@@ -75,40 +70,17 @@ class Config {
     }
     set scoreInBricks(scoreInBricks) {
         if (typeof scoreInBricks === 'undefined') {
-            scoreInBricks = 'allBricks'
+            scoreInBricks = 'selectedBrick'
         } else if (scoreInBricks !== 'allBricks' && scoreInBricks !== 'selectedBrick') {
             return
         }
         if (scoreInBricks !== this.#scoreInBricks) {
             this.#scoreInBricks = scoreInBricks
             if (!this.#inConstructor) {
-                if (!this.#scoreInBricks || this.#scoreInBricks === 'allBricks') {
+                if (!this.#scoreInBricks || this.#scoreInBricks === 'selectedBrick') {
                     removeCookie('scoreInBricks')
                 } else {
                     setCookie('scoreInBricks', this.#scoreInBricks)
-                }
-            }
-        }
-    }
-
-    // 
-    get playing() {
-        return this.#playing
-    }
-    set playing(playing) {
-        if (playing && (playing === 'true' || playing === true)) {
-            playing = true
-        } else {
-            playing = false
-        }
-
-        if (playing !== this.#playing) {
-            this.#playing = playing
-            if (!this.#inConstructor) {
-                if (this.#playing === false) {
-                    removeCookie('playing')
-                } else {
-                    setCookie('playing', 'true')
                 }
             }
         }
@@ -119,20 +91,20 @@ class Config {
         return this.#autoplay
     }
     set autoplay(autoplay) {
-        if (autoplay && (autoplay === 'true' || autoplay === true)) {
-            autoplay = true
-        } else {
+        if (autoplay && (autoplay === 'false' || autoplay === false)) {
             autoplay = false
+        } else {
+            autoplay = true
         }
 
         if (autoplay !== this.#autoplay) {
             this.#autoplay = autoplay
             if (!this.#inConstructor) {
-                if (this.#autoplay === false) {
+                if (this.#autoplay === true) {
                     removeCookie('autoplay')
                 } else {
                     const in10Minutes = 1 / 144;
-                    setCookie('autoplay', 'true', in10Minutes)
+                    setCookie('autoplay', 'false', in10Minutes)
                 }
             }
         }
