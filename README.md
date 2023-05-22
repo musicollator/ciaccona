@@ -1,1 +1,3 @@
 # ciaccona
+
+()[docs/manuscriptFirstLine.jpg]
