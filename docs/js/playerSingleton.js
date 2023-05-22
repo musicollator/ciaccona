@@ -55,14 +55,15 @@ function hidePlayer() {
     if (theContainerCol) theContainerCol.classList.remove('push2right')
 }
 
-async function createPlayerSingleton(fullameNoSpaceLowercaseNoDiacritics, no_plyr_event) {
+async function createPlayerSingleton(fullameNoSpaceLowercaseNoDiacriticsParam, no_plyr_event) {
 
+    const fullameNoSpaceLowercaseNoDiacriticsLocalScope = fullameNoSpaceLowercaseNoDiacriticsParam
     if (config.plyrPlayer) {
 
         return new Promise((resolve, reject) => {
 
             // https://github.com/sampotts/plyr#the-source-setter
-            createTimings(fullameNoSpaceLowercaseNoDiacritics).then((artistAndTimings) => {
+            createTimings(fullameNoSpaceLowercaseNoDiacriticsLocalScope).then((artistAndTimings) => {
                 Ω.showArtist(artistAndTimings)
                 // console.log('ABOUT TO CHANGE VIDEO', artist['▶'].youtubeUrl)
                 config.plyrPlayer.source = {
@@ -89,11 +90,11 @@ async function createPlayerSingleton(fullameNoSpaceLowercaseNoDiacritics, no_ply
     }
 
     return new Promise((resolve, reject) => {
-        if (!fullameNoSpaceLowercaseNoDiacritics) {
-            reject(`fullameNoSpaceLowercaseNoDiacritics='${fullameNoSpaceLowercaseNoDiacritics}' not good`)
+        if (!fullameNoSpaceLowercaseNoDiacriticsLocalScope) {
+            reject(`fullameNoSpaceLowercaseNoDiacriticsLocalScope='${fullameNoSpaceLowercaseNoDiacriticsLocalScope}' not good`)
         }
 
-        createTimings(fullameNoSpaceLowercaseNoDiacritics).then((artistAndTimings) => {
+        createTimings(fullameNoSpaceLowercaseNoDiacriticsLocalScope).then((artistAndTimings) => {
 
             // we have more info bout the artist
             Ω.showArtist(artistAndTimings)
