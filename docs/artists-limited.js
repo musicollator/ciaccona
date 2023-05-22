@@ -1,9 +1,10 @@
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
+import config from "/js/config.js?v=2.2.8"
 import codec from "/js/structure.js?v=2.2.8"
 import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.8"
 import { theArtists } from "/js/artists.js?v=2.2.8"
-import { shuffleArray, generateElement  } from "/js/utils.js?v=2.2.8"
+import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.8"
 
 console.log('artists-limited')
 
@@ -71,6 +72,7 @@ function generateData() {
     return data;
 }
 
+// window.addEventListener("DOMContentLoaded", (event) => {
 (list => {
     if (!list) return
 
@@ -132,15 +134,19 @@ function generateData() {
 
         function setEventListeners() {
             // https://getbootstrap.com/docs/5.2/components/offcanvas/#via-javascript
+            /*
             const offcanvasElementList = document.querySelectorAll('.offcanvas')
             const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+            */
+           const offcanvasElement = document.getElementById('theOffcanvas')
+            if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(offcanvasElement)
 
             document.querySelectorAll('.list-artist').forEach(element => {
                 element.addEventListener('click', (event) => {
                     event.stopPropagation()
                     event.preventDefault()
 
-                    offcanvasList.forEach(oc => oc.hide())
+                    config.offcanvasElementBootstrapped.hide()
 
                     createPlayerSingleton(event.currentTarget.dataset.a).then(result => {
                         const artistAndTimings = result.value
@@ -154,50 +160,32 @@ function generateData() {
                 })
             })
 
-            offcanvasElementList.forEach(offcanvasElement => {
-                offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                })
-                offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
-                    if (typeof coerce.variation !== 'undefined') {
-                        if (coerce.color) {
-                            offcanvasElement.classList.add(coerce.color.clazz)
-                            offcanvasElement.classList.add(coerce.color.tonality)
-                            offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                            })
-                        }
-                        document.querySelectorAll('.list-artist').forEach(la => {
-                            la.style.backgroundImage = bg(la.dataset.a, coerce.variation)
+            offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+                if (typeof coerce.variation !== 'undefined') {
+                    if (coerce.color) {
+                        offcanvasElement.classList.add(coerce.color.clazz)
+                        offcanvasElement.classList.add(coerce.color.tonality)
+                        offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
                         })
                     }
-                })
-                offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
-                    if (coerce.color) {
-                        offcanvasElement.classList.remove(coerce.color.clazz)
-                        offcanvasElement.classList.remove(coerce.color.tonality)
-                    }
-                    coerce.color = undefined
-                    offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
+                    document.querySelectorAll('.list-artist').forEach(la => {
+                        la.style.backgroundImage = bg(la.dataset.a, coerce.variation)
                     })
+                }
+            })
+            offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
+                if (coerce.color) {
+                    offcanvasElement.classList.remove(coerce.color.clazz)
+                    offcanvasElement.classList.remove(coerce.color.tonality)
+                }
+                coerce.color = undefined
+                offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
                 })
             })
 
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
-                offcanvasList.forEach(oc => oc.hide())
+                config.offcanvasElementBootstrapped.hide()
             }))
-
-            /* 
-            moved to dom.js
-            document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
-                event.preventDefault()
-                event.stopPropagation()
-                coerce.variation = element.dataset.variation
-                coerce.color = {
-                    clazz: element.dataset.clazz,
-                    tonality: element.dataset.tonality,
-                }
-                offcanvasList.forEach(oc => oc.show())
-            }))
-            */
         }
 
         setEventListeners()
@@ -205,3 +193,4 @@ function generateData() {
     }
 
 })(document.getElementById('list'))
+// });

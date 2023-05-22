@@ -143,12 +143,12 @@ const Ω = {
                         document.querySelector('header.header').style.display = 'flex'
                         document.querySelector('footer.footer').style.display = 'flex'
                         this.currentlyShowing = animejs({
-                            targets: ['#theContainerCol', '#playerWrapper', '#offcanvasExample'],
+                            targets: ['#theContainerCol', '#playerWrapper', '#theOffcanvas'],
                             opacity: 0,
                             speed: 600,
                             easing: 'linear',
                             complete: () => {
-                                document.querySelectorAll('#theContainerCol, #playerWrapper', '#offcanvasExample').forEach(e => {
+                                document.querySelectorAll('#theContainerCol, #playerWrapper', '#theOffcanvas').forEach(e => {
                                     this.visibilities[e.id] = e.style.visibility
                                     e.style.visibility = 'hidden'
                                 })
@@ -174,11 +174,11 @@ const Ω = {
             document.querySelector('footer.footer').style.display = 'none'
 
             window.requestAnimationFrame((chrono) => {
-                document.querySelectorAll('#theContainerCol, #playerWrapper', '#offcanvasExample').forEach(e => {
+                document.querySelectorAll('#theContainerCol, #playerWrapper', '#theOffcanvas').forEach(e => {
                     e.style.visibility = this.visibilities[e.id]
                 })
                 animejs({
-                    targets: ['#theContainerCol', '#playerWrapper', '#offcanvasExample'],
+                    targets: ['#theContainerCol', '#playerWrapper', '#theOffcanvas'],
                     opacity: 1,
                     speed: 600,
                     easing: 'linear',
@@ -320,8 +320,11 @@ const Ω = {
 
     },
     setPuzzleClickHandlers: () => {
+        /*
         const offcanvasElementList = document.querySelectorAll('.offcanvas')
         const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+        */
+        if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(document.getElementById('theOffcanvas')) 
 
         document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
             event.preventDefault()
@@ -331,7 +334,7 @@ const Ω = {
                 clazz: element.dataset.clazz,
                 tonality: element.dataset.tonality,
             }
-            offcanvasList.forEach(oc => oc.show())
+            config.offcanvasElementBootstrapped.show()
         }))
 
     }
