@@ -1,3 +1,3 @@
 # ciaccona
 
-[<img src="docs/manuscriptFirstLine.jpg" />](ciaccona.cthiebaud.com)
+[<img src="docs/manuscriptFirstLine.jpg" />](https://ciaccona.cthiebaud.com/)
