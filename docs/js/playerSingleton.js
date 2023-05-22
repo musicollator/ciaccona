@@ -1,7 +1,7 @@
-import config from "/js/config.js?v=2.2.14"
-import createTimings from "/js/timings.js?v=2.2.14"
-import createPlayer from "/js/player.js?v=2.2.14"
-import Ω from "/js/dom.js?v=2.2.14"
+import config from "/js/config.js?v=2.2.15"
+import createTimings from "/js/timings.js?v=2.2.15"
+import createPlayer from "/js/player.js?v=2.2.15"
+import Ω from "/js/dom.js?v=2.2.15"
 
 
 function togglePlayer() {
