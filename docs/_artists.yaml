@@ -591,6 +591,11 @@
 - firstname: Virginie
   lastname: Robilliard
   instrument: 1Violin
+  facebook: https://www.facebook.com/profile.php?id=100010179971026
+  youtube: VirginieRobilliard
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid02CddsELQz9hqWCQSoLjt2ZK3ohh4yMkFaA1bFTUF7eCXWHa239ZEXkxBnAkKhwmUpl
+    sort: 31
   flag: 🇫🇷
   ▶:
     id: KWcGsRKbe-U

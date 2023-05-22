@@ -52,7 +52,10 @@ export default function brickClickHandler(event) {
             config.plyrPlayer.currentTime = startBar.duration.asMilliseconds() / 1000
 
             if (!isPlaying) {
-                config.plyrPlayer.play()
+                setTimeout(() => {
+                    config.plyrPlayer.pause()
+                    config.plyrPlayer.play()
+                }, 500)
             }
         }
 
