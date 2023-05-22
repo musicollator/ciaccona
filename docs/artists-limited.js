@@ -106,15 +106,15 @@ function generateData() {
 
     var listArtistElements = document.querySelectorAll('.list-artist')
     const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
+        console.log('All ImagesLoaded')
     });
     imgLoad.on('progress', function (instance, image) {
-        image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
+        console.log('image loaded', image)
+        image.element.style.visibility = 'inherit'
+        // image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
     });
 
-    const event = new Event("artistsLoaded");
-    window.dispatchEvent(event);
-
-    readyToPack.then((result) => {
+    {
         console.log("about to create packery ...")
         const thePackery = new packeryLayout(list, {
             itemSelector: ".list-item",
@@ -199,6 +199,6 @@ function generateData() {
 
         setEventListeners()
 
-    })
+    }
 
 })(document.getElementById('list'))

@@ -24,8 +24,6 @@ function calcItemWidth() {
         document.documentElement.style.setProperty('--2liw', `${listItemDoublPercentageWidth}%`)
         document.documentElement.style.setProperty('--2lih', `${listItemsDoubleHeight}px`)
     }
-    console.log('shout readyToPack event...')
-    window.dispatchEvent(new Event('readyToPack'));
 }
 
 window.addEventListener("calcItemWidth", (event) => {

@@ -124,10 +124,3 @@ const readyToIsotope = new Promise((resolve) => {
     })
 })
 
-// transform packery event into promise
-const readyToPack = new Promise((resolve) => {
-    window.addEventListener('readyToPack', (event) => {
-        console.log("... heard readyToPack event");
-        resolve(event)
-    })
-})        
