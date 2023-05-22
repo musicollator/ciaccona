@@ -72,6 +72,7 @@ function ouvreLesYeux() {
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 createColoredBadges('grid');
+Ω.setPuzzleClickHandlers()
 Ω.showScoreDisplay()
 Ω.showScoreInBricks()
 

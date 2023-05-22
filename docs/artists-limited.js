@@ -117,11 +117,11 @@ function generateData() {
     {
         console.log("about to create packery ...")
         const thePackery = new packeryLayout(list, {
-            itemSelector: ".list-item",
-            percentPosition: false,
+            itemSelector: "#list .list-item",
+            gutter: 10,
             initLayout: false,
-            gutter: '#list .gutter-sizer',
-            resize: true
+            resize: true,
+            percentPosition: false
         })
 
         thePackery.on('layoutComplete', function () {
@@ -185,6 +185,8 @@ function generateData() {
                 offcanvasList.forEach(oc => oc.hide())
             }))
 
+            /* 
+            moved to dom.js
             document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
                 event.preventDefault()
                 event.stopPropagation()
@@ -195,6 +197,7 @@ function generateData() {
                 }
                 offcanvasList.forEach(oc => oc.show())
             }))
+            */
         }
 
         setEventListeners()

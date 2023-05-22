@@ -318,6 +318,22 @@ const Ω = {
         });
         resizeObserver.observe(document.querySelector('#grid'));
 
+    },
+    setPuzzleClickHandlers: () => {
+        const offcanvasElementList = document.querySelectorAll('.offcanvas')
+        const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+
+        document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
+            event.preventDefault()
+            event.stopPropagation()
+            coerce.variation = element.dataset.variation
+            coerce.color = {
+                clazz: element.dataset.clazz,
+                tonality: element.dataset.tonality,
+            }
+            offcanvasList.forEach(oc => oc.show())
+        }))
+
     }
 }
 
