@@ -4,7 +4,7 @@ import codec from "/js/structure.js?v=2.2.15"
 class Config {
     #scoreDisplay = 'firstBar'
     #scoreInBricks = 'selectedBrick'
-    #autoplay = true
+    #autoplay = false
     #pane = 'left'
     #shuffleReplicator = undefined
 
@@ -91,20 +91,20 @@ class Config {
         return this.#autoplay
     }
     set autoplay(autoplay) {
-        if (autoplay && (autoplay === 'false' || autoplay === false)) {
-            autoplay = false
-        } else {
+        if (autoplay && (autoplay === 'true' || autoplay === true)) {
             autoplay = true
+        } else {
+            autoplay = false
         }
 
         if (autoplay !== this.#autoplay) {
             this.#autoplay = autoplay
             if (!this.#inConstructor) {
-                if (this.#autoplay === true) {
+                if (this.#autoplay === false) {
                     removeCookie('autoplay')
                 } else {
                     const in10Minutes = 1 / 144;
-                    setCookie('autoplay', 'false', in10Minutes)
+                    setCookie('autoplay', 'true', in10Minutes)
                 }
             }
         }
