@@ -35,6 +35,7 @@ const template = (data) => `
         data-index="${data.i}" 
         data-a="${data.a}" 
         data-v="${data.v}" 
+        data-i="${data.bg}"
         style="background-image: ${data.bg}; overflow:hidden;">
         <div class="d-flex flex-column justify-content-start" style="height:100%; visibility: hidden;" >
             <div class="hero-intro flex-shrink-1; align-self-start;" 
@@ -166,13 +167,17 @@ function generateData() {
             })
 
             offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
-                if (typeof coerce.variation !== 'undefined') {
+                if (typeof coerce.candidate !== 'undefined') {
                     if (coerce.color) {
                         offcanvasElement.classList.add(coerce.color.clazz)
                         offcanvasElement.classList.add(coerce.color.tonality)
                     }
                     document.querySelectorAll('.list-artist').forEach(la => {
-                        la.style.backgroundImage = bg(la.dataset.a, coerce.variation)
+                        la.style.backgroundImage = bg(la.dataset.a, coerce.candidate)
+                    })
+                } else {
+                    document.querySelectorAll('.list-artist').forEach(la => {
+                        la.style.backgroundImage = la.dataset.i
                     })
                 }
             })
