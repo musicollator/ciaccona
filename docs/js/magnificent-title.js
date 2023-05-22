@@ -1,4 +1,4 @@
-import { generateElement } from "/js/utils.js?v=2.2.5"
+import { generateElement } from "/js/utils.js?v=2.2.6"
 
 class MagnificentTitle {
     templateForTheme

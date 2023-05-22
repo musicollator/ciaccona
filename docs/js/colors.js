@@ -1,10 +1,10 @@
 import tinycolor from 'https://cdn.jsdelivr.net/npm/tinycolor2@1.6.0/+esm'
 import bezierEasing from 'https://cdn.jsdelivr.net/npm/bezier-easing@2.1.0/+esm'
-import config from "/js/config.js?v=2.2.5"
-import codec from "/js/structure.js?v=2.2.5"
-import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.5"
-import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=2.2.5"
-import MagnificentTitle from "/js/magnificent-title.js?v=2.2.5"
+import config from "/js/config.js?v=2.2.6"
+import codec from "/js/structure.js?v=2.2.6"
+import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.6"
+import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=2.2.6"
+import MagnificentTitle from "/js/magnificent-title.js?v=2.2.6"
 
 function _T(hex6color, transparency) {
     if (hex6color.length !== 6) return hex6color
