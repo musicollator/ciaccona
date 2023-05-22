@@ -15,6 +15,9 @@ class Artist {
 
         this.thisUrl = `/video/${this.fullnameNoSpaceLowercaseNoDiacritics}.html`
         this.social = `https://www.facebook.com/sharer/sharer.php?u=https://ciaccona.cthiebaud.com${this.thisUrl}`
+        if (this.facebookPost && this.facebookPost.url) {
+            this.social = this.facebookPost.url
+        }
 
         const vid = this['▶']
         vid.youtubeUrl = `https://youtu.be/${vid.id}`

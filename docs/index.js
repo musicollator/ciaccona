@@ -166,12 +166,6 @@ function generateData(arrayOfArtists) {
     <span class="fullname align-self-center" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
     &nbsp;
     <img class="align-self-center" src="index.svg?v=2.2.13#close-circle-view" style="width:32px; height:32px;">
-    <!--
-    <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
-    </a>
-    <a id="social" class="share btn btn-lihjt icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share...">
-    </a>
-    --!
 </div>
 `
 
