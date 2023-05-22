@@ -33,14 +33,16 @@ class MagnificentTitle {
     </div>
     ${incl ? incl : ''}
 </div>`)
-        const title = t => generateElement(`<div style="display: inline-block; user-select: none; font-size: 28px;">${t}</div>`)
+        const generateTitle = t => generateElement(`<div style="display: inline-block; user-select: none; font-size: 28px;">${t}</div>`)
+        const title = generateTitle('Ciaccona')
+
         switch (this.where) {
             case 1:
-                this.templateForTheme.querySelector('#pane-ciaccona').prepend(title('Ciaccona'))
+                this.templateForTheme.querySelector('#pane-ciaccona').prepend(title)
                 break;
             case 2:
             case 3:
-                this.templateForTheme.querySelector('#pane-artists').append(title('Ciaccona'))
+                this.templateForTheme.querySelector('#pane-artists').append(title)
                 break;
             /*
             case 3:
@@ -51,7 +53,11 @@ class MagnificentTitle {
             default:
                 break;
         }
-
+        this.templateForTheme.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', a2 => {
+                document.getElementsByTagName('body')[0].style.opacity = ".5"
+            }, { once: true })
+        })
     }
 }
 export default MagnificentTitle

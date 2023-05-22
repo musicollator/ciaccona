@@ -2,7 +2,7 @@ import isotopeLayout from 'https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/+es
 import config from "/js/config.js?v=2.2.0"
 import codec from "/js/structure.js?v=2.2.0"
 import { togglePlayer } from "/js/playerSingleton.js?v=2.2.0"
-import { createColoredBadges } from "/js/colors.js?v=2.2.0"
+import { createColoredBadges } from "/js/colors.js?v=2.2.0.1"
 import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.0"
 import Ω from "/js/dom.js?v=2.2.0"
 
@@ -104,7 +104,7 @@ if (autoplayChecked) {
 // loading 
 const hideLoading = () => {
 
-    showPlayer()
+    showPlayer(undefined)
 
     const loadingE = document.getElementById('loading')
     if (loadingE) {

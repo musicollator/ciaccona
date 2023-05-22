@@ -1,11 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import codec from "/js/structure.js?v=2.2.0"
-import { colorArray } from "/js/colors.js?v=2.2.0"
+import { colorArray } from "/js/colors.js?v=2.2.0.1"
 import { theArtists } from "/js/artists.js?v=2.2.0"
 import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.0"
 import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.0"
-import MagnificentTitle from "/js/magnificent-title.js?v=2.2.0"
+import MagnificentTitle from "/js/magnificent-title.js?v=2.2.0.1"
 
 const abg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 

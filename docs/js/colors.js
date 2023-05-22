@@ -4,7 +4,7 @@ import config from "/js/config.js?v=2.2.0"
 import codec from "/js/structure.js?v=2.2.0"
 import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.0"
 import { shuffleArray, normalizeVraiment, logFunc, generateElement } from "/js/utils.js?v=2.2.0"
-import MagnificentTitle from "/js/magnificent-title.js?v=2.2.0"
+import MagnificentTitle from "/js/magnificent-title.js?v=2.2.0.1"
 
 function _T(hex6color, transparency) {
     if (hex6color.length !== 6) return hex6color
