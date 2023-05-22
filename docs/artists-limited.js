@@ -130,8 +130,6 @@ function generateData() {
 
         thePackery.layout()
 
-        setEventListeners()
-
         function setEventListeners() {
             // https://getbootstrap.com/docs/5.2/components/offcanvas/#via-javascript
             const offcanvasElementList = document.querySelectorAll('.offcanvas')
@@ -198,6 +196,9 @@ function generateData() {
                 offcanvasList.forEach(oc => oc.show())
             }))
         }
+
+        setEventListeners()
+
     })
 
 })(document.getElementById('list'))
