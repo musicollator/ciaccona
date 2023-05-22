@@ -267,10 +267,15 @@
     </main>
 
     <script src="/lib/bootstrap.bundle-5.2.3.min.js"></script>
+    <script type="module">
+        // workaround for https://bugs.webkit.org/show_bug.cgi?id=242740
+        import { theArtists } from "/js/artists.js?v=2.2.19"
+        console.log("workaround for https://bugs.webkit.org/show_bug.cgi?id=242740", theArtists)
+    </script>
 
     <script async type="module" src="/ciaccona.js?v=2.2.19"></script>
     <script async type="module" src="/artists-limited.js?v=2.2.19"></script>
-    <script type="module">
+    <script async type="module">
         import config from "/js/config.js?v=2.2.19"
         document.getElementById('∅').addEventListener('click', () => {
             config.reset()
