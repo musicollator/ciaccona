@@ -102,7 +102,7 @@ const feedbackOnCurrentTime = (source, currentTime, noSave, isPlaying, scrollToV
         console.log('no variation here', currentTime)
         unplay_and_unselect()
         if (doSave) {
-            coerce.variation = undefined
+            // coerce.variation = undefined
         }
         return
     }

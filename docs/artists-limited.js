@@ -146,6 +146,9 @@ function generateData() {
                     event.stopPropagation()
                     event.preventDefault()
 
+                    coerce.variation = coerce.candidate
+                    coerce.candidate = undefined
+
                     config.offcanvasElementBootstrapped.hide()
 
                     createPlayerSingleton(event.currentTarget.dataset.a).then(result => {
@@ -154,8 +157,10 @@ function generateData() {
                         // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
                         const url = new URL(location);
                         url.searchParams.set("a", artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics);
+                        if (typeof coerce.variation !== 'undefined') {
+                            url.searchParams.set("v", coerce.variation);
+                        }
                         history.pushState({}, "", url);
-
                     })
                 })
             })
@@ -165,8 +170,6 @@ function generateData() {
                     if (coerce.color) {
                         offcanvasElement.classList.add(coerce.color.clazz)
                         offcanvasElement.classList.add(coerce.color.tonality)
-                        offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                        })
                     }
                     document.querySelectorAll('.list-artist').forEach(la => {
                         la.style.backgroundImage = bg(la.dataset.a, coerce.variation)
@@ -184,6 +187,12 @@ function generateData() {
             })
 
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
+                coerce.candidate = undefined
+                coerce.variation = undefined
+                const url = new URL(location);
+                url.searchParams.delete("v");
+                history.pushState({}, "", url);
+
                 config.offcanvasElementBootstrapped.hide()
             }))
         }

@@ -329,7 +329,7 @@ const Ω = {
         document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
             event.preventDefault()
             event.stopPropagation()
-            coerce.variation = element.dataset.variation
+            coerce.candidate = element.dataset.variation
             coerce.color = {
                 clazz: element.dataset.clazz,
                 tonality: element.dataset.tonality,

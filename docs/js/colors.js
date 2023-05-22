@@ -108,8 +108,6 @@ const colorArray = getColorArray(.5);
 
 function createColoredBadges(idContainer) {
 
-    const thisURL = new URL(window.location)
-
     const _widths_ = [
         { w: 268 }, // 00
         { w: 322 }, // 01
