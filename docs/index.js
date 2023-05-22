@@ -1,11 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import codec from "/js/structure.js?v=2.2.8"
-import { colorArray } from "/js/colors.js?v=2.2.8"
-import { theArtists } from "/js/artists.js?v=2.2.8"
-import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.8"
-import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.8"
-import MagnificentTitle from "/js/magnificent-title.js?v=2.2.8"
+import codec from "/js/structure.js?v=2.2.9"
+import { colorArray } from "/js/colors.js?v=2.2.9"
+import { theArtists } from "/js/artists.js?v=2.2.9"
+import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.9"
+import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.9"
+import MagnificentTitle from "/js/magnificent-title.js?v=2.2.9"
 
 const abg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -165,7 +165,7 @@ function generateData(arrayOfArtists) {
     const artistBadge = `<div id="artist-badge" class="p-2 d-flex" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
     <span class="fullname align-self-center" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
     &nbsp;
-    <img class="align-self-center" src="index.svg?v=2.2.8#close-circle-view" style="width:32px; height:32px;">
+    <img class="align-self-center" src="index.svg?v=2.2.9#close-circle-view" style="width:32px; height:32px;">
     <!--
     <a id="youtube-url" class="btn btn-lihjt icon-base icon-youtube_external_link text-muted" target="_youtube" href="#" aria-label="Original Video...">
     </a>

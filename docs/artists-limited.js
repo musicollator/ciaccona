@@ -1,10 +1,10 @@
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
-import config from "/js/config.js?v=2.2.8"
-import codec from "/js/structure.js?v=2.2.8"
-import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.8"
-import { theArtists } from "/js/artists.js?v=2.2.8"
-import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.8"
+import config from "/js/config.js?v=2.2.9"
+import codec from "/js/structure.js?v=2.2.9"
+import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.9"
+import { theArtists } from "/js/artists.js?v=2.2.9"
+import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.9"
 
 console.log('artists-limited')
 
