@@ -38,6 +38,15 @@ class Config {
 
     }
 
+    reset() {
+        this.scoreDisplay = undefined
+        this.scoreInBricks = undefined
+        this.playing = undefined
+        this.autoplay = undefined
+        this.pane = undefined
+        this.shuffleReplicator = undefined
+    }
+
     // 
     get scoreDisplay() {
         return this.#scoreDisplay
@@ -162,7 +171,7 @@ class Config {
             if (Array.isArray(shuffleReplicator)) {
                 stringedshuffleReplicator = shuffleReplicator.toString()
             } else if (typeof shuffleReplicator === 'string' || shuffleReplicator instanceof String) {
-                arrayshuffleReplicator = shuffleReplicator.split(',');
+                arrayshuffleReplicator = shuffleReplicator.split(',').map(i => parseInt(i));
             }
         }
         // https://www.30secondsofcode.org/js/s/array-comparison/

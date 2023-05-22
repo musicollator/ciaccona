@@ -11,16 +11,16 @@ const abg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/a
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+}
 
-const template = (data, first) => `
+const template = (data) => `
 <div id="li-artist${data.v}" 
      class="list-artist hero"  
      data-index="${data.index}" 
      data-a="${data.a}" 
      data-v="${data.v}" 
      style="background-image: ${data.abg}; overflow:visible;">
-    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden; ${first ? 'visibility: hidden;' : ''}" >
+    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden;" >
         <div class="hero-intro flex-shrink-1; align-self-start;" 
              title="Pin or unpin ${data.firstname} ${data.lastname}"
              style="padding-right: 0.5rem;">
@@ -31,7 +31,7 @@ const template = (data, first) => `
              ${data.lastname}
         </div>
     </div>
-    <div class="flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; overflow: visible; ${first ? 'visibility: hidden;' : ''}">
+    <div class="flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; overflow: visible;">
         <a class="puzzle-limited" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 id="gb-puzzle${data.v}-svg" 
@@ -180,10 +180,11 @@ function generateData(arrayOfArtists) {
     let arrayOfArtists = coerce.shuffle ? shuffleArray(artists.artists) : artists.artists
     data = generateData(arrayOfArtists)
     data.forEach(d => {
-        list.innerHTML += `<div class="list-item">${template(d, true)}</div>`
+        list.appendChild(generateElement(`<div class="list-item">${template(d)}</div>`))
     })
 
-    var listArtistElements = document.querySelectorAll('.list-artist')
+    const listArtistElements = document.querySelectorAll('.list-artist')
+    console.log("òeriuwtvnep2iughwempcgiuhwmcpgwiuthcm", listArtistElements)
     const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
     });
     imgLoad.on('progress', function (instance, image) {

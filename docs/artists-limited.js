@@ -3,7 +3,7 @@ import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import codec from "/js/structure.js?v=2.2.7"
 import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.7"
 import { theArtists } from "/js/artists.js?v=2.2.7"
-import { shuffleArray } from "/js/utils.js?v=2.2.7"
+import { shuffleArray, generateElement  } from "/js/utils.js?v=2.2.7"
 
 console.log('artists-limited')
 
@@ -97,11 +97,11 @@ function generateData() {
         if (d.instrument !== previousInstrument) {
             const instrumentDisplayName = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;' /* No-Break Space */)
 
-            list.innerHTML += templateDivider(d.instrument, instrumentDisplayName)
+            list.appendChild(generateElement(templateDivider(d.instrument, instrumentDisplayName)))
 
             previousInstrument = d.instrument
         }
-        list.innerHTML += template(d)
+        list.appendChild(generateElement(template(d)))
     })
 
     var listArtistElements = document.querySelectorAll('.list-artist')

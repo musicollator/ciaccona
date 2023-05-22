@@ -190,7 +190,7 @@
                         data-bs-toggle="dropdown" aria-expanded="false" aria-label="Configure...">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="configMenuLink">
-                        <form class="px-4 py-3">
+                        <form class="px-4 py-1">
                             <div class="label">Show Score …</div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="flexRadioDefault" data-score-display="firstBar" id="firstBarRadioButton">
@@ -241,6 +241,10 @@
                                     <label>About</label>
                                 </a>
                             </div>
+                            <hr class="dropdown-divider">
+                            <div style="width:100%; display: flex; justify-content: center;">
+                                <button id="∅" type="button" class="btn btn-light" style="font-size:smaller">∅</button>
+                            </div>
                         </form>
                     </ul>
                 </span>
@@ -263,7 +267,12 @@
 
     <script async type="module" src="/ciaccona.js?v=2.2.7"></script>
     <script async type="module" src="/artists-limited.js?v=2.2.7"></script>
-
+    <script type="module">
+        import config from "/js/config.js?v=2.2.7"
+        document.getElementById('∅').addEventListener('click', () => {
+            config.reset()
+        });
+    </script>
 </body>
 
 </html>
