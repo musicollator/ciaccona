@@ -100,6 +100,16 @@ class Coerce {
             this.#coerceVariation = undefined
             console.log(` ... ERROR from variation=${variation} to coerceVariation=${this.#coerceVariation}`)
         }
+        ; (badgeVariation => {
+            if (!badgeVariation) return
+            if (typeof this.#coerceVariation === 'undefined') {
+                badgeVariation.innerHTML = ''
+                badgeVariation.style.visibility = 'hidden'
+            } else {
+                badgeVariation.innerHTML = this.#coerceVariation
+                badgeVariation.style.visibility = 'visible'
+            }
+        })(document.getElementById('badge-variation'));
     }
 
     //
