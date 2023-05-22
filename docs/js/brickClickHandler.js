@@ -1,4 +1,4 @@
-import config from "/js/config.js?v=2.1.9"
+import config from "/js/config.js?v=2.2.0"
 
 export default function brickClickHandler(event) {
     const selectingVariation = event.target.closest('.select-variation')
@@ -19,7 +19,7 @@ export default function brickClickHandler(event) {
     document.querySelectorAll('.grid-brick.selected').forEach(selected => selected.classList.remove('selected'))
     document.querySelectorAll('.grid-brick.goodbye').forEach(goodbye => goodbye.classList.remove('goodbye'))
     document.querySelectorAll('.grid-brick.hello').forEach(hello => hello.classList.remove('hello'))
-    
+
     if (!thisGridBrickWasSelected) {
         thisGridBrick.classList.add('selected')
     }
