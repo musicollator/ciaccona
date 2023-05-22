@@ -53,7 +53,7 @@ class Coerce {
     constructor(params) {
         this.variation = params.v ?? undefined
         this.fullameNoSpaceLowercaseNoDiacritics = params.a ?? undefined
-        
+
         this.no_plyr_event = params.no_plyr_event ?? undefined
         this.pane = params.p ?? undefined
         this.shuffle = params.shuffle ?? undefined
@@ -83,18 +83,22 @@ class Coerce {
     }
     set variation(variation) {
         try {
-            if (typeof variation !== 'undefined' && variation !== null) {
-                this.#coerceVariation = parseInt(variation)
-                if (isNaN(this.#coerceVariation)) {
-                    this.#coerceVariation = undefined
-                }
-            } else {
+            if (typeof variation === 'undefined' || variation === null) {
                 this.#coerceVariation = undefined
+            } else if (typeof variation === 'number') {
+                this.#coerceVariation = variation
+            } else {
+                const qwe = parseInt(variation)
+                if (isNaN(qwe)) {
+                    this.#coerceVariation = undefined
+                } else {
+                    this.#coerceVariation = qwe
+                }
             }
-            console.log(`global variable coerceVariation=${this.#coerceVariation}`)
+            console.log(`coerceVariation=${this.#coerceVariation} (from variation=${variation})`)
         } catch (error) {
-            console.log(`query string parameter v is not a number: v=${params.v}`)
             this.#coerceVariation = undefined
+            console.log(` ... ERROR from variation=${variation} to coerceVariation=${this.#coerceVariation}`)
         }
     }
 

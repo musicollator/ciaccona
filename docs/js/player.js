@@ -93,27 +93,24 @@ function hidePlay(cause) {
     unplay_and_unselect(cause === 'pause')
 }
 
-const feedbackOnCurrentTime = (source, currentTime, noSave, isPlaying, scrollToVariation, scrollOptions) => {
-
-    const doSave = noSave == null || noSave === false
+const feedbackOnCurrentTime = (source, currentTime, rememberCurrentBar, isPlaying, scrollToVariation, scrollOptions) => {
 
     const barIndex = config.artistAndTimings.time2bar(currentTime)
     if (barIndex == null || barIndex === -1) {
         console.log('no variation here', currentTime)
         unplay_and_unselect()
-        if (doSave) {
-            // coerce.variation = undefined
+        if (rememberCurrentBar) {
+            coerce.currentBar = undefined
         }
         return
     }
-    const variation = config.artistAndTimings.bars[barIndex].variation
 
-    // changement de variation 
-    /*
-    if (coerce.variation != variation) {
-        coerce.variation = variation
+    if (rememberCurrentBar) {
+        if (coerce.currentBar !== barIndex) {
+            coerce.currentBar = barIndex
+        }
     }
-    */
+    const variation = config.artistAndTimings.bars[barIndex].variation
 
     if (isPlaying) {
         horzScrollScore(variation, currentTime)
@@ -179,15 +176,17 @@ export default function createPlayer(selector, ignore_all_events) {
         config.plyrPlayer = _plyer
 
         const onReady = () => {
-            console.log("IN onReady()")
-            let theStartingBar = config.artistAndTimings.bars[0]
-            if (config.autoplay || typeof coerce.variation !== 'undefined') {
-                const qwe = typeof coerce.variation === 'undefined' ? 0 : coerce.variation;
-                theStartingBar = config.artistAndTimings.bars[codec.variation2bar(qwe)]
+            let _bar = 0
+            if (coerce.variation) {
+                _bar = codec.variation2bar(coerce.variation)
+            } else if (coerce.currentBar) {
+                _bar = coerce.currentBar
+            } else {
+                _bar = codec.variation2bar(0)
             }
+            const theStartingBar = config.artistAndTimings.bars[_bar]
             console.log("onReady: Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar["Time Recorded"], "), thanks.")
             _plyer.currentTime = theStartingBar.duration.asMilliseconds() / 1000
-            console.log("OUT onReady()")
         }
 
         function INIT_EVENT_HANDLERS() {
@@ -240,7 +239,7 @@ export default function createPlayer(selector, ignore_all_events) {
             _plyer.on('playing', (event) => {
                 console.log("Plyr playing event")
                 showPlay(event.detail.plyr.currentTime)
-                feedbackOnCurrentTime('playing', event.detail.plyr.currentTime, undefined /* save variation */, _plyer.playing, true, { behavior: "smooth", block: "nearest" })
+                feedbackOnCurrentTime('playing', event.detail.plyr.currentTime, true /* remember current bar */, _plyer.playing, true, { behavior: "smooth", block: "nearest" })
             })
             _plyer.on('timeupdate', (event) => {
                 // console.log("Plyr timeupdate event", event.detail.plyr.currentTime)
@@ -248,7 +247,7 @@ export default function createPlayer(selector, ignore_all_events) {
                     // console.log("Plyr timeupdate event: do nothing when not playing")
                 } else {
                     // console.log("Plyr timeupdate event while plying")
-                    feedbackOnCurrentTime('timeupdate', event.detail.plyr.currentTime, undefined /* save variation */, _plyer.playing, true, { behavior: "smooth", block: "nearest" })
+                    feedbackOnCurrentTime('timeupdate', event.detail.plyr.currentTime, true /* remember current bar */, _plyer.playing, true, { behavior: "smooth", block: "nearest" })
                     const çaJoue = new Event('çaJoue');
                     document.dispatchEvent(çaJoue)
                 }
@@ -262,7 +261,7 @@ export default function createPlayer(selector, ignore_all_events) {
                 }
 
                 const seekTime = event.detail.plyr.media.duration * (event.detail.plyr.elements.inputs.seek.value / 100)
-                feedbackOnCurrentTime('seeking', seekTime, true /* do not save variation */, _plyer.playing, true, { behavior: "instant", block: "center" })
+                feedbackOnCurrentTime('seeking', seekTime, false /* do not remember current bar */, _plyer.playing, true, { behavior: "instant", block: "center" })
             })
             _plyer.on('seeked', (event) => {
                 console.log("Plyr seeked event", 'begin', begin, '_plyer.playing', _plyer.playing)
@@ -278,7 +277,7 @@ export default function createPlayer(selector, ignore_all_events) {
                         }
                     }
                 }
-                feedbackOnCurrentTime('seeked', event.detail.plyr.currentTime, undefined /* save variation */, _plyer.playing, true, { behavior: "smooth", block: "center" })
+                feedbackOnCurrentTime('seeked', event.detail.plyr.currentTime, true /* remember current bar */, _plyer.playing, true, { behavior: "smooth", block: "center" })
             })
         }
 

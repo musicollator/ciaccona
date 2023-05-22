@@ -329,8 +329,8 @@ const Ω = {
         document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
             event.preventDefault()
             event.stopPropagation()
-            coerce.candidate = element.dataset.variation
             coerce.color = {
+                candidate: element.dataset.variation,
                 clazz: element.dataset.clazz,
                 tonality: element.dataset.tonality,
             }

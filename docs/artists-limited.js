@@ -139,7 +139,7 @@ function generateData() {
             const offcanvasElementList = document.querySelectorAll('.offcanvas')
             const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
             */
-           const offcanvasElement = document.getElementById('theOffcanvas')
+            const offcanvasElement = document.getElementById('theOffcanvas')
             if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(offcanvasElement)
 
             document.querySelectorAll('.list-artist').forEach(element => {
@@ -147,8 +147,9 @@ function generateData() {
                     event.stopPropagation()
                     event.preventDefault()
 
-                    coerce.variation = coerce.candidate
-                    coerce.candidate = undefined
+                    if (coerce.color?.candidate) {
+                        coerce.variation = coerce.color?.candidate
+                    }
 
                     config.offcanvasElementBootstrapped.hide()
 
@@ -167,19 +168,19 @@ function generateData() {
             })
 
             offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
-                if (typeof coerce.candidate !== 'undefined') {
-                    if (coerce.color) {
-                        offcanvasElement.classList.add(coerce.color.clazz)
-                        offcanvasElement.classList.add(coerce.color.tonality)
+                if (coerce.color) {
+                    offcanvasElement.classList.add(coerce.color.clazz)
+                    offcanvasElement.classList.add(coerce.color.tonality)
+                    if (typeof coerce.color.candidate !== 'undefined') {
+                        document.querySelectorAll('.list-artist').forEach(la => {
+                            la.style.backgroundImage = bg(la.dataset.a, coerce.color.candidate)
+                        })
+                        return
                     }
-                    document.querySelectorAll('.list-artist').forEach(la => {
-                        la.style.backgroundImage = bg(la.dataset.a, coerce.candidate)
-                    })
-                } else {
-                    document.querySelectorAll('.list-artist').forEach(la => {
-                        la.style.backgroundImage = la.dataset.i
-                    })
                 }
+                document.querySelectorAll('.list-artist').forEach(la => {
+                    la.style.backgroundImage = la.dataset.i
+                })
             })
             offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
                 if (coerce.color) {
@@ -187,12 +188,9 @@ function generateData() {
                     offcanvasElement.classList.remove(coerce.color.tonality)
                 }
                 coerce.color = undefined
-                offcanvasElement.querySelectorAll('.divider').forEach(dividerElement => {
-                })
             })
 
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
-                coerce.candidate = undefined
                 coerce.variation = undefined
                 const url = new URL(location);
                 url.searchParams.delete("v");
