@@ -52,7 +52,7 @@ class Coerce {
 
     constructor(params) {
         this.variation = params.v ?? undefined
-        this.fullameNoSpaceLowercaseNoDiacritics = params.a ?? undefined
+        this.fullnameNoSpaceLowercaseNoDiacritics = params.a ?? undefined
 
         this.no_plyr_event = params.no_plyr_event ?? undefined
         this.pane = params.p ?? undefined
@@ -61,18 +61,18 @@ class Coerce {
     }
 
     //
-    get fullameNoSpaceLowercaseNoDiacritics() {
+    get fullnameNoSpaceLowercaseNoDiacritics() {
         return this.#coerceArtist
     }
-    set fullameNoSpaceLowercaseNoDiacritics(fullameNoSpaceLowercaseNoDiacritics) {
-        if (typeof fullameNoSpaceLowercaseNoDiacritics !== 'undefined') {
-            if (!this.#validFullamesNoSpaceLowercaseNoDiacritics.includes(fullameNoSpaceLowercaseNoDiacritics)) {
-                console.log(`invalid fullameNoSpaceLowercaseNoDiacritics: ${fullameNoSpaceLowercaseNoDiacritics}`)
+    set fullnameNoSpaceLowercaseNoDiacritics(fullnameNoSpaceLowercaseNoDiacritics) {
+        if (typeof fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+            if (!this.#validFullamesNoSpaceLowercaseNoDiacritics.includes(fullnameNoSpaceLowercaseNoDiacritics)) {
+                console.log(`invalid fullnameNoSpaceLowercaseNoDiacritics: ${fullnameNoSpaceLowercaseNoDiacritics}`)
                 this.#coerceArtist = undefined
-            } else if (fullameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
+            } else if (fullnameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
                 this.#coerceArtist = 'moi'
             } else {
-                this.#coerceArtist = fullameNoSpaceLowercaseNoDiacritics
+                this.#coerceArtist = fullnameNoSpaceLowercaseNoDiacritics
             }
         }
     }
@@ -133,8 +133,8 @@ const coerce = new Coerce(params)
 // transform packery event into promise
 const readyToIsotope = new Promise((resolve) => {
     window.addEventListener('readyToIsotope', (event) => {
-        console.log("... heard readyToIsotope event");
+        console.log("... heard readyToIsotope event, about to resolve readyToIsotope promise ...");
         resolve(event)
-    })
+    }, { once: true })
 })
 

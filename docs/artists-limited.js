@@ -34,6 +34,7 @@ const template = (data) => `
         data-a="${data.a}" 
         data-v="${data.v}" 
         data-i="${data.bg}"
+        title="${data.n}"
         style="background-image: ${data.bg}; overflow:hidden;">
         <div class="d-flex flex-column justify-content-start" style="height:100%; visibility: hidden;" >
             <div class="hero-intro flex-shrink-1; align-self-start;" 
@@ -152,8 +153,10 @@ loadArtists().then(putainDeArtists => {
                         config.offcanvasElementBootstrapped.hide()
 
                         let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
+
                         createPlayerSingleton(artistObject).then(result => {
                             const artistAndTimings = result.value
+                            coerce.fullnameNoSpaceLowercaseNoDiacritics = artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics
 
                             // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
                             const url = new URL(location);
@@ -170,6 +173,9 @@ loadArtists().then(putainDeArtists => {
                     if (coerce.color) {
                         offcanvasElement.classList.add(coerce.color.clazz)
                         offcanvasElement.classList.add(coerce.color.tonality)
+                        document.querySelectorAll(`.list-artist[data-a="${coerce.fullnameNoSpaceLowercaseNoDiacritics}"]`).forEach(la => {
+                            la.classList.add('thisIsTheOne')
+                        })
                         if (typeof coerce.color.candidate !== 'undefined') {
                             document.querySelectorAll('.list-artist').forEach(la => {
                                 la.style.backgroundImage = bg(la.dataset.a, coerce.color.candidate)
@@ -186,7 +192,10 @@ loadArtists().then(putainDeArtists => {
                         offcanvasElement.classList.remove(coerce.color.clazz)
                         offcanvasElement.classList.remove(coerce.color.tonality)
                     }
-                    coerce.color = undefined
+                    document.querySelectorAll(`.list-artist`).forEach(la => {
+                        la.classList.remove('thisIsTheOne')
+                    })
+                coerce.color = undefined
                 })
 
                 document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {

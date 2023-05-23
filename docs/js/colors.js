@@ -147,11 +147,11 @@ function createColoredBadges(idContainer) {
         { w: 0 }    // 35 (should never happen)
     ]
 
-    const _colors_ = colorArray // getColorArray(coerce.fullameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
+    const _colors_ = colorArray // getColorArray(coerce.fullnameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
 
     const temporaryContainer = generateElement("<template>");
 
-    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', coerce.fullameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
+    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', coerce.fullnameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
 
     const twoZeroPad = (num) => String(num).padStart(2, '0')
     let i = 0;
@@ -296,7 +296,7 @@ body.video-player .${clazz} .divider {
             </svg>
             <div id="gb-variation${i}" 
                  class="${c.kebabName}-text fw-bold" 
-                 data-a="${coerce.fullameNoSpaceLowercaseNoDiacritics}"
+                 data-a="${coerce.fullnameNoSpaceLowercaseNoDiacritics}"
                  data-v="${i}"
                  style="padding: .333rem;">
                 ${i === 0 || i === codec.variationsCount - 1 ? "&nbsp;" : i}

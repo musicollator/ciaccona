@@ -6,13 +6,6 @@ import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.
 import { loadArtists } from "/js/artists.js?v=2.2.23"
 import Ω from "/js/dom.js?v=2.2.23"
 
-// transform windows loaded event into promise
-const windowLoaded = new Promise((resolve) => {
-    window.addEventListener('load', (event) => {
-        resolve(event)
-    })
-})
-
 document.getElementById('version').innerHTML = ver
 
 const about = new Ω.About()
@@ -20,8 +13,8 @@ const about = new Ω.About()
 // tidyfication of menu items
 /*
 document.querySelectorAll('#videos-menu span.c').forEach((e) => e.innerHTML = "")
-if (fullameNoSpaceLowercaseNoDiacritics) {
-    const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics="${fullameNoSpaceLowercaseNoDiacritics}"]`)
+if (fullnameNoSpaceLowercaseNoDiacritics) {
+    const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics="${fullnameNoSpaceLowercaseNoDiacritics}"]`)
     if (menuItem) {
         menuItem.classList.add('disabled')
         menuItem.querySelector(`span.c`).innerHTML = "&#10004;&nbsp;"
@@ -81,7 +74,7 @@ const autoplayChecked = document.getElementById('autoplayChecked')
 if (autoplayChecked) {
     if (config.autoplay) autoplayChecked.checked = true
 } else {
-    console.log('NO AUTOPLAY CHECK BOX ?!')
+    console.log('NO AUTOPLAY CHECKBOX ?!')
 }
 
 (grid => {
@@ -107,7 +100,7 @@ if (autoplayChecked) {
 // loading 
 const hideLoading = () => {
 
-    showPlayer(undefined)
+    showPlayer()
 
     const loadingE = document.getElementById('loading')
     if (loadingE) {
@@ -121,21 +114,18 @@ const hideLoading = () => {
     }
 }
 
-const event = new Event("ciacconaLoaded");
-window.dispatchEvent(event);
-
 // everything
 const allPromises = new Map()
 // names of promises, for bookkeeping
 const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 
 // 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
-if (coerce.fullameNoSpaceLowercaseNoDiacritics) {
+if (coerce.fullnameNoSpaceLowercaseNoDiacritics) {
 
     allPromises.set(
         PLAYER,
         loadArtists().then(putainDeArtists => {
-            let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullameNoSpaceLowercaseNoDiacritics)
+            let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics)
 
             return createPlayerSingleton(artistObject, coerce.no_plyr_event)
         })
@@ -149,7 +139,7 @@ allPromises.set(
     new Promise((resolve, reject) => {
 
         readyToIsotope.then(result => {
-            console.log('about to create isotope ...')
+            console.log('readyToIsotope promise resolved, about to create isotope ...')
             const theIsotope = new isotopeLayout('#grid', {
                 itemSelector: "#theContainer #theContainerCol .ciaccona#grid .grid-brick",
                 sortBy: 'id',
