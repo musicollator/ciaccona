@@ -259,20 +259,28 @@ const Ω = {
     },
 
     showArtist: (artist) => {
-        const badgeArtist = document.querySelector('.artist#badge-artist')
-        if (!badgeArtist) return
+        (badgeArtist => {
+            if (!badgeArtist) return
 
-        badgeArtist.style.visibility = "visible"
+            badgeArtist.style.visibility = "visible"
 
-        const fullname = artist.fullname === "Christophe Thiebaud" ? "Moi" : artist.fullname;
+            const fullname = artist.fullname === "Christophe Thiebaud" ? "Moi" : artist.fullname;
 
-        document.querySelector('head title').innerHTML = `Ciaccona - ${artist.fullname}`
+            document.querySelector('head title').innerHTML = `Ciaccona - ${artist.fullname}`
 
-        badgeArtist.style.visibility = 'inherit'
-        badgeArtist.querySelector('.fullname').innerHTML = fullname
-        badgeArtist.querySelector('a#youtube-url').setAttribute('href', artist['▶'].youtubeTrueUrl ? artist['▶'].youtubeTrueUrl : artist['▶'].youtubeUrl)
-        badgeArtist.querySelector('a#youtube-url').setAttribute('target', artist['▶'].id)
-        badgeArtist.querySelector('a#social').setAttribute('href', artist.social)
+            badgeArtist.style.visibility = 'inherit'
+            badgeArtist.querySelector('.fullname').innerHTML = fullname
+            badgeArtist.querySelector('a#youtube-url').setAttribute('href', artist['▶'].youtubeTrueUrl ? artist['▶'].youtubeTrueUrl : artist['▶'].youtubeUrl)
+            badgeArtist.querySelector('a#youtube-url').setAttribute('target', artist['▶'].id)
+            badgeArtist.querySelector('a#social').setAttribute('href', artist.social)
+        })(document.querySelector('.artist#badge-artist'));
+
+
+        (badgeVariation => {
+            if (!badgeVariation) return
+            badgeVariation.style.visibility = "visible"
+            coerce.variation = coerce.variation
+        })(document.getElementById('badge-variation'));
 
     },
 
@@ -320,11 +328,48 @@ const Ω = {
 
     },
     setPuzzleClickHandlers: () => {
-        /*
-        const offcanvasElementList = document.querySelectorAll('.offcanvas')
-        const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
-        */
-        if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(document.getElementById('theOffcanvas')) 
+
+        (badgeVariation => {
+            if (!badgeVariation) return
+
+            badgeVariation.addEventListener('click', (event) => {
+                coerce.variation = undefined
+
+                const url = new URL(location);
+                url.searchParams.delete("v");
+                history.pushState({}, "", url);
+            })
+
+            coerce.setVariationListener((variation, oldVariation) => {
+                if (typeof variation === 'undefined') {
+                    badgeVariation.querySelector('#badge-variation-number').innerHTML = ''
+                    const path = document.querySelector(`#badge-variation-puzzle path`)
+                    path.remove()
+                } else {
+                    badgeVariation.querySelector('#badge-variation-number').innerHTML = variation
+
+                    // clone
+                    const svgFrom = document.querySelector(`.grid-brick#gb${variation} svg`)
+                    // const textFrom = document.querySelector(`.grid-brick#gb${variation} #gb-variation${variation}`)
+                    const svgClone = svgFrom.cloneNode(true)
+                    // const textClone = textFrom.cloneNode(true)
+                    const svgTo = document.querySelector(`#badge-variation-puzzle`)
+                    const id = svgTo.getAttribute('id')
+                    const transform = svgTo.style.transform
+                    const parent = svgTo.parentNode
+                    // parent.innerHTML = ''
+                    svgTo.remove()
+                    svgClone.setAttribute('id', id)
+                    svgClone.style.transform = transform
+                    /*
+                    textClone.setAttribute('id', badge-variation-number)
+                    textClone.classList.add('dugenou')*/
+                    parent.append(svgClone /*, textClone*/)
+                }
+            })
+        })(document.getElementById('badge-variation'));
+
+        if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(document.getElementById('theOffcanvas'))
 
         document.querySelectorAll('.brick.has-score .select-variation').forEach(element => element.addEventListener('click', (event) => {
             event.preventDefault()

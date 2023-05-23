@@ -195,15 +195,10 @@ loadArtists().then(putainDeArtists => {
                     document.querySelectorAll(`.list-artist`).forEach(la => {
                         la.classList.remove('thisIsTheOne')
                     })
-                coerce.color = undefined
+                    coerce.color = undefined
                 })
 
                 document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
-                    coerce.variation = undefined
-                    const url = new URL(location);
-                    url.searchParams.delete("v");
-                    history.pushState({}, "", url);
-
                     config.offcanvasElementBootstrapped.hide()
                 }))
             }

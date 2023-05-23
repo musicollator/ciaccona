@@ -134,7 +134,8 @@
         <div class="ms-2" style="margin: auto 0;">
             <span class="font-monospace badge rounded-pill bg-light text-dark">
                 <span id="version" class="font-monospace" style="font-size: 8pt;"></span>
-                <a class="btn btn-light text-muted icon-base icon-github" target="github" href="https://github.com/musicollator/ciaccona/blob/main/README.md" aria-label="Ciaccona on Github">
+                <a class="btn btn-light text-muted icon-base icon-github" target="github" href="https://github.com/musicollator/ciaccona/blob/main/README.md"
+                    aria-label="Ciaccona on Github">
                 </a>
             </span>
         </div>
@@ -170,11 +171,18 @@
                 </span>
             </div>
 
-            <div id="badge-variation" class="my-nav-item badge rounded-pill text-bg-light align-self-start flex-shrink-1" style="overflow: hidden;">
+            <div id="badge-variation" class="my-nav-item select-variation align-self-start d-flex justify-content-evenly" style="height: 36px; overflow: visible;">
+                <div class="btn btn-light text-muted d-flex justify-content-between" style="position: relative;  max-width: 50px;">
+                    <svg id="badge-variation-puzzle" class="clipboard-puzzle" style="visibility: inherit; overflow: visible; transform: scale(1.5);">
+                    </svg>
+                    <div id="badge-variation-number" class="aspen-hush-text fw-bold dugenou" data-v="7">
+                        &nbsp;
+                    </div>
+                </div>
             </div>
 
             <div id="badge-artist" class="my-nav-item artist align-self-start flex-shrink-1" style="overflow: hidden;">
-                <div class="btn btn-light text-muted d-flex justify-content-between">
+                <div class="btn btn-light text-muted d-flex justify-content-between" style="margin: 0; padding: 1px;">
                     <a id="eye" class="btn icon-base icon-eye_close text-muted" href="#" aria-label="Show / Hide Video" style="min-width:32px;">
                     </a>
                     <label class="fullname text-light"></label>

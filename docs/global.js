@@ -42,10 +42,11 @@ class Coerce {
         'yunpark',
     ]
     #coerceVariation
-    #startBarOfLastSelectedVariation
     #coerceArtist
     #shuffle
+    #variationListener
 
+    setVariationListener
     no_plyr_event
     pane
     debug
@@ -58,6 +59,10 @@ class Coerce {
         this.pane = params.p ?? undefined
         this.shuffle = params.shuffle ?? undefined
         this.debug = params.d ?? undefined
+
+        this.setVariationListener = (variationListener) => {
+            this.#variationListener = variationListener
+        }
     }
 
     //
@@ -83,33 +88,28 @@ class Coerce {
     }
     set variation(variation) {
         try {
+            let candidateVariation
             if (typeof variation === 'undefined' || variation === null) {
-                this.#coerceVariation = undefined
+                candidateVariation = undefined
             } else if (typeof variation === 'number') {
-                this.#coerceVariation = variation
+                candidateVariation = variation
             } else {
-                const qwe = parseInt(variation)
-                if (isNaN(qwe)) {
-                    this.#coerceVariation = undefined
-                } else {
-                    this.#coerceVariation = qwe
+                candidateVariation = parseInt(variation)
+                if (isNaN(candidateVariation)) {
+                    candidateVariation = undefined
                 }
             }
-            console.log(`coerceVariation=${this.#coerceVariation} (from variation=${variation})`)
+            if (this.#variationListener) {
+                this.#variationListener(candidateVariation, this.#coerceVariation)
+            }
+            if (this.#coerceVariation !== candidateVariation) {
+                this.#coerceVariation = candidateVariation
+                console.log(`coerceVariation=${this.#coerceVariation} (from variation=${variation})`)
+            }
         } catch (error) {
             this.#coerceVariation = undefined
             console.log(` ... ERROR from variation=${variation} to coerceVariation=${this.#coerceVariation}`)
         }
-        ; (badgeVariation => {
-            if (!badgeVariation) return
-            if (typeof this.#coerceVariation === 'undefined') {
-                badgeVariation.innerHTML = ''
-                badgeVariation.style.visibility = 'hidden'
-            } else {
-                badgeVariation.innerHTML = this.#coerceVariation
-                badgeVariation.style.visibility = 'visible'
-            }
-        })(document.getElementById('badge-variation'));
     }
 
     //
