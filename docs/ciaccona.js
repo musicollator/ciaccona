@@ -3,6 +3,7 @@ import config from "/js/config.js?v=2.2.20"
 import { togglePlayer } from "/js/playerSingleton.js?v=2.2.20"
 import { createColoredBadges } from "/js/colors.js?v=2.2.20"
 import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.20"
+import { theArtists } from "/js/artists.js?v=2.2.20"
 import Ω from "/js/dom.js?v=2.2.20"
 
 // transform windows loaded event into promise
@@ -131,9 +132,11 @@ const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 // 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
 if (coerce.fullameNoSpaceLowercaseNoDiacritics) {
 
+    let artistObject = theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullameNoSpaceLowercaseNoDiacritics)
+
     allPromises.set(
         PLAYER,
-        createPlayerSingleton(coerce.fullameNoSpaceLowercaseNoDiacritics, coerce.no_plyr_event)
+        createPlayerSingleton(artistObject, coerce.no_plyr_event)
     )
 }
 

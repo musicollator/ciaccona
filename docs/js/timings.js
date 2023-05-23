@@ -89,13 +89,13 @@ class Timings {
     }
 }
 
-function createTimings(fullameNoSpaceLowercaseNoDiacritics) {
+function createTimings(artistObject) {
     return new Promise((resolve, reject) => {
-        let artistObject = theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(fullameNoSpaceLowercaseNoDiacritics)
+
         if (!artistObject) {
-            reject(`no artist associated with : < ${fullameNoSpaceLowercaseNoDiacritics} >`)
+            reject(`invalid parameter artistObject: < ${artistObject} >`)
             return
-        }
+        }         
 
         const timingsURL = artistObject['▶'].timingsUrl
         const javascriptizedId = artistObject['▶'].javascriptizedId

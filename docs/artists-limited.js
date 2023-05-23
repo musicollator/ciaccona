@@ -153,7 +153,8 @@ function generateData() {
 
                     config.offcanvasElementBootstrapped.hide()
 
-                    createPlayerSingleton(event.currentTarget.dataset.a).then(result => {
+                    let artistObject = theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
+                    createPlayerSingleton(artistObject).then(result => {
                         const artistAndTimings = result.value
 
                         // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
