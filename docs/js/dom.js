@@ -342,29 +342,23 @@ const Ω = {
 
             coerce.setVariationListener((variation, oldVariation) => {
                 if (typeof variation === 'undefined') {
-                    badgeVariation.querySelector('#badge-variation-number').innerHTML = ''
+                    // badgeVariation.querySelector('#badge-variation-number').innerHTML = ''
                     const path = document.querySelector(`#badge-variation-puzzle path`)
                     path.remove()
                 } else {
-                    badgeVariation.querySelector('#badge-variation-number').innerHTML = variation
+                    // badgeVariation.querySelector('#badge-variation-number').innerHTML = variation
 
                     // clone
                     const svgFrom = document.querySelector(`.grid-brick#gb${variation} svg`)
-                    // const textFrom = document.querySelector(`.grid-brick#gb${variation} #gb-variation${variation}`)
                     const svgClone = svgFrom.cloneNode(true)
-                    // const textClone = textFrom.cloneNode(true)
                     const svgTo = document.querySelector(`#badge-variation-puzzle`)
                     const id = svgTo.getAttribute('id')
                     const transform = svgTo.style.transform
                     const parent = svgTo.parentNode
-                    // parent.innerHTML = ''
                     svgTo.remove()
                     svgClone.setAttribute('id', id)
                     svgClone.style.transform = transform
-                    /*
-                    textClone.setAttribute('id', badge-variation-number)
-                    textClone.classList.add('dugenou')*/
-                    parent.append(svgClone /*, textClone*/)
+                    parent.prepend(svgClone)
                 }
             })
         })(document.getElementById('badge-variation'));
