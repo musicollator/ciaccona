@@ -30,39 +30,6 @@ if (fullnameNoSpaceLowercaseNoDiacritics) {
 }
 */
 
-function ouvreLesYeux() {
-    (badgeArtistEyeElement => {
-        if (!badgeArtistEyeElement) return;
-
-        (playerWrapper => {
-            if (!playerWrapper) return;
-            if (playerWrapper.style.visibility === 'visible') {
-                badgeArtistEyeElement.classList.remove('icon-eye_open')
-                badgeArtistEyeElement.classList.add('icon-eye_close')
-            } else {
-                badgeArtistEyeElement.classList.remove('icon-eye_close')
-                badgeArtistEyeElement.classList.add('icon-eye_open')
-            }
-        })(document.getElementById('playerWrapper'));
-
-        badgeArtistEyeElement.addEventListener('click', (event) => {
-            event.stopPropagation()
-            event.preventDefault()
-            const isPlayerVisible = togglePlayer()
-            if (typeof isPlayerVisible !== 'undefined') {
-                if (isPlayerVisible) {
-                    badgeArtistEyeElement.classList.remove('icon-eye_open')
-                    badgeArtistEyeElement.classList.add('icon-eye_close')
-                } else {
-                    badgeArtistEyeElement.classList.remove('icon-eye_close')
-                    badgeArtistEyeElement.classList.add('icon-eye_open')
-                }
-            }
-        })
-
-    })(document.querySelector('.artist#badge-artist #eye'))
-}
-
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 createColoredBadges('grid');
 Ω.setPuzzleClickHandlers()
@@ -184,8 +151,6 @@ Promise.allSettled([...allPromises.values()]).then((results) => {
 
     const isotopeResult = map.get(ISOTOPE)
     const playerResult = map.get(PLAYER)
-
-    ouvreLesYeux()
 
     if (isotopeResult) {
         isotopeResult.on('arrangeComplete', function (filteredItems) {
