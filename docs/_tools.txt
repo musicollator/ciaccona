@@ -39,6 +39,11 @@ look for version number
 replace with 
 $11$2
 
+([\?"']v*=*1\.0\.0-alpha)(\.\d+)*(["'#])
+replace with 
+$1$2.1$3
+
+
 rename all _xxx\d.js files to _xxx4.js
 # check first
 for file in *; do echo $file; done

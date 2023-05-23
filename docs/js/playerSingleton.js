@@ -1,7 +1,7 @@
-import config from "/js/config.js?v=2.2.25"
-import createTimings from "/js/timings.js?v=2.2.25"
-import createPlayer from "/js/player.js?v=2.2.25"
-import Ω from "/js/dom.js?v=2.2.25"
+import config from "/js/config.js?v=1.0.0-alpha"
+import createTimings from "/js/timings.js?v=1.0.0-alpha"
+import createPlayer from "/js/player.js?v=1.0.0-alpha"
+import Ω from "/js/dom.js?v=1.0.0-alpha"
 
 function regardeDeTousTesYeux() {
     (badgeArtistEyeElement => {
