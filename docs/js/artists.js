@@ -60,17 +60,17 @@ class Artists {
     sort = (f) => this.artists.sort(f)
 }
 
-let ARTISTS
+let ARTISTS = undefined
 
 function loadArtists() {
     console.log('loading artists ...')
     return new Promise((resolve, reject) => {
-        if (ARTISTS) {
+        if (typeof ARTISTS !== 'undefined') {
             console.log('loaded artists from cache', ARTISTS)
             resolve(ARTISTS)
         }
 
-        console.log('fetching artists ...')
+        console.log(`no artists in cache (${ARTISTS}), fetching ...`)
         const urlArtistsYAML = "/_artists.yaml"
         const artistsRequest = new Request(urlArtistsYAML);
         const artists = new Artists()
@@ -98,8 +98,6 @@ function loadArtists() {
     })
 }
 
-const theArtists = await loadArtists()
-
 let theArtist
 
-export { theArtists, theArtist, theDayWhenIReadTheVideoMeters }
+export { loadArtists, theArtist, theDayWhenIReadTheVideoMeters }

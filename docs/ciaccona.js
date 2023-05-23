@@ -3,6 +3,7 @@ import config from "/js/config.js?v=2.2.22"
 import { togglePlayer } from "/js/playerSingleton.js?v=2.2.22"
 import { createColoredBadges } from "/js/colors.js?v=2.2.22"
 import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.22"
+import { loadArtists } from "/js/artists.js?v=2.2.22"
 import Ω from "/js/dom.js?v=2.2.22"
 
 // transform windows loaded event into promise
@@ -131,13 +132,16 @@ const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 // 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
 if (coerce.fullameNoSpaceLowercaseNoDiacritics) {
 
-    let artistObject = config.theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullameNoSpaceLowercaseNoDiacritics)
-
     allPromises.set(
         PLAYER,
-        createPlayerSingleton(artistObject, coerce.no_plyr_event)
+        loadArtists().then(putainDeArtists => {
+            let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullameNoSpaceLowercaseNoDiacritics)
+
+            return createPlayerSingleton(artistObject, coerce.no_plyr_event)
+        })
     )
 }
+
 
 // 2. create and flood color bricks into isotope
 allPromises.set(

@@ -1,8 +1,8 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import codec from "/js/structure.js?v=2.2.22"
+import { loadArtists } from "/js/artists.js?v=2.2.22"
 import { colorArray } from "/js/colors.js?v=2.2.22"
-import { theArtists } from "/js/artists.js?v=2.2.22"
 import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.22"
 import { jigsawGenerator } from "/js/jigsawShield.js?v=2.2.22"
 import MagnificentTitle from "/js/magnificent-title.js?v=2.2.22"
@@ -153,8 +153,8 @@ function generateData(arrayOfArtists) {
     return data;
 }
 
-{
-    const artists = theArtists
+loadArtists().then(putainDeArtists => {
+
 
     const list = document.getElementById('list')
 
@@ -169,7 +169,7 @@ function generateData(arrayOfArtists) {
 
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
-    let arrayOfArtists = coerce.shuffle ? shuffleArray(artists.artists) : artists.artists
+    let arrayOfArtists = coerce.shuffle ? shuffleArray(putainDeArtists.artists) : putainDeArtists.artists
     data = generateData(arrayOfArtists)
     data.forEach(d => {
         list.appendChild(generateElement(`<div class="list-item">${template(d)}</div>`))
@@ -187,7 +187,7 @@ function generateData(arrayOfArtists) {
     {
         console.log("about to create packery ...")
         const thePackery = new packeryLayout('#list', {
-            itemSelector: ".list-item", // #theContainer #theContainerCol .artists#list 
+            itemSelector: ".list-item", 
             percentPosition: false,
             initLayout: false,
             gutter: '#list .gutter-sizer',
@@ -224,7 +224,7 @@ function generateData(arrayOfArtists) {
             if (artistBadge) {
                 if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
                     artistBadge.style.visibility = 'inherit'
-                    artistBadge.querySelector('.fullname').innerHTML = artists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics).fullname
+                    artistBadge.querySelector('.fullname').innerHTML = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics).fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
                 } else {
                     artistBadge.style.visibility = 'hidden'
@@ -286,4 +286,4 @@ function generateData(arrayOfArtists) {
             }))
         }
     }
-}
+})

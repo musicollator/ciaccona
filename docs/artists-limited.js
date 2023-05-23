@@ -4,8 +4,7 @@ import config from "/js/config.js?v=2.2.22"
 import codec from "/js/structure.js?v=2.2.22"
 import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.22"
 import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.22"
-
-console.log('artists-limited')
+import { loadArtists } from "/js/artists.js?v=2.2.22"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -72,137 +71,137 @@ function generateData() {
     return data;
 }
 
-// window.addEventListener("DOMContentLoaded", (event) => {
-(list => {
-    if (!list) return
+loadArtists().then(putainDeArtists => {
+    (list => {
+        if (!list) return
 
-    list.querySelectorAll('.list-item').forEach(E => E.remove())
+        list.querySelectorAll('.list-item').forEach(E => E.remove())
 
-    arrayOfArtists = config.theArtists.artists.sort((a, b) => {
-        if (a.instrument === b.instrument) {
-            if (a.lastname === 'Moi') {
-                return 1
-            } else if (b.lastname === 'Moi') {
-                return -1
-            } else {
-                return a.lastname.localeCompare(b.lastname)
+        arrayOfArtists = putainDeArtists.artists.sort((a, b) => {
+            if (a.instrument === b.instrument) {
+                if (a.lastname === 'Moi') {
+                    return 1
+                } else if (b.lastname === 'Moi') {
+                    return -1
+                } else {
+                    return a.lastname.localeCompare(b.lastname)
+                }
             }
-        }
-        return a.instrument.localeCompare(b.instrument)
-    })
-
-    data = generateData()
-
-    let previousInstrument = "_"
-
-    data.forEach(d => {
-        if (d.instrument !== previousInstrument) {
-            const instrumentDisplayName = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;' /* No-Break Space */)
-
-            list.appendChild(generateElement(templateDivider(d.instrument, instrumentDisplayName)))
-
-            previousInstrument = d.instrument
-        }
-        list.appendChild(generateElement(template(d)))
-    })
-
-    var listArtistElements = document.querySelectorAll('.list-artist')
-    const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
-        console.log('All ImagesLoaded')
-    });
-    imgLoad.on('progress', function (instance, image) {
-        console.log('image loaded', image)
-        image.element.style.visibility = 'inherit'
-        // image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
-    });
-
-    {
-        console.log("about to create packery ...")
-        const thePackery = new packeryLayout(list, {
-            itemSelector: "#list .list-item",
-            gutter: 10,
-            initLayout: false,
-            resize: true,
-            percentPosition: false
+            return a.instrument.localeCompare(b.instrument)
         })
 
-        thePackery.on('layoutComplete', function () {
-            console.log("Packery layout complete");
+        data = generateData()
+
+        let previousInstrument = "_"
+
+        data.forEach(d => {
+            if (d.instrument !== previousInstrument) {
+                const instrumentDisplayName = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;' /* No-Break Space */)
+
+                list.appendChild(generateElement(templateDivider(d.instrument, instrumentDisplayName)))
+
+                previousInstrument = d.instrument
+            }
+            list.appendChild(generateElement(template(d)))
         })
 
-        thePackery.layout()
+        var listArtistElements = document.querySelectorAll('.list-artist')
+        const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
+            console.log('All ImagesLoaded')
+        });
+        imgLoad.on('progress', function (instance, image) {
+            console.log('image loaded', image)
+            image.element.style.visibility = 'inherit'
+            // image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
+        });
 
-        function setEventListeners() {
-            // https://getbootstrap.com/docs/5.2/components/offcanvas/#via-javascript
-            /*
-            const offcanvasElementList = document.querySelectorAll('.offcanvas')
-            const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
-            */
-            const offcanvasElement = document.getElementById('theOffcanvas')
-            if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(offcanvasElement)
+        {
+            console.log("about to create packery ...")
+            const thePackery = new packeryLayout(list, {
+                itemSelector: "#list .list-item",
+                gutter: 10,
+                initLayout: false,
+                resize: true,
+                percentPosition: false
+            })
 
-            document.querySelectorAll('.list-artist').forEach(element => {
-                element.addEventListener('click', (event) => {
-                    event.stopPropagation()
-                    event.preventDefault()
+            thePackery.on('layoutComplete', function () {
+                console.log("Packery layout complete");
+            })
 
-                    if (coerce.color?.candidate) {
-                        coerce.variation = coerce.color?.candidate
-                    }
+            thePackery.layout()
 
-                    config.offcanvasElementBootstrapped.hide()
+            function setEventListeners() {
+                // https://getbootstrap.com/docs/5.2/components/offcanvas/#via-javascript
+                /*
+                const offcanvasElementList = document.querySelectorAll('.offcanvas')
+                const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+                */
+                const offcanvasElement = document.getElementById('theOffcanvas')
+                if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(offcanvasElement)
 
-                    let artistObject = config.theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
-                    createPlayerSingleton(artistObject).then(result => {
-                        const artistAndTimings = result.value
+                document.querySelectorAll('.list-artist').forEach(element => {
+                    element.addEventListener('click', (event) => {
+                        event.stopPropagation()
+                        event.preventDefault()
 
-                        // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
-                        const url = new URL(location);
-                        url.searchParams.set("a", artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics);
-                        if (typeof coerce.variation !== 'undefined') {
-                            url.searchParams.set("v", coerce.variation);
+                        if (coerce.color?.candidate) {
+                            coerce.variation = coerce.color?.candidate
                         }
-                        history.pushState({}, "", url);
+
+                        config.offcanvasElementBootstrapped.hide()
+
+                        let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
+                        createPlayerSingleton(artistObject).then(result => {
+                            const artistAndTimings = result.value
+
+                            // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
+                            const url = new URL(location);
+                            url.searchParams.set("a", artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics);
+                            if (typeof coerce.variation !== 'undefined') {
+                                url.searchParams.set("v", coerce.variation);
+                            }
+                            history.pushState({}, "", url);
+                        })
                     })
                 })
-            })
 
-            offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
-                if (coerce.color) {
-                    offcanvasElement.classList.add(coerce.color.clazz)
-                    offcanvasElement.classList.add(coerce.color.tonality)
-                    if (typeof coerce.color.candidate !== 'undefined') {
-                        document.querySelectorAll('.list-artist').forEach(la => {
-                            la.style.backgroundImage = bg(la.dataset.a, coerce.color.candidate)
-                        })
-                        return
+                offcanvasElement.addEventListener('show.bs.offcanvas', (event) => {
+                    if (coerce.color) {
+                        offcanvasElement.classList.add(coerce.color.clazz)
+                        offcanvasElement.classList.add(coerce.color.tonality)
+                        if (typeof coerce.color.candidate !== 'undefined') {
+                            document.querySelectorAll('.list-artist').forEach(la => {
+                                la.style.backgroundImage = bg(la.dataset.a, coerce.color.candidate)
+                            })
+                            return
+                        }
                     }
-                }
-                document.querySelectorAll('.list-artist').forEach(la => {
-                    la.style.backgroundImage = la.dataset.i
+                    document.querySelectorAll('.list-artist').forEach(la => {
+                        la.style.backgroundImage = la.dataset.i
+                    })
                 })
-            })
-            offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
-                if (coerce.color) {
-                    offcanvasElement.classList.remove(coerce.color.clazz)
-                    offcanvasElement.classList.remove(coerce.color.tonality)
-                }
-                coerce.color = undefined
-            })
+                offcanvasElement.addEventListener('hidden.bs.offcanvas', (event) => {
+                    if (coerce.color) {
+                        offcanvasElement.classList.remove(coerce.color.clazz)
+                        offcanvasElement.classList.remove(coerce.color.tonality)
+                    }
+                    coerce.color = undefined
+                })
 
-            document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
-                coerce.variation = undefined
-                const url = new URL(location);
-                url.searchParams.delete("v");
-                history.pushState({}, "", url);
+                document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
+                    coerce.variation = undefined
+                    const url = new URL(location);
+                    url.searchParams.delete("v");
+                    history.pushState({}, "", url);
 
-                config.offcanvasElementBootstrapped.hide()
-            }))
+                    config.offcanvasElementBootstrapped.hide()
+                }))
+            }
+
+            setEventListeners()
+
         }
 
-        setEventListeners()
-
-    }
-
-})(document.getElementById('list'))
-// });
+    })(document.getElementById('list'))
+})
