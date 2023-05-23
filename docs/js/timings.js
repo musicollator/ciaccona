@@ -3,7 +3,6 @@ import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
 import config from "/js/config.js?v=2.2.21"
 import codec from "/js/structure.js?v=2.2.21"
 import { binaryRangeSearch } from "/js/utils.js?v=2.2.21"
-import { theArtists, theArtist } from "/js/artists.js?v=2.2.21"
 
 class Timings {
 

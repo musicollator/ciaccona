@@ -3,7 +3,6 @@ import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import config from "/js/config.js?v=2.2.21"
 import codec from "/js/structure.js?v=2.2.21"
 import { createPlayerSingleton } from "/js/playerSingleton.js?v=2.2.21"
-import { theArtists } from "/js/artists.js?v=2.2.21"
 import { shuffleArray, generateElement } from "/js/utils.js?v=2.2.21"
 
 console.log('artists-limited')
@@ -79,7 +78,7 @@ function generateData() {
 
     list.querySelectorAll('.list-item').forEach(E => E.remove())
 
-    arrayOfArtists = theArtists.artists.sort((a, b) => {
+    arrayOfArtists = config.theArtists.artists.sort((a, b) => {
         if (a.instrument === b.instrument) {
             if (a.lastname === 'Moi') {
                 return 1
@@ -153,7 +152,7 @@ function generateData() {
 
                     config.offcanvasElementBootstrapped.hide()
 
-                    let artistObject = theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
+                    let artistObject = config.theArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
                     createPlayerSingleton(artistObject).then(result => {
                         const artistAndTimings = result.value
 

@@ -112,8 +112,6 @@ const template = (data) => `
 </div>`
 
 let data = []
-let artists2
-// let arrayOfArtists = []
 const colors = colorArray;
 
 function generateData(arrayOfArtists) {
@@ -156,7 +154,7 @@ function generateData(arrayOfArtists) {
 }
 
 {
-    const artists = artists2 = theArtists
+    const artists = theArtists
 
     const list = document.getElementById('list')
 
@@ -226,7 +224,7 @@ function generateData(arrayOfArtists) {
             if (artistBadge) {
                 if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
                     artistBadge.style.visibility = 'inherit'
-                    artistBadge.querySelector('.fullname').innerHTML = artists2.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics).fullname
+                    artistBadge.querySelector('.fullname').innerHTML = artists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics).fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
                 } else {
                     artistBadge.style.visibility = 'hidden'

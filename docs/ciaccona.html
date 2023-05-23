@@ -270,7 +270,9 @@
     <script type="module">
         // workaround for https://bugs.webkit.org/show_bug.cgi?id=242740
         import { theArtists } from "/js/artists.js?v=2.2.21"
+        import config from "/js/config.js?v=2.2.21"
         console.log("workaround for https://bugs.webkit.org/show_bug.cgi?id=242740", theArtists)
+        config.theArtists = theArtists
     </script>
 
     <script async type="module" src="/ciaccona.js?v=2.2.21"></script>
