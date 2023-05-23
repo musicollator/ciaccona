@@ -123,38 +123,39 @@
   .gutter-sizer {
     width: var(--gs, 1rem);
   }
-  .hero {
-    color: #c8b273;
-    display: flex;
-    isolation: isolate;
-    filter: grayscale(0.1667);
-    div.hide-name {
-      &:first-child {
-        color: transparent;
-      }
-    }
-  }
-  .hero-intro {
-    position: relative;
-    padding: 0px 0.333rem;
-    cursor: pointer;
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      /* z-index: -1; */
-      mix-blend-mode: multiply;
-      background-color: steelblue;
-    }
-    &.vert {
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      line-height: 10.672px;
-      width: 1.667rem;
-      padding-bottom: 0.5rem;
-    }
-    &.pushed::after {
-      background: #b47846;
+}
+.hero {
+  color: #c8b273;
+  display: flex;
+  isolation: isolate;
+  filter: grayscale(0.1667);
+  div.hide-name {
+    &:first-child {
+      color: transparent;
     }
   }
 }
+.hero-intro {
+  position: relative;
+  padding: 0px 0.333rem;
+  cursor: pointer;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* z-index: -1; */
+    mix-blend-mode: multiply;
+    background-color: steelblue;
+  }
+  &.vert {
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    line-height: 10.672px;
+    width: 1.667rem;
+    padding-bottom: 0.5rem;
+  }
+  &.pushed::after {
+    background: #b47846;
+  }
+}
+

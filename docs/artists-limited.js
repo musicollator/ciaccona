@@ -36,8 +36,8 @@ const template = (data) => `
         data-i="${data.bg}"
         title="${data.n}"
         style="background-image: ${data.bg}; overflow:hidden;">
-        <div class="d-flex flex-column justify-content-start" style="height:100%; visibility: hidden;" >
-            <div class="hero-intro flex-shrink-1; align-self-start;" 
+        <div class="d-flex flex-column justify-content-start" style="height:100%;" >
+            <div class="hero-intro flex-shrink-1 align-self-start"
                 style="padding-right: 0.5rem;">
                 ${data.n}
             </div>

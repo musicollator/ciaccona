@@ -21,12 +21,12 @@ const template = (data) => `
      data-v="${data.v}" 
      style="background-image: ${data.abg}; overflow:visible;">
     <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden;" >
-        <div class="hero-intro flex-shrink-1; align-self-start;" 
+        <div class="hero-intro flex-shrink-1 align-self-start" 
              title="Pin or unpin ${data.firstname} ${data.lastname}"
              style="padding-right: 0.5rem;">
              ${data.firstname}
         </div>
-        <div class="hero-intro vert flex-grow-1;" 
+        <div class="hero-intro vert flex-grow-1" 
              title="Pin or unpin ${data.firstname} ${data.lastname}">
              ${data.lastname}
         </div>
