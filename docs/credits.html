@@ -46,7 +46,7 @@
         <header class="p-2 d-flex" style="background-color: #f0f0f0; height: 4rem;">
             <h1 class="flex-grow-1">Credits</h1>
             <button id="go-back" type="button" class="btn btn-light m-0 p-0" style="z-index: 2;">
-                <img src="index.svg?v=2.2.20#close-circle-view" style="width:32px; height:32px;">
+                <img src="index.svg?v=2.2.21#close-circle-view" style="width:32px; height:32px;">
             </button>
         </header>
         <div id="perfContainerRow" class="row" style="">
@@ -67,7 +67,7 @@
             window.location = document.referrer
         });
 
-        jquery("code#thanks").load("/_thanks.yaml?v=2.2.20", function (response, status, xhr) {
+        jquery("code#thanks").load("/_thanks.yaml?v=2.2.21", function (response, status, xhr) {
             if (status == "success") {
                 Prism.highlightElement(this)
                 jquery('#credits').show()
