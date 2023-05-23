@@ -1,10 +1,10 @@
 import isotopeLayout from 'https://cdn.jsdelivr.net/npm/isotope-layout@3.0.6/+esm'
-import config from "/js/config.js?v=2.2.24"
-import { togglePlayer } from "/js/playerSingleton.js?v=2.2.24"
-import { createColoredBadges } from "/js/colors.js?v=2.2.24"
-import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.24"
-import { loadArtists } from "/js/artists.js?v=2.2.24"
-import Ω from "/js/dom.js?v=2.2.24"
+import config from "/js/config.js?v=2.2.25"
+import { togglePlayer } from "/js/playerSingleton.js?v=2.2.25"
+import { createColoredBadges } from "/js/colors.js?v=2.2.25"
+import { createPlayerSingleton, showPlayer } from "/js/playerSingleton.js?v=2.2.25"
+import { loadArtists } from "/js/artists.js?v=2.2.25"
+import Ω from "/js/dom.js?v=2.2.25"
 
 document.getElementById('version').innerHTML = ver
 
