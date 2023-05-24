@@ -333,20 +333,16 @@ const Ω = {
             if (!badgeVariation) return
 
             badgeVariation.addEventListener('click', (event) => {
-                coerce.variation = undefined
-
-                const url = new URL(location);
-                url.searchParams.delete("v");
-                history.pushState({}, "", url);
+                coerce.variationUndo()
             })
 
             coerce.setVariationListener((variation, oldVariation) => {
                 if (typeof variation === 'undefined') {
-                    // badgeVariation.querySelector('#badge-variation-number').innerHTML = ''
+                    badgeVariation.querySelector('#badge-variation-number').innerHTML = ''
                     const path = document.querySelector(`#badge-variation-puzzle path`)
                     path.remove()
                 } else {
-                    // badgeVariation.querySelector('#badge-variation-number').innerHTML = variation
+                    badgeVariation.querySelector('#badge-variation-number').innerHTML = variation
 
                     // clone
                     const svgFrom = document.querySelector(`.grid-brick#gb${variation} svg`)
@@ -359,6 +355,15 @@ const Ω = {
                     svgClone.setAttribute('id', id)
                     svgClone.style.transform = transform
                     parent.prepend(svgClone)
+                }
+                {
+                    const url = new URL(location);
+                    if (typeof variation === 'undefined') {
+                        url.searchParams.delete("v");
+                    } else {
+                        url.searchParams.set("v", variation);
+                    }
+                    history.pushState({}, "", url);
                 }
             })
         })(document.getElementById('badge-variation'));

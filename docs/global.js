@@ -42,6 +42,7 @@ class Coerce {
         'yunpark',
     ]
     #coerceVariation
+    #coerceVariationPrevious
     #coerceArtist
     #shuffle
     #variationListener
@@ -103,13 +104,16 @@ class Coerce {
                 this.#variationListener(candidateVariation, this.#coerceVariation)
             }
             if (this.#coerceVariation !== candidateVariation) {
+                this.#coerceVariationPrevious = this.#coerceVariation
                 this.#coerceVariation = candidateVariation
-                console.log(`coerceVariation=${this.#coerceVariation} (from variation=${variation})`)
+                console.log(`coerceVariation /${this.#coerceVariation}/ (from parameter /${variation}/) coerceVariationPrevious is now /${this.#coerceVariationPrevious}/`)
             }
         } catch (error) {
-            this.#coerceVariation = undefined
-            console.log(` ... ERROR from variation=${variation} to coerceVariation=${this.#coerceVariation}`)
+            console.log(`Trying to set variation to /${variation}/ -> ERROR /${error}/! coerceVariation /${this.#coerceVariation}/ left unchanged`)
         }
+    }
+    variationUndo = () => {
+        this.variation = this.#coerceVariationPrevious
     }
 
     //
