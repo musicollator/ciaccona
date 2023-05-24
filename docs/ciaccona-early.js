@@ -1,4 +1,4 @@
-import { theTrickToViewportUnitsOnMobile } from "/js/utils.js?v=1.0.1-alpha.1"
+import { theTrickToViewportUnitsOnMobile } from "/js/utils.js?v=1.0.1-alpha.2"
 
 // brick width
 function calcBrickWidth() {

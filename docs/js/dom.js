@@ -1,7 +1,7 @@
 import animejs from '/lib/anime-3.2.1.es.min.js'
-import config from "/js/config.js?v=1.0.1-alpha.1"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1-alpha.1"
-import brickClickHandler from "/js/brickClickHandler.js?v=1.0.1-alpha.1"
+import config from "/js/config.js?v=1.0.1-alpha.2"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1-alpha.2"
+import brickClickHandler from "/js/brickClickHandler.js?v=1.0.1-alpha.2"
 
 const Ω = {
     animateUnveilScores: () => {
