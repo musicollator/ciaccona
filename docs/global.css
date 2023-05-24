@@ -9,7 +9,14 @@ body.video-player {
 }
 
 a {
+  color: inherit;
   text-decoration: none !important;
+  &:hover {
+    color: inherit;
+  }
+  &:visited {
+    color: inherit;
+  }
 }
 
 .fullparent {
