@@ -71,16 +71,23 @@ class Coerce {
         return this.#coerceArtist
     }
     set fullnameNoSpaceLowercaseNoDiacritics(fullnameNoSpaceLowercaseNoDiacritics) {
-        if (typeof fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
-            if (!this.#validFullamesNoSpaceLowercaseNoDiacritics.includes(fullnameNoSpaceLowercaseNoDiacritics)) {
-                console.log(`invalid fullnameNoSpaceLowercaseNoDiacritics: ${fullnameNoSpaceLowercaseNoDiacritics}`)
-                this.#coerceArtist = undefined
-            } else if (fullnameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
-                this.#coerceArtist = 'moi'
-            } else {
-                this.#coerceArtist = fullnameNoSpaceLowercaseNoDiacritics
-            }
+        if (typeof fullnameNoSpaceLowercaseNoDiacritics === 'undefined' ||
+            fullnameNoSpaceLowercaseNoDiacritics == null ||
+            fullnameNoSpaceLowercaseNoDiacritics === 0 ||
+            fullnameNoSpaceLowercaseNoDiacritics === '' ) {
+            this.#coerceArtist = undefined
+            return
         }
+
+        if (!this.#validFullamesNoSpaceLowercaseNoDiacritics.includes(fullnameNoSpaceLowercaseNoDiacritics)) {
+            console.log(`invalid fullnameNoSpaceLowercaseNoDiacritics: ${fullnameNoSpaceLowercaseNoDiacritics}`)
+            this.#coerceArtist = undefined
+        } else if (fullnameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
+            this.#coerceArtist = 'moi'
+        } else {
+            this.#coerceArtist = fullnameNoSpaceLowercaseNoDiacritics
+        }
+
     }
 
     // 
