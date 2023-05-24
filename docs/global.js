@@ -113,6 +113,9 @@ class Coerce {
             if (this.#coerceVariation !== candidateVariation) {
                 this.#coerceVariationPrevious = this.#coerceVariation
                 this.#coerceVariation = candidateVariation
+                if (typeof this.#coerceVariation !== 'undefined') {
+                    this.#coerceVariationPrevious = undefined 
+                }
                 console.log(`coerceVariation /${this.#coerceVariation}/ (from parameter /${variation}/) coerceVariationPrevious is now /${this.#coerceVariationPrevious}/`)
             }
         } catch (error) {
