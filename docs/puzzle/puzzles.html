@@ -251,7 +251,7 @@
 
             <div class="d-flex" style="margin:2rem; position:relative;">
                 <button id="go-back" type="button" class="btn btn-light m-0 p-0" style="position: absolute; right:0; top:0; z-index: 2;">
-                    <img src="/index.svg?v=1.0.0-alpha.1#close-circle-view" style="width:32px; height:32px;">
+                    <img src="/index.svg?v=1.0.1-alphaclose-circle-view" style="width:32px; height:32px;">
                 </button>
 
                 <div class="flex-grow-1 d-flex">
@@ -319,7 +319,7 @@
     </main>
 
     <script type="module">
-        import { theTrickToViewportUnitsOnMobile } from "/js/utils.js?v=1.0.0-alpha.1"
+        import { theTrickToViewportUnitsOnMobile } from "/js/utils.js?v=1.0.1-alpha
         function scaleGrid() {
             const vw = window.innerWidth
             const vh = window.innerHeight
@@ -346,9 +346,9 @@
         // https://codepen.io/desandro/pen/eJXRbW
         import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
         import Draggabilly from 'https://cdn.jsdelivr.net/npm/draggabilly@3.0.0/+esm'
-        import { shuffleArray } from "/js/utils.js?v=1.0.0-alpha.1"
-        import { loadArtists } from "/js/artists.js?v=1.0.0-alpha.1"
-        import codec from "/js/structure.js?v=1.0.0-alpha.1"
+        import { shuffleArray } from "/js/utils.js?v=1.0.1-alpha
+        import { loadArtists } from "/js/artists.js?v=1.0.1-alpha
+        import codec from "/js/structure.js?v=1.0.1-alpha
 
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop)
