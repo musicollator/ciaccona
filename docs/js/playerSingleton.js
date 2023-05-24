@@ -10,16 +10,7 @@ function regardeDeTousTesYeux() {
         badgeArtistEyeElement.addEventListener('click', (event) => {
             event.stopPropagation()
             event.preventDefault()
-            const isPlayerVisible = togglePlayer()
-            if (typeof isPlayerVisible !== 'undefined') {
-                if (isPlayerVisible) {
-                    badgeArtistEyeElement.classList.remove('icon-eye_open')
-                    badgeArtistEyeElement.classList.add('icon-eye_close')
-                } else {
-                    badgeArtistEyeElement.classList.remove('icon-eye_close')
-                    badgeArtistEyeElement.classList.add('icon-eye_open')
-                }
-            }
+            const isPlayerVisible = togglePlayer()            
         })
     })(document.querySelector('.artist#badge-artist #eye'))
 }
@@ -98,15 +89,18 @@ async function createPlayerSingleton(artistObject, no_plyr_event) {
             createTimings(artistObject).then((artistAndTimings) => {
                 Ω.showArtist(artistAndTimings)
                 // console.log('ABOUT TO CHANGE VIDEO', artist['▶'].youtubeUrl)
-                config.plyrPlayer.source = {
-                    type: 'video',
-                    sources: [
-                        {
-                            src: artistAndTimings['▶'].youtubeUrl,
-                            provider: 'youtube',
-                        },
-                    ],
-                };
+                if (typeof config?.plyrPlayer?.source !== 'undefined' &&
+                    !config.plyrPlayer.source.includes(artistAndTimings['▶'].id)) {
+                    config.plyrPlayer.source = {
+                        type: 'video',
+                        sources: [
+                            {
+                                src: artistAndTimings['▶'].youtubeUrl,
+                                provider: 'youtube',
+                            },
+                        ],
+                    };
+                }
                 resolve({
                     key: "PLAYER",
                     value: artistAndTimings,
