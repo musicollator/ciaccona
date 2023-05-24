@@ -251,7 +251,7 @@
 
             <div class="d-flex" style="margin:2rem; position:relative;">
                 <button id="go-back" type="button" class="btn btn-light m-0 p-0" style="position: absolute; right:0; top:0; z-index: 2;">
-                    <img src="index.svg?v=2.2.9#close-circle-view" style="width:32px; height:32px;">
+                    <img src="/index.svg?v=2.2.9#close-circle-view" style="width:32px; height:32px;">
                 </button>
 
                 <div class="flex-grow-1 d-flex">
@@ -272,10 +272,10 @@
                     <h2 class="text-light" style="text-align: left;">
                         <span id="artistsWithVidCount">a</span>
                         Artists
-                        <img src="svg/math-multiplication-icon.svg" style="width:22px; height:auto;">
+                        <img src="/svg/math-multiplication-icon.svg" style="width:22px; height:auto;">
                         <span id="variationsCount">v</span>
                         Variations
-                        <img src="svg/equals-symbol-svgrepo-com.svg" style="width:22px; height:auto;">
+                        <img src="/svg/equals-symbol-svgrepo-com.svg" style="width:22px; height:auto;">
                         <span id="puzzlesCount">v</span> Puzzles</a>
                     </h2>
                 </div>
@@ -347,14 +347,14 @@
         import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
         import Draggabilly from 'https://cdn.jsdelivr.net/npm/draggabilly@3.0.0/+esm'
         import { shuffleArray } from "/js/utils.js?v=2.2.9"
-        import { theArtists } from "/js/artists.js?v=2.2.9"
+        import { loadArtists } from "/js/artists.js?v=2.2.9"
         import codec from "/js/structure.js?v=2.2.9"
 
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop)
         })
         let coerceArtist = params.a ?? undefined
-        let coerce.variation = params.v ?? undefined
+        let coerceVariation = params.v ?? undefined
 
         document.getElementById("go-back").addEventListener("click", () => {
             window.location = document.referrer
@@ -384,9 +384,9 @@
             console.log('clicked!')
         }
 
-        {
+        loadArtists().then((artists) => {
 
-            const artistsWithVid = shuffleArray(theArtists.artists.filter(a => !a.v.still))
+            const artistsWithVid = shuffleArray(artists.artists.filter(a => !a['▶'].still))
             const artistsWithVidCount = artistsWithVid.length
             const variationsCount = codec.variationsCount
             const puzzlesCount = codec.variationsCount * artistsWithVid.length
@@ -395,7 +395,7 @@
             document.getElementById('variationsCount').innerHTML = variationsCount
             document.getElementById('puzzlesCount').innerHTML = puzzlesCount
 
-            let v = coerce.variation ?? 0
+            let v = coerceVariation ?? 0
             let a = 0
             if (coerceArtist) {
                 for (a = 0; a < artistsWithVid.length; a++) {

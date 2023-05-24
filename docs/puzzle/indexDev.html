@@ -106,7 +106,7 @@
         import animejs from '/lib/anime-3.2.1.es.min.js'
         import { shuffleArray, generateElement, normalizeVraiment } from "/js/utils.js?v=2.2.9"
         import codec from "/js/structure.js?v=2.2.9"
-        import { theArtists } from "/js/artists.js?v=2.2.9"
+        import { loadArtists } from "/js/artists.js?v=2.2.9"
         import { jigsawGenerator as jg, JigsawShield } from "/js/jigsawShield.js?v=2.2.9"
 
         const params = new Proxy(new URLSearchParams(window.location.search), {
@@ -114,8 +114,8 @@
         })
         let test = params.test ?? undefined
         let coerceArtist = params.a ?? undefined
-        let coerce.variation = params.v ? parseInt(params.v) : undefined
-        if (isNaN(coerce.variation) || coerce.variation < 0 || codec.variationsCount <= coerce.variation) coerce.variation = undefined
+        let coerceVariation= params.v ? parseInt(params.v) : undefined
+        if (isNaN(coerceVariation) || coerceVariation< 0 || codec.variationsCount <= coerceVariation) coerceVariation= undefined
         let shuffle = params.shuffle ?? undefined
         if (typeof shuffle !== 'undefined' && (shuffle === 'false' || shuffle === '0' || !shuffle)) {
             shuffle = false
@@ -277,7 +277,7 @@
                         const borderX = xi === 0 ? 0 : marginX;
                         const borderY = yi === 0 ? 0 : marginY;
                         const artist = coerceArtist ?? a.fullnameNoSpaceLowercaseNoDiacritics
-                        const variation = coerce.variation ?? (shuffledV[i] % codec.variationsCount)
+                        const variation = coerceVariation?? (shuffledV[i] % codec.variationsCount)
 
                         if (_.image) {
                             cell.style.backgroundImage = `url(${_.image})`
@@ -293,8 +293,8 @@
             })
 
         }
-        const qwe = theArtists
-        doIt
+
+        loadArtists().then(doIt)
 
         var pckry = new packeryLayout(thePuzzle, {
             itemSelector: '.colonne',
@@ -338,8 +338,8 @@
             } else if (event.key === 'Escape') {
                 toggleShuffleTiles()
             } else if (event.key === 'Enter') {
-                if (typeof coerce.variation !== 'undefined') {
-                    coerce.variation = (coerce.variation + 1) % codec.variationsCount
+                if (typeof coerceVariation!== 'undefined') {
+                    coerceVariation= (coerceVariation+ 1) % codec.variationsCount
                 }
                 changeIt()
                 pckry.reloadItems()
