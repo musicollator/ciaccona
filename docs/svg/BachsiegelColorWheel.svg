@@ -45,7 +45,7 @@
     <foreignObject x="0" y="0" width="100%" height="100%" clip-path="url(#clip)">
         <div class="gradient" style="animation: spin 5s linear infinite;" xmlns="http://www.w3.org/1999/xhtml" />
     </foreignObject>
-    <circle cx="50%" cy="7.5%" r="10" stroke="#446688" stroke-width="10" fill="#f0f8ff80">
+    <circle cx="50%" cy="7.5%" r="10" stroke="#446688" stroke-width="10" fill="#faf6ee80">
         <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 297.3225 266.2365" to="360 297.3225 266.2365" dur="5s" repeatCount="indefinite" />
     </circle>
     <path id="qwe" d="M 297.3225 366.2365 A 100 100 0 0 0 297.3225 166.23649999999998" fill="none" stroke="#446688" stroke-width="20">

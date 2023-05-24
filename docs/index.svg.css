@@ -110,4 +110,13 @@
   background-size: 200%;
 }
 
+.icon-television {
+  background-image: url("svg/television-svgrepo-com.svg?v=1.0.1-alpha.1");
+}
+
+.icon-external_link {
+  background-image: url("svg/External_link_font_awesome.svg?v=1.0.1-alpha.1");
+}
+
+
 
