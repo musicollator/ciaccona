@@ -162,41 +162,42 @@
     </div>
 
     <main id="theContainer" class="container-xxl flex-shrink-0">
-        <div class="d-flex justify-content-between" style="height: 0 !important;">
+        <div class="my-nav d-flex justify-content-between" style="height: 0 !important; gap: 2px;">
             <div id="videos-menu" class="my-nav-item align-self-start" style="visibility:hidden;">
                 <span class="dropdown dropstart">
-                    <a class="btn btn-light text-muted icon-base icon-violin2" style="width: 50px; height: 36px;" type="button" data-bs-toggle="offcanvas"
+                    <a class="bgdark bghov btn btn-light text-muted icon-base icon-violin2" style="width: 50px; height: 36px;" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#theOffcanvas" aria-controls="theOffcanvas">
                     </a>
                 </span>
             </div>
 
             <div id="badge-variation" class="my-nav-item select-variation align-self-start d-flex justify-content-evenly" style="height: 36px; overflow: visible;">
-                <div class="btn btn-light text-muted d-flex justify-content-between" style="position: relative;  max-width: 50px;">
-                    <svg id="badge-variation-puzzle" class="clipboard-puzzle" style="visibility: inherit; overflow: visible; transform: scale(1.4);">
+                <a class="bgdark bghov btn btn-light text-muted d-flex justify-content-between" type="button" style="position: relative; max-width: 50px; ">
+                    <svg id="badge-variation-puzzle" class="clipboard-puzzle" style="visibility: inherit; overflow: visible; transform: scale(1.4); width: 28px;">
                     </svg>
                     <div id="badge-variation-number" class="fw-bold dugenou" style="display: none;">
                         &nbsp;
                     </div>
-                </div>
+                </a>
+                <!-- span style="max-width: 50px;  max-height: 36px;">
+                </!-->
             </div>
 
             <div id="badge-artist" class="my-nav-item artist align-self-start flex-shrink-1" style="overflow: hidden;">
-                <div class="btn btn-light text-muted d-flex justify-content-between" style="margin: 0; padding: 1px; gap: 0.2rem;">
-                    <a id="eye" class="btn icon-base icon-eye_close text-muted" href="#" aria-label="Show / Hide Video" style="min-width:32px;">
+                <span class="bgdark btn btn-light text-muted d-flex justify-content-between" style="margin: 0; padding: 1px; gap: 0.2rem; overflow: hidden;">
+                    <a id="eye" class="bgtrans bghov btn icon-base icon-eye_close text-muted" href="#" type="button" aria-label="Show / Hide Video" style="min-width:32px;">
                     </a>
                     <label class="fullname" style="color: #faf6ee;"></label>
-                    <a id="social" class="share btn icon-base icon-share text-muted" target="_facebook" href="#" aria-label="Share..." style="min-width:32px;">
+                    <a id="social" class="bgtrans bghov share btn icon-base icon-share text-muted" target="_facebook" href="#" type="button" aria-label="Share..." style="min-width:32px;">
                     </a>
-                    <a id="youtube-url" class="btn icon-base icon-external_link text-muted" target="_youtube" href="#" aria-label="Original Video..." style="min-width:32px;">
+                    <a id="youtube-url" class="bgtrans bghov btn icon-base icon-external_link text-muted" target="_youtube" href="#" type="button" aria-label="Original Video..." style="min-width:32px;">
                     </a>
-                </div>
+                </span>
             </div>
-
 
             <div id="config-menu" class="my-nav-item btn-group dropstart align-self-start" style="visibility:hidden;">
                 <span class="dropdown dropstart">
-                    <a class="btn btn-light text-muted icon-base icon-treble_clef" style="width: 50px; height: 36px;" href="#" role="button" id="configMenuLink"
+                    <a class="bgdark bghov btn btn-light text-muted icon-base icon-treble_clef" style="width: 50px; height: 36px;" href="#" type="button" role="button" id="configMenuLink"
                         data-bs-toggle="dropdown" aria-expanded="false" aria-label="Configure...">
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="configMenuLink">
@@ -265,7 +266,7 @@
         <div id="theContainerRow" class="row justify-content-end">
             <div id="playerWrapper" class="col video-container" data-plyr-provider="youtube" data-plyr-embed-id="" style="visibility: hidden">
             </div>
-            <div id="theContainerCol" class="col" style="padding: 2rem 0 0 0">
+            <div id="theContainerCol" class="col" style="padding: 2.4rem 0 0 0">
                 <div id="grid" class="ciaccona">
                 </div>
             </div>

@@ -343,42 +343,29 @@ span.d {
   font-size: 10px;
   margin-left: 0.3rem;
 }
-.my-nav-item {
-  > * {
-    background: transparent;
-    z-index: 3;
-    label {
-      white-space: nowrap;
-      user-select: none;
-    }
-    a.btn {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-  }
-  &:not(.artist) > * > a.btn {
-    background-color: #00000080 !important;
-  }
-}
 
-#badge-variation,
-#badge-artist {
-  margin: 0;
-  z-index: 2;
+.my-nav .my-nav-item {
   visibility: hidden;
-  > div {
-    // margin: 0 2px;
-    // padding: 1px 0.3rem;
-    background-color: #00000080;
-    > * {
-      /*padding: 0;
-      margin: 0 2px; */
-    }
-    .fullname {
-      cursor: default;
-      user-select: text;
-      font-size: larger;
-    }
+  background-color: transparent;
+  z-index: 3;
+  .btn {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .bgdark {
+    background-color: #000000a0 !important;
+  }
+  .bgtrans {
+    background-color: transparent !important;
+  }
+  .bghov:hover {
+    background-color: gray !important;
+  }
+  label.fullname {
+    cursor: default;
+    user-select: text;
+    font-size: larger;
+    white-space: nowrap;
   }
 }
 
