@@ -1,7 +1,7 @@
 import plyr from 'https://cdn.jsdelivr.net/npm/plyr@3.7.8/+esm'
-import config from "/js/config.js?v=1.0.0-alpha.1"
-import codec from "/js/structure.js?v=1.0.0-alpha.1"
-import { normalizeVraiment } from "/js/utils.js?v=1.0.0-alpha.1"
+import config from "/js/config.js?v=1.0.1-alpha.1"
+import codec from "/js/structure.js?v=1.0.1-alpha.1"
+import { normalizeVraiment } from "/js/utils.js?v=1.0.1-alpha.1"
 
 console.log('started player.js, set initialized to FALSE and begin to TRUE')
 let initialized = false
