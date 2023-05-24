@@ -295,10 +295,7 @@ body.video-player .${clazz} .divider {
                  <path class="${c.kebabName}-path" d="${jigsawGenerator.getJigsawPath(i + 1)}"></path>
             </svg>
             <div id="gb-variation${i}" 
-                 class="${c.kebabName}-text fw-bold" 
-                 data-a="${coerce.fullnameNoSpaceLowercaseNoDiacritics}"
-                 data-v="${i}"
-                 style="padding: .333rem;">
+                 class="gb-variation ${c.kebabName}-text fw-bold">
                 ${i === 0 || i === codec.variationsCount - 1 ? "&nbsp;" : i}
             </div>
         </div>

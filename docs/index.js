@@ -20,7 +20,7 @@ const template = (data) => `
      data-a="${data.a}" 
      data-v="${data.v}" 
      style="background-image: ${data.abg}; overflow:visible;">
-    <div class="d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden;" >
+    <div class="select-artist d-flex flex-column justify-content-start${data.hideName}" style="height:100%; overflow: hidden;" >
         <div class="hero-intro flex-shrink-1 align-self-start" 
              title="Pin or unpin ${data.firstname} ${data.lastname}"
              style="padding-right: 0.5rem;">
@@ -31,7 +31,7 @@ const template = (data) => `
              ${data.lastname}
         </div>
     </div>
-    <div class="flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; overflow: visible;">
+    <div class="select-variation flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; overflow: visible;">
         <a class="puzzle-limited" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 id="gb-puzzle${data.v}-svg" 
@@ -260,25 +260,25 @@ loadArtists().then(putainDeArtists => {
                     window.location = whereDoIGo
                 }
             }))
-            document.querySelectorAll('.list-artist .puzzle-limited').forEach(E => E.addEventListener('click', (event) => {
+            document.querySelectorAll('.list-artist .select-variation').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
                 if (typeof coerce.variation !== 'undefined') {
                     coerce.variation = undefined
                 } else {
-                    coerce.variation = parseInt(event.currentTarget.parentNode.parentNode.dataset.v)
+                    coerce.variation = event.currentTarget.parentNode.dataset.v
                     coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
                 }
                 data = generateData(arrayOfArtists)
                 forceRedraw()
             }))
-            document.querySelectorAll('.list-artist .hero-intro').forEach(E => E.addEventListener('click', (event) => {
+            document.querySelectorAll('.list-artist .select-artist').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
                 if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
                     coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
                 } else {
-                    coerce.fullnameNoSpaceLowercaseNoDiacritics = event.currentTarget.parentNode.parentNode.dataset.a
+                    coerce.fullnameNoSpaceLowercaseNoDiacritics = event.currentTarget.parentNode.dataset.a
                     coerce.variation = undefined
                 }
                 data = generateData(arrayOfArtists)
