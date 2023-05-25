@@ -253,9 +253,27 @@ const Ω = {
                 config.scoreInBricks = scoreInBricks
                 Ω.showScoreInBricks()
             })
-        })
+        });
 
-            ; (e => { if (e) e.addEventListener('click', () => config.autoplay = !config.autoplay) })(document?.getElementById('autoplayChecked'));
+        (e => {
+            if (e) e.addEventListener('click', () => {
+                config.autoplay = !config.autoplay
+            })
+        })(document?.getElementById('autoplayChecked'));
+
+        (e => {
+            if (e) {
+                e.style.cursor = 'pointer'
+                const bs = generateElement('<div id="bach_signature" target="_bach_signature"></div>')
+                e.appendChild(bs)
+                bs.addEventListener('click', (event) => {
+                    event.preventDefault()
+                    event.stopPropagation()
+
+                    window.location = "https://www.bach-digital.de/rsc/viewer/BachDigitalSource_derivate_00005577/db_bachp0967_page013v.jpg"
+                })
+            }
+        })(document?.getElementById('b34'));
     },
 
     showArtist: (artist) => {

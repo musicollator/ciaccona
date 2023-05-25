@@ -56,11 +56,20 @@
         }
         &:last-child {
           background-color: transparent !important;
-          .brick {
+          #bach_signature {
+            position: absolute;
+            right: 0;
+            bottom: 0;
             background-image: url(index.svg?v=1.0.1-alpha.2#bach_signature-view);
-            background-position-y: center;
+            background-position-y: bottom;
             background-position-x: right;
             background-repeat: no-repeat;
+            width: 12rem;
+            height: 2.8rem;
+            margin: 0.6rem;
+            &:hover {
+              background-color:#ffffff40;
+            }
           }
         }
         .brick {

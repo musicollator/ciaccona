@@ -85,8 +85,10 @@
   background-image: url("index.svg?v=1.0.1-alpha.2#bach_siel_full_right-view");
 }
 .icon-bach_signature {
-  background-image: url("index.svg?v=1.0.1-alpha.2#bach_signature-view");
-}
+  background-image: url(index.svg?v=1.0.1-alpha.2#bach_signature-view);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: 40%;}
 .icon-violin {
   background-image: url("index.svg?v=1.0.1-alpha.2#violin-view");
 }
