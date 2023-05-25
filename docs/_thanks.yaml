@@ -3,7 +3,8 @@
 🎵 score:
   mutopia: "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1426"
   lilypond: "http://lilypond.org/"
-  manuscript: "https://www.bach-digital.de/receive/BachDigitalSource_source_00001955 "
+  manuscript: "https://www.bach-digital.de/receive/BachDigitalSource_source_00001955"
+  manuscript2: "https://digital.staatsbibliothek-berlin.de/werkansicht?PPN=PPN862413133&PHYSID=PHYS_0028&DMDID=DMDLOG_0005"
 🖥 javascript:
   bezier-easing: "https://github.com/gre/bezier-easing"
   bootstrap: "https://getbootstrap.com/"
