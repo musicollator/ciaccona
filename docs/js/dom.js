@@ -263,9 +263,10 @@ const Ω = {
 
         (e => {
             if (e) {
-                e.style.cursor = 'pointer'
-                const bs = generateElement('<div id="bach_signature" target="_bach_signature"></div>')
-                e.appendChild(bs)
+                
+                const bs = generateElement('<div id="bach_signature" target="_bach_signature">&nbsp;</div>')
+                e.insertBefore(bs, e.querySelector('.select-variation'));
+                bs.style.cursor = 'pointer'
                 bs.addEventListener('click', (event) => {
                     event.preventDefault()
                     event.stopPropagation()

@@ -66,9 +66,9 @@
             background-repeat: no-repeat;
             width: 12rem;
             height: 2.8rem;
-            margin: 0.6rem;
+            margin: 0 2rem 1rem 0;
             &:hover {
-              background-color:#ffffff40;
+              background-color: #ffffff40;
             }
           }
         }
@@ -142,7 +142,7 @@
       .grid-brick.has-score.selected {
         // background-color: transparent !important;
         .brick {
-          > *:not(:first-child):not(:last-child) {
+          > *:not(:first-child):not(:last-child):not(#bach_signature) {
             display: none !important;
           }
           .score {

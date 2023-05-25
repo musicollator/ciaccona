@@ -248,14 +248,13 @@ body.video-player .${clazz} .divider {
 
      <div id="b${i}" 
          class="${c.kebabName} brick has-score font-monospace d-flex align-items-center justify-content-between" 
-         style="${i === codec.variationsCount - 1 ? 'border-radius: 0;' : ''} " 
          data-bar="${barFrom}" 
          data-variation="${i}"
          aria-label="brick ${i}">
 
          <div id="s${i}" 
              class="score" 
-             style="width: ${(_widths_[i].w) - 120}px;" 
+             style="width: ${(_widths_[i].w) - 120}px; ${i === codec.variationsCount - 1 ? "border-radius: 0;" : ""}" 
              data-width="${(_widths_[i].w) - 120}"
              aria-label="score ${i}">
 
@@ -273,10 +272,10 @@ body.video-player .${clazz} .divider {
         </div>
 
         <div class="${c.kebabName}-text d-flex flex-grow-1 flex-column justify-content-between" 
-             style="height:100%; text-align: right; ${i === codec.variationsCount - 1 ? "display:none;" : ""}font-size:1.1rem; padding: 0 .3rem; border-right: .5px solid white;">
+             style="height:100%; text-align: right; ${i === codec.variationsCount - 1 ? "visibility:hidden;" : ""}font-size:1.1rem; padding: 0 .3rem; border-right: .5px solid white;">
             <div class="pt-1">${barFrom + 1}</div>
-            <div style="${i === codec.variationsCount - 1 ? "display:none; " : ""}font-style: italic; font-size:.8rem;">
-                ${warning}
+            <div style="font-style: italic; font-size:.8rem;">
+                ${i === codec.variationsCount - 1 ? warning : "&nbsp;"}
             </div>
             <div class="pb-1">${barTo}</div>
         </div>
