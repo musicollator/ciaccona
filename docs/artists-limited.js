@@ -55,6 +55,14 @@ function generateData() {
     let shuffledV = shuffleArray(Array.from(Array(codec.variationsCount), (_, index) => index))
 
     arrayOfArtists.forEach(a => {
+
+        if (!coerce.no_plyr_event) {
+            coerce.fullnameNoSpaceLowercaseNoDiacritics = a.fullnameNoSpaceLowercaseNoDiacritics
+            if (!coerce.fullnameNoSpaceLowercaseNoDiacritics) {
+                return
+            }
+        }
+
         const v = vi % codec.variationsCount
         const name = a.completeName ?? a.fullname
         const artistFullnameNoBreakingSpaces = name.replaceAll(/\s/gi, '&#xA0;' /* No-Break Space */);
@@ -111,9 +119,8 @@ loadArtists().then(putainDeArtists => {
             console.log('All ImagesLoaded')
         });
         imgLoad.on('progress', function (instance, image) {
-            console.log('image loaded', image)
+            // console.log('image loaded', image)
             image.element.style.visibility = 'inherit'
-            // image.element.querySelectorAll('.list-artist > *').forEach(E => E.style.visibility = 'inherit')
         });
 
         {
