@@ -46,6 +46,13 @@ class Timings {
         return o.isDuration()
     }
 
+    get hasBars() {
+        return this.bars.length !== 0
+    }
+    get noBars() {
+        return this.bars.length === 0
+    }
+
     constructor(interestingData, data) {
         lodashMerge(this, interestingData, data)
 

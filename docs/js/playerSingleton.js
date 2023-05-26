@@ -126,7 +126,7 @@ async function createPlayerSingleton(artistObject, no_plyr_event) {
             const selectorPlyr = Ω.beforeCreatePlayer(artistAndTimings['▶'].id)
 
             // go create
-            createPlayer(selectorPlyr, no_plyr_event).then(result => {
+            createPlayer(selectorPlyr, no_plyr_event || artistAndTimings.bars.length === 0).then(result => {
                 result.value = artistAndTimings
                 regardeDeTousTesYeux()
                 resolve(result)

@@ -32,7 +32,7 @@ export default function brickClickHandler(event) {
             config.plyrPlayer.muted = false
         }, 200)
 
-        if (isPlaying && thisGridBrickWasPlaying) {
+        if (isPlaying && thisGridBrickWasPlaying) { 
             config.plyrPlayer.pause()
             thisGridBrick.classList.remove('gbPlaying')
         } else if (!isPlaying && thisGridBrickWasSelected) {
@@ -44,18 +44,20 @@ export default function brickClickHandler(event) {
             thisGridBrick.classList.add('hello')
             document.querySelector('.grid-brick.gbPlaying')?.classList.add('goodbye')
 
-            // get bar data from timings
-            let startBar = config.artistAndTimings.bars[thisBar]
-            console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${thisVariation}, variation starts at bar ${startBar.index}`, event)
+            if (config.artistAndTimings.hasBars) {
+                // get bar data from timings
+                let startBar = config.artistAndTimings.bars[thisBar]
+                console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${thisVariation}, variation starts at bar ${startBar.index}`, event)
 
-            // seek to the duration
-            config.plyrPlayer.currentTime = startBar.duration.asMilliseconds() / 1000
+                // seek to the duration
+                config.plyrPlayer.currentTime = startBar.duration.asMilliseconds() / 1000
 
-            if (!isPlaying) {
-                setTimeout(() => {
-                    config.plyrPlayer.pause()
-                    config.plyrPlayer.play()
-                }, 500)
+                if (!isPlaying) {
+                    setTimeout(() => {
+                        config.plyrPlayer.pause()
+                        config.plyrPlayer.play()
+                    }, 500)
+                }
             }
         }
 

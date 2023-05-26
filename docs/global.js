@@ -15,6 +15,7 @@ class Coerce {
         'clara-jumikang',
         'florentinginot',
         'genzohtakehisa',
+        // 'gustavleonhardt',
         'hilaryhahn',
         'isabellefaust',
         'jeannelamon',
@@ -74,7 +75,7 @@ class Coerce {
         if (typeof fullnameNoSpaceLowercaseNoDiacritics === 'undefined' ||
             fullnameNoSpaceLowercaseNoDiacritics == null ||
             fullnameNoSpaceLowercaseNoDiacritics === 0 ||
-            fullnameNoSpaceLowercaseNoDiacritics === '' ) {
+            fullnameNoSpaceLowercaseNoDiacritics === '') {
             this.#coerceArtist = undefined
             return
         }
@@ -114,7 +115,7 @@ class Coerce {
                 this.#coerceVariationPrevious = this.#coerceVariation
                 this.#coerceVariation = candidateVariation
                 if (typeof this.#coerceVariation !== 'undefined') {
-                    this.#coerceVariationPrevious = undefined 
+                    this.#coerceVariationPrevious = undefined
                 }
                 console.log(`coerceVariation /${this.#coerceVariation}/ (from parameter /${variation}/) coerceVariationPrevious is now /${this.#coerceVariationPrevious}/`)
             }

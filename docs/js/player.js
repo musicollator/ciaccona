@@ -176,6 +176,8 @@ export default function createPlayer(selector, ignore_all_events) {
         config.plyrPlayer = _plyer
 
         const onReady = () => {
+            if (config.artistAndTimings.noBars) return
+
             let _bar = 0
             if (coerce.variation) {
                 _bar = codec.variation2bar(coerce.variation)
@@ -184,11 +186,32 @@ export default function createPlayer(selector, ignore_all_events) {
             } else {
                 _bar = codec.variation2bar(0)
             }
+
             const theStartingBar = config.artistAndTimings.bars[_bar]
             console.log("onReady: Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar["Time Recorded"], "), thanks.")
             _plyer.currentTime = theStartingBar.duration.asMilliseconds() / 1000
         }
 
+        const handleArrows = (event) => {
+            const selected = document.querySelector('.grid-brick.selected.has-score')
+            const scrollOptions = { behavior: "smooth", block: "center" }
+            if (!selected) {
+                if (event.key === 'ArrowDown') {
+                    selectAndScrollToVariation("keyboard", 0, scrollOptions)
+                } else if (event.key === 'ArrowUp') {
+                    selectAndScrollToVariation("keyboard", codec.variationsCount - 1, scrollOptions)
+                }
+                return
+            } else {
+                const variation = parseInt(selected.dataset.variation)
+                if (event.key === 'ArrowDown') {
+                    selectAndScrollToVariation("keyboard", variation + 1, scrollOptions)
+                } else if (event.key === 'ArrowUp') {
+                    selectAndScrollToVariation("keyboard", variation - 1, scrollOptions)
+                }
+                return
+            }
+        }
         function INIT_EVENT_HANDLERS() {
             /*
             _plyer.on('volumechange', (event) => {
@@ -290,11 +313,12 @@ export default function createPlayer(selector, ignore_all_events) {
             } else {
                 // setBrickClickEvent(_plyer)
 
-                if (!ignore_all_events) {
+                if (!ignore_all_events && config.artistAndTimings.hasBars) {
                     INIT_EVENT_HANDLERS()
 
                     onReady()
                 } else {
+                    // document.addEventListener('keydown', handleArrows);
                     _plyer.on('timeupdate', (event) => {
                         console.log("Plyr timeupdate event", event.detail.plyr.currentTime)
                     })
