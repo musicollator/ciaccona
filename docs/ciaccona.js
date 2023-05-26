@@ -94,7 +94,7 @@ if (coerce.fullnameNospaceLowercaseNodiacritics) {
         loadArtists().then(putainDeArtists => {
             let artistObject = putainDeArtists.getArtistFromFullnameNospaceLowercaseNodiacritics(coerce.fullnameNospaceLowercaseNodiacritics)
 
-            return createPlayerSingleton(artistObject, coerce.no_plyr_event)
+            return createPlayerSingleton(artistObject, coerce.wip)
         })
     )
 }

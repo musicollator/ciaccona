@@ -79,7 +79,7 @@ function hidePlayer() {
     })(document.getElementById('theContainerCol'));
 }
 
-async function createPlayerSingleton(artistObject, no_plyr_event) {
+async function createPlayerSingleton(artistObject, wip) {
 
     if (config.plyrPlayer) {
 
@@ -126,7 +126,7 @@ async function createPlayerSingleton(artistObject, no_plyr_event) {
             const selectorPlyr = Ω.beforeCreatePlayer(artistAndTimings['▶'].id)
 
             // go create
-            createPlayer(selectorPlyr, no_plyr_event || artistAndTimings.bars.length === 0).then(result => {
+            createPlayer(selectorPlyr, wip || artistAndTimings.bars.length === 0).then(result => {
                 result.value = artistAndTimings
                 regardeDeTousTesYeux()
                 resolve(result)

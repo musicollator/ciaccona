@@ -56,7 +56,7 @@ function generateData() {
 
     arrayOfArtists.forEach(a => {
 
-        if (!coerce.no_plyr_event) {
+        if (!coerce.wip) {
             if (!coerce.validateFullameNospaceLowercaseNodiacritics(a.fullnameNospaceLowercaseNodiacritics)) {
                 return
             }

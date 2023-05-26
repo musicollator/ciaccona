@@ -48,7 +48,7 @@ class Coerce {
     #shuffle
     #variationListener
 
-    no_plyr_event
+    wip
     pane
     debug
 
@@ -57,7 +57,7 @@ class Coerce {
 
         this.fullnameNospaceLowercaseNodiacritics = params.a ?? undefined
 
-        this.no_plyr_event = params.no_plyr_event ?? undefined
+        this.wip = params.wip ?? undefined
         this.pane = params.p ?? undefined
         this.shuffle = params.shuffle ?? undefined
         this.debug = params.d ?? undefined
