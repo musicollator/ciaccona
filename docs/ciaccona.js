@@ -13,8 +13,8 @@ const about = new Ω.About()
 // tidyfication of menu items
 /*
 document.querySelectorAll('#videos-menu span.c').forEach((e) => e.innerHTML = "")
-if (fullnameNoSpaceLowercaseNoDiacritics) {
-    const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics="${fullnameNoSpaceLowercaseNoDiacritics}"]`)
+if (fullnameNospaceLowercaseNodiacritics) {
+    const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics="${fullnameNospaceLowercaseNodiacritics}"]`)
     if (menuItem) {
         menuItem.classList.add('disabled')
         menuItem.querySelector(`span.c`).innerHTML = "&#10004;&nbsp;"
@@ -87,12 +87,12 @@ const allPromises = new Map()
 const PLAYER = "PLAYER", ISOTOPE = "ISOTOPE";
 
 // 1. promise resolves when 1) timings for this artist have been loaded, then 2) video player is ready
-if (coerce.fullnameNoSpaceLowercaseNoDiacritics) {
+if (coerce.fullnameNospaceLowercaseNodiacritics) {
 
     allPromises.set(
         PLAYER,
         loadArtists().then(putainDeArtists => {
-            let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics)
+            let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNospaceLowercaseNodiacritics)
 
             return createPlayerSingleton(artistObject, coerce.no_plyr_event)
         })

@@ -57,8 +57,7 @@ function generateData() {
     arrayOfArtists.forEach(a => {
 
         if (!coerce.no_plyr_event) {
-            coerce.fullnameNoSpaceLowercaseNoDiacritics = a.fullnameNoSpaceLowercaseNoDiacritics
-            if (!coerce.fullnameNoSpaceLowercaseNoDiacritics) {
+            if (!coerce.validateFullameNospaceLowercaseNodiacritics(a.fullnameNospaceLowercaseNodiacritics)) {
                 return
             }
         }
@@ -69,10 +68,10 @@ function generateData() {
         const datum = {
             instrument: a.instrument,
             i: vi,
-            a: a.fullnameNoSpaceLowercaseNoDiacritics,
+            a: a.fullnameNospaceLowercaseNodiacritics,
             v: v,
             n: artistFullnameNoBreakingSpaces,
-            bg: bg(a.fullnameNoSpaceLowercaseNoDiacritics, shuffledV[vi % shuffledV.length]),
+            bg: bg(a.fullnameNospaceLowercaseNodiacritics, shuffledV[vi % shuffledV.length]),
         }
         data.push(datum)
         vi++
@@ -163,11 +162,11 @@ loadArtists().then(putainDeArtists => {
 
                         createPlayerSingleton(artistObject).then(result => {
                             const artistAndTimings = result.value
-                            coerce.fullnameNoSpaceLowercaseNoDiacritics = artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics
+                            coerce.fullnameNospaceLowercaseNodiacritics = artistAndTimings.fullnameNospaceLowercaseNodiacritics
 
                             // https://developer.mozilla.org/en-US/docs/Web/API/History/pushState and https://stackoverflow.com/a/3354511/1070215 
                             const url = new URL(location);
-                            url.searchParams.set("a", artistAndTimings.fullnameNoSpaceLowercaseNoDiacritics);
+                            url.searchParams.set("a", artistAndTimings.fullnameNospaceLowercaseNodiacritics);
                             if (typeof coerce.variation !== 'undefined') {
                                 url.searchParams.set("v", coerce.variation);
                             }
@@ -180,7 +179,7 @@ loadArtists().then(putainDeArtists => {
                     if (coerce.color) {
                         offcanvasElement.classList.add(coerce.color.clazz)
                         offcanvasElement.classList.add(coerce.color.tonality)
-                        document.querySelectorAll(`.list-artist[data-a="${coerce.fullnameNoSpaceLowercaseNoDiacritics}"]`).forEach(la => {
+                        document.querySelectorAll(`.list-artist[data-a="${coerce.fullnameNospaceLowercaseNodiacritics}"]`).forEach(la => {
                             la.classList.add('thisIsTheOne')
                         })
                         if (typeof coerce.color.candidate !== 'undefined') {

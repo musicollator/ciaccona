@@ -355,7 +355,7 @@ const Ω = {
                 coerce.variationUndo()
             })
 
-            coerce.setVariationListener((variation, oldVariation) => {
+            coerce.variationListener = (variation, oldVariation) => {
                 if (typeof variation === 'undefined') {
                     badgeVariation.querySelector('#badge-variation-number').innerHTML = ''
                     const path = document.querySelector(`#badge-variation-puzzle path`)
@@ -384,7 +384,7 @@ const Ω = {
                     }
                     history.pushState({}, "", url);
                 }
-            })
+            }
         })(document.getElementById('badge-variation'));
 
         if (typeof config.offcanvasElementBootstrapped === 'undefined') config.offcanvasElementBootstrapped = new bootstrap.Offcanvas(document.getElementById('theOffcanvas'))

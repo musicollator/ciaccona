@@ -399,7 +399,7 @@
             let a = 0
             if (coerceArtist) {
                 for (a = 0; a < artistsWithVid.length; a++) {
-                    if (artistsWithVid[a].fullnameNoSpaceLowercaseNoDiacritics === coerceArtist) {
+                    if (artistsWithVid[a].fullnameNospaceLowercaseNodiacritics === coerceArtist) {
                         break;
                     }
                 }
@@ -412,7 +412,7 @@
                 document.getElementById('name').innerHTML = a.fullname
                 document.getElementById('vari').innerHTML = v
                 document.querySelectorAll('.tile').forEach(t => {
-                    t.style.backgroundImage = `url(https://musicollator.github.io/ciaccona-stationary/artists/${a.fullnameNoSpaceLowercaseNoDiacritics}/${a.fullnameNoSpaceLowercaseNoDiacritics}-${v}.jpg)`
+                    t.style.backgroundImage = `url(https://musicollator.github.io/ciaccona-stationary/artists/${a.fullnameNospaceLowercaseNodiacritics}/${a.fullnameNospaceLowercaseNodiacritics}-${v}.jpg)`
                 })
             }
             setImageAndName(artistsWithVid[a], v)

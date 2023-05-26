@@ -1,7 +1,7 @@
 const ver = "1.0.1-alpha.2"
 
 class Coerce {
-    #validFullamesNoSpaceLowercaseNoDiacritics = [
+    #validFullnamesNospaceLowercaseNodiacritics = [
         'moi',
 
         'adolfbusch',
@@ -48,45 +48,44 @@ class Coerce {
     #shuffle
     #variationListener
 
-    setVariationListener
     no_plyr_event
     pane
     debug
 
     constructor(params) {
         this.variation = params.v ?? undefined
-        this.fullnameNoSpaceLowercaseNoDiacritics = params.a ?? undefined
+
+        this.fullnameNospaceLowercaseNodiacritics = params.a ?? undefined
 
         this.no_plyr_event = params.no_plyr_event ?? undefined
         this.pane = params.p ?? undefined
         this.shuffle = params.shuffle ?? undefined
         this.debug = params.d ?? undefined
-
-        this.setVariationListener = (variationListener) => {
-            this.#variationListener = variationListener
-        }
     }
 
     //
-    get fullnameNoSpaceLowercaseNoDiacritics() {
+    validateFullameNospaceLowercaseNodiacritics(fnnslcnd) {
+        return this.#validFullnamesNospaceLowercaseNodiacritics.includes(fnnslcnd)
+    }
+    get fullnameNospaceLowercaseNodiacritics() {
         return this.#coerceArtist
     }
-    set fullnameNoSpaceLowercaseNoDiacritics(fullnameNoSpaceLowercaseNoDiacritics) {
-        if (typeof fullnameNoSpaceLowercaseNoDiacritics === 'undefined' ||
-            fullnameNoSpaceLowercaseNoDiacritics == null ||
-            fullnameNoSpaceLowercaseNoDiacritics === 0 ||
-            fullnameNoSpaceLowercaseNoDiacritics === '') {
+    set fullnameNospaceLowercaseNodiacritics(fullnameNospaceLowercaseNodiacritics) {
+        if (typeof fullnameNospaceLowercaseNodiacritics === 'undefined' ||
+            fullnameNospaceLowercaseNodiacritics == null ||
+            fullnameNospaceLowercaseNodiacritics === 0 ||
+            fullnameNospaceLowercaseNodiacritics === '') {
             this.#coerceArtist = undefined
             return
         }
 
-        if (!this.#validFullamesNoSpaceLowercaseNoDiacritics.includes(fullnameNoSpaceLowercaseNoDiacritics)) {
-            console.log(`invalid fullnameNoSpaceLowercaseNoDiacritics: ${fullnameNoSpaceLowercaseNoDiacritics}`)
+        if (!this.validateFullameNospaceLowercaseNodiacritics(fullnameNospaceLowercaseNodiacritics)) {
+            console.log(`invalid fullnameNospaceLowercaseNodiacritics: ${fullnameNospaceLowercaseNodiacritics}`)
             this.#coerceArtist = undefined
-        } else if (fullnameNoSpaceLowercaseNoDiacritics === 'christophethiebaud') {
+        } else if (fullnameNospaceLowercaseNodiacritics === 'christophethiebaud') {
             this.#coerceArtist = 'moi'
         } else {
-            this.#coerceArtist = fullnameNoSpaceLowercaseNoDiacritics
+            this.#coerceArtist = fullnameNospaceLowercaseNodiacritics
         }
 
     }
@@ -125,6 +124,13 @@ class Coerce {
     }
     variationUndo = () => {
         this.variation = this.#coerceVariationPrevious
+    }
+    get variationListener() {
+        return this.#variationListener
+    }
+
+    set variationListener(variationListener) {
+        this.#variationListener = variationListener
     }
 
     //

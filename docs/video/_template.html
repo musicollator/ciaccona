@@ -95,7 +95,7 @@ https://ciaccona.cthiebaud.com/video/{{filename}}
             const sorted = artists.artists.sort((a, b) => b.fullname - a.fullname)
             const instances = []
             sorted.forEach((artist) => {
-                if (artist.fullnameNoSpaceLowercaseNoDiacritics !== 'ksenijakomljenovic') {
+                if (artist.fullnameNospaceLowercaseNodiacritics !== 'ksenijakomljenovic') {
                     return
                 }
                 /*
@@ -103,7 +103,7 @@ https://ciaccona.cthiebaud.com/video/{{filename}}
                     fullname: artist.fullname, 
                     hashtag: `#${artist.fullnameNoSpace}`, 
                     twitter: artist.twitter ? `@${artist.twitter}` : undefined, 
-                    filename: `${artist.fullnameNoSpaceLowercaseNoDiacritics}.html`
+                    filename: `${artist.fullnameNospaceLowercaseNodiacritics}.html`
                     
                 },)
                 instances.push(instantiated)
@@ -114,7 +114,7 @@ https://ciaccona.cthiebaud.com/video/{{filename}}
                 // if (1 < i++) throw BreakException;
 
                 console.log(artist.fullname, artist['▶'].viewsPerMonth, artist['▶'].youtubeUrl)
-                const key = artist.fullnameNoSpaceLowercaseNoDiacritics
+                const key = artist.fullnameNospaceLowercaseNodiacritics
                 const results = template({
                     key: key,
                     artist: artist.fullname,

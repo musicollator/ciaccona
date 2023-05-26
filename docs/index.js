@@ -57,11 +57,10 @@ function generateData(arrayOfArtists) {
     let vi = 0
     // const pattern = getRandomInt(10)
     arrayOfArtists.forEach(a => {
-        if (a.fullnameNoSpaceLowercaseNoDiacritics === 'moi') {
+        if (a.fullnameNospaceLowercaseNodiacritics === 'moi') {
             return;
         }
-        coerce.fullnameNoSpaceLowercaseNoDiacritics = a.fullnameNoSpaceLowercaseNoDiacritics
-        if (!coerce.fullnameNoSpaceLowercaseNoDiacritics) {
+        if (!coerce.validateFullameNospaceLowercaseNodiacritics(a.fullnameNospaceLowercaseNodiacritics)) {
             return
         }
         const v = typeof coerce.variation === 'undefined' ? vi % codec.variationsCount : coerce.variation
@@ -76,13 +75,13 @@ function generateData(arrayOfArtists) {
         const datum = {
             index: vi,
             number: v === 0 || 34 <= v ? '' : v,
-            a: coerce.fullnameNoSpaceLowercaseNoDiacritics || a.fullnameNoSpaceLowercaseNoDiacritics,
+            a: coerce.fullnameNospaceLowercaseNodiacritics || a.fullnameNospaceLowercaseNodiacritics,
             v: v,
             firstname: a.firstname,
             lastname: artistLastnameNoBreakingSpaces,
-            abg: abg(coerce.fullnameNoSpaceLowercaseNoDiacritics || a.fullnameNoSpaceLowercaseNoDiacritics, v),
+            abg: abg(coerce.fullnameNospaceLowercaseNodiacritics || a.fullnameNospaceLowercaseNodiacritics, v),
             jigsaw: j,
-            hideName: coerce.fullnameNoSpaceLowercaseNoDiacritics ? ' hide-name' : '',
+            hideName: coerce.fullnameNospaceLowercaseNodiacritics ? ' hide-name' : '',
             fill: /* tonality ? `url(#pattern${v}_${pattern})` : */ `#${colors[v].puzzleColor}`,
             stroke: colors[v].textColor,
             pinUnpinVariationTitle: vi == 0 ? "theme" : vi == codec.variationsCount - 1 ? "final chord" : `variation n°${vi}`,
@@ -148,7 +147,7 @@ loadArtists().then(putainDeArtists => {
             artistBadge.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
+                coerce.fullnameNospaceLowercaseNodiacritics = undefined
                 data = generateData(arrayOfArtists)
                 forceRedraw()
             })
@@ -158,14 +157,14 @@ loadArtists().then(putainDeArtists => {
             if (typeof coerce.variation !== 'undefined') {
                 document.querySelectorAll('.list-artist .puzzle-limited').forEach(e => e.classList.add('pushed'))
             }
-            if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+            if (typeof coerce.fullnameNospaceLowercaseNodiacritics !== 'undefined') {
                 document.querySelectorAll('.list-artist .hero-intro').forEach(e => e.classList.add('pushed'))
             }
             const artistBadge = document.getElementById('artist-badge')
             if (artistBadge) {
-                if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+                if (typeof coerce.fullnameNospaceLowercaseNodiacritics !== 'undefined') {
                     artistBadge.style.visibility = 'inherit'
-                    artistBadge.querySelector('.fullname').innerHTML = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNoSpaceLowercaseNoDiacritics).fullname
+                    artistBadge.querySelector('.fullname').innerHTML = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(coerce.fullnameNospaceLowercaseNodiacritics).fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
                 } else {
                     artistBadge.style.visibility = 'hidden'
@@ -195,7 +194,7 @@ loadArtists().then(putainDeArtists => {
                     event.stopPropagation()
                     event.preventDefault()
                     let whereDoIGo = `/ciaccona.html?a=${event.target.dataset.a}`
-                    if (typeof coerce.variation !== 'undefined' || typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
+                    if (typeof coerce.variation !== 'undefined' || typeof coerce.fullnameNospaceLowercaseNodiacritics !== 'undefined') {
                         whereDoIGo += `&v=${event.target.dataset.v}`
                     }
                     window.location = whereDoIGo
@@ -208,7 +207,7 @@ loadArtists().then(putainDeArtists => {
                     coerce.variation = undefined
                 } else {
                     coerce.variation = event.currentTarget.parentNode.dataset.v
-                    coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
+                    coerce.fullnameNospaceLowercaseNodiacritics = undefined
                 }
                 data = generateData(arrayOfArtists)
                 forceRedraw()
@@ -216,10 +215,10 @@ loadArtists().then(putainDeArtists => {
             document.querySelectorAll('.list-artist .select-artist').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
                 event.preventDefault()
-                if (typeof coerce.fullnameNoSpaceLowercaseNoDiacritics !== 'undefined') {
-                    coerce.fullnameNoSpaceLowercaseNoDiacritics = undefined
+                if (typeof coerce.fullnameNospaceLowercaseNodiacritics !== 'undefined') {
+                    coerce.fullnameNospaceLowercaseNodiacritics = undefined
                 } else {
-                    coerce.fullnameNoSpaceLowercaseNoDiacritics = event.currentTarget.parentNode.dataset.a
+                    coerce.fullnameNospaceLowercaseNodiacritics = event.currentTarget.parentNode.dataset.a
                     coerce.variation = undefined
                 }
                 data = generateData(arrayOfArtists)

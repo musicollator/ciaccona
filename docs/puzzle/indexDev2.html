@@ -281,7 +281,7 @@
                     const offsetY = Math.round(normalizeVraiment(yi, 0, _.yn - 1, 0, _.height * (_.yn - 1) / _.yn))
                     const borderX = xi === 0 ? 0 : marginX;
                     const borderY = yi === 0 ? 0 : marginY;
-                    const artist = coerceArtist ?? a.fullnameNoSpaceLowercaseNoDiacritics
+                    const artist = coerceArtist ?? a.fullnameNospaceLowercaseNodiacritics
                     const variation = coerceVariation ?? shuffledV[i]
 
                     if (_.image) {

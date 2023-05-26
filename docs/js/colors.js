@@ -147,11 +147,11 @@ function createColoredBadges(idContainer) {
         { w: 0 }    // 35 (should never happen)
     ]
 
-    const _colors_ = colorArray // getColorArray(coerce.fullnameNoSpaceLowercaseNoDiacritics ? .400 : undefined)
+    const _colors_ = colorArray // getColorArray(coerce.fullnameNospaceLowercaseNodiacritics ? .400 : undefined)
 
     const temporaryContainer = generateElement("<template>");
 
-    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', coerce.fullnameNoSpaceLowercaseNoDiacritics ? 3 : 2).templateForTheme);
+    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', coerce.fullnameNospaceLowercaseNodiacritics ? 3 : 2).templateForTheme);
 
     const twoZeroPad = (num) => String(num).padStart(2, '0')
     let i = 0;
