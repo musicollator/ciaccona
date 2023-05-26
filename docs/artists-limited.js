@@ -1,10 +1,10 @@
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
-import config from "/js/config.js?v=1.0.1-alpha.2"
-import codec from "/js/structure.js?v=1.0.1-alpha.2"
-import { createPlayerSingleton } from "/js/playerSingleton.js?v=1.0.1-alpha.2"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1-alpha.2"
-import { loadArtists } from "/js/artists.js?v=1.0.1-alpha.2"
+import config from "/js/config.js?v=1.0.1-alpha.3"
+import codec from "/js/structure.js?v=1.0.1-alpha.3"
+import { createPlayerSingleton } from "/js/playerSingleton.js?v=1.0.1-alpha.3"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1-alpha.3"
+import { loadArtists } from "/js/artists.js?v=1.0.1-alpha.3"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -158,7 +158,7 @@ loadArtists().then(putainDeArtists => {
 
                         config.offcanvasElementBootstrapped.hide()
 
-                        let artistObject = putainDeArtists.getArtistFromNameNoSpaceLowercaseNoDiacritics(event.currentTarget.dataset.a)
+                        let artistObject = putainDeArtists.getArtistFromFullnameNospaceLowercaseNodiacritics(event.currentTarget.dataset.a)
 
                         createPlayerSingleton(artistObject).then(result => {
                             const artistAndTimings = result.value
