@@ -66,7 +66,7 @@
 -->
 
     <script id="twitter-template" type="text/x-handlebars-template">
-Listen to {{fullname}}{{#if twitter}} ({{twitter}}){{/if}} performing the #Ciaccona from #JSBach's partita in D minor for solo violin #BWV1004, collated with 32+ other performers:
+Listen to {{fullname}}{{#if twitter}} ({{twitter}}){{/if}} performing the #Ciaccona from #JSBach's partita in D minor for solo violin #BWV1004, collated with 35+ other performers:
 
 #Chaconne #Bach {{hashtag}}
 
@@ -83,10 +83,10 @@ https://ciaccona.cthiebaud.com/video/{{filename}}
 
     <script type="module">
         import jquery from 'https://cdn.jsdelivr.net/npm/jquery@3.6.4/+esm'
-        import { theArtists } from "/js/artists.js?v=1.0.1-alpha.3"
+        import { loadArtists } from "/js/artists.js?v=0.13.3"
 
-        {
-            const artists = theArtists
+        loadArtists().then((artists) => {
+
             const source = document.getElementById("head-template").innerHTML;
             const template = Handlebars.compile(source);
             const BreakException = {};
@@ -95,7 +95,7 @@ https://ciaccona.cthiebaud.com/video/{{filename}}
             const sorted = artists.artists.sort((a, b) => b.fullname - a.fullname)
             const instances = []
             sorted.forEach((artist) => {
-                if (artist.fullnameNospaceLowercaseNodiacritics !== 'ksenijakomljenovic') {
+                if (artist.fullnameNospaceLowercaseNodiacritics !== 'gustavleonhardt') {
                     return
                 }
                 /*

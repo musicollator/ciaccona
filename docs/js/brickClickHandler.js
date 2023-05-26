@@ -47,7 +47,7 @@ export default function brickClickHandler(event) {
             if (config.artistAndTimings.hasBars) {
                 // get bar data from timings
                 let startBar = config.artistAndTimings.bars[thisBar]
-                console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar]["Time Recorded"]}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${thisVariation}, variation starts at bar ${startBar.index}`, event)
+                console.log(`CLICKED on bar ${thisBar} [${config.artistAndTimings.bars[thisBar].duration.asMilliseconds() / 1000}], variation ${config.artistAndTimings.bars[thisBar].variation} === ${thisVariation}, variation starts at bar ${startBar.index}`, event)
 
                 // seek to the duration
                 config.plyrPlayer.currentTime = startBar.duration.asMilliseconds() / 1000

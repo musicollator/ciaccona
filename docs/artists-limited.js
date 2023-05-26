@@ -60,6 +60,9 @@ function generateData() {
             if (!coerce.validateFullameNospaceLowercaseNodiacritics(a.fullnameNospaceLowercaseNodiacritics)) {
                 return
             }
+            if (a.workInProgress) {
+                return
+            }
         }
 
         const v = vi % codec.variationsCount

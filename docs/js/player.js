@@ -1,6 +1,7 @@
 import plyr from 'https://cdn.jsdelivr.net/npm/plyr@3.7.8/+esm'
 import config from "/js/config.js?v=1.0.1-alpha.3"
 import codec from "/js/structure.js?v=1.0.1-alpha.3"
+import fileSaver from 'https://cdn.jsdelivr.net/npm/file-saver@2.0.5/+esm'
 import { normalizeVraiment } from "/js/utils.js?v=1.0.1-alpha.3"
 
 console.log('started player.js, set initialized to FALSE and begin to TRUE')
@@ -23,8 +24,14 @@ function horzScrollScore(variation, currentTime) {
 
     const curr = codec.variation2bar(variation)
     const next = codec.variation2bar(variation + 1)
+    if (!curr || !next) {
+        return -1
+    }
     const thisStartBar = config.artistAndTimings.bars[curr]
     const nextStartBar = config.artistAndTimings.bars[next]
+    if (!thisStartBar || !nextStartBar) {
+        return -1
+    }
     const thisStartTime = thisStartBar.duration.asMilliseconds() / 1000
     const nextStartTime = nextStartBar.duration.asMilliseconds() / 1000
 
@@ -188,17 +195,18 @@ export default function createPlayer(selector, ignore_all_events) {
             }
 
             const theStartingBar = config.artistAndTimings.bars[_bar]
-            console.log("onReady: Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar["Time Recorded"], "), thanks.")
+            console.log("onReady: Dear plyr, I'd like you to seek at bar <", theStartingBar.index, "> (", theStartingBar.duration, "), thanks.")
             _plyer.currentTime = theStartingBar.duration.asMilliseconds() / 1000
         }
 
-        const handleArrows = (event) => {
+        const handleKeyboard = (event) => {
+            /*
             const selected = document.querySelector('.grid-brick.selected.has-score')
             const scrollOptions = { behavior: "smooth", block: "center" }
             if (!selected) {
                 if (event.key === 'ArrowDown') {
                     selectAndScrollToVariation("keyboard", 0, scrollOptions)
-                } else if (event.key === 'ArrowUp') {
+                } else if (handleKeyboard=== 'ArrowUp') {
                     selectAndScrollToVariation("keyboard", codec.variationsCount - 1, scrollOptions)
                 }
                 return
@@ -210,7 +218,35 @@ export default function createPlayer(selector, ignore_all_events) {
                     selectAndScrollToVariation("keyboard", variation - 1, scrollOptions)
                 }
                 return
+            }*/
+            console.log(event.code)
+            switch (event.code) {
+                case 'Space':
+                    config.recording = []
+                    config.recording.push({
+                        i: config.recording.length,
+                        t: config.plyrPlayer.media.currentTime
+                    })
+                    console.log('[recording] started', config.plyrPlayer.media.currentTime)
+                    break;
+                case 'KeyP':
+                    config.recording.push({
+                        i: config.recording.length,
+                        t: config.plyrPlayer.media.currentTime
+                    })
+                    console.log('[recording] currentTime saved', config.plyrPlayer.media.currentTime)
+                    break;
+                case 'KeyS':
+                    const blob = new Blob([JSON.stringify(config.recording, null, '  ')], { type: "text/plain;charset=utf-8" });
+                    const path = `___bars.json`
+                    setTimeout(() => {
+                        fileSaver.saveAs(blob, path);
+                        console.log('[recording] saved to', path)
+                    }, 1000)
+                default:
+                    break;
             }
+            return true;
         }
         function INIT_EVENT_HANDLERS() {
             /*
@@ -318,9 +354,10 @@ export default function createPlayer(selector, ignore_all_events) {
 
                     onReady()
                 } else {
-                    // document.addEventListener('keydown', handleArrows);
+                    document.addEventListener('keydown', handleKeyboard);
+
                     _plyer.on('timeupdate', (event) => {
-                        console.log("Plyr timeupdate event", event.detail.plyr.currentTime)
+                        // console.log("Plyr timeupdate event", event.detail.plyr.currentTime)
                     })
                 }
 

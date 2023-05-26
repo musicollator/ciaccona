@@ -21,42 +21,43 @@ const puppeteer = require('puppeteer');
         'rachelpodger',
     ]
     const performers = [
-        'adolfbusch',
-        'amandinebeyer',
-        'andreadevitis',
-        'anneleenlenaerts',
-        'bellahristova',
-        'chiaramassini',
-        'christiantetzlaff',
-        'clara-jumikang',
-        'moi',
-        'florentinginot',
-        'genzohtakehisa',
-        'hilaryhahn',
-        'isabellefaust',
-        'jeannelamon',
-        'juliafischer',
-        'ksenijakomljenovic',
-        'lisajacobs',
-        'lizaferschtman',
-        'martafemenia',
-        'martinbaker',
-        'michaelleontchik',
-        'midorigoto',
-        'miguelrincon',
-        'mikastoltzman',
-        'moranwasser',
-        'petrapolackova',
-        'polinaosetinskaya',
-        'rachellellenwong',
-        'rachelpodger',
-        'raphaellasmits',
-        'sigiswaldkuijken',
-        'veronikaeberle',
-        'veroniquederaedemaeker',
-        'virginierobilliard',
-        'vonhansen',
-        'yunpark',
+        // 'adolfbusch',
+        // 'amandinebeyer',
+        // 'andreadevitis',
+        // 'anneleenlenaerts',
+        // 'bellahristova',
+        // 'chiaramassini',
+        // 'christiantetzlaff',
+        // 'clara-jumikang',
+        // 'moi',
+        // 'florentinginot',
+        // 'genzohtakehisa',
+        'gustavleonhardt',
+        //'hilaryhahn',
+        //'isabellefaust',
+        //'jeannelamon',
+        //'juliafischer',
+        //'ksenijakomljenovic',
+        //'lisajacobs',
+        //'lizaferschtman',
+        //'martafemenia',
+        //'martinbaker',
+        //'michaelleontchik',
+        //'midorigoto',
+        //'miguelrincon',
+        //'mikastoltzman',
+        //'moranwasser',
+        //'petrapolackova',
+        //'polinaosetinskaya',
+        //'rachellellenwong',
+        //'rachelpodger',
+        //'raphaellasmits',
+        //'sigiswaldkuijken',
+        //'veronikaeberle',
+        //'veroniquederaedemaeker',
+        //'virginierobilliard',
+        //'vonhansen',
+        //'yunpark',
     ]
 
     const cookies = [{
@@ -134,7 +135,7 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'visible'
                     )
-                }, '#videos-menu, #config-menu, #theContainerCol')
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, #theContainerCol, div.plyr__controls')
 
                 // Query for an element handle.
                 console.log(`await page.waitForSelector('#gb${variation} .score')`)
@@ -158,7 +159,7 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'hidden'
                     )
-                }, '#videos-menu, #config-menu, #theContainerCol, div.plyr__controls')
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, #theContainerCol, div.plyr__controls')
                 /*
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
                 for (let playerControl of playerControls) {

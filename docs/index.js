@@ -63,6 +63,9 @@ function generateData(arrayOfArtists) {
         if (!coerce.validateFullameNospaceLowercaseNodiacritics(a.fullnameNospaceLowercaseNodiacritics)) {
             return
         }
+        if (a.workInProgress) {
+            return
+        }
         const v = typeof coerce.variation === 'undefined' ? vi % codec.variationsCount : coerce.variation
         const j = jigsawGenerator.getJigsawItem(v + 1)
         const transX = parseInt(j.viewBox.replaceAll(/^([\.\d\-]+).*$/g, "$1"))

@@ -10,15 +10,20 @@ class Timings {
         if (bar == null || barIndex == null) {
             throw new Error(bar, typeof bar, barIndex, typeof barIndex)
         }
-        if (bar.m == null) {
-            bar.m = moment(bar["Time Recorded"])
-        }
-        bar.duration = moment.duration(bar.m.diff(this.start))
-        if (this.offset) {
-            bar.duration.add(this.offset)
-        }
-        if (this.adjust) {
-            bar.duration.subtract(this.adjust)
+        if (typeof bar["Time Recorded"] !== 'undefined') {
+            if (bar.m == null) {
+                bar.m = moment(bar["Time Recorded"])
+            }
+            bar.duration = moment.duration(bar.m.diff(this.start))
+            if (this.offset) {
+                bar.duration.add(this.offset)
+            }
+            if (this.adjust) {
+                bar.duration.subtract(this.adjust)
+            }
+        } else if (typeof bar.t !== 'undefined') {
+            bar.duration = moment.duration(bar.t*1000)
+            bar.m = moment(0).add(bar.duration)
         }
         bar.index = barIndex
         bar.variation = codec.bar2variation(bar.index)
@@ -78,7 +83,7 @@ class Timings {
 
         this.bars.forEach((bar, index) => this.#initializeBarObject(bar, index))
 
-        if (false) { // calc length ?
+        if (true) { // calc length ?
             if (256 <= this.bars.length) {
                 // get duration of first variation 
                 console.log('var 0', this.bars[0].m.format())
@@ -101,7 +106,7 @@ function createTimings(artistObject) {
         if (!artistObject) {
             reject(`invalid parameter artistObject: < ${artistObject} >`)
             return
-        }         
+        }
 
         const timingsURL = artistObject['▶'].timingsUrl
         const javascriptizedId = artistObject['▶'].javascriptizedId

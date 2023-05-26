@@ -656,8 +656,10 @@
 - firstname: Gustav
   lastname: Leonhardt
   instrument: 5Keyboard
+  workInProgress: true
   ▶:
     id: mXRIr78A5xg
+    length: 12′10″
 - firstname: ""
   lastname: Moi
   instrument: 4Plucked_Strings

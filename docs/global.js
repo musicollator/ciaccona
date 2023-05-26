@@ -15,7 +15,7 @@ class Coerce {
         'clara-jumikang',
         'florentinginot',
         'genzohtakehisa',
-        // 'gustavleonhardt',
+        'gustavleonhardt',
         'hilaryhahn',
         'isabellefaust',
         'jeannelamon',
