@@ -57,6 +57,9 @@ function generateData(arrayOfArtists) {
     let vi = 0
     // const pattern = getRandomInt(10)
     arrayOfArtists.forEach(a => {
+        if (35 <= vi) { // title + theme + 33 vars + final chord = title + 35
+            return
+        }
         if (a.fullnameNospaceLowercaseNodiacritics === 'moi') {
             return;
         }

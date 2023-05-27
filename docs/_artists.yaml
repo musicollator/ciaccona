@@ -656,9 +656,13 @@
 - firstname: Gustav
   lastname: Leonhardt
   instrument: 5Keyboard
-  workInProgress: true
+  workInProgress: false
+  flag: 🇳🇱
   ▶:
     id: mXRIr78A5xg
+    views: 147649
+    published: Dec 14, 2011
+    collected: May 27, 2023
     length: 12′10″
 - firstname: ""
   lastname: Moi
