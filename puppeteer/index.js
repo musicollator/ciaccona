@@ -62,11 +62,11 @@ const puppeteer = require('puppeteer');
 
     const cookies = [{
         name: 'scoreDisplay',
-        value: 'firstBar',
+        value: 'fullScore',
         domain: 'localhost'
     }, {
         name: 'scoreInBricks',
-        value: 'allBricks',
+        value: 'selectedBrick',
         domain: 'localhost'
     }]
 
@@ -159,20 +159,15 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'hidden'
                     )
-                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, #theContainerCol, div.plyr__controls')
-                /*
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // #theContainerCol, div.plyr__controls
+
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
                 for (let playerControl of playerControls) {
                     //hover on each element handle
-                    // await playerControl.hover();
-                    */
+                    await playerControl.hover();
+
                     console.log('waiting for çaJoue event')
                     await waitForEvent('çaJoue', 2)
-
-                    /* if (v < 1) {
-                        console.log('çaJoue! waiting for 2 seconds ...')
-                        sleep(2000)
-                    } */
 
                     // Capture screenshot
                     const path = `artists/${performer}/${performer}-${variation}.png`
@@ -185,7 +180,7 @@ const puppeteer = require('puppeteer');
                     await element.dispose();
 
                     // resolveVariation(true)
-                /* } */
+                }
             }
             /*
         }
