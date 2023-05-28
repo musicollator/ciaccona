@@ -79,9 +79,12 @@
                                 <img src="svg/person-male-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
-                            <th scope="col" class="published text-start  sortable">Published on <span></span></th>
-                            <!-- th scope="col" class="since     text-start  sortable">Since <span></span></!-->
                             <th scope="col" class="views     text-start  sortable">Views <span></span></th>
+                            <th scope="col" class="monthly   text-start  sortable" style="min-width: 6rem;">
+                                Monthly
+                                <span style="float: right;"></span>
+                            </th>
+                            <th scope="col" class="published text-start  sortable" colspan="2">Published on <span></span></th>
                             <th scope="col" class="yt        text-center">
                                 <img src="svg/YouTube_social_white_square_(2017)_white_middle.svg" style="width: 22px; height:22px;">
                                 <span></span>
@@ -99,9 +102,10 @@
     <script id="candidate-template" type="text/x-handlebars-template">{{#each this}}        
 <tr>
 <th class="name" data-lastname="{{reverseFullname}}"><a href={{thisUrl}}>{{reverseFullname}}</a></th>
-<td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
-<!-- td class="since">{{humanize v.durationMoment}}</!-->
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
+<td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
+<td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
+<td class="since" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{humanize v.durationMoment}}</td>
 <td class="yt        text-center"><a 
     href={{#if v.youtubeTrueUrl}}{{v.youtubeTrueUrl}}{{else}}{{v.youtubeUrl}}{{/if}}
     target={{fullnameNospaceLowercaseNodiacritics}}>
