@@ -108,7 +108,7 @@
             */
 
             FB.api('/me', 'GET', {
-                fields: 'first_name,last_name,name,id,picture.width(50).height(50)'
+                fields: 'first_name,last_name,name,id,email,picture.width(50).height(50)'
             }, function (response) {
                 console.log(response);//Check the response in console
                 document.getElementById('tronche').src=response.picture.data.url;
