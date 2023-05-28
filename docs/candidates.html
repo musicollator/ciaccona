@@ -111,7 +111,8 @@
                 fields: 'first_name,last_name,name,id,email,picture.width(50).height(50)'
             }, function (response) {
                 console.log(response);//Check the response in console
-                document.getElementById('tronche').src=response.picture.data.url;
+                document.getElementById('tronche').src = response.picture.data.url
+                document.getElementById('tronche').title = response.name
             });
         }
 
@@ -131,9 +132,10 @@
             <div style="border: 1px solid #d0d0d0; border-radius: .667rem; display:inline-block; padding:.4rem;">
                 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="display:inline-block">
                 </fb:login-button>
-    
+
                 <div style="display:inline-block" id="status">
-                    <img id="tronche" src="/svg/face-with-a-question-mark-svgrepo-com.svg" style="width:32px; height:32px; border-radius:16px;"> <!-- /images/mexican-sugar-skull-small.jpeg -->
+                    <img id="tronche" src="/svg/face-with-a-question-mark-svgrepo-com.svg" style="width:32px; height:32px; border-radius:16px;">
+                    <!-- /images/mexican-sugar-skull-small.jpeg -->
                 </div>
             </div>
             <button id="go-back" type="button" class="btn btn-light m-0 p-0">
