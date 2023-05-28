@@ -659,7 +659,9 @@
 - firstname: Gustav
   lastname: Leonhardt
   instrument: 5Keyboard
-  workInProgress: false
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid035qcG5mYmt2AuCp97VyzzMu6KTUEos8iAd9D4NAGnARGRuVsbUdj21WWu2Vs4snuDl
+    sort: 36
   flag: 🇳🇱
   ▶:
     id: mXRIr78A5xg
@@ -670,6 +672,9 @@
 - firstname: Jean 
   lastname: Rondeau
   instrument: 5Keyboard
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid02hpixLBBqP9THYcMdFJ5ieu5xNgNNfzBtteBosBu7PUiHGzSbdzLy9XnRuVqqR9aPl
+    sort: 37
   flag: 🇫🇷
   ▶:
     id: _ChKsMjIMFw
