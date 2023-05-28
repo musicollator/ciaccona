@@ -72,6 +72,10 @@ class JigsawShield {
                     return this.#jigsawViewBox
                 }
             }
+            this.getJigsawItemsCount = () => {
+                return jig.config.map.size
+            }
+        
         } catch (e) {
             console.error(e);
         }

@@ -19,6 +19,7 @@ class Coerce {
         'hilaryhahn',
         'isabellefaust',
         'jeannelamon',
+        'jeanrondeau',
         'juliafischer',
         'ksenijakomljenovic',
         'lisajacobs',
