@@ -108,10 +108,10 @@
             */
 
             FB.api('/me', 'GET', {
-                fields: 'first_name,last_name,name,id,picture.width(150).height(150)'
+                fields: 'first_name,last_name,name,id,picture.width(50).height(50)'
             }, function (response) {
                 console.log(response);//Check the response in console
-                document.getElementById('status').innerHTML = "<img src='" + response.picture.data.url + "'>";
+                document.getElementById('tronche').src=response.picture.data.url;
             });
         }
 
@@ -128,10 +128,13 @@
 <main id="candContainer" class="container-xxl">
     <header class="p-2" style="background-color: #f0f0f0; height: 6rem">
         <div style="float:right">
-            <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="display:inline-block">
-            </fb:login-button>
-
-            <div style="display:inline-block" id="status">
+            <div style="border: 1px solid #d0d0d0; border-radius: .667rem; display:inline-block; padding:.4rem;">
+                <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="display:inline-block">
+                </fb:login-button>
+    
+                <div style="display:inline-block" id="status">
+                    <img id="tronche" src="/svg/face-with-a-question-mark-svgrepo-com.svg" style="width:32px; height:32px; border-radius:16px;"> <!-- /images/mexican-sugar-skull-small.jpeg -->
+                </div>
             </div>
             <button id="go-back" type="button" class="btn btn-light m-0 p-0">
                 <img src="index.svg?v=1.0.1-alpha.4#close-circle-view" style="width:32px; height:32px;">
@@ -215,9 +218,14 @@
     }
 
     document.getElementById("go-back").addEventListener("click", () => {
-        FB.logout(function (response) {
+        const tronche = document.getElementById('tronche')
+        if (tronche.src.endsWith("face-with-a-question-mark-svgrepo-com.svg")) {
             window.location = document.referrer
-        });
+        } else {
+            FB.logout(function (response) {
+                window.location = document.referrer
+            });
+        }
     });
 
     const ff = new Intl.NumberFormat()
