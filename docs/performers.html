@@ -58,7 +58,7 @@
     <!-- bootstrap -->
     <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
 
-    <link rel="stylesheet" href="performers.css?v=1.0.1-alpha.4">
+    <link rel="stylesheet" href="performers.css?v=1.0.1-alpha.5">
 
 </head>
 
@@ -66,7 +66,7 @@
     <main id="perfContainer" class="container-xxl">
         <header class="p-2" style="background-color: #f0f0f0; height: 6rem">
             <button id="go-back" type="button" class="btn btn-light m-0 p-0" style="float:right">
-                <img src="index.svg?v=1.0.1-alpha.4#close-circle-view" style="width:32px; height:32px;">
+                <img src="index.svg?v=1.0.1-alpha.5#close-circle-view" style="width:32px; height:32px;">
             </button>
             <h1>Performers</h1>
             <p>Views meters were read on <span id="collected"></span>. Pitch detection is approximate.</p>
@@ -162,7 +162,7 @@
     </script>
 
     <script async type="module">
-        import { loadArtists, theDayWhenIReadTheVideoMeters } from "/js/artists.js?v=1.0.1-alpha.4"
+        import { loadArtists, theDayWhenIReadTheVideoMeters } from "/js/artists.js?v=1.0.1-alpha.5"
 
         document.getElementById("go-back").addEventListener("click", () => {
             window.location = document.referrer

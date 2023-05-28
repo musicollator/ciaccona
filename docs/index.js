@@ -1,11 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import codec from "/js/structure.js?v=1.0.1-alpha.4"
-import { loadArtists } from "/js/artists.js?v=1.0.1-alpha.4"
-import { colorArray } from "/js/colors.js?v=1.0.1-alpha.4"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1-alpha.4"
-import { jigsawGenerator } from "/js/jigsawShield.js?v=1.0.1-alpha.4"
-import MagnificentTitle from "/js/magnificent-title.js?v=1.0.1-alpha.4"
+import codec from "/js/structure.js?v=1.0.1-alpha.5"
+import { loadArtists } from "/js/artists.js?v=1.0.1-alpha.5"
+import { colorArray } from "/js/colors.js?v=1.0.1-alpha.5"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.1-alpha.5"
+import { jigsawGenerator } from "/js/jigsawShield.js?v=1.0.1-alpha.5"
+import MagnificentTitle from "/js/magnificent-title.js?v=1.0.1-alpha.5"
 
 const abg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -111,7 +111,7 @@ loadArtists().then(putainDeArtists => {
     const artistBadge = `<div id="artist-badge" class="p-2 d-flex" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
     <span class="fullname align-self-center" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
     &nbsp;
-    <img class="align-self-center" src="index.svg?v=1.0.1-alpha.4#close-circle-view" style="width:32px; height:32px;">
+    <img class="align-self-center" src="index.svg?v=1.0.1-alpha.5#close-circle-view" style="width:32px; height:32px;">
 </div>
 `
 
