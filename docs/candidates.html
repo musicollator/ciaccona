@@ -68,7 +68,7 @@
             <button id="go-back" type="button" class="btn btn-light m-0 p-0" style="float:right">
                 <img src="index.svg?v=1.0.1-alpha.4#close-circle-view" style="width:32px; height:32px;">
             </button>
-            <h1>Candidates</h1>
+            <h1><span id="candidatesCount"></span> Candidates</h1>
         </header>
         <div id="candContainerRow" class="row" style="">
             <div id="candContainerCol" class="col">
@@ -166,6 +166,7 @@
             candidates.sort((a,b) => a.reverseFullname.localeCompare(b.reverseFullname))
             const bodyContent = template(candidates)
             theBody.innerHTML = bodyContent
+            document.getElementById('candidatesCount').innerHTML = candidates.length
             console.log('# candidates', candidates.length)
 
         }).catch((error) => {
