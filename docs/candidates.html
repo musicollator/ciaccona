@@ -267,6 +267,7 @@
                 candidates.push(new Candidate(c))
             })
 
+            candidates.sort((a,b) => a.reverseFullname.localeCompare(b.reverseFullname))
             const bodyContent = template(candidates)
             theBody.innerHTML = bodyContent
             console.log('# candidates', candidates.length)
