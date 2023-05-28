@@ -41,7 +41,7 @@ $12$3
 
 ([\?"']v*=*1\.0\.1-alpha\.)\d+(["'#])
 replace with 
-$13$2
+$14$2
 
 
 rename all _xxx\d.js files to _xxx4.js
