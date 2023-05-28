@@ -1,5 +1,7 @@
 
-👩👨 performers: "https://ciaccona.cthiebaud.com/performers.html"
+👩👨 performers: 
+  - "https://ciaccona.cthiebaud.com/performers.html"
+  - "https://ciaccona.cthiebaud.com/candidates.html"
 🎵 score:
   mutopia: "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=1426"
   lilypond: "http://lilypond.org/"

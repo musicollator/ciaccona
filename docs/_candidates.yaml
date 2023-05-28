@@ -1,58 +1,377 @@
-Alon Sariel https://youtu.be/Uy3FUwJpCAQ
-Amandine Beyer https://youtu.be/GXI2w1R8LbA
-Anabel Montesinos https://youtu.be/N_WTmnh0Zqw
-Arabella Steinbacher https://youtu.be/0TzJ_ZxRImY 
-arr. for String Orchestra (iPalpiti/Schmieder) https://youtu.be/vgZBEAa2iA4
-Arturo Benedetti Michelangeli https://youtu.be/wCMK-HyMG0M
-Aubree Oliverson https://youtu.be/qaRA6hC19KY
-Aya Hamada https://youtu.be/eABZwIPmrbY
-Chaconne at Home for 14 violinists https://youtu.be/_eQd95VFpI8
-David Russell  https://youtu.be/fprDySEWI-s
-David Russell https://youtu.be/LSeP_gzBGq8
-David Russell https://youtu.be/r9aClPbLiA4
-didiernyckelharpa https://youtu.be/0v56JcmKzNU
-Eastman Saxophone Project https://youtu.be/Qn5YZLJ0QBw
-Edin Karamazov https://youtu.be/CkskQMKBRjU
-Elise Liu https://youtu.be/tT46qnLyp2g
-Enrico Bottelli https://youtu.be/fps504EKniA
-Eroica Trio https://youtu.be/KtgrvUqb650
-Fernando Cordella https://youtu.be/5X-pCvEhxUE
-Franz Silvestri https://youtu.be/EZREQegRDYk
-Gioconda De Vito https://youtu.be/fjb-ReyPzwQ
-Greta Medini https://youtu.be/9dDALcfTkxw
-Hillary Smith + Christopher Ahn https://youtu.be/2Y1vJYUokbc
-Hina Maeda https://youtu.be/e-TS-BaAR0Y
-Isaac Stern  https://youtu.be/1zvRWFD_1_M
-Itzhak Perlman https://youtu.be/qtyTaE7LvVs
-Iva Miletic https://youtu.be/AXh2fxYmakw
-Jean Geoffroy https://youtu.be/7Xcs_OXicls
-Jean Rondeau https://youtu.be/_ChKsMjIMFw
-Johann Sebastian Paetsch https://youtu.be/Hx-mGrlQmvM
-Jose Miguel Moreno https://youtu.be/Sdi1kf0mfi8
-Juan Luis Orozco https://youtu.be/LIj6ER-PBD8
-Keren Satkin https://youtu.be/PBKCGWul2zU
-Knut Erik Sundquist https://youtu.be/kSEQcitQNO4
-Kyrill Rybakov https://youtu.be/McHYHdLKzCQ
-Lara Saliba https://youtu.be/Yt0ovieceFs
-Manuel Barrueco https://youtu.be/v4LUzZYLNN4
-Marco Caiazza https://youtu.be/myYByJ_yIR4
-Marco Serino, violin + Vokalquartett Mozarteum Salzburg https://youtu.be/i-vtSWEs5aQ
-Naomi Sutherland https://www.youtube.com/live/JYGna8AHDfg?feature=share
-Nathan Milstein https://youtu.be/_TgqnzU1ZQk
-Nathan Milstein https://youtu.be/Szu-ui-fnzs
-Nemanja Radulovic https://youtu.be/MS1ATruO7f4
-Olivier Penin https://youtu.be/SfS14rpl0OI
-Polina Osetinskaya https://youtu.be/qoYaxJWb42s
-Psychedelic Rock https://youtu.be/n1AHJCVDU4Y
-Rakhlin https://youtu.be/NmkNZW3PvB8
-Sanel Redzic  https://youtu.be/BtT9cEipTos
-Sara Celardo (search facebook)
-Sato https://youtu.be/pnK6R5ej6Hg
-Seiai Pipers https://youtu.be/gOuCjwIMR2c
-Svetlin Roussev https://youtu.be/gUxcoixiVCI
-Tatiana Daubek https://youtu.be/LV025VdWatA
-Thomas Dunford https://youtu.be/AuY3KTm9HoE
-TorbjornLars https://youtu.be/dpB2nRpCuVk
-Viktoria Mullova https://youtu.be/omOnU8R4Kyc
-Vincent van Amsterdam https://youtu.be/azNF_OCkhoc
-Yehudi Menuhin https://youtu.be/Nunk9fRaZZs
+- firstname: Alon
+  lastname: Sariel
+  ▶:
+    id: Uy3FUwJpCAQ
+    views: 27735
+    published: May 12, 2016
+
+- firstname: Amandine
+  lastname: Beyer
+  ▶:
+    id: GXI2w1R8LbA
+    views: 41821
+    published: Sep 16, 2014
+
+- firstname: Anabel
+  lastname: Montesinos
+  ▶:
+    id: N_WTmnh0Zqw
+    views: 8413
+    published: Feb 12, 2023
+
+- firstname: Arabella
+  lastname: Steinbacher
+  ▶:
+    id: 0TzJ_ZxRImY
+    views: 17515
+    published: Aug 23, 2013
+
+- firstname: Eduard 
+  lastname: Schmieder
+  ▶:
+    id: vgZBEAa2iA4
+    views: 9409
+    published: Feb 21, 2019
+
+- firstname: Arturo Benedetti
+  lastname: Michelangeli
+  ▶:
+    id: wCMK-HyMG0M
+    views: 9409
+    published: Feb 21, 2019
+
+- firstname: Aubree
+  lastname: Oliverson
+  ▶:
+    id: qaRA6hC19KY
+    views: 3702
+    published: Jun 22, 2021
+
+- firstname: Aya
+  lastname: Hamada
+  ▶:
+    id: eABZwIPmrbY
+    views: 5540
+    published: May 3, 2016
+
+- firstname: Various
+  lastname: Violinists
+  ▶:
+    id: _eQd95VFpI8
+    views: 174612
+    published: Apr 28, 2020
+
+- firstname: David
+  lastname: Russell
+  ▶:
+    id: fprDySEWI-s
+    views: 363
+    published: Jul 2, 2016
+
+- firstname: David
+  lastname: Russell
+  ▶:
+    id: r9aClPbLiA4
+    views: 4630
+    published: Oct 14, 2021
+
+- firstname: Didier
+  lastname: Nyckelharpa
+  ▶:
+    id: 0v56JcmKzNU
+    views: 12431
+    published: Apr 18, 2020
+
+- firstname: Saxophone Project
+  lastname: Eastman
+  ▶:
+    id: Qn5YZLJ0QBw
+    views: 101001
+    published: Dec 30, 2014
+
+- firstname: Edin
+  lastname: Karamazov
+  ▶:
+    id: CkskQMKBRjU
+    views: 24119
+    published: Mar 2, 2020
+
+- firstname: Elise
+  lastname: Liu
+  ▶:
+    id: tT46qnLyp2g
+    views: 1827
+    published: Jun 14, 2019
+
+- firstname: Enrico
+  lastname: Bottelli
+  ▶:
+    id: fps504EKniA
+    views: 4905
+    published: Jun 15, 2022
+
+- firstname: Trio
+  lastname: Eroica
+  ▶:
+    id: KtgrvUqb650
+    views: 11705
+    published: Aug 4, 2011
+
+- firstname: Fernando
+  lastname: Cordella
+  ▶:
+    id: 5X-pCvEhxUE
+    views: 25603
+    published: Sep 18, 2020
+
+- firstname: Franz
+  lastname: Silvestri
+  ▶:
+    id: EZREQegRDYk
+    views: 2489
+    published: Sep 25, 2021
+
+- firstname: Gioconda
+  lastname: De Vito
+  ▶:
+    id: fjb-ReyPzwQ
+    views: 1411
+    published: Jan 15, 2020
+
+- firstname: Greta
+  lastname: Medini
+  ▶:
+    id: 9dDALcfTkxw
+    views: 53310
+    published: Feb 14, 2014
+
+- firstname: Christopher
+  lastname: Ahn
+  ▶:
+    id: 2Y1vJYUokbc
+    views: 183433
+    published: Jan 24, 2017
+
+- firstname: Hina
+  lastname: Maeda
+  ▶:
+    id: e-TS-BaAR0Y
+    views: 26049
+    published: Oct 10, 2022
+
+- firstname: Isaac
+  lastname: Stern
+  ▶:
+    id: 1zvRWFD_1_M
+    views: 464671
+    published: Dec 30, 2010
+
+- firstname: Itzhak
+  lastname: Perlman
+  ▶:
+    id: qtyTaE7LvVs
+    views: 1540014
+    published: Jul 28, 2016
+
+- firstname: Iva
+  lastname: Miletic
+  ▶:
+    id: AXh2fxYmakw
+    views: 43
+    published: May 20, 2023
+
+- firstname: Jean
+  lastname: Geoffroy
+  ▶:
+    id: 7Xcs_OXicls
+    views: 8000
+    published: May 8, 2020
+
+- firstname: Johann Sebastian
+  lastname: Paetsch
+  ▶:
+    id: Hx-mGrlQmvM
+    views: 2048
+    published: Feb 1, 2018
+
+- firstname: Jose Miguel
+  lastname: Moreno
+  ▶:
+    id: Sdi1kf0mfi8
+    views: 36377
+    published: Apr 2, 2011
+
+- firstname: Juan Luis
+  lastname: Orozco
+  ▶:
+    id: LIj6ER-PBD8
+    views: 88
+    published: May 19, 2023
+
+- firstname: Keren
+  lastname: Satkin
+  ▶:
+    id: PBKCGWul2zU
+    views: 7009
+    published: Sep 15, 2017
+
+- firstname: Knut Erik
+  lastname: Sundquist
+  ▶:
+    id: kSEQcitQNO4
+    views: 17769
+    published: May 30, 2021
+
+- firstname: Kyrill
+  lastname: Rybakov
+  ▶:
+    id: McHYHdLKzCQ
+    views: 3867
+    published: Dec 24, 2020
+
+- firstname: Lara
+  lastname: Saliba
+  ▶:
+    id: Yt0ovieceFs
+    views: 18088
+    published: Jul 20, 2022
+
+- firstname: Manuel
+  lastname: Barrueco
+  ▶:
+    id: v4LUzZYLNN4
+    views: 25786
+    published: Jun 26, 2019
+
+- firstname: Marco
+  lastname: Caiazza
+  ▶:
+    id: myYByJ_yIR4
+    views: 21921
+    published: Dec 8, 2020
+
+- firstname: Marco
+  lastname: Serino
+  ▶:
+    id: i-vtSWEs5aQ
+    views: 13072
+    published: Sep 15, 2020
+
+- firstname: Nathan
+  lastname: Milstein
+  ▶:
+    id: _TgqnzU1ZQk
+    views: 62099
+    published: Apr 22, 2013
+
+- firstname: Nathan
+  lastname: Milstein
+  ▶:
+    id: Szu-ui-fnzs
+    views: 75117
+    published: Feb 27, 2018
+
+- firstname: Nemanja
+  lastname: Radulovic
+  ▶:
+    id: MS1ATruO7f4
+    views: 341299
+    published: Jul 9, 2018
+
+- firstname: Olivier
+  lastname: Penin
+  ▶:
+    id: SfS14rpl0OI
+    views: 121461
+    published: Sep 28, 2018
+
+- firstname: Polina
+  lastname: Osetinskaya
+  ▶:
+    id: qoYaxJWb42s
+    views: 61870
+    published: Mar 20, 2021
+
+- firstname: Psychedelic
+  lastname: Rock
+  ▶:
+    id: n1AHJCVDU4Y
+    views: 47471
+    published: Jul 7, 2016
+
+- firstname: Natan
+  lastname: Rakhlin
+  ▶:
+    id: NmkNZW3PvB8
+    views: 23374
+    published: Dec 12, 2015
+
+- firstname: Sanel
+  lastname: Redzic
+  ▶:
+    id: BtT9cEipTos
+    views: 273592
+    published: Aug 2, 2011
+
+- firstname: Shunsuke
+  lastname: Sato
+  ▶:
+    id: pnK6R5ej6Hg
+    views: 974875
+    published: Oct 4, 2018
+
+- firstname: 
+  lastname: Seiai Pipers
+  ▶:
+    id: gOuCjwIMR2c
+    views: 3136
+    published: Feb 19, 2014
+
+- firstname: Svetlin
+  lastname: Roussev
+  ▶:
+    id: gUxcoixiVCI
+    views: 4650
+    published: Sep 6, 2020
+
+- firstname: Tatiana
+  lastname: Daubek
+  ▶:
+    id: LV025VdWatA
+    views: 237
+    published: Dec 25, 2019
+
+- firstname: Thomas
+  lastname: Dunford
+  ▶:
+    id: AuY3KTm9HoE
+    views: 5173
+    published: Aug 12, 2019
+
+- firstname: Lars
+  lastname: Torbjorn
+  ▶:
+    id: dpB2nRpCuVk
+    views: 34325
+    published: Jan 23, 2020
+
+- firstname: Viktoria
+  lastname: Mullova
+  ▶:
+    id: omOnU8R4Kyc
+    views: 70656
+    published: Jan 27, 2022
+
+- firstname: Vincent
+  lastname: van Amsterdam
+  ▶:
+    id: azNF_OCkhoc
+    views: 1537
+    published: Apr 19, 2023
+
+- firstname: Yehudi
+  lastname: Menuhin
+  ▶:
+    id: Nunk9fRaZZs
+    views: 22563
+    published: Mar 17, 2022
