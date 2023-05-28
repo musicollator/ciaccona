@@ -122,7 +122,7 @@
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" style="display:inline-block">
             </fb:login-button>
 
-            <div  style="display:inline-block" id="status">
+            <div style="display:inline-block" id="status">
             </div>
             <button id="go-back" type="button" class="btn btn-light m-0 p-0">
                 <img src="index.svg?v=1.0.1-alpha.4#close-circle-view" style="width:32px; height:32px;">
@@ -206,7 +206,9 @@
     }
 
     document.getElementById("go-back").addEventListener("click", () => {
-        window.location = document.referrer
+        FB.logout(function (response) {
+            window.location = document.referrer
+        });
     });
 
     const ff = new Intl.NumberFormat()
