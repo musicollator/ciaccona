@@ -87,7 +87,8 @@ tbody > tr > td.flag {
 }
 
 tbody > tr > td.published,
-tbody > tr > td.since {
+tbody > tr > td.since,
+tbody > tr > th.name  {
   white-space: nowrap;
 }
 

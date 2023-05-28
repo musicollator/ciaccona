@@ -150,6 +150,7 @@
             <table id="theTable" class="table table-fit table-responsive table-striped table-hover table-sm ">
                 <thead>
                     <tr style="font-size:smaller">
+                        <!-- th scope="col" id="rownum" class="rownum">#</!-->
                         <th scope="col" id="name" class="name      text-center sortable">
                             <img src="svg/person-male-svgrepo-com.svg" style="width: 22px; height:22px;">
                             <span></span>
@@ -176,7 +177,8 @@
 
 <script id="candidate-template" type="text/x-handlebars-template">{{#each this}}        
 <tr>
-<th class="name" data-lastname="{{reverseFullname}}"><a href={{thisUrl}}>{{reverseFullname}}</a></th>
+<!-- th class="rownum">{{@index }}</!-->
+<th class="name" data-lastname="{{reverseFullname}}">{{reverseFullname}}</th>
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
