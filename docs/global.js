@@ -1,4 +1,4 @@
-const ver = "1.0.1-alpha.5"
+const ver = "1.0.1-alpha.6"
 
 class Coerce {
     #validFullnamesNospaceLowercaseNodiacritics = [
