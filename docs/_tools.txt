@@ -56,3 +56,13 @@ for file in *; do echo $file; done
 for file in _*; do echo $(echo $file | sed -e 's/_o/bwv-1004_5_viewboxed-/g'); done
 
 echo '_o29.svg' | sed -e 's/_o\([0-9]+\)/bwv-1004_5_bboxed-$1/g'
+
+
+add candidate
+^([^ \-]+) (.*)\n([^ ]+)\n([0-9,]+ views +(.*)$)
+- firstname: $1
+  lastname: $2
+  ▶:
+    id: $3
+    views: $4
+    published: $5
