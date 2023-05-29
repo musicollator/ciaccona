@@ -18,6 +18,7 @@ class Artist {
         if (this.facebookPost && this.facebookPost.url) {
             this.social = this.facebookPost.url
         }
+        if (!this.instrument) this.instrument = 'unkown'
 
         const vid = this['▶']
         vid.youtubeUrl = `https://youtu.be/${vid.id}`
