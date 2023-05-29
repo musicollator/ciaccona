@@ -68,7 +68,7 @@
             <button id="go-back" type="button" class="btn btn-light m-0 p-0" style="float:right">
                 <img src="index.svg?v=1.0.1-alpha.6#close-circle-view" style="width:32px; height:32px;">
             </button>
-            <h1>Performers</h1>
+            <h1><span id="performersCount"></span> Performers</h1>
             <p>Views meters were read on <span id="collected"></span>. Pitch detection is approximate.</p>
         </header>
         <div id="perfContainerRow" class="row" style="">
@@ -199,6 +199,8 @@
             const sorted = theArtists.artists.sort(sortMoiAlwaysFirst)
             const bodyContent = template(sorted)
             theBody.innerHTML = bodyContent
+            document.getElementById('performersCount').innerHTML = sorted.length
+
         })
 
     </script>

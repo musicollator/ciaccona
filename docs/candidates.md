@@ -113,6 +113,42 @@ should take a bit less thatn 10 minutes for ciaccona-stationery github page to b
 
 7. create screenshot for facebook open graph
 
+fiddle with puppeteer to make a nice screenshot
+
+copy png to /screenshots, remove -<variation_number> from filename
+convert to jpg (I use export from preview app on mac)
+
+8. test and push to gihub
+
+9. verify /video/<fullnameNospaceLowercaseNodiacritics>.html page with  facebook debbuger
+
+get url from performers.html page
+
+https://developers.facebook.com/tools/debug/
+
+10. create annoucement on ciaccona facebook page
+
+https://www.facebook.com/ciacconabwv004/
+
+
+New performer #39, Fernando Cordella (@fernandoturconicordella).
+
+Fernando Cordella is the first artist from the South American continent to be featured in the application, and I hope it won't be the last, as he gives us a rousing performance.
+
+More about Fernando Cordella:
+https://www.bachbrasil.com/
+https://www.youtube.com/c/fernandocordella
+https://www.facebook.com/profile.php?id=100049192845054
+https://www.facebook.com/bachbrasil/
+https://twitter.com/CordellaCravo
+
+#fernandocordella #BWV1004 #jsbach #ciaccona #chaconne
+
+https://ciaccona.cthiebaud.com/video/fernandocordella.html
+
+
+
+
 
 
 [TO BE COMPLETED]
