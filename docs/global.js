@@ -36,6 +36,7 @@ class Coerce {
         'rachellellenwong',
         'rachelpodger',
         'raphaellasmits',
+        'shunsukesato',
         'sigiswaldkuijken',
         'veronikaeberle',
         'veroniquederaedemaeker',
