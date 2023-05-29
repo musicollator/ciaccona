@@ -283,7 +283,7 @@ const Ω = {
 
             badgeArtist.style.visibility = "visible"
 
-            const fullname = artist.fullname === "Christophe Thiebaud" ? "Moi" : artist.fullname;
+            const fullname = artist.fullname === "Christophe Thiebaud" ? '自分' : artist.fullname;
 
             document.querySelector('head title').innerHTML = `Ciaccona - ${artist.fullname}`
 

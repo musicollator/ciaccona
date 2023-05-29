@@ -29,7 +29,7 @@ const puppeteer = require('puppeteer');
         // 'chiaramassini',
         // 'christiantetzlaff',
         // 'clara-jumikang',
-        // 'moi',
+        // '自分',
         // 'florentinginot',
         // 'genzohtakehisa',
         // 'gustavleonhardt',

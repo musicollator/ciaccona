@@ -92,9 +92,9 @@ loadArtists().then(putainDeArtists => {
 
         arrayOfArtists = putainDeArtists.artists.sort((a, b) => {
             if (a.instrument === b.instrument) {
-                if (a.lastname === 'Moi') {
+                if (a.lastname === '自分') {
                     return 1
-                } else if (b.lastname === 'Moi') {
+                } else if (b.lastname === '自分') {
                     return -1
                 } else {
                     return a.lastname.localeCompare(b.lastname)

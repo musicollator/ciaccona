@@ -2,7 +2,7 @@ const ver = "1.0.1-alpha.5"
 
 class Coerce {
     #validFullnamesNospaceLowercaseNodiacritics = [
-        'moi',
+        '自分',
 
         'adolfbusch',
         'amandinebeyer',
@@ -85,7 +85,7 @@ class Coerce {
             console.log(`invalid fullnameNospaceLowercaseNodiacritics: ${fullnameNospaceLowercaseNodiacritics}`)
             this.#coerceArtist = undefined
         } else if (fullnameNospaceLowercaseNodiacritics === 'christophethiebaud') {
-            this.#coerceArtist = 'moi'
+            this.#coerceArtist = '自分'
         } else {
             this.#coerceArtist = fullnameNospaceLowercaseNodiacritics
         }

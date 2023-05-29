@@ -57,7 +57,7 @@ function generateData(arrayOfArtists) {
     let vi = 0
     // const pattern = getRandomInt(10)
     arrayOfArtists.forEach(a => {
-        if (a.fullnameNospaceLowercaseNodiacritics === 'moi') {
+        if (a.fullnameNospaceLowercaseNodiacritics === '自分') {
             return;
         }
         if (!coerce.validateFullameNospaceLowercaseNodiacritics(a.fullnameNospaceLowercaseNodiacritics)) {
