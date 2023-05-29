@@ -48,6 +48,10 @@ rename all _xxx\d.js files to _xxx4.js
 # check first
 for file in *; do echo $file; done
 for file in *; do echo $(echo $file | sed -e 's/[0-9]/10/g'); done
+
+for file in *; do echo $(echo $file | sed -e 's/moi/自分/g'); done
+for file in *; do mv $file $(echo $file | sed -e 's/moi/自分/g'); done
+
 # then go
 for file in *; do mv $file $(echo $file | sed -e 's/_o/bwv-1004_5_viewboxed-/g'); done
 

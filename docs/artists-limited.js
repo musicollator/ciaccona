@@ -65,6 +65,7 @@ function generateData() {
                 return
             }
         }
+        // console.log(a.fullnameNospaceLowercaseNodiacritics)
 
         const v = vi % codec.variationsCount
         const name = a.completeName ?? a.fullname
@@ -88,7 +89,6 @@ loadArtists().then(putainDeArtists => {
         if (!list) return
 
         list.querySelectorAll('.list-item').forEach(E => E.remove())
-
 
         arrayOfArtists = putainDeArtists.artists.sort((a, b) => {
             if (a.instrument === b.instrument) {

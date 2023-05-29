@@ -88,7 +88,7 @@ function loadArtists() {
                 artists.addArtist(new Artist(a))
             })
 
-            console.log('# artists', artists.size())
+            console.log('# artists', artists.size(), artists)
 
             ARTISTS = artists
             resolve(artists)
