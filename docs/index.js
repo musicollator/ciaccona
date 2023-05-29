@@ -57,10 +57,6 @@ function generateData(arrayOfArtists) {
     let vi = 0
     // const pattern = getRandomInt(10)
     arrayOfArtists.forEach(a => {
-        /*
-        if ( jigsawGenerator.getJigsawItemsCount() <= vi) { 
-            return
-        }*/
         if (a.fullnameNospaceLowercaseNodiacritics === 'moi') {
             return;
         }
@@ -115,12 +111,36 @@ loadArtists().then(putainDeArtists => {
 </div>
 `
 
+    const separatorTemplate = (sep) => `<div id="separator-badge" class="list-item d-flex justify-content-start">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+        id="gb-puzzle-separator-svg" 
+        style="overflow: visible;"
+        viewBox="${sep.jig.viewBox}">
+        <path stroke="${sep.stroke}" 
+            stroke-width="1" 
+            fill="${sep.fill}" 
+            d="${sep.jig.path}">
+        </path>
+    </svg>
+</div>`
+
+
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
     let arrayOfArtists = coerce.shuffle ? shuffleArray(putainDeArtists.artists) : putainDeArtists.artists
     data = generateData(arrayOfArtists)
+    let i = 1;
     data.forEach(d => {
+        if (0 === (i % jigsawGenerator.getJigsawItemsCount())) {
+            const separator = generateElement(separatorTemplate({
+                jig: jigsawGenerator.getJigsawItem(0),
+                fill: '#00000080',
+                stroke: '#ffffff80'
+            }))
+            list.appendChild(separator)
+        }
         list.appendChild(generateElement(`<div class="list-item">${template(d)}</div>`))
+        i++
     })
 
     const listArtistElements = document.querySelectorAll('.list-artist')
@@ -134,7 +154,7 @@ loadArtists().then(putainDeArtists => {
     {
         console.log("about to create packery ...")
         const thePackery = new packeryLayout('#list', {
-            itemSelector: ".list-item", 
+            itemSelector: ".list-item",
             percentPosition: false,
             initLayout: false,
             gutter: '#list .gutter-sizer',
@@ -184,7 +204,7 @@ loadArtists().then(putainDeArtists => {
         displayArtist()
 
         function forceRedraw() {
-            document.querySelectorAll('.list-item:not(#magnificent-title-ciaccona)').forEach(E => {
+            document.querySelectorAll('.list-item:not(#magnificent-title-ciaccona):not(#separator-badge)').forEach(E => {
                 const i = parseInt(E.children[0].dataset.index)
                 const newChild = generateElement(template(data[i]))
                 E.replaceChild(newChild, E.children[0])
