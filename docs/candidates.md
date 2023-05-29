@@ -33,8 +33,16 @@ ShunsukeSato-pnK6R5ej6Hg.js
 
 insert the following in the file
 
+the key of the youtube must be "javascriptized"
+
+1. all '-' are replaced with '_' 
+2. an id starting with a number is prefixed with '_' 
+cf. class Artist in artists.js
+
+e.g. `5X-pCvEhxUE` becomes `_5X_pCvEhxUE`
+
 ```
-var pnK6R5ej6Hg = {
+var <javascriptized youtube video id> = {
     bars: [
     ]
 }
@@ -58,7 +66,7 @@ then start playing the video (obviously not with spacebar, click on the play but
 
 then press 'p' on each bar
 
-when everything is over, press space sto save the timings
+when everything is over, press 's' sto save the timings
 
 look at the console to see where the timings file has been saved.
 
@@ -68,7 +76,9 @@ refresh the localhost browser and test.
 
 5. remove the workInProgress property
 
-add fullnameNospaceLowercaseNodiacritics (`shunsukesato`) to global.js, preferably in the alphabetical order, but it is not required
+add fullnameNospaceLowercaseNodiacritics (`shunsukesato`) to global.js (preferably in the alphabetical order, but order is not required)
+
+fernandocordella
 
 6. generate shunsukesato.html with all required OG infos
 
@@ -86,6 +96,24 @@ move/rename it to
 open /pupeeter/index.js
 
 tweak it to produce the kind of image desired (with or without full score, with player control or not, etc.)
+
+a directory named <fullnameNospaceLowercaseNodiacritics> has been created under /puppeteer/artists
+
+move the directory to ciaccona-stationary repo
+
+open terminal in this moved dir
+create wepb files 
+for f in *.(png)(N); do cwebp -q 4 ${f} -o ${f%%.*}.webp; done
+create jpg files
+for f in *.(png)(N); do ffmpeg -i ${f} -qscale:v 8 ${f%%.*}.jpg; done
+
+cf. _ffmpeg-cmd.txt in ciaccona-stationery reop
+push to github
+should take a bit less thatn 10 minutes for ciaccona-stationery github page to be deployed
+
+7. create screenshot for facebook open graph
+
+
 
 [TO BE COMPLETED]
 

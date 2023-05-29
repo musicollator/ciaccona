@@ -13,6 +13,7 @@ class Coerce {
         'christiantetzlaff',
         'christophethiebaud',
         'clara-jumikang',
+        'fernandocordella',
         'florentinginot',
         'genzohtakehisa',
         'gustavleonhardt',
