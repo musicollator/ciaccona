@@ -23,6 +23,7 @@ const iconMap = {
 const templateDivider = (instrumentKey, instrumentDisplayName) => `
 <div class="list-item divider d-flex justify-content-between">
     <div class="icon-base icon-${iconMap[instrumentKey]}" style="align-self: center;"></div>
+    <div id="${instrumentKey}" class="flex-grow-1" style="align-self: center; text-align: right; margin-right: 0.5rem;">&nbsp;</div>
     <div style="align-self: center;">${instrumentDisplayName}</div>
 </div>`
 
@@ -88,6 +89,7 @@ loadArtists().then(putainDeArtists => {
 
         list.querySelectorAll('.list-item').forEach(E => E.remove())
 
+
         arrayOfArtists = putainDeArtists.artists.sort((a, b) => {
             if (a.instrument === b.instrument) {
                 if (a.lastname === 'Moi') {
@@ -103,9 +105,10 @@ loadArtists().then(putainDeArtists => {
 
         data = generateData()
 
+        const instrumentsCount = new Map()
         let previousInstrument = "_"
-
         data.forEach(d => {
+            instrumentsCount.set(d.instrument, (instrumentsCount.get(d.instrument) || 0) + 1)
             if (d.instrument !== previousInstrument) {
                 const instrumentDisplayName = d.instrument.replaceAll(/\d/gi, '').replaceAll(/_/gi, '&#xA0;' /* No-Break Space */)
 
@@ -115,6 +118,9 @@ loadArtists().then(putainDeArtists => {
             }
             list.appendChild(generateElement(template(d)))
         })
+        for (let [key, value] of instrumentsCount) {
+            document.getElementById(key).innerHTML = value
+        }
 
         var listArtistElements = document.querySelectorAll('.list-artist')
         const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
