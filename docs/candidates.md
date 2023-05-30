@@ -106,7 +106,7 @@ tweak it to produce the kind of image desired (with or without full score, with 
 
 then run index.js as a node project
 
-it creates a `<fullnameNospaceLowercaseNodiacritics>` directory containing all 34~something screenshots, each taken at the start of a variaion, under the `/puppeteer/artists` directory
+it creates a `<fullnameNospaceLowercaseNodiacritics>` directory containing all 34~something screenshots, each taken at the start of a variation, under the `/puppeteer/artists` directory
 
 move the directory to `ciaccona-stationary` repository
 
