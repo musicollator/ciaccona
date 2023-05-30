@@ -1,45 +1,41 @@
-1. add record to  /_artists.yaml
+# How to add a performer
 
-(you may cut & paste from _candidates.yaml)
+## 1. add performer data to  /_artists.yaml
+
+(you may cut & paste it from _candidates.yaml)
+
 
 ```
-- firstname: Shunsuke
-  lastname: Sato
+- firstname: Roger
+  lastname: Dugland
   ▶:
-    id: pnK6R5ej6Hg
-    views: 974875
-    published: Oct 4, 2018
+    id: QWERTYUIOP
+    views: 12
+    published: Jan 1, 1070
 ```
 
-2. set workInProgress property so that it does not interfere with production
+set workInProgress property to true so that data does not interfere with production
+
 
 ```
-- firstname: Shunsuke
-  lastname: Sato
+- firstname: Roger
+  lastname: Dugland
   workInProgress: true
   ▶:
-    id: pnK6R5ej6Hg
-    views: 974875
-    published: Oct 4, 2018
+    id: QWERTYUIOP
+    views: 12
+    published: Jan 1, 1070
 ```
 
-3. create an empty file in the timings directory
+## 2. create an empty file in the timings directory
 
-the file MUST be named `<fullname without spaces>-<youtube video id>.js``
+file must be named `<titlecase fullname without spaces>-<youtube video id>.js`, e.g.:
 
 ```
-ShunsukeSato-pnK6R5ej6Hg.js
+RogerDugland-QWERTYUIOP.js
 ```
 
-insert the following in the file
-
-the key of the youtube must be "javascriptized"
-
-1. all '-' are replaced with '_' 
-2. an id starting with a number is prefixed with '_' 
-cf. class Artist in artists.js
-
-e.g. `5X-pCvEhxUE` becomes `_5X_pCvEhxUE`
+file content must be:
 
 ```
 var <javascriptized youtube video id> = {
@@ -48,7 +44,17 @@ var <javascriptized youtube video id> = {
 }
 ```
 
-4. record timings
+youtube video id must be "javascriptized":
+
+* all '-' are replaced with '_' 
+* an id starting with a number is prefixed with '_' 
+
+see class Artist in artists.js for the actual code
+
+e.g. `0QWERT-YUIOP` becomes `_0QWERT_YUIOP`
+
+
+## 3. record timings
 
 launch app on local host with query parameter wip=true
 
@@ -56,81 +62,98 @@ http://localhost:1010/ciaccona.html?wip=true
 
 the video will appear at the bottom of the left offcanvas sliding menu of the ciaccona.html page under the category instrument:unkown
 
-click on it, then show video to start recording the timings
+click on it, then show video to start recording
 
 seek to the beginning of the chaconne (that may not be the beginning of the video)
 
-press 'spacebar' to reset the timings to empty array and to add the first entry
+press 'spacebar' to reset the recording to a timestamp array with one element
 
-then start playing the video (obviously not with spacebar, click on the play button of the player)
+start playing the video (obviously not with 'spacebar', click instead on the play button of the player controls)
 
-then press 'p' on each bar
+press 'p' on each bar
 
-when everything is over, press 's' sto save the timings
+when everything is over, press 's' to save the timings
 
-look at the console to see where the timings file has been saved.
+look at the console to see where the timings file has been saved
 
-replace the empty 'bars' array of the ShunsukeSato-pnK6R5ej6Hg.js file with the full content of the timings file 
+replace the empty `bars` array of the `RogerDugland-QWERTYUIOP.js` file with the full content of the timings file
 
-refresh the localhost browser and test.
+refresh the localhost browser and test
 
-5. remove the workInProgress property
+if test is ok, remove the workInProgress property
 
-add fullnameNospaceLowercaseNodiacritics (`shunsukesato`) to global.js (preferably in the alphabetical order, but order is not required)
+add `<fullnameNospaceLowercaseNodiacritics>` (e.g. `rogerdugland`) to global.js (preferably in the alphabetical order, but ordering is not mandatory)
 
-fernandocordella
+at this point, you can push to githu and deploy, everything should work, but the next elements are needed to complete the work.
 
-6. generate shunsukesato.html with all required OG infos
+## 4. generate `rogerdugland.html` 
 
-edit /video/_template.html, filter the loop over the artists to keep only `shunsukesato`
+this file contains facebook and twitter open graph infoss
 
-open http://localhost:1010/video/_template.html
+edit `/video/_template.html`, filter the loop over the artists to keep only `rogerdugland`
 
-_shunsukesato.html is saved automatically in the downloads directory, 
-double check it 
-move/rename it to 
-/video/shunsukesato.html
+open http://localhost:1010/video/_template.html in a browser
 
-6. create screenshot stationnary
+a file named `_rogerdugland.html` is automatically generated and saved to the downloads directory
 
-open /pupeeter/index.js
+double check it, then rename it (no starting underscore) and move it to `/video/rogerdugland.html` 
+
+## 5. create stationnary
+
+open `/pupeeter/index.js`
 
 tweak it to produce the kind of image desired (with or without full score, with player control or not, etc.)
 
-a directory named <fullnameNospaceLowercaseNodiacritics> has been created under /puppeteer/artists
+then run index.js as a node project
 
-move the directory to ciaccona-stationary repo
+it creates a `<fullnameNospaceLowercaseNodiacritics>` directory at /puppeteer/artists
 
-open terminal in this moved dir
+move the directory to `ciaccona-stationary` repo
+
+open terminal in this dir
+
 create wepb files 
+```
 for f in *.(png)(N); do cwebp -q 4 ${f} -o ${f%%.*}.webp; done
+```
 create jpg files
+```
 for f in *.(png)(N); do ffmpeg -i ${f} -qscale:v 8 ${f%%.*}.jpg; done
+```
 
-cf. _ffmpeg-cmd.txt in ciaccona-stationery reop
+(see _ffmpeg-cmd.txt in ciaccona-stationery repo)
+
 push to github
+
 should take a bit less thatn 10 minutes for ciaccona-stationery github page to be deployed
 
-7. create screenshot for facebook open graph
+## 7. create open graph screenshot
 
-fiddle with puppeteer to make a nice screenshot
+
+fiddle with puppeteer to create and select a nice screenshot
 
 copy png to /screenshots, remove -<variation_number> from filename
 convert to jpg (I use export from preview app on mac)
 
-8. test and push to gihub
+## 8. test and push to gihub
 
-9. verify /video/<fullnameNospaceLowercaseNodiacritics>.html page with  facebook debbuger
+## 9. verify open graph data
 
-get url from performers.html page
+oepn `/video/<fullnameNospaceLowercaseNodiacritics>.html` page with facebook debbuger
+
+for convenience, get full url from left link in performers.html page
+
+past url to
 
 https://developers.facebook.com/tools/debug/
 
-10. create annoucement on ciaccona facebook page
+## 10. create anouncement on ciaccona facebook page
 
 https://www.facebook.com/ciacconabwv004/
 
+e.g.
 
+```
 New performer #39, Fernando Cordella (@fernandoturconicordella).
 
 Fernando Cordella is the first artist from the South American continent to be featured in the application, and I hope it won't be the last, as he gives us a rousing performance.
@@ -145,11 +168,4 @@ https://twitter.com/CordellaCravo
 #fernandocordella #BWV1004 #jsbach #ciaccona #chaconne
 
 https://ciaccona.cthiebaud.com/video/fernandocordella.html
-
-
-
-
-
-
-[TO BE COMPLETED]
-
+```
