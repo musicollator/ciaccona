@@ -251,7 +251,7 @@
 - firstname: Jeanne
   lastname: Lamon
   completeName: Jeanne Lamon, Chloe Kim, Christina Mahler
-  instrument: 3String_Trio
+  instrument: 3Ensemble
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0K57uMkCYhm7Qv29PwJJWkS6TQZVtPz9WhNaFv32iG8JtnGPegeNFiw2zCuxdt8bEl
     sort: 10
@@ -740,6 +740,7 @@
 - firstname: Arkady 
   lastname: Leytush
   workInProgress: false
+  instrument: 3Ensemble
   flag: 🇷🇺
   ▶:
     id: NmkNZW3PvB8

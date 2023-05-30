@@ -23,8 +23,8 @@ const iconMap = {
 const templateDivider = (instrumentKey, instrumentDisplayName) => `
 <div class="list-item divider d-flex justify-content-between" style="border-radius: 2rem 0 0 2rem;">
     <div class="icon-base icon-${iconMap[instrumentKey]}" style="align-self: center; border-radius: 2rem;"></div>
-    <div id="${instrumentKey}" class="flex-grow-1" style="align-self: center; text-align: right; margin-right: 0.5rem;">&nbsp;</div>
-    <div style="align-self: center;">${instrumentDisplayName}</div>
+    <div class="flex-grow-1" style="align-self: center; text-align: right; margin-right: 0.5rem;">${instrumentDisplayName}</div>
+    <div id="${instrumentKey}" style="align-self: center; font-size:smaller;">&nbsp;</div>
 </div>`
 
 const template = (data) => `
@@ -119,7 +119,7 @@ loadArtists().then(putainDeArtists => {
             list.appendChild(generateElement(template(d)))
         })
         for (let [key, value] of instrumentsCount) {
-            document.getElementById(key).innerHTML = value
+            document.getElementById(key).innerHTML = `(${value})`
         }
 
         var listArtistElements = document.querySelectorAll('.list-artist')
