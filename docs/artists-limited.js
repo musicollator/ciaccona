@@ -22,7 +22,7 @@ const iconMap = {
 
 const templateDivider = (instrumentKey, instrumentDisplayName) => `
 <div class="list-item divider d-flex justify-content-between" style="border-radius: 2rem 0 0 2rem;">
-    <div class="icon-base icon-${iconMap[instrumentKey]}" style="align-self: center; background-color: #ffffffc0; border-radius: 2rem; background-size: 75%;"></div>
+    <div class="icon-base icon-${iconMap[instrumentKey]}" style="align-self: center; border-radius: 2rem;"></div>
     <div id="${instrumentKey}" class="flex-grow-1" style="align-self: center; text-align: right; margin-right: 0.5rem;">&nbsp;</div>
     <div style="align-self: center;">${instrumentDisplayName}</div>
 </div>`

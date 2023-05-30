@@ -80,7 +80,9 @@
                                 <img src="svg/person-male-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
-                            <th scope="col" class="flag      text-start  sortable">&nbsp; <span></span></th>
+                            <th scope="col" class="flag      text-start  sortable">&nbsp; 
+                                <img src="svg/earth-svgrepo-com.svg" style="width: 22px; height:22px;">
+                                <span style="width: 25px;"></span></th>
                             <th scope="col" class="published text-start  sortable" colspan="2">Published on <span></span></th>
                             <th scope="col" class="views     text-start  sortable">Views <span></span></th>
                             <th scope="col" class="monthly   text-start  sortable" style="min-width: 6rem;">
@@ -88,7 +90,7 @@
                                 <span style="float: right;"></span>
                             </th>
                             <th scope="col" class="length    text-start  sortable" style="min-width: 4rem;">
-                                <img src="svg/stopwatch-svgrepo-com.svg" style="width: 22px; height:22px;">
+                                <img src="svg/metronome-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
                             <th scope="col" class="herz      text-start  sortable" style="min-width: 4rem;">
@@ -99,9 +101,9 @@
                                 <img src="svg/YouTube_social_white_square_(2017)_white_middle.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
-                            <th scope="col" class="fb        text-center sortable">
-                                <img src="svg/2021_Facebook_icon.svg" style="width: 22px; height:22px;">
-                                <span></span>
+                            <th scope="col" class="fb        text-start  sortable" style="width: 50px;">
+                                <img src="svg/info-svgrepo-com.svg" style="width: 22px; height:22px;">
+                                <span style="width: 25px;"></span>
                             </th>
                         </tr>
                     </thead>
@@ -129,7 +131,7 @@
         {{#if v.trueId}}{{v.trueId}}{{else}}{{v.id}}{{/if}}
     </a></td>
 <td class="fb        text-center"  data-number="{{#if facebookPost}}{{numberFormat facebookPost.sort}}{{else}}-1{{/if}}">
-    {{#if facebookPost}}<sup>{{facebookPost.sort}}</sup>&nbsp;<a href={{facebookPost.url}} target=FB><img src="svg/External_link_font_awesome.svg"></a>
+    {{#if facebookPost}}<sup>{{facebookPost.sort}}</sup>&nbsp;<a href={{facebookPost.url}} target=FB><img src="svg/external-link-svgrepo-com.svg"></a>
     {{else}}
     &nbsp;{{/if}}
 </td>
