@@ -153,20 +153,24 @@ https://www.facebook.com/ciacconabwv004/
 e.g.
 
 ```
-New performer #39, Fernando Cordella (@fernandoturconicordella).
+New performer #40, Avi Avital (@aviavital).
 
-Fernando Cordella is the first artist from the South American continent to be featured in the application, and I hope it won't be the last, as he gives us a rousing performance.
+Another video of Avi Avital's Chaconne is available on YouTube, with much better sound and video quality. Unfortunately, an obscure digital rights management company has banned the video from being embedded in an app, so I had to fall back on this one, which is in any case an excellent performance, in a more intimate, more relaxed, setting. Perhaps the presence of the audience gives the other video a touch of extra tension and drama.
 
-More about Fernando Cordella:
-https://www.bachbrasil.com/
-https://www.youtube.com/c/fernandocordella
-https://www.facebook.com/profile.php?id=100049192845054
-https://www.facebook.com/bachbrasil/
-https://twitter.com/CordellaCravo
+Direct link to the Ciaccona in the other video: https://www.youtube.com/watch?v=AI56MpTFxso&t=974s
 
-#fernandocordella #BWV1004 #jsbach #ciaccona #chaconne
+here is also the Deutsche Grammophon recording, albeit without video: https://youtu.be/g4JKEZ91B8g
 
-https://ciaccona.cthiebaud.com/video/fernandocordella.html
+More about Avi Avital.
+https://www.aviavital.com/
+https://en.wikipedia.org/wiki/Avi_Avital
+https://www.facebook.com/aviavital
+https://www.youtube.com/aviavital
+https://twitter.com/aviavital
+
+#aviavital #BWV1004 #jsbach #ciaccona #chaconne
+
+https://ciaccona.cthiebaud.com/video/aviavital.html
 ```
 
 add announcement data to `_artists.yaml`
