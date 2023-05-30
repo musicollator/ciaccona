@@ -146,7 +146,7 @@ https://developers.facebook.com/tools/debug/
 for convenience, copy full url from link in performers.html page
 
 
-## 10. create anouncement on ciaccona facebook page
+## 10. create announcement on ciaccona facebook page
 
 https://www.facebook.com/ciacconabwv004/
 
@@ -169,7 +169,7 @@ https://twitter.com/CordellaCravo
 https://ciaccona.cthiebaud.com/video/fernandocordella.html
 ```
 
-add anouncement data to `_artists.yaml`
+add announcement data to `_artists.yaml`
 
 e.g.
 
