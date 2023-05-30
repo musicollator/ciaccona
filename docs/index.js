@@ -9,10 +9,6 @@ import MagnificentTitle from "/js/magnificent-title.js?v=1.0.1-alpha.6"
 
 const abg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-}
-
 const template = (data) => `
 <div id="li-artist${data.v}" 
      class="list-artist hero"  
@@ -55,7 +51,6 @@ const colors = colorArray;
 function generateData(arrayOfArtists) {
     data = []
     let vi = 0
-    // const pattern = getRandomInt(10)
     arrayOfArtists.forEach(a => {
         if (a.fullnameNospaceLowercaseNodiacritics === '自分') {
             return;
@@ -99,7 +94,6 @@ function generateData(arrayOfArtists) {
 
 loadArtists().then(putainDeArtists => {
 
-
     const list = document.getElementById('list')
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
@@ -110,8 +104,7 @@ loadArtists().then(putainDeArtists => {
     <img class="align-self-center" src="index.svg?v=1.0.1-alpha.6#close-circle-view" style="width:32px; height:32px;">
 </div>
 `
-
-    const separatorTemplate = (sep) => `<div id="separator-badge" class="list-item d-flex justify-content-start">
+    const separatorTemplate = (sep) => `<div id="separator-badge" class="list-item d-flex justify-content-start" style="z-index: 1;">
     <svg xmlns="http://www.w3.org/2000/svg" 
         id="gb-puzzle-separator-svg" 
         style="overflow: visible;"
@@ -124,13 +117,12 @@ loadArtists().then(putainDeArtists => {
     </svg>
 </div>`
 
-
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
     let arrayOfArtists = coerce.shuffle ? shuffleArray(putainDeArtists.artists) : putainDeArtists.artists
     data = generateData(arrayOfArtists)
     let i = 1;
-    data.forEach(d => {
+    data.forEach(datum => {
         if (0 === (i % jigsawGenerator.getJigsawItemsCount())) {
             const separator = generateElement(separatorTemplate({
                 jig: jigsawGenerator.getJigsawItem(0),
@@ -139,7 +131,7 @@ loadArtists().then(putainDeArtists => {
             }))
             list.appendChild(separator)
         }
-        list.appendChild(generateElement(`<div class="list-item">${template(d)}</div>`))
+        list.appendChild(generateElement(`<div class="list-item">${template(datum)}</div>`))
         i++
     })
 
