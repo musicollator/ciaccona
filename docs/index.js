@@ -104,14 +104,14 @@ loadArtists().then(putainDeArtists => {
     <img class="align-self-center" src="index.svg?v=1.0.1-alpha.6#close-circle-view" style="width:32px; height:32px;">
 </div>
 `
-    const separatorTemplate = (sep) => `<div id="separator-badge" class="list-item d-flex justify-content-start" style="z-index: 1;">
+    const separatorTemplate = (sep) => `<div id="separator-badge" class="list-item d-flex ${sep.justify}" style="z-index: 1;">
     <svg xmlns="http://www.w3.org/2000/svg" 
         id="gb-puzzle-separator-svg" 
         style="overflow: visible;"
         viewBox="${sep.jig.viewBox}">
-        <path stroke="${sep.stroke}" 
+        <path stroke="#${sep.stroke}" 
             stroke-width="1" 
-            fill="${sep.fill}" 
+            fill="#${sep.fill}" 
             d="${sep.jig.path}">
         </path>
     </svg>
@@ -119,19 +119,34 @@ loadArtists().then(putainDeArtists => {
 
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
+    const getRandomHiddenPuzzle = Math.round(Math.random() * (jigsawGenerator.getJigsawItemsCount()))
     let arrayOfArtists = coerce.shuffle ? shuffleArray(putainDeArtists.artists) : putainDeArtists.artists
     data = generateData(arrayOfArtists)
     let i = 1;
     data.forEach(datum => {
         if (0 === (i % jigsawGenerator.getJigsawItemsCount())) {
             const separator = generateElement(separatorTemplate({
+                justify: 'justify-content-start',
                 jig: jigsawGenerator.getJigsawItem(0),
-                fill: '#00000080',
-                stroke: '#ffffff80'
+                fill: '00000080',
+                stroke: 'ffffff80'
             }))
             list.appendChild(separator)
         }
-        list.appendChild(generateElement(`<div class="list-item">${template(datum)}</div>`))
+
+        if (getRandomHiddenPuzzle !== 0 && getRandomHiddenPuzzle === (i % jigsawGenerator.getJigsawItemsCount())) {
+            const v = (i - 1) % codec.variationsCount
+            const separator = generateElement(separatorTemplate({
+                justify: 'justify-content-center',
+                jig: jigsawGenerator.getJigsawItem(i % jigsawGenerator.getJigsawItemsCount()),
+                fill: colors[v].p_rgb,
+                stroke: colors[v].stripeColor,
+            }))
+            list.appendChild(separator)
+        } else {
+            list.appendChild(generateElement(`<div class="list-item">${template(datum)}</div>`))
+        }
+
         i++
     })
 
