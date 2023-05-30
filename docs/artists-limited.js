@@ -11,7 +11,7 @@ const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/ar
 const iconMap = {
     '1Violin': 'violin',
     '2Double_Bass': 'violin',
-    '3String_Trio': 'violin',
+    '3Ensemble': 'violin',
     '4Plucked_Strings': 'ukulele',
     '5Keyboard': 'keyboard',
     '6Harp': 'harp',
