@@ -84,19 +84,19 @@ if test is ok, remove the workInProgress property
 
 add `<fullnameNospaceLowercaseNodiacritics>` (e.g. `rogerdugland`) to global.js (preferably in the alphabetical order, but ordering is not mandatory)
 
-at this point, you can push to githu and deploy, everything should work, but the next elements are needed to complete the work.
+at this point, you may push to github and deploy, everything should work, but the next elements are needed to complete the work.
 
-## 4. generate `rogerdugland.html` 
+## 4. generate `<fullnameNospaceLowercaseNodiacritics>.html` 
 
 this file contains facebook and twitter open graph infoss
 
-edit `/video/_template.html`, filter the loop over the artists to keep only `rogerdugland`
+edit `/video/_template.html`, filter the loop over the artists to keep only `<fullnameNospaceLowercaseNodiacritics>`, e.g. `rogerdugland`
 
 open http://localhost:1010/video/_template.html in a browser
 
-a file named `_rogerdugland.html` is automatically generated and saved to the downloads directory
+a file named `_<fullnameNospaceLowercaseNodiacritics>_.html` e.g. `_rogerdugland.html` is automatically generated and saved to the downloads directory
 
-double check it, then rename it (no starting underscore) and move it to `/video/rogerdugland.html` 
+double check it, then rename it (no starting underscore) and move it to e.g. `/video/rogerdugland.html` 
 
 ## 5. create stationnary
 
@@ -106,46 +106,45 @@ tweak it to produce the kind of image desired (with or without full score, with 
 
 then run index.js as a node project
 
-it creates a `<fullnameNospaceLowercaseNodiacritics>` directory at /puppeteer/artists
+it creates a `<fullnameNospaceLowercaseNodiacritics>` directory containing all 34~something screenshots, each taken at the start of a variaion, under the `/puppeteer/artists` directory
 
-move the directory to `ciaccona-stationary` repo
+move the directory to `ciaccona-stationary` repository
 
 open terminal in this dir
 
-create wepb files 
+create wepb files:
 ```
 for f in *.(png)(N); do cwebp -q 4 ${f} -o ${f%%.*}.webp; done
 ```
-create jpg files
+create jpg files:
 ```
 for f in *.(png)(N); do ffmpeg -i ${f} -qscale:v 8 ${f%%.*}.jpg; done
 ```
 
-(see _ffmpeg-cmd.txt in ciaccona-stationery repo)
+(see `_ffmpeg-cmd.txt` in ciaccona-stationery repo)
 
 push to github
 
-should take a bit less thatn 10 minutes for ciaccona-stationery github page to be deployed
+should take ~10 minutes for ciaccona-stationery github page to be deployed
 
 ## 7. create open graph screenshot
 
-
 fiddle with puppeteer to create and select a nice screenshot
 
-copy png to /screenshots, remove -<variation_number> from filename
-convert to jpg (I use export from preview app on mac)
+copy the screenshot png file to /screenshots, remove `-<variation_number>` from filename
+
+convert to jpg (I use export from preview app on mac), the original png may be deleted
 
 ## 8. test and push to gihub
 
 ## 9. verify open graph data
 
-oepn `/video/<fullnameNospaceLowercaseNodiacritics>.html` page with facebook debbuger
-
-for convenience, get full url from left link in performers.html page
-
-past url to
+open `/video/<fullnameNospaceLowercaseNodiacritics>.html` page with facebook debugger
 
 https://developers.facebook.com/tools/debug/
+
+for convenience, copy full url from link in performers.html page
+
 
 ## 10. create anouncement on ciaccona facebook page
 
@@ -169,3 +168,19 @@ https://twitter.com/CordellaCravo
 
 https://ciaccona.cthiebaud.com/video/fernandocordella.html
 ```
+
+add anouncement data to `_artists.yaml`
+
+e.g.
+
+```
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid0fdc3ejDS2otrXmE6mRRZde8McgYAz62RRg7N7Vz5M3jRhydua9tD79hn4eHyTkuCl
+    sort: 39
+```
+
+push to github
+
+# WE'RE DONE!
+
+
