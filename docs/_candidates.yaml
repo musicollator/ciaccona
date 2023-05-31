@@ -299,7 +299,7 @@
     views: 47471
     published: Jul 7, 2016
 
-- firstname: Arkady 
+- firstname: Arkady
   lastname: Leytush
   ▶:
     id: NmkNZW3PvB8
@@ -415,7 +415,7 @@
   lastname: Stoltzman
   ▶:
     id: YOu5y_vyJr0
-    views: 555  
+    views: 555
     published: Jan 2, 2020
 
 - firstname: Mika
@@ -514,7 +514,7 @@
   ▶:
     id: AiUeOt4ekaE
     views: 40076
-    published: Mar 6, 2021 
+    published: Mar 6, 2021
 
 - firstname: Peter
   lastname: Schmidt
@@ -591,7 +591,7 @@
   ▶:
     id: dOHiI_5yycU
     views: 1448673
-    published: Sep 16, 2020 
+    published: Sep 16, 2020
 
 - firstname: Avi
   lastname: Avital
@@ -679,8 +679,16 @@
     published: Dec 20, 2018
 
 - firstname: Violinist
-  lastname: Paris Street 
+  lastname: Paris Street
   ▶:
     id: eA-dvnSO_rQ
     views: 65123
     published: Nov 3, 2011
+
+- firstname: Leopold
+  lastname: Stokowski
+  ▶:
+    id: NEUYq5t-cCM
+    views: 243897
+    published: Jun 4, 2012
+
