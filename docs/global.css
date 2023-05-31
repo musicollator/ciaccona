@@ -54,6 +54,7 @@ a {
   height: 50px;
   display: flex;
   padding: 1rem .5rem;
+  white-space: nowrap;
 }
 
 .magnificent-card * {
