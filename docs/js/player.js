@@ -24,11 +24,12 @@ function horzScrollScore(variation, currentTime) {
 
     const curr = codec.variation2bar(variation)
     const next = codec.variation2bar(variation + 1)
-    if (!curr || !next) {
+    if (curr == -1 || next == -1) {
         return -1
     }
     const thisStartBar = config.artistAndTimings.bars[curr]
     const nextStartBar = config.artistAndTimings.bars[next]
+    console.log('thisStartBar', thisStartBar, 'nextStartBar', nextStartBar)
     if (!thisStartBar || !nextStartBar) {
         return -1
     }
@@ -153,26 +154,6 @@ const feedbackOnCurrentTime = (source, currentTime, rememberCurrentBar, isPlayin
         }
     }
 }
-
-/*
-const setBrickClickEvent = (_plyer) => {
-
-document.querySelectorAll(".brick.has-score .score").forEach((b) => {
-    // b.addEventListener('click', handleScoreClick, true)
-
-    b.addEventListener("scrollend", (event) => {
-        // console.log(b.scrollLeft)
-        if (b.scrollLeft === 0 && !_plyer.playing) {
-            const bar = parseInt(b.parentNode.dataset.bar)
-            const theBar = config.artistAndTimings.bars[bar]
-            console.log("scrollend: Dear plyr, I'd like you to seek at bar <", bar, ">, thanks.")
-            _plyer.currentTime = theBar.duration.asMilliseconds() / 1000
-        }
-
-    }, true);
-})
-}
-*/
 
 export default function createPlayer(selector, ignore_all_events) {
     initialized = false
