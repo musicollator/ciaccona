@@ -39,9 +39,10 @@ look for version number
 replace with 
 $12$3
 
-([\?"']v*=*1\.0\.1-alpha\.)\d+(["'#])
+next bump may be:
+([\?"']v*=*1\.0\.2-alpha\.*)\d*(["'#])
 replace with 
-$14$2
+$1.1$2
 
 
 rename all _xxx\d.js files to _xxx4.js
