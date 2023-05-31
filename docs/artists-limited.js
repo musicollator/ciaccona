@@ -17,7 +17,7 @@ const iconMap = {
     '6Harp': 'harp',
     '7Cimbalom': 'cimbalom',
     '8Flute': 'flute',
-    '9Marimba': 'xylophone ',
+    '9Marimba': 'xylophone',
 }
 
 const templateDivider = (instrumentKey, instrumentDisplayName) => `
