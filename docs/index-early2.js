@@ -9,14 +9,14 @@ function calcItemWidth() {
     }
 
     const containerWidth = listE.getBoundingClientRect().width
-    const gutter_sizer = 0.0125;
+    const gutter_sizer = 0 // 0.0125;
     const gutter_size = containerWidth * gutter_sizer
-    const listItemsPerRow = 1 + Math.floor(containerWidth / 400)
+    const listItemsPerRow = 1 + Math.floor(containerWidth / 240)
     const listItemsWidth = (containerWidth - (listItemsPerRow - 1) * gutter_size) / listItemsPerRow
     const listItemsDoubleWidth = 2 * listItemsWidth + gutter_size - .2
     const listItemPercentageWidth = 100 * listItemsWidth / containerWidth
     const listItemDoublPercentageWidth = 100 * listItemsDoubleWidth / containerWidth
-    const listItemsHeight = listItemsWidth / 1.91;
+    const listItemsHeight = listItemsWidth // / 1.91;
     const listItemsDoubleHeight = listItemsHeight * 2 + gutter_size - .2
 
     document.documentElement.style.setProperty('--gs', `${gutter_sizer * 100}%`)

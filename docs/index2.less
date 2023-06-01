@@ -10,17 +10,21 @@
     padding: 0;
     margin: 0;
     overflow: visible;
-
+    .list2-artist {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      transition: background-image 0.5s linear;
+      margin: 0;
+    }
     .list-artist {
       align-items: flex-end;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       transition: background-image 0.5s linear;
-      /*
       border-style: solid;
       border-width: 0.333px;
-      */
       display: flex;
       justify-content: space-between;
       visibility: inherit;
@@ -100,27 +104,25 @@
   .select-artist {
     cursor: pointer;
     &:hover {
-      background-color: #ffffff30
+      background-color: #ffffff30;
     }
   }
+  /*
   .select-variation {
     cursor: pointer;
     .puzzle-limited {
-      /*
       background-color: #00000060;
       border: 1px transparent solid;
-      */
       &.pushed {
-        /*
         background-color: #ffffff60;
         border: 1px #00000040 solid;
-        */
       }
     }
     &:hover {
       background-color: #ffffff30
     }
   }
+  */
   .puzzle {
     cursor: pointer;
     width: 3rem;
@@ -143,37 +145,58 @@
     width: var(--gs, 1rem);
   }
 }
+.hero2 {
+  color: white;
+  .hero-intro {
+    opacity: 0.75;
+    background-color: steelblue;
+    &.vert {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      line-height: 10.672px;
+      width: 1.667rem;
+      padding-bottom: 0.5rem;
+    }
+  }
+  &.hide-name {
+    .vert {
+      color: transparent;
+    }
+    &.pushed::after {
+      background: #b47846;
+    }
+  }
+}
 .hero {
   color: #c8b273;
   display: flex;
   isolation: isolate;
   filter: grayscale(0.1667);
-  div.hide-name {
-    &:first-child {
+  .hide-name {
+    .vert {
       color: transparent;
     }
   }
-}
-.hero-intro {
-  position: relative;
-  padding: 0px 0.333rem;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    mix-blend-mode: multiply;
-    background-color: steelblue;
-  }
-  &.vert {
-    writing-mode: vertical-lr;
-    text-orientation: upright;
-    line-height: 10.672px;
-    width: 1.667rem;
-    padding-bottom: 0.5rem;
-    white-space: nowrap;
-  }
-  &.pushed::after {
-    background: #b47846;
+  .hero-intro {
+    position: relative;
+    padding: 0px 0.333rem;
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      mix-blend-mode: multiply;
+      background-color: steelblue;
+    }
+    &.vert {
+      writing-mode: vertical-lr;
+      text-orientation: upright;
+      line-height: 10.672px;
+      width: 1.667rem;
+      padding-bottom: 0.5rem;
+    }
+    &.pushed::after {
+      background: #b47846;
+    }
   }
 }
