@@ -1,10 +1,10 @@
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
-import config from "/js/config.js?v=1.0.2-alpha.1"
-import codec from "/js/structure.js?v=1.0.2-alpha.1"
-import { createPlayerSingleton } from "/js/playerSingleton.js?v=1.0.2-alpha.1"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.2-alpha.1"
-import { loadArtists } from "/js/artists.js?v=1.0.2-alpha.1"
+import config from "/js/config.js?v=1.0.2-alpha.2"
+import codec from "/js/structure.js?v=1.0.2-alpha.2"
+import { createPlayerSingleton } from "/js/playerSingleton.js?v=1.0.2-alpha.2"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.2-alpha.2"
+import { loadArtists } from "/js/artists.js?v=1.0.2-alpha.2"
 
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
