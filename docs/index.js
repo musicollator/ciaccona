@@ -15,7 +15,7 @@ const template = (datum) => `
      data-index="${datum.index}" 
      data-artist="${datum.artist.index}" 
      data-variation="${datum.variation}" 
-     data-fullnameNospaceLowercaseNodiacritics="${datum.artist.fullnameNospaceLowercaseNodiacritics}"
+     data-fullnamenospacelowercasenodiacritics="${datum.artist.fullnameNospaceLowercaseNodiacritics}"
      style="background-image: ${datum.artist.artistVariationBackground}; overflow:visible;">
     <div class="select-artist d-flex flex-column justify-content-start${datum.artist.hideName}" 
         style="height:100%; overflow: hidden; ${typeof datum.artist.index === 'undefined' ? 'display: none; ' : ''}" >
@@ -198,7 +198,7 @@ loadArtists().then(putainDeArtists => {
                 if (event.currentTarget === event.target) {
                     event.stopPropagation()
                     event.preventDefault()
-                    let whereDoIGo = `/ciaccona.html?a=${event.target.dataset.a}`
+                    let whereDoIGo = `/ciaccona.html?a=${event.target.dataset.fullnamenospacelowercasenodiacritics}`
                     if (typeof coerce.variation !== 'undefined' || typeof coerce.artist !== 'undefined') {
                         whereDoIGo += `&v=${event.target.dataset.variation}`
                     }
