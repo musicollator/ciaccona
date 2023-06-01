@@ -82,6 +82,13 @@ class JigsawShield {
     }
 }
 
-const jigsawGenerator = new JigsawShield()
+let jigsawGenerator = new JigsawShield()
+
+window.addEventListener("newItemWidth", (event) => {
+    console.log('...heard newItemWidth event, let us re-generate default jigsaw...')
+    jigsawGenerator = new JigsawShield()
+    window.dispatchEvent(new Event('newJigsawGenerator'));
+});
+
 
 export { jigsawGenerator, JigsawShield }
