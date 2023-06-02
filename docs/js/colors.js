@@ -151,7 +151,7 @@ function createColoredBadges(idContainer) {
 
     const temporaryContainer = generateElement("<template>");
 
-    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', coerce.fullnameNospaceLowercaseNodiacritics ? 3 : 2).templateForTheme);
+    temporaryContainer.appendChild(new MagnificentTitle('grid-brick', 2).templateForTheme);
 
     const twoZeroPad = (num) => String(num).padStart(2, '0')
     let i = 0;

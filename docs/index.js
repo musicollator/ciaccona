@@ -9,6 +9,20 @@ import MagnificentTitle from "/js/magnificent-title.js?v=1.0.2-alpha.1"
 
 const getBackgroundFromArtistVariation = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
+const artistBadge = `
+<div id="artist-badge" 
+    class="p-2 d-flex" 
+    style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
+    <span class="fullname align-self-center" 
+        style="color: #d0d0d0; font-size: 1.4rem;">
+        &nbsp;
+    </span>
+    &nbsp;
+    <img class="align-self-center" 
+        src="index.svg?v=1.0.2-alpha.2#close-circle-view" 
+        style="width:32px; height:32px;">
+</div>`
+
 const template = (datum) => `
 <div id="li-artist${datum.index}" 
      class="list-artist hero"  
@@ -17,7 +31,7 @@ const template = (datum) => `
      data-variation="${datum.variation}" 
      data-fullnamenospacelowercasenodiacritics="${datum.artist.fullnameNospaceLowercaseNodiacritics}"
      style="background-image: ${datum.artist.artistVariationBackground}; overflow:visible;">
-    <div class="select-artist d-flex flex-column justify-content-start ${datum.artist.hideName}" 
+    <div class="select-artist d-flex flex-column justify-content-start ${datum.artist.coerced ? 'hide-name' : ''}" 
         style="height:100%; overflow: hidden; ${typeof datum.artist.index === 'undefined' ? 'display: none; ' : ''}" >
         <div class="hero-intro flex-shrink-1 align-self-start" 
              title="Pin or unpin ${datum.artist.firstname} ${datum.artist.lastname}"
@@ -35,59 +49,66 @@ const template = (datum) => `
             <svg xmlns="http://www.w3.org/2000/svg" 
                 id="gb-puzzle${datum.variation}-svg" 
                 style="overflow: visible; transform: scale(${typeof datum.artist.index === 'undefined' ? '.5' : '1'});"
-                viewBox="${datum.jigsaw.viewBox}">
+                viewBox="${datum.jigsawItem.viewBox}">
                 <path 
                     style=""
                     stroke="#${datum.stroke}" 
                     stroke-width="3" 
                     fill="#${datum.fill}c0" 
-                    d="${datum.jigsaw.path}" style=""></path>
+                    d="${datum.jigsawItem.path}" style=""></path>
             </svg>
         </a>
     </div>
 </div>`
 
 const colors = colorArray;
-let numPuzzleWithNoPerformer
-let randomNoPerformerPuzzleItemIndexArray
 let arrayOfArtistsFiltered
-let jigsaw = new JigsawShield()
+let jigsawOnSteroids
 
-function generateData2(arrayOfArtistsFiltered) {
-    let data = []
+function generateData(arrayOfArtistsFiltered) {
+    const data = []
 
-    let indexArtistGlobal = 0
-    for (let i = 0; i < jigsaw.getJigsawItemsCount() - 1; i++) {
-        const indexPuzzle = i + 1;
-        const indexVariation = typeof coerce.variation === 'undefined' ? indexPuzzle % codec.variationsCount : coerce.variation
-        const indexColor = indexVariation % colors.length
+    let grabbableArtistIndex = 0
+    for (let i = 0; i < jigsawOnSteroids.jigsaw.getJigsawItemsCount() - 1; i++) {
+        const indexJigsawItem = i + 1;
+        const indexVariation = (typeof coerce.variation === 'undefined' ? i : coerce.variation) % codec.variationsCount
+        const indexColor = (typeof coerce.variation === 'undefined' ? i : coerce.variation) % colors.length
         let artist = {}
-        if (typeof randomNoPerformerPuzzleItemIndexArray.find(x => x == i) === 'undefined') {
-            const indexArtist = typeof coerce.artist === 'undefined' ? indexArtistGlobal : coerce.artist
-            // console.log('indexArtistGlobal', indexArtistGlobal, 'arrayOfArtistsFiltered.length', arrayOfArtistsFiltered.length)
+        if (typeof jigsawOnSteroids.itemsWithNoPerformer.find(x => x == i) === 'undefined') {
+            const ai = (typeof coerce.artist === 'undefined' ? grabbableArtistIndex : coerce.artist) % arrayOfArtistsFiltered.length
+            const a = arrayOfArtistsFiltered[ai]
             artist = {
-                index: indexArtist,
-                firstname: arrayOfArtistsFiltered[indexArtist].firstname,
-                lastname: arrayOfArtistsFiltered[indexArtist].lastname,
-                hideName: typeof coerce.artist !== 'undefined' ? ' hide-name' : '',
-                fullnameNospaceLowercaseNodiacritics: arrayOfArtistsFiltered[indexArtist].fullnameNospaceLowercaseNodiacritics,
-                artistVariationBackground: getBackgroundFromArtistVariation(arrayOfArtistsFiltered[indexArtist].fullnameNospaceLowercaseNodiacritics, indexVariation),
+                index: ai,
+                coerced: typeof coerce.artist !== 'undefined',
+                firstname: a.firstname,
+                lastname: a.lastname,
+                fullnameNospaceLowercaseNodiacritics: a.fullnameNospaceLowercaseNodiacritics,
+                artistVariationBackground: getBackgroundFromArtistVariation(a.fullnameNospaceLowercaseNodiacritics, indexVariation),
             }
-            indexArtistGlobal++
+            grabbableArtistIndex++
         }
 
         const datum = {
             index: i,
             artist: artist,
             variation: indexVariation,
-            jigsaw: jigsaw.getJigsawItem(indexPuzzle),
+            jigsawItem: jigsawOnSteroids.jigsaw.getJigsawItem(indexJigsawItem),
             fill: colors[indexColor].p_rgb,
             stroke: colors[indexColor].stripeColor,
         }
-        // console.log('datum', datum)
         data.push(datum)
     }
     return data;
+}
+
+function createJigsawOnSteroids(artistArrayLength) {
+    const j = new JigsawShield()
+    const jigsawItemsWithNoPerformerCount = Math.max(0, j.getJigsawItemsCount() - artistArrayLength)
+    const jigsawItemsWithNoPerformerRandomArray = new Array(jigsawItemsWithNoPerformerCount).fill(0).map(x => Math.round(Math.random() * (j.getJigsawItemsCount() - 1)))
+    return {
+        jigsaw: j, 
+        itemsWithNoPerformer: jigsawItemsWithNoPerformerRandomArray
+    }
 }
 
 loadArtists().then(putainDeArtists => {
@@ -96,39 +117,27 @@ loadArtists().then(putainDeArtists => {
 
     list.querySelectorAll('.list-artist').forEach(E => E.remove())
 
-    const artistBadge = `<div id="artist-badge" class="p-2 d-flex" style="white-space: nowrap; visibility: hidden; margin: 0 auto;">
-    <span class="fullname align-self-center" style="color: #d0d0d0; font-size: 1.4rem;">&nbsp;</span>
-    &nbsp;
-    <img class="align-self-center" src="index.svg?v=1.0.2-alpha.2#close-circle-view" style="width:32px; height:32px;">
-</div>
-`
-
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
     arrayOfArtistsFiltered = putainDeArtists.artists.filter(a => a.lastname !== '自分');
-    numPuzzleWithNoPerformer = Math.max(0, jigsaw.getJigsawItemsCount() - arrayOfArtistsFiltered.length)
-    randomNoPerformerPuzzleItemIndexArray = new Array(numPuzzleWithNoPerformer).fill(0).map(x => {
-        return Math.round(Math.random() * (jigsaw.getJigsawItemsCount() - 1))
-    })
-
     arrayOfArtistsFiltered = shuffleArray(arrayOfArtistsFiltered)
 
-    const data = generateData2(arrayOfArtistsFiltered)
-    let i = 1;
+    jigsawOnSteroids = createJigsawOnSteroids(arrayOfArtistsFiltered.length)
+
+    const data = generateData(arrayOfArtistsFiltered)
     data.forEach(datum => {
         const separator = generateElement(`<div class="list-item" style="padding: 1rem;">${template(datum)}</div>`)
         list.appendChild(separator)
-        i++
     })
 
     const listArtistElements = document.querySelectorAll('.list-artist')
     const imgLoad = new ImagesLoaded(listArtistElements, { background: true }, function () {
     });
     imgLoad.on('progress', function (instance, image) {
-        // console.log('image loaded', image)
         image.element.style.visibility = 'inherit'
     });
 
+    // let's go
     {
         // console.log("about to create packery ...")
         const thePackery = new packeryLayout('#list', {
@@ -140,12 +149,12 @@ loadArtists().then(putainDeArtists => {
         })
 
         thePackery.on('layoutComplete', function () {
-            // console.log("Packery layout complete");
+            console.log("Packery layout complete");
         })
 
         thePackery.layout()
 
-        setListener()
+        setListeners()
 
         const artistBadge = document.getElementById('artist-badge')
         if (artistBadge) {
@@ -153,7 +162,7 @@ loadArtists().then(putainDeArtists => {
                 event.stopPropagation()
                 event.preventDefault()
                 coerce.artist = undefined
-                forceRedraw(generateData2(arrayOfArtistsFiltered))
+                forceRedraw(generateData(arrayOfArtistsFiltered))
             })
         }
 
@@ -182,46 +191,41 @@ loadArtists().then(putainDeArtists => {
 
         function forceRedraw(data) {
             let doLayout = false
-            document.querySelectorAll('.list-item:not(#magnificent-title-ciaccona):not(#separator-badge)').forEach(E => {
+            document.querySelectorAll('.list-item:not(#magnificent-title-ciaccona)').forEach(E => {
                 try {
                     const i = parseInt(E.children[0].dataset.index)
                     if (data.length <= i) {
                         E.remove()
-                        thePackery.remove(E);                
-                        doLayout = true               
+                        thePackery.remove(E)
+                        doLayout = true
                     } else {
                         const qwe = template(data[i])
                         const newChild = generateElement(qwe)
                         E.replaceChild(newChild, E.children[0])
                         data[i].done = true
                     }
-
                 } catch (error) {
                     console.error(error)
                 }
             })
             data.filter(datum => typeof datum.done === 'undefined').forEach(datum => {
-                const separator = generateElement(`<div class="list-item" style="padding: 1rem;">${template(datum)}</div>`)
-                list.appendChild(separator)
-                thePackery.appended( separator );
-                doLayout = true            
+                const listItem = generateElement(`<div class="list-item" style="padding: 1rem;">${template(datum)}</div>`)
+                list.appendChild(listItem)
+                thePackery.appended(listItem)
+                doLayout = true
             })
-            if (doLayout) thePackery.layout(); 
+            if (doLayout) thePackery.layout()
             displayArtist()
-            setListener()
+            setListeners()
         }
 
         window.addEventListener("newJigsawGenerator", (event) => {
-            // console.log('...heard newJigsawGenerator event, let us re-generate default jigsaw...')
-            jigsaw = new JigsawShield()
-            numPuzzleWithNoPerformer = Math.max(0, jigsaw.getJigsawItemsCount() - arrayOfArtistsFiltered.length)
-            randomNoPerformerPuzzleItemIndexArray = new Array(numPuzzleWithNoPerformer).fill(0).map(x => {
-                return Math.round(Math.random() * (jigsaw.getJigsawItemsCount() - 1))
-            })
-            forceRedraw(generateData2(arrayOfArtistsFiltered))
+            // console.log('...heard newJigsawGenerator event, let us re-generate default jigsawOnSteroids ...')
+            jigsawOnSteroids = createJigsawOnSteroids(arrayOfArtistsFiltered.length)
+            forceRedraw(generateData(arrayOfArtistsFiltered))
         });
 
-        function setListener() {
+        function setListeners() {
             // https://codepen.io/desandro/pen/WxjJJW/
             document.querySelectorAll('.list-artist').forEach(E => E.addEventListener('click', (event) => {
                 // console.log('currentTarget', event.currentTarget, 'target', event.target)
@@ -244,7 +248,7 @@ loadArtists().then(putainDeArtists => {
                     coerce.variation = event.currentTarget.parentNode.dataset.variation
                     coerce.artist = undefined
                 }
-                forceRedraw(generateData2(arrayOfArtistsFiltered))
+                forceRedraw(generateData(arrayOfArtistsFiltered))
             }))
             document.querySelectorAll('.list-artist .select-artist').forEach(E => E.addEventListener('click', (event) => {
                 event.stopPropagation()
@@ -255,7 +259,7 @@ loadArtists().then(putainDeArtists => {
                     coerce.artist = event.currentTarget.parentNode.dataset.artist
                     coerce.variation = undefined
                 }
-                forceRedraw(generateData2(arrayOfArtistsFiltered))
+                forceRedraw(generateData(arrayOfArtistsFiltered))
             }))
         }
     }
