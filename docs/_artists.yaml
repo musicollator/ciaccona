@@ -726,7 +726,6 @@
 - firstname: Avi
   lastname: Avital
   instrument: 4Plucked_Strings
-  workInProgress: false
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0BxYY1MWqd7p3YGKHjtNjWZRaD8SWpk5MExvhcU4FHNziK5Z6TuE4A4Am6A5Jw3R8l
     sort: 40
@@ -739,10 +738,28 @@
     length: 14′06″
 - firstname: Arkady 
   lastname: Leytush
-  workInProgress: false
   instrument: 3Ensemble
+  completeName: Arkady Leytush conducts Belgorod Philharmonic Symphony Orchestra
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid02EVKimTYBH3K88eSfBsaF2zeXBXy9Qc26za7kfj67zsWnECdvqrkU1gicTrb624hkl
+    sort: 41
   flag: 🇷🇺
   ▶:
     id: NmkNZW3PvB8
     views: 23374
     published: Dec 12, 2015
+    collected: May 30, 2023
+    length: 14′06″
+- firstname: Christopher
+  lastname: Ahn
+  completeName: Christopher Ahn & Hillary Smith
+  workInProgress: false
+  instrument: 3Ensemble
+  qwe: christopherahn
+  flag: 🇺🇸
+  ▶:
+    id: 2Y1vJYUokbc
+    views: 183433
+    published: Jan 24, 2017
+    collected: Jun 2, 2023
+    length: 13′22″

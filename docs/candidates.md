@@ -100,7 +100,7 @@ double check it, then rename it (no starting underscore) and move it to e.g. `/v
 
 ## 5. create stationnary
 
-open `/pupeeter/index.js`
+open `/puppeteer/index.js`
 
 tweak it to produce the kind of image desired (with or without full score, with player control or not, etc.)
 
