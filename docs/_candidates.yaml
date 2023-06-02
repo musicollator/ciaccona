@@ -161,6 +161,8 @@
 
 - firstname: Itzhak
   lastname: Perlman
+  instrument: 1Violin
+  blockedBy: https://www.nikita-ventures.com
   ▶:
     id: qtyTaE7LvVs
     views: 1540014
@@ -266,6 +268,7 @@
 
 - firstname: Nemanja
   lastname: Radulovic
+  flag: 🇷🇸
   ▶:
     id: MS1ATruO7f4
     views: 341299
@@ -291,13 +294,6 @@
     id: n1AHJCVDU4Y
     views: 47471
     published: Jul 7, 2016
-
-- firstname: Arkady
-  lastname: Leytush
-  ▶:
-    id: NmkNZW3PvB8
-    views: 23374
-    published: Dec 12, 2015
 
 - firstname: Sanel
   lastname: Redzic

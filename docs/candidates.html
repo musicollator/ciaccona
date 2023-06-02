@@ -178,7 +178,7 @@
 <script id="candidate-template" type="text/x-handlebars-template">{{#each this}}        
 <tr>
 <!-- th class="rownum">{{@index }}</!-->
-<th class="name" data-lastname="{{reverseFullname}}">{{reverseFullname}}</th>
+<th class="name" data-lastname="{{reverseFullname}}" style="{{blockedStyle}}" title="{{blockedBy}}">{{reverseFullname}}</th>
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
@@ -211,6 +211,14 @@
             vid.youtubeUrl = `https://youtu.be/${vid.id}`
             vid.publishedMoment = moment(vid.published)
             this.v = vid
+
+            if (typeof this.blockedBy !== 'undefined') {
+                this.blockedBy = `blocked by ${this.blockedBy}`
+                this.blockedStyle = "text-decoration: line-through;"
+            } else {
+                this.blockedBy = ""
+                this.blockedStyle = ""
+            }
 
             if (true) { // calc viewsPerMonth ?
                 let collected = theDayWhenIReadTheVideoMeters
