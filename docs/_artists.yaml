@@ -164,6 +164,9 @@
     published: Aug 7, 2018
     collected: Apr 25, 2023
     length: 16′23″
+    pitch: 295.3
+    a4: 442.5
+
 - firstname: Florentin
   lastname: Ginot
   instrument: 2Double_Bass
@@ -635,7 +638,7 @@
     collected: May 15, 2023
     length: 14′47″
     pitch: 147.5
-    a4: 441
+    a4: 442
   🕸: "https://vonhansenmusic.com/"
 - firstname: Yun
   lastname: Park
@@ -669,6 +672,9 @@
     published: Dec 14, 2011
     collected: May 27, 2023
     length: 12′10″
+    pitch: 273.9
+    a4: 410.5
+    
 - firstname: Jean 
   lastname: Rondeau
   instrument: 5Keyboard
@@ -682,6 +688,9 @@
     published: Nov 6, 2014
     collected: May 28, 2023
     length: 11′32″
+    pitch: 68.9
+    a4: 413
+
 - firstname: ""
   lastname: 自分
   instrument: 4Plucked_Strings
@@ -710,6 +719,8 @@
     published: Oct 4, 2018
     collected: May 29, 2023
     length: 13′09″
+    pitch: 278.7
+    a4: 417.5
 - firstname: Fernando
   lastname: Cordella
   instrument: 5Keyboard
@@ -723,6 +734,8 @@
     published: Sep 18, 2020
     collected: May 29, 2023
     length: 12′29″
+    pitch: 69.5
+    a4: 416.5
 - firstname: Avi
   lastname: Avital
   instrument: 4Plucked_Strings
@@ -736,6 +749,8 @@
     published: Jul 2, 2020
     collected: May 30, 2023
     length: 14′06″
+    pitch: 293.9
+    a4: 440
 - firstname: Arkady 
   lastname: Leytush
   instrument: 3Ensemble
@@ -750,6 +765,9 @@
     published: Dec 12, 2015
     collected: May 30, 2023
     length: 14′06″
+    pitch: 295.4
+    a4: 442.5
+
 - firstname: Christopher
   lastname: Ahn
   completeName: Christopher Ahn & Hillary Smith
@@ -767,3 +785,5 @@
     published: Jan 24, 2017
     collected: Jun 2, 2023
     length: 13′22″
+    pitch: 147.2
+    a4: 440
