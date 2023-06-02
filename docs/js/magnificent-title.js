@@ -47,7 +47,7 @@ class MagnificentTitle {
         }
         this.templateForTheme.querySelectorAll('a').forEach(a => {
             a.addEventListener('click', a2 => {
-                document.getElementsByTagName('body')[0].style.opacity = ".5"
+                document.getElementsByTagName('body')[0].style.opacity = ".25"
             }, { once: true })
         })
     }

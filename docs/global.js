@@ -165,3 +165,8 @@ const readyToIsotope = new Promise((resolve) => {
     }, { once: true })
 })
 
+document.onvisibilitychange = function () {
+    if (document.visibilityState === 'hidden') {
+        document.getElementsByTagName('body')[0].style.opacity = "1"
+    }
+};
