@@ -969,7 +969,8 @@
 - firstname: Hélène
   lastname: Grimaud
   fullnameNospaceLowercaseNodiacritics: helenegrimaud
-  instrument: 5Keyboard
+  instrument: Piano
+  instrumentCategory: 5Keyboard
   blockedBy: https://www.nikita-ventures.com
   ▶:
     id: dOHiI_5yycU

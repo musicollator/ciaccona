@@ -155,7 +155,6 @@
                             <img src="svg/person-male-svgrepo-com.svg" style="width: 22px; height:22px;">
                             <span></span>
                         </th>
-                        <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
                         <th scope="col" class="views      text-start  sortable">Views <span></span></th>
                         <th scope="col" class="monthly    text-start  sortable" style="min-width: 6rem;">
                             Monthly
@@ -166,6 +165,7 @@
                             <img src="svg/YouTube_social_white_square_(2017)_white_middle.svg" style="width: 22px; height:22px;">
                             <span></span>
                         </th>
+                        <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
                     </tr>
                 </thead>
                 <tbody id="theBody">
@@ -180,7 +180,6 @@
 <tr>
 <!-- th class="rownum">{{@index }}</!-->
 <th class="name" data-lastname="{{reverseFullname}}" style="{{blockedStyle}}" title="{{blockedBy}}">{{reverseFullname}}</th>
-<td class="instrument text-end">{{instrument}}</td>
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
@@ -190,6 +189,7 @@
     target={{fullnameNospaceLowercaseNodiacritics}}>
         {{#if v.trueId}}{{v.trueId}}{{else}}{{v.id}}{{/if}}
     </a></td>
+<td class="instrument text-end">{{instrument}}</td>
 </tr>{{/each}}</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
