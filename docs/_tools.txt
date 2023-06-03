@@ -37,7 +37,7 @@ for file in _*; do mv $file $(echo $file | sed -e 's/^.//'); done
 look for version number
 ([\?"']v=*2\.2\.)[\d\.]+(["'#])
 replace with 
-$12$3
+$14$2
 
 next bump may be:
 ([\?"']v*=*1\.0\.2-alpha\.*)\d*(["'#])
