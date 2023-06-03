@@ -747,15 +747,6 @@
     views: 2455
     published: Jan 3, 2021
 
-- firstname: Hélène
-  lastname: Grimaud
-  instrument: Piano
-  intrumentCategory: 5Keyboard
-  ▶:
-    id: dOHiI_5yycU
-    views: 1448673
-    published: Sep 16, 2020
-
 - firstname: Avi
   lastname: Avital
   instrument: Mandolin
@@ -974,3 +965,14 @@
     views: 21367
     published: Sep 13, 2018
     collected: Jun 3, 2023
+
+- firstname: Hélène
+  lastname: Grimaud
+  fullnameNospaceLowercaseNodiacritics: helenegrimaud
+  instrument: 5Keyboard
+  blockedBy: https://www.nikita-ventures.com
+  ▶:
+    id: dOHiI_5yycU
+    views: 1448673
+    published: Sep 16, 2020
+
