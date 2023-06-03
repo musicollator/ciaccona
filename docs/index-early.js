@@ -11,7 +11,7 @@ function calcItemWidth() {
     const containerWidth = listE.getBoundingClientRect().width
     const gutter_sizer = 0.0125;
     const gutter_size = containerWidth * gutter_sizer
-    const listItemsPerRow = 1 + Math.floor(containerWidth / 400)
+    const listItemsPerRow = 1 + Math.floor(containerWidth / 360)
     const listItemsWidth = (containerWidth - (listItemsPerRow - 1) * gutter_size) / listItemsPerRow
     const listItemsDoubleWidth = 2 * listItemsWidth + gutter_size - .2
     const listItemPercentageWidth = 100 * listItemsWidth / containerWidth
