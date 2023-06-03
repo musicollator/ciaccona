@@ -61,6 +61,8 @@ const template = (datum) => `
     </div>
 </div>`
 
+const listItemWrapper = (template, datum) => `<div class="list-item ${typeof datum.artist.index === 'undefined' ? 'on-top' : ''}" style="padding: 1rem;">${template(datum)}</div>`
+
 const colors = colorArray;
 let arrayOfArtistsFiltered
 let jigsawOnSteroids
@@ -126,7 +128,7 @@ loadArtists().then(putainDeArtists => {
 
     const data = generateData(arrayOfArtistsFiltered)
     data.forEach(datum => {
-        const separator = generateElement(`<div class="list-item" style="padding: 1rem;">${template(datum)}</div>`)
+        const separator = generateElement(listItemWrapper(template, datum))
         list.appendChild(separator)
     })
 
@@ -209,7 +211,7 @@ loadArtists().then(putainDeArtists => {
                 }
             })
             data.filter(datum => typeof datum.done === 'undefined').forEach(datum => {
-                const listItem = generateElement(`<div class="list-item" style="padding: 1rem;">${template(datum)}</div>`)
+                const listItem = generateElement(listItemWrapper(template, datum))
                 list.appendChild(listItem)
                 thePackery.appended(listItem)
                 doLayout = true
