@@ -185,29 +185,7 @@
     pitch: 98.4
     a4: 440
   🕸: "https://florentinginot.com/"
-- firstname: Genzoh
-  lastname: Takehisa
-  instrument: 5Keyboard
-  insta: genzoh_takehisa
-  twitter: genzohtakehisa
-  facebook: GenzohTakehisa9
-  youtube: channel/UCx4eT-uNiSIAiLYV6MS4XqQ
-  facebookPost:
-    url: https://www.facebook.com/ciacconabwv004/posts/pfbid02DqwvJoQ7ZeDWNd41G1RerXsLNxsCpVh79oFT25xY9yAC99zBvUBv9oXAwWMewnYyl
-    sort: 2
-  flag: 🇯🇵
-  ▶:
-    id: JETARLGbUJo
-    trueId: ze_QPWuyZLo
-    views: 16275
-    published: Oct 9, 2011
-    collected: May 15, 2023
-    performed: August 1, 2010
-    length: 12′22″
-    tonality: G
-    pitch: 93.3
-    a4: 419
-  🕸: "http://www.genzoh.jp"
+
 - firstname: Hilary
   lastname: Hahn
   instrument: 1Violin
@@ -802,3 +780,26 @@
     collected: Jun 3, 2023
     length: 16′25″
 
+- firstname: Genzoh
+  lastname: Takehisa
+  instrument: 5Keyboard
+  insta: genzoh_takehisa
+  twitter: genzohtakehisa
+  facebook: GenzohTakehisa9
+  youtube: channel/UCx4eT-uNiSIAiLYV6MS4XqQ
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid02DqwvJoQ7ZeDWNd41G1RerXsLNxsCpVh79oFT25xY9yAC99zBvUBv9oXAwWMewnYyl
+    sort: 2
+  flag: 🇯🇵
+  ▶:
+    id: JETARLGbUJo
+    trueId: ze_QPWuyZLo
+    views: 16275
+    published: Oct 9, 2011
+    collected: May 15, 2023
+    performed: August 1, 2010
+    length: 12′22″
+    tonality: G
+    pitch: 93.3
+    a4: 419
+  🕸: "http://www.genzoh.jp"

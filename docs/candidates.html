@@ -155,8 +155,9 @@
                             <img src="svg/person-male-svgrepo-com.svg" style="width: 22px; height:22px;">
                             <span></span>
                         </th>
-                        <th scope="col" class="views     text-start  sortable">Views <span></span></th>
-                        <th scope="col" class="monthly   text-start  sortable" style="min-width: 6rem;">
+                        <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
+                        <th scope="col" class="views      text-start  sortable">Views <span></span></th>
+                        <th scope="col" class="monthly    text-start  sortable" style="min-width: 6rem;">
                             Monthly
                             <span style="float: right;"></span>
                         </th>
@@ -179,6 +180,7 @@
 <tr>
 <!-- th class="rownum">{{@index }}</!-->
 <th class="name" data-lastname="{{reverseFullname}}" style="{{blockedStyle}}" title="{{blockedBy}}">{{reverseFullname}}</th>
+<td class="instrument text-end">{{instrument}}</td>
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
