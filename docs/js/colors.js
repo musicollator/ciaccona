@@ -275,7 +275,7 @@ body.video-player .${clazz} .divider {
              style="height:100%; text-align: right; ${i === codec.variationsCount - 1 ? "visibility:hidden;" : ""}font-size:1.1rem; padding: 0 .3rem; border-right: .5px solid white;">
             <div class="pt-1">${barFrom + 1}</div>
             <div style="font-style: italic; font-size:.8rem;">
-                ${i === codec.variationsCount - 1 ? warning : "&nbsp;"}
+                ${i !== codec.variationsCount - 1 ? warning : "&nbsp;"}
             </div>
             <div class="pb-1">${barTo}</div>
         </div>

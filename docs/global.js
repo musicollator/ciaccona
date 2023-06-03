@@ -4,6 +4,7 @@ class Coerce {
     #validFullnamesNospaceLowercaseNodiacritics = [
         '自分',
 
+        'adelaideferriere',
         'adolfbusch',
         'amandinebeyer',
         'andreadevitis',

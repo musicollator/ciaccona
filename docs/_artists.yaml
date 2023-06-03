@@ -771,7 +771,6 @@
 - firstname: Christopher
   lastname: Ahn
   completeName: Christopher Ahn & Hillary Smith
-  workInProgress: false
   instrument: 3Ensemble
   facebook: https://www.facebook.com/cahn22
   facebook2: https://www.facebook.com/profile.php?id=2537862
@@ -787,3 +786,15 @@
     length: 13′22″
     pitch: 147.2
     a4: 440
+
+- firstname: Adélaïde
+  lastname: Ferrière
+  instrument: 9Marimba
+  flag: 🇫🇷
+  workInProgress: false
+  ▶:
+    id: tTGmfs8IN7s
+    views: 4144
+    published: Aug 5, 2022
+    collected: Jun 3, 2023
+
