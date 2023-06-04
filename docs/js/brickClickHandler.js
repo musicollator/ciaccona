@@ -1,4 +1,4 @@
-import config from "/js/config.js?v=1.0.2-alpha.4"
+import config from "/js/config.js?v=1.0.3-beta"
 
 export default function brickClickHandler(event) {
     const selectingVariation = event.target.closest('.select-variation')
