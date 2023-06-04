@@ -179,7 +179,7 @@ loadArtists().then(putainDeArtists => {
             if (artistBadge) {
                 if (typeof coerce.artist !== 'undefined') {
                     artistBadge.style.visibility = 'inherit'
-                    artistBadge.querySelector('.fullname').innerHTML = putainDeArtists.artists[coerce.artist].fullname
+                    artistBadge.querySelector('.fullname').innerHTML = arrayOfArtistsFiltered[coerce.artist].fullname
                     document.querySelectorAll('.list-artist .hero-intro:not(.vert)').forEach(E => E.style.display = 'none')
                 } else {
                     artistBadge.style.visibility = 'hidden'
