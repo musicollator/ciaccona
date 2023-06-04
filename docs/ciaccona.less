@@ -391,9 +391,15 @@ span.d {
   background-color: #4e493e;
   color: #c8b273;
   .divider {
+    border: none !important;
+    color: #c8b273 !important;
+    padding: .333rem .667rem !important;
     background-color: rgb(44, 50, 54);
     .icon-base {
       background-color: transparent;
+    }
+    &::after {
+      margin-left: .5rem !important;
     }
   }
 }
