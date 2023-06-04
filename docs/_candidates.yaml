@@ -144,7 +144,7 @@
 
 - firstname: Trio
   lastname: Eroica
-  instrument: Piano Violin Cello 
+  instrument: Piano Violin Cello
   instrumentCategory: 3Ensemble
   ▶:
     id: KtgrvUqb650
@@ -153,7 +153,7 @@
 
 - firstname: Trio
   lastname: Eroica
-  instrument: Piano Violin Cello 
+  instrument: Piano Violin Cello
   instrumentCategory: 3Ensemble
   ▶:
     id: 5yqpUcg6q14
@@ -1018,4 +1018,39 @@
     views: 2605
     published: Dec 4, 2022
     collected: Jun 4, 2023
+
+- firstname:  Saria
+  lastname: Convertino
+  fullnameNospaceLowercaseNodiacritics: sariaconvertino
+  instrument: Accordion
+  instrumentCategory: Boh
+  ▶:
+    id: dwZWKeODH90
+    views: 15617
+    published: Jul 15, 2015
+    collected: Jun 4, 2023
+
+- firstname:  Théo
+  lastname: Ould
+  fullnameNospaceLowercaseNodiacritics: theoould
+  instrument: Accordion
+  instrumentCategory: Boh
+  ▶:
+    id: UBf2ZedjC_s
+    views: 4665
+    published: Apr 23, 2021
+    collected: Jun 4, 2023
+
+- firstname:  Nicholas
+  lastname: DiEugenio
+  fullnameNospaceLowercaseNodiacritics: nicholasdieugenio
+  instrument: Violin
+  instrumentCategory: 1Violin
+  ▶:
+    id: JnQyAq00dek
+    views: 437
+    published: Oct 9, 2020
+    collected: Jun 4, 2023
+
+
 
