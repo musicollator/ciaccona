@@ -806,8 +806,8 @@
 
 - firstname:  Théo
   lastname: Ould
+  flag: 🇫🇷
   fullnameNospaceLowercaseNodiacritics: theoould
-  qwe: ThéoOuld-UBf2ZedjC_s.js
   instrument: 10Accordion
   workInProgress: false
   ▶:
@@ -815,4 +815,4 @@
     views: 4665
     published: Apr 23, 2021
     collected: Jun 4, 2023
-
+    length: 12′49″

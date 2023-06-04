@@ -21,7 +21,7 @@ const puppeteer = require('puppeteer');
         'rachelpodger',
     ]
     const performers = [
-        'adelaideferriere',
+        // 'adelaideferriere',
         // 'adolfbusch',
         // 'amandinebeyer',
         // 'andreadevitis',
@@ -60,6 +60,7 @@ const puppeteer = require('puppeteer');
         //'raphaellasmits',
         // 'shunsukesato',
         //'sigiswaldkuijken',
+        'theoould',
         //'veronikaeberle',
         //'veroniquederaedemaeker',
         //'virginierobilliard',
