@@ -865,7 +865,7 @@
     views: 243897
     published: Jun 4, 2012
 
-- firstname: Brian 
+- firstname: Brian
   lastname: Thornton
   instrument: Cellos
   instrumentCategory: 3Ensemble
@@ -885,7 +885,7 @@
     views: 61
     published: May 8, 2023
     collected: Jun 3, 2023
-    length: 11′39″ 
+    length: 11′39″
     tonality: G
 
 - firstname: Evgeny
@@ -917,7 +917,7 @@
   instrumentCategory: 8Flute
   ▶:
     id: UbFWcm3TYMw
-    views: 4975 
+    views: 4975
     published: May 14, 2020
     collected: Jun 3, 2023
 
@@ -928,8 +928,8 @@
   instrumentCategory: 4Plucked_Strings
   ▶:
     id: IDJiKL6sHAY
-    views: 76447 
-    published: Feb 7, 2019 
+    views: 76447
+    published: Feb 7, 2019
     collected: Jun 3, 2023
 
 - firstname: John
@@ -939,11 +939,11 @@
   instrumentCategory: 4Plucked_Strings
   ▶:
     id: e4pVx9zOQV8
-    views: 4812  
-    published: May 3, 2015 
+    views: 4812
+    published: May 3, 2015
     collected: Jun 3, 2023
 
-- firstname:  Seiji 
+- firstname:  Seiji
   lastname: Ozawa
   fullnameNospaceLowercaseNodiacritics: seijiozawa
   completeName: Transcription Hideo Saito · Boston Symphony Orchestra · Seiji Ozawa
@@ -951,11 +951,11 @@
   instrumentCategory: 3Ensemble
   ▶:
     id: Qm07s4EIBi4
-    views: 2208   
-    published: Jul 23, 2018  
+    views: 2208
+    published: Jul 23, 2018
     collected: Jun 3, 2023
 
-- firstname:  Nobuya 
+- firstname:  Nobuya
   lastname: Sugawa
   fullnameNospaceLowercaseNodiacritics: nobuyasugawa
   instrument: Saxophone
@@ -977,7 +977,7 @@
     views: 1448673
     published: Sep 16, 2020
 
-- firstname:  Mari 
+- firstname:  Mari
   lastname: Samuelsen
   fullnameNospaceLowercaseNodiacritics: marisamuelsen
   instrument: Violin
@@ -988,13 +988,25 @@
     published: Jun 6, 2019
     collected: Jun 4, 2023
 
-- firstname:  Leonid   
+- firstname:  Leonid
   lastname: Zheleznyj
   fullnameNospaceLowercaseNodiacritics: leonidzheleznyj
   instrument: Violin
   instrumentCategory: 1Violin
   ▶:
     id: qXNb_7dGNWA
-    views: 12905 
+    views: 12905
     published: Oct 18, 2020
     collected: Jun 4, 2023
+
+- firstname:  Alexis
+  lastname: Cárdenas
+  fullnameNospaceLowercaseNodiacritics: alexiscardenas
+  instrument: Violin
+  instrumentCategory: 3Ensemble
+  ▶:
+    id: V44xoTfzVf4
+    views: 2605
+    published: Dec 4, 2022
+    collected: Jun 4, 2023
+
