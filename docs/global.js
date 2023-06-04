@@ -43,6 +43,7 @@ class Coerce {
         'raphaellasmits',
         'shunsukesato',
         'sigiswaldkuijken',
+        'theoould',
         'veronikaeberle',
         'veroniquederaedemaeker',
         'virginierobilliard',

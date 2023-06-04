@@ -8,15 +8,16 @@ import { loadArtists } from "/js/artists.js?v=1.0.3-beta"
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
 const iconMap = {
-    '1Violin': 'violin',
-    '2Double_Bass': 'violin',
-    '3Ensemble': 'violin',
-    '4Plucked_Strings': 'ukulele',
-    '5Keyboard': 'keyboard',
-    '6Harp': 'harp',
-    '7Cimbalom': 'cimbalom',
-    '8Flute': 'flute',
-    '9Marimba': 'xylophone',
+    '01Violin': 'violin',
+    '02Double_Bass': 'violin',
+    '03Ensemble': 'violin',
+    '04Plucked_Strings': 'ukulele',
+    '05Keyboard': 'keyboard',
+    '06Harp': 'harp',
+    '07Cimbalom': 'cimbalom',
+    '08Flute': 'flute',
+    '09Marimba': 'xylophone',
+    '10Accordion': 'accordion',
 }
 
 const templateDivider = (instrumentKey, instrumentDisplayName) => `
