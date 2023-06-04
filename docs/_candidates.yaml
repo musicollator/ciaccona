@@ -955,7 +955,7 @@
     published: Jul 23, 2018  
     collected: Jun 3, 2023
 
-- firstname:  Nobuya Sugawa 
+- firstname:  Nobuya 
   lastname: Sugawa
   fullnameNospaceLowercaseNodiacritics: nobuyasugawa
   instrument: Saxophone
@@ -977,3 +977,24 @@
     views: 1448673
     published: Sep 16, 2020
 
+- firstname:  Mari 
+  lastname: Samuelsen
+  fullnameNospaceLowercaseNodiacritics: marisamuelsen
+  instrument: Violin
+  instrumentCategory: 1Violin
+  ▶:
+    id: BFCmT1BJYxo
+    views: 13208
+    published: Jun 6, 2019
+    collected: Jun 4, 2023
+
+- firstname:  Leonid   
+  lastname: Zheleznyj
+  fullnameNospaceLowercaseNodiacritics: leonidzheleznyj
+  instrument: Violin
+  instrumentCategory: 1Violin
+  ▶:
+    id: qXNb_7dGNWA
+    views: 12905 
+    published: Oct 18, 2020
+    collected: Jun 4, 2023
