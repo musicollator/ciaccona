@@ -144,12 +144,21 @@
 
 - firstname: Trio
   lastname: Eroica
-  instrument: Piano Trio
+  instrument: Piano Violin Cello 
   instrumentCategory: 3Ensemble
   ▶:
     id: KtgrvUqb650
     views: 11705
     published: Aug 4, 2011
+
+- firstname: Trio
+  lastname: Eroica
+  instrument: Piano Violin Cello 
+  instrumentCategory: 3Ensemble
+  ▶:
+    id: 5yqpUcg6q14
+    views: 5169
+    published: Jul 1, 2016
 
 - firstname: Fernando
   lastname: Cordella
