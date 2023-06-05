@@ -40,9 +40,9 @@ replace with
 $14$2
 
 next bump may be:
-([\?"']v*=*1\.0\.3-beta\.*)\d*(["'#])
+([\?"']v*=*1\.0\.4-beta\.*)\d*(["'#])
 replace with 
-$12$2
+$1.1$2
 
 
 rename all _xxx\d.js files to _xxx4.js
