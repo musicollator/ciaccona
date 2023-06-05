@@ -16,7 +16,7 @@
     still: true
 - firstname: Amandine
   lastname: Beyer
-  instrument: 01Violin
+  instrument: 00Baroque_Violin
   insta: amandinebeyer
   twitter: AmandineBeyerGI
   facebook:
@@ -471,7 +471,7 @@
   🕸: "https://osetinskaya.com/"
 - firstname: Rachel
   lastname: Podger
-  instrument: 01Violin
+  instrument: 00Baroque_Violin
   insta: rachelpodgerofficial
   twitter: RachPodger
   linkedin: rachel-podger-22807a4
@@ -492,7 +492,7 @@
   🕸: "https://www.rachelpodger.com/"
 - firstname: Rachell Ellen
   lastname: Wong
-  instrument: 01Violin
+  instrument: 00Baroque_Violin
   twitter: rachellviolin
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid02B1prGiNnMsPZxtFX7hQPVPvG41dDDSnMxJN29fiHRyLETisFVpye68PQzRK8ooCil
@@ -527,7 +527,7 @@
   🕸: https://www.rsmits.com/
 - firstname: Sigiswald
   lastname: Kuijken
-  instrument: 01Violin
+  instrument: 00Baroque_Violin
   linkedin: sigiswald-kuijken-32aab149
   wikipedia: https://en.wikipedia.org/wiki/Sigiswald_Kuijken
   facebookPost: 
@@ -686,7 +686,7 @@
     a4: 440
 - firstname: Shunsuke
   lastname: Sato
-  instrument: 01Violin
+  instrument: 00Baroque_Violin
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid02waBBa4GALXdckXqw9upu1E3V3Twkh4izeoUZR9A4uo8vEFrXRwKiRZVkirhtKfhgl
     sort: 38
@@ -809,7 +809,6 @@
   flag: 🇫🇷
   fullnameNospaceLowercaseNodiacritics: theoould
   instrument: 10Accordion
-  workInProgress: false
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0s6v5k2YAXxXhTfmT3yorDmUrJeStAByG9mgRe2s5ENUHtN2hUsyJ5gyfUJJXP6Bhl
     sort: 44
@@ -819,3 +818,15 @@
     published: Apr 23, 2021
     collected: Jun 4, 2023
     length: 12′49″
+
+- firstname:  Augusta
+  lastname: McKay
+  fullnameNospaceLowercaseNodiacritics: augustamckay
+  instrument: 00Baroque_Violin
+  qwe: AugustaMcKay-GGR0QJBeDNg.js
+  workInProgress: true
+  ▶:
+    id: GGR0QJBeDNg
+    views: 31998
+    published: Jul 2, 2020
+    collected: Jun 5, 2023

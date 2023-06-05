@@ -9,7 +9,7 @@
 
 - firstname: Amandine
   lastname: Beyer
-  instrument: Violin
+  instrument: Baroque Violin
   instrumentCategory: 1Violin
   ▶:
     id: GXI2w1R8LbA
@@ -189,7 +189,7 @@
 
 - firstname: Greta
   lastname: Medini
-  instrument: Violin
+  instrument: Viola
   instrumentCategory: 1Violin
   ▶:
     id: 9dDALcfTkxw
@@ -1041,5 +1041,26 @@
     published: Oct 9, 2020
     collected: Jun 4, 2023
 
+- firstname:  Vaclav 
+  lastname: Navrat
+  fullnameNospaceLowercaseNodiacritics: vaclavnavrat
+  instrument: Baroque Violin
+  instrumentCategory: 00Baroque_Violin
+  ▶:
+    id: 7ePBzdMEBCU
+    views: 1567
+    published: May 5, 2016
+    collected: Jun 5, 2023
 
-
+- firstname:  Hiro     
+  lastname: Kurosaki
+  fullnameNospaceLowercaseNodiacritics: hirokurosaki
+  workInProgress: true
+  instrument: Baroque Violin
+  instrumentCategory: 00Baroque_Violin
+  qwe: HiroKurosaki-hSpoxkKtfAw.js
+  ▶:
+    id: hSpoxkKtfAw
+    views: 330
+    published: Sep 4, 2020
+    collected: Jun 5, 2023

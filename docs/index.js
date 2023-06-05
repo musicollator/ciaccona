@@ -122,7 +122,7 @@ loadArtists().then(putainDeArtists => {
 
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
-    arrayOfArtistsFiltered = putainDeArtists.artists.filter(a => a.lastname !== '自分')
+    arrayOfArtistsFiltered = putainDeArtists.artists.filter(a => a.lastname !== '自分' && !a.workInProgress)
     arrayOfArtistsFiltered = coerce.shuffle ? shuffleArray(arrayOfArtistsFiltered) : arrayOfArtistsFiltered
 
     jigsawOnSteroids = createJigsawOnSteroids(arrayOfArtistsFiltered.length)

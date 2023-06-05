@@ -8,6 +8,7 @@ import { loadArtists } from "/js/artists.js?v=1.0.4-beta"
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
 const iconMap = {
+    '00Baroque_Violin': 'violin',
     '01Violin': 'violin',
     '02Double_Bass': 'violin',
     '03Ensemble': 'violin',
