@@ -820,13 +820,16 @@
     length: 12′49″
 
 - firstname:  Augusta
-  lastname: McKay
+  lastname: 
   fullnameNospaceLowercaseNodiacritics: augustamckay
   instrument: 00Baroque_Violin
-  qwe: AugustaMcKay-GGR0QJBeDNg.js
-  workInProgress: false
+  flag: 🇺🇸
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid029NVW3Yj9KzioNdGZQ5vKRZ2VqYqXHoA22qHmddkSTwvuj2xkAgzm1mJi3CjwfEyhl
+    sort: 44
   ▶:
     id: GGR0QJBeDNg
     views: 31998
     published: Jul 2, 2020
     collected: Jun 5, 2023
+    length: 13′15″
