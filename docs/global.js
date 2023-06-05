@@ -10,6 +10,7 @@ class Coerce {
         'andreadevitis',
         'anneleenlenaerts',
         'arkadyleytush',
+        'augustamckay',
         'aviavital',
         'bellahristova',
         'chiaramassini',
