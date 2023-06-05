@@ -1,11 +1,11 @@
 import packeryLayout from 'https://cdn.jsdelivr.net/npm/packery@2.1.2/+esm'
 import ImagesLoaded from "https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/+esm"
-import codec from "/js/structure.js?v=1.0.4-beta"
-import { loadArtists } from "/js/artists.js?v=1.0.4-beta"
-import { colorArray } from "/js/colors.js?v=1.0.4-beta"
-import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.4-beta"
-import { JigsawShield } from "/js/jigsawShield.js?v=1.0.4-beta"
-import MagnificentTitle from "/js/magnificent-title.js?v=1.0.4-beta"
+import codec from "/js/structure.js?v=1.0.4-beta.1"
+import { loadArtists } from "/js/artists.js?v=1.0.4-beta.1"
+import { colorArray } from "/js/colors.js?v=1.0.4-beta.1"
+import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.4-beta.1"
+import { JigsawShield } from "/js/jigsawShield.js?v=1.0.4-beta.1"
+import MagnificentTitle from "/js/magnificent-title.js?v=1.0.4-beta.1"
 
 const getBackgroundFromArtistVariation = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
@@ -19,7 +19,7 @@ const artistBadge = `
     </span>
     &nbsp;
     <img class="align-self-center" 
-        src="index.svg?v=1.0.4-beta#close-circle-view" 
+        src="index.svg?v=1.0.4-beta.1#close-circle-view" 
         style="width:32px; height:32px;">
 </div>`
 
