@@ -106,7 +106,7 @@ function generateData(arrayOfArtistsFiltered) {
 function createJigsawOnSteroids(artistArrayLength) {
     const j = new JigsawShield()
     const jigsawItemsWithNoPerformerCount = Math.max(0, (j.getJigsawItemsCount() - 1 /* this 1 is the title */) - artistArrayLength)
-    const jigsawItemsWithNoPerformerRandomArray = new Array(jigsawItemsWithNoPerformerCount).fill(0).map(x => Math.round(Math.random() * (j.getJigsawItemsCount() - 1)))
+    const jigsawItemsWithNoPerformerRandomArray = new Array(jigsawItemsWithNoPerformerCount).fill(0).map(x => Math.round(Math.random() * (j.getJigsawItemsCount() - 1 - 1 /* this 1 is the title */)))
     console.log("j.getJigsawItemsCount()", j.getJigsawItemsCount(), "artistArrayLength", artistArrayLength, jigsawItemsWithNoPerformerRandomArray)
     return {
         jigsaw: j, 
@@ -122,8 +122,8 @@ loadArtists().then(putainDeArtists => {
 
     list.appendChild(new MagnificentTitle('list-item', 1, artistBadge).templateForTheme)
 
-    arrayOfArtistsFiltered = putainDeArtists.artists.filter(a => a.lastname !== '自分');
-    arrayOfArtistsFiltered = /*shuffleArray(*/arrayOfArtistsFiltered/*)*/
+    arrayOfArtistsFiltered = putainDeArtists.artists.filter(a => a.lastname !== '自分')
+    arrayOfArtistsFiltered = coerce.shuffle ? shuffleArray(arrayOfArtistsFiltered) : arrayOfArtistsFiltered
 
     jigsawOnSteroids = createJigsawOnSteroids(arrayOfArtistsFiltered.length)
 
