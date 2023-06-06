@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
+    <style>
+        div {
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main id="main" class="container">
+        <div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </main>
+    <script type="module">
+        import { getColorArrayRaw } from "/js/colors.js?v=1.0.4-beta.1"
+        import { generateElement } from "/js/utils.js?v=1.0.4-beta.1"
+
+        const kebabize = (str) => str.replace(/[A-Z]+(?![a-z])|[A-Z]/g, ($, ofs) => (ofs ? "-" : "") + $.toLowerCase())
+
+        const templateStyle = (clazz, backgroundColor) =>
+            `.${clazz} {
+  background-color: #${backgroundColor};
+}
+`
+        const _colors_ = getColorArrayRaw()
+
+        const styles = []
+        _colors_.forEach(function (c) {
+            c.kebabName = kebabize(c.name.replaceAll(/ /gi, ''))
+            const style = templateStyle(c.kebabName, c.p_rgb)
+            styles.push(style)
+            c.kebabName2 = kebabize(c.name.replaceAll(/ /gi, '')) + '_'
+            const style2 = templateStyle(c.kebabName2, c.rgb)
+            styles.push(style2)
+        })
+
+        document.getElementsByTagName('head')[0].appendChild(
+            generateElement(`<style>${styles.join("")}</style>`)
+        );
+
+        const template = (i,c) => `
+        <div class="d-flex">
+            <div style="width: 20px;">
+                ${i}
+            </div>
+            <div style="width: 200px; height: 40px; text-align: right;">
+                <a href="https://hexcolorpedia.com/color/?q=${c.rgb}" target="hexcolorpedia">${c.name}</a>
+            </div>
+            <div class="${c.kebabName2}" style="width: 200px; height: 40px; margin-right: 0;">
+            </div>
+            <div class="${c.kebabName}" style="width: 200px; height: 40px; margin-left: 0;">
+            </div>
+            <div> 
+                <a href="https://www.pantone.com/connect/${c.pantone}" target="hexcolorpedia">${c.pantone}</a>
+            </div>
+        </div>
+        `
+        const main = document.getElementById('main')
+        let i = 0
+        _colors_.forEach(function (c) {
+            console.log(c)
+            main.append(generateElement(template(i++, c)))
+        })
+    </script>
+</body>
+
+</html>
