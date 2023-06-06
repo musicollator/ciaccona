@@ -65,19 +65,20 @@ function getColorArrayRaw() {
 
 function getColorArray(transparencyParam) {
 
-    let shuffledC
-    if (config.shuffleReplicator) {
-        shuffledC = config.shuffleReplicator
-    } else {
-        shuffledC = shuffleArray(Array.from(_other_colors_, (_, index) => index))
-        config.shuffleReplicator = shuffledC
+    if (coerce.shuffle) {
+        let shuffledC
+        if (config.shuffleReplicator) {
+            shuffledC = config.shuffleReplicator
+        } else {
+            shuffledC = shuffleArray(Array.from(_other_colors_, (_, index) => index))
+            config.shuffleReplicator = shuffledC
+        }
+        let shuf = 0
+        for (let s of _other_colors_) {
+            s.shuf = shuffledC[shuf++]
+        }
+        _other_colors_.sort((a, b) => a.shuf - b.shuf)
     }
-    let shuf = 0
-    for (let s of _other_colors_) {
-        s.shuf = shuffledC[shuf++]
-    }
-
-    _other_colors_.sort((a, b) => a.shuf - b.shuf)
 
     let _colors_ = _first_color_.concat(_other_colors_)
     _colors_.push(_last_color_[0])
@@ -90,23 +91,24 @@ function getColorArray(transparencyParam) {
     for (let s of _colors_) {
         const k0_1normalized = normalizeVraiment(k++, 0, _colors_.length, 0, 1)
         const contrastChange = (1 - easingVanishingContrast(k0_1normalized)) * 100
-        const luminance = tinycolor(s.p_rgb).getLuminance();
+        s.baseColor = s.rgb
+        const luminance = tinycolor(s.baseColor).getLuminance();
         if (luminance > .333) {
-            s.textColor = tinycolor(s.p_rgb).darken(contrastChange).toString("hex6").slice(1)
-            s.puzzleColor = tinycolor(s.p_rgb).darken(15).toString("hex6").slice(1)
-            const stripe = tinycolor(s.p_rgb).darken(5)
+            s.textColor = tinycolor(s.baseColor).darken(contrastChange).toString("hex6").slice(1)
+            s.puzzleColor = tinycolor(s.baseColor).darken(15).toString("hex6").slice(1)
+            const stripe = tinycolor(s.baseColor).darken(5)
             s.stripeColor = stripe.toString("hex6").slice(1)
             s.stripeColorAlpha = stripe.setAlpha(transparency).toString("hex8").slice(1)
         } else {
-            s.textColor = tinycolor(s.p_rgb).lighten(contrastChange).toString("hex6").slice(1)
-            s.puzzleColor = tinycolor(s.p_rgb).lighten(12).toString("hex6").slice(1)
-            const stripe = tinycolor(s.p_rgb).lighten(5)
+            s.textColor = tinycolor(s.baseColor).lighten(contrastChange).toString("hex6").slice(1)
+            s.puzzleColor = tinycolor(s.baseColor).lighten(12).toString("hex6").slice(1)
+            const stripe = tinycolor(s.baseColor).lighten(5)
             s.stripeColor = stripe.toString("hex6").slice(1)
             s.stripeColorAlpha = stripe.setAlpha(transparency).toString("hex8").slice(1)
         }
         const theDarkerTheLighter = easingTheDarkerTheLighter(luminance) * 100
-        s.borderColor = tinycolor(s.p_rgb).lighten(theDarkerTheLighter).toString("hex6").slice(1)
-        s.p_rgbAlpha = tinycolor(s.p_rgb).setAlpha(transparency).toString("hex8").slice(1)
+        s.borderColor = tinycolor(s.baseColor).lighten(theDarkerTheLighter).toString("hex6").slice(1)
+        s.baseColorAlpha = tinycolor(s.baseColor).setAlpha(transparency).toString("hex8").slice(1)
     }
     return _colors_
 }
@@ -169,25 +171,25 @@ function createColoredBadges(idContainer) {
     _colors_.forEach(function (c) {
         c.kebabName = kebabize(c.name.replaceAll(/ /gi, ''))
         const clazz = c.kebabName
-        const backgroundColor = c.p_rgb
-        const backgroundColorAlpha = c.p_rgbAlpha
+        const backgroundColor = c.baseColor
+        const backgroundColorAlpha = c.baseColorAlpha
         const bgstripe = `linear-gradient(135deg, 
             #${c.stripeColor} 25%, 
-            #${c.p_rgb} 25%, 
-            #${c.p_rgb} 50%, 
+            #${backgroundColor} 25%, 
+            #${backgroundColor} 50%, 
             #${c.stripeColor} 50%, 
             #${c.stripeColor} 75%, 
-            #${c.p_rgb} 75%, 
-            #${c.p_rgb} 100%); 
+            #${backgroundColor} 75%, 
+            #${backgroundColor} 100%); 
             background-size: 16.97px 16.97px;`
         const bgstripeAlpha = `linear-gradient(135deg, 
             #${_T(c.stripeColor)} 25%, 
-            #${_T(c.p_rgb)} 25%, 
-            #${_T(c.p_rgb)} 50%, 
+            #${_T(backgroundColor)} 25%, 
+            #${_T(backgroundColor)} 50%, 
             #${_T(c.stripeColor)} 50%, 
             #${_T(c.stripeColor)} 75%, 
-            #${_T(c.p_rgb)} 75%, 
-            #${_T(c.p_rgb)} 100%); 
+            #${_T(backgroundColor)} 75%, 
+            #${_T(backgroundColor)} 100%); 
             background-size: 16.97px 16.97px;`
 
         const templateStyle =
