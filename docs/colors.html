@@ -11,21 +11,13 @@
     <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
     <style>
         div {
-            margin: 0 1rem;
+            margin: 0 0;
         }
     </style>
 </head>
 
 <body>
     <main id="main" class="container">
-        <div>
-            <div>
-
-            </div>
-            <div>
-
-            </div>
-        </div>
     </main>
     <script src="global.js?v=1.0.4-beta.1"></script>
     <script type="module">
@@ -60,14 +52,16 @@
             <div style="width: 20px;">
                 ${c.i}
             </div>
-            <div style="width: 200px; height: 40px; text-align: right;">
-                <a href="https://hexcolorpedia.com/color/?q=${c.rgb}" target="hexcolorpedia">${c.name}</a>
+            <div style="width: 280px; height: 40px; text-align: right;">
+                <a href="https://hexcolorpedia.com/color/?q=${c.rgb}" target="hexcolorpedia">${c.name}
+                </a> <span class="font-monospace">[${c.rgb}]</span>
             </div>
-            <div class="${c.kebabName2}" style="width: 200px; height: 40px; margin-right: 0;">
+            <div class="${c.kebabName2}" style="width: 200px; height: 40px; margin-right: 0; margin-left: 0;">
             </div>
-            <div class="${c.kebabName}" style="width: 200px; height: 40px; margin-left: 0;">
+            <div class="${c.kebabName}" style="width: 200px; height: 40px; margin-left: 0; margin-left: 0;">
             </div>
             <div> 
+                <span class="font-monospace">[${c.p_rgb}]</span>
                 <a href="https://www.pantone.com/connect/${c.pantone}" target="hexcolorpedia">${c.pantone}</a>
             </div>
         </div>
