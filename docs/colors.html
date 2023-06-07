@@ -27,6 +27,7 @@
             </div>
         </div>
     </main>
+    <script src="global.js?v=1.0.4-beta.1"></script>
     <script type="module">
         import { getColorArrayRaw } from "/js/colors.js?v=1.0.4-beta.1"
         import { generateElement } from "/js/utils.js?v=1.0.4-beta.1"
@@ -57,7 +58,7 @@
         const template = (i,c) => `
         <div class="d-flex">
             <div style="width: 20px;">
-                ${i}
+                ${c.i}
             </div>
             <div style="width: 200px; height: 40px; text-align: right;">
                 <a href="https://hexcolorpedia.com/color/?q=${c.rgb}" target="hexcolorpedia">${c.name}</a>
