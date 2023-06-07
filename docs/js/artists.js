@@ -52,10 +52,19 @@ class Artists {
     }
     addArtist = (a) => {
         this.#mapFullnameNospaceLowercaseNodiacritics2Artist.set(a.fullnameNospaceLowercaseNodiacritics, a)
+        a.index = this.artists.length
         this.artists.push(a)
     }
     getArtistFromFullnameNospaceLowercaseNodiacritics = (fnnslcnd) => {
         return this.#mapFullnameNospaceLowercaseNodiacritics2Artist.get(fnnslcnd)
+    }
+    getNextArtist = (fnnslcnd) => {
+        const thisA = this.#mapFullnameNospaceLowercaseNodiacritics2Artist.get(fnnslcnd)
+        return this.artists[thisA.index + 1 % this.artists.length]
+    }
+    getPreviousArtist = (fnnslcnd) => {
+        const thisA = this.#mapFullnameNospaceLowercaseNodiacritics2Artist.get(fnnslcnd)
+        return this.artists[(thisA.index + this.artists.length - 1) % this.artists.length]
     }
     size = () => this.artists.length
     sort = (f) => this.artists.sort(f)

@@ -109,7 +109,7 @@ function createJigsawOnSteroids(artistArrayLength) {
     const jigsawItemsWithNoPerformerRandomArray = new Array(jigsawItemsWithNoPerformerCount).fill(0).map(x => Math.round(Math.random() * (j.getJigsawItemsCount() - 1 - 1 /* this 1 is the title */)))
     console.log("j.getJigsawItemsCount()", j.getJigsawItemsCount(), "artistArrayLength", artistArrayLength, jigsawItemsWithNoPerformerRandomArray)
     return {
-        jigsaw: j, 
+        jigsaw: j,
         itemsWithNoPerformer: jigsawItemsWithNoPerformerRandomArray
     }
 }
@@ -247,9 +247,15 @@ loadArtists().then(putainDeArtists => {
                 event.preventDefault()
                 if (typeof coerce.variation !== 'undefined') {
                     coerce.variation = undefined
-                } else {
+                } else { 
+                    /*
                     coerce.variation = event.currentTarget.parentNode.dataset.variation
                     coerce.artist = undefined
+                    */
+                    if (typeof coerce.artist !== 'undefined') {
+                        let whereDoIGo = `/puzzle?a=${arrayOfArtistsFiltered[coerce.artist].fullnameNospaceLowercaseNodiacritics}&v=${ event.currentTarget.parentNode.dataset.variation}`
+                        window.location = whereDoIGo
+                    }
                 }
                 forceRedraw(generateData(arrayOfArtistsFiltered))
             }))
