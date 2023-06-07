@@ -92,8 +92,8 @@ class Timings {
                 // from 0 to 256 bar :
                 const from0to256 = this.bars[lastvarbar].m.diff(this.bars[0].m)
                 const lastD = 3 * (from0to256 / 256)
-                const duration = moment.duration(from0to256 + lastD)
-                this.lengthAsAString = `${duration.minutes()}′${duration.seconds()}″`
+                this.duration = moment.duration(from0to256 + lastD)
+                this.lengthAsAString = `${this.duration.minutes()}′${this.duration.seconds()}″`
                 console.log('duration is roughly', this.lengthAsAString)
             }
         }
