@@ -99,16 +99,17 @@
                     .attr("y", (d) => y(d.length))
                     .attr("height", (d) => y(0) - y(d.length));
 
+                const formatDuration = (d) => {
+                    const dur = moment.duration(d)
+                            const lengthAsAString = `${dur.minutes()}′${dur.seconds()}″`
+                            console.log(d, i, lengthAsAString)
+                            return lengthAsAString
+                }
                 // Add the x-axis and label.
                 svg.append("g")
                     .attr("transform", `translate(0,${height - marginBottom})`)
-                    .call(d3.axisBottom(x).ticks(width / 80).tickSizeOuter(0).tickFormat(
-                        (d, i) => {
-                            const dur = moment.duration(d)
-                            const lengthAsAString = `${dur.hours()}h${dur.minutes()}m${dur.seconds()}s`
-                            console.log(d, i, lengthAsAString)
-                            return lengthAsAString
-                        }))
+                    .call(d3.axisBottom(x).ticks(width / 60).tickSizeOuter(0).tickFormat(
+                        (d, i) => formatDuration(d)))
                     .call((g) => g.append("text")
                         .attr("x", width)
                         .attr("y", marginBottom - 4)
@@ -147,9 +148,10 @@
                     .data(bins)
                     .on('mouseover', function (event, d) {
                         console.log(event, d)
+                        d.sort((x,y) => x.rate - y.rate)
                         tooltip
                             .html(
-                                `<div>${d.map(x => x.artist).join('<div></div>')}<\div>`
+                                `<div>${d.map(x => `${formatDuration(x.rate)} ${x.artist}`).join('<div></div>')}<\div>`
                             )
                             .style('visibility', 'visible');
                         d3.select(this).transition().attr('fill', hoverColor);
