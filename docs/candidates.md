@@ -166,7 +166,7 @@ Direct link to the Ciaccona in the other video: https://www.youtube.com/watch?v=
 
 here is also the Deutsche Grammophon recording, albeit without video: https://youtu.be/g4JKEZ91B8g
 
-More about Avi Avital.
+More about Avi Avital:
 https://www.aviavital.com/
 https://en.wikipedia.org/wiki/Avi_Avital
 https://www.facebook.com/aviavital
