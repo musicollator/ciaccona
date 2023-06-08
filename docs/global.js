@@ -37,6 +37,7 @@ class Coerce {
         'miguelrincon',
         'mikastoltzman',
         'moranwasser',
+        'nemanjaradulovic',
         'petrapolackova',
         'polinaosetinskaya',
         'rachellellenwong',

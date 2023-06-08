@@ -833,3 +833,19 @@
     published: Jul 2, 2020
     collected: Jun 5, 2023
     length: 13′15″
+
+- firstname: Nemanja
+  lastname: Radulovic
+  instrument: 01Violin
+  fullnameNospaceLowercaseNodiacritics: nemanjaradulovic 
+  timingsFile: NemanjaRadulovic-MS1ATruO7f4.js
+  flag: 🇷🇸
+  workInProgress: false
+  ▶:
+    id: MS1ATruO7f4
+    views: 342725
+    published: Jul 9, 2018
+    collected: Jun 8, 2023
+    length: 15′12″
+
+
