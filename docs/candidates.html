@@ -201,6 +201,7 @@
     import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
     import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
     import { doHistogram } from '/histogram.js??v=1.0.4-beta.1'
+    import { loadArtists } from "/js/artists.js?v=1.0.4-beta.1"
 
     const theDayWhenIReadTheVideoMeters = moment('2023-05-28T00:00:00Z')
 
@@ -231,6 +232,8 @@
                 vid.durationMoment = moment.duration(vid.duration)
                 vid.viewsPerMonth = Math.floor(vid.views / vid.durationMoment.asMonths())
             }
+            this.views = vid.views
+            this.viewsPerMonth = vid.viewsPerMonth
         }
     }
 
@@ -281,18 +284,21 @@
         document.getElementById('candidatesCount').innerHTML = candidates.length
         console.log('# candidates', candidates.length)
 
-        const rect = document.getElementById('histoWrapper').getBoundingClientRect()
-        const loadArtistsPromise = () => new Promise((resolve) => {
-            resolve(candidates)
+        loadArtists().then((theArtists) => {
+            theArtists.artists.forEach(a => {
+                candidates.push(new Candidate(a))
+            })
+            const rect = document.getElementById('histoWrapper').getBoundingClientRect()
+            doHistogram({
+                idWrapper: 'histoWrapper',
+                key: "viewsPerMonth",
+                formatKey: (k) => {
+                    return k
+                },
+                thresholds: 160,
+                durations: candidates,
+            })
         })
-        doHistogram({
-            loadArtists: loadArtistsPromise,
-            idWrapper: 'histoWrapper',
-            key: "views",
-            formatKey: (k) => k,
-        })
-
-
     }).catch((error) => {
         console.log("script loading error", urlCandidatesYAML, error);
     })

@@ -16,6 +16,7 @@ function doHistogram(configParam) {
         idWrapper: "body",
         widthWrapper: 900,
         heightWrapper: 500,
+        thresholds: 40,
     }
 
     lodashMerge(config, configParam)
@@ -34,14 +35,14 @@ function doHistogram(configParam) {
 
             // Bin the data.
             const bins = d3.bin()
-                .thresholds(50)
+                .thresholds(config.thresholds)
                 .value((d) => d[config.key])
                 (data);
 
             // Declare the x (horizontal position) scale.
             const x = d3.scaleLinear()
                 .domain([bins[0].x0, bins[bins.length - 1].x1])
-                .range([marginLeft, width - marginRight]);
+                .range([marginLeft, width - marginRight])
 
             // Declare the y (vertical position) scale.
             const y = d3.scaleLinear()
@@ -70,13 +71,14 @@ function doHistogram(configParam) {
             svg.append("g")
                 .attr("transform", `translate(0,${height - marginBottom})`)
                 .call(d3.axisBottom(x).ticks(width / 60).tickSizeOuter(0).tickFormat(
-                    (d, i) => formatDuration(d)))
+                    (d, i) => config.formatKey(d)
+                ))
                 .call((g) => g.append("text")
                     .attr("x", width)
                     .attr("y", marginBottom - 4)
                     .attr("fill", "currentColor")
                     .attr("text-anchor", "end")
-                    .text("duration →"));
+                    .text(`${config.key} →`));
 
             // Add the y-axis and label, and remove the domain line.
             svg.append("g")
@@ -112,7 +114,7 @@ function doHistogram(configParam) {
                     d.sort((x, y) => x[config.key] - y[config.key])
                     tooltip
                         .html(
-                            `<div>${d.map(x => `${config.formatKey(x[config.key])} ${x.artist}`).join('<div></div>')}<\div>`
+                            `<div>${d.map(x => `${config.formatKey(x[config.key])} ${x.fullname}`).join('<div></div>')}<\div>`
                         )
                         .style('visibility', 'visible');
                     d3.select(this).transition().attr('fill', hoverColor);
