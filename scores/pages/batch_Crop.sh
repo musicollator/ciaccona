@@ -19,4 +19,7 @@ docker start 3535ee387493
 for f in *.png; do mv -- "$f" "${f%%.*}.svg"; done
 
 
-docker run -v $(pwd):/app -w /app jeandeaual/lilypond:2.25.2 lilypond -dcrop -dno-point-and-click -fsvg bwv-1004_5_for_SVGs.ly 
+docker run -v $(pwd):/app -w /app jeandeaual/lilypond:latest lilypond -dcrop -dno-point-and-click -fsvg bwv-1004_5_for_SVGs.ly 
+
+docker run -v $(pwd):/app -w /app jeandeaual/lilypond:latest lilypond --version
+
