@@ -191,3 +191,5 @@ e.g.
 push to github
 
 # WE'RE DONE!
+
+Clearly, Nemanja Radulović is more interested in highlighting the performer than in trying to be historically informed and faithful to the composer. A fairyland of rallentandos, full-on romantic dynamics, etc. It has the merit of being openly claimed. Moreover, "Let whoever is without sin cast the first stone (Jn 8:7)"! Isn't that the primary motivation for all of us performers? To put ourselves forward? At least Nemanja Radulović has virtuosity, intonation and, above all, energy. Well worth a listen, IMHO.
