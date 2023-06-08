@@ -91,7 +91,7 @@ function getColorArray(transparencyParam) {
     for (let s of _colors_) {
         const k0_1normalized = normalizeVraiment(k++, 0, _colors_.length, 0, 1)
         const contrastChange = (1 - easingVanishingContrast(k0_1normalized)) * 100
-        s.baseColor = s.rgb
+        s.baseColor = s.p_rgb
         const luminance = tinycolor(s.baseColor).getLuminance();
         if (luminance > .333) {
             s.textColor = tinycolor(s.baseColor).darken(contrastChange).toString("hex6").slice(1)
