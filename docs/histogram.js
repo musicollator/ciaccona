@@ -1,51 +1,26 @@
-import { loadArtists } from "/js/artists.js?v=1.0.4-beta.1"
-import createTimings from "/js/timings.js?v=1.0.4-beta.1"
 import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
+import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
+
+const formatDuration = (d) => {
+    const dur = moment.duration(d)
+    const lengthAsAString = `${dur.minutes()}′${dur.seconds()}″`
+    // console.log(d, lengthAsAString)
+    return lengthAsAString
+}
 
 function doHistogram(configParam) {
 
-    const config = { 
-        loadArtists: loadArtists, 
-        key: "duration", 
-        formatKey: k => formatDuration(k), 
-        idWrapper: "body", 
-        widthWrapper: 900, 
+    const config = {
+        key: "duration",
+        formatKey: k => formatDuration(k),
+        idWrapper: "body",
+        widthWrapper: 900,
         heightWrapper: 500,
     }
 
     lodashMerge(config, configParam)
 
-    const duration = moment.duration(0);
-    let i = 1;
-    const durations = []
-    config.loadArtists().then(putainDeArtists => {
-        putainDeArtists.artists.forEach(artistObject => {
-            createTimings(artistObject).then((artistAndTimings) => {
-                // console.log(artistAndTimings.duration)
-                duration.add(artistAndTimings.duration)
-                durations.push(
-                    {
-                        artist: artistAndTimings.fullname,
-                        duration: artistAndTimings.duration.asMilliseconds(),
-                        views: artistAndTimings['▶'].views,
-                        viewsPerMonth: artistAndTimings['▶'].viewsPerMonth,
-                        pitch: artistAndTimings['▶'].a4
-                    }
-
-                )
-                const mean = duration.asMilliseconds() / i++
-                const meanDuration = moment.duration(mean)
-                const lengthAsAString = `${duration.hours()}h${duration.minutes()}m${duration.seconds()}s`
-                const meanAsAString = `${meanDuration.hours()}h${meanDuration.minutes()}m${meanDuration.seconds()}s`
-                console.log(duration.asSeconds(), lengthAsAString, '| mean:', meanDuration.asMilliseconds(), meanAsAString)
-
-                if (i === 46) {
-                    document.getElementById(config.idWrapper).append(dothed3(durations, putainDeArtists.artists))
-                }
-
-            })
-        })
-    })
+    document.getElementById(config.idWrapper).append(dothed3(config.durations,config. putainDeArtistsArtists))
 
     function dothed3(data, artists) {
         {
@@ -91,12 +66,6 @@ function doHistogram(configParam) {
                 .attr("y", (d) => y(d.length))
                 .attr("height", (d) => y(0) - y(d.length));
 
-            const formatDuration = (d) => {
-                const dur = moment.duration(d)
-                const lengthAsAString = `${dur.minutes()}′${dur.seconds()}″`
-                console.log(d, i, lengthAsAString)
-                return lengthAsAString
-            }
             // Add the x-axis and label.
             svg.append("g")
                 .attr("transform", `translate(0,${height - marginBottom})`)
