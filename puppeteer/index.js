@@ -27,7 +27,7 @@ const puppeteer = require('puppeteer');
         // 'andreadevitis',
         // 'anneleenlenaerts',
         // 'arkadyleytush',
-        'augustamckay',
+        // 'augustamckay',
         // 'aviavital',
         // 'bellahristova',
         // 'chiaramassini',
@@ -54,6 +54,7 @@ const puppeteer = require('puppeteer');
         //'miguelrincon',
         //'mikastoltzman',
         //'moranwasser',
+        'nemanjaradulovic',
         //'petrapolackova',
         //'polinaosetinskaya',
         //'rachellellenwong',
@@ -171,7 +172,7 @@ const puppeteer = require('puppeteer');
                 }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // , #theContainerCol, div.plyr__controls
 
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
-                for (let playerControl of playerControls) { 
+                for (let playerControl of playerControls)  {
                     //hover on each element handle
                     await playerControl.hover();
 
