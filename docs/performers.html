@@ -37,7 +37,8 @@
     <meta property="og:url" content="https://ciaccona.cthiebaud.com/performers.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ciaccona - Performers">
-    <meta property="og:description" content="45+ performances of Johann Sebastian Bach's Ciaccona from Partita in D minor for solo violin BWV1004, collated for entertainment and study.">
+    <meta property="og:description"
+        content="45+ performances of Johann Sebastian Bach's Ciaccona from Partita in D minor for solo violin BWV1004, collated for entertainment and study.">
     <meta property="og:image" content="https://ciaccona.cthiebaud.com/screenshots/performers.jpg" />
     <meta property="og:image:url" content="https://ciaccona.cthiebaud.com/screenshots/performers.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -50,7 +51,8 @@
     <meta property="twitter:domain" content="ciaccona.cthiebaud.com">
     <meta property="twitter:url" content="https://ciaccona.cthiebaud.com/performers.html">
     <meta name="twitter:title" content="Ciaccona - Performers">
-    <meta name="twitter:description" content="45+ performances of Johann Sebastian Bach's Ciaccona from Partita in D minor for solo violin BWV1004, collated for entertainment and study.">
+    <meta name="twitter:description"
+        content="45+ performances of Johann Sebastian Bach's Ciaccona from Partita in D minor for solo violin BWV1004, collated for entertainment and study.">
     <meta name="twitter:image" content="https://ciaccona.cthiebaud.com/screenshots/performers.jpg">
 
     <!-- Include Handlebars from a CDN -->
@@ -74,15 +76,17 @@
         <div id="perfContainerRow" class="row" style="">
             <div id="perfContainerCol" class="col">
                 <table id="theTable" class="table table-fit table-responsive table-striped table-hover table-sm ">
+                    <caption style="width:100%" class="caption-top" id="histoWrapper"></caption>
                     <thead>
                         <tr style="font-size:smaller">
                             <th scope="col" id="name" class="name      text-center sortable">
                                 <img src="svg/person-male-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
-                            <th scope="col" class="flag      text-start  sortable">&nbsp; 
+                            <th scope="col" class="flag      text-start  sortable">&nbsp;
                                 <img src="svg/earth-svgrepo-com.svg" style="width: 22px; height:22px;">
-                                <span style="width: 25px;"></span></th>
+                                <span style="width: 25px;"></span>
+                            </th>
                             <th scope="col" class="published text-start  sortable" colspan="2">Published on <span></span></th>
                             <th scope="col" class="views     text-start  sortable">Views <span></span></th>
                             <th scope="col" class="monthly   text-start  sortable" style="min-width: 6rem;">
@@ -138,6 +142,8 @@
 </tr>{{/each}}</script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@latest/moment.min.js"></script>
 
     <script>
         const sortMoiAlwaysLast = (a, b) => {
@@ -165,6 +171,7 @@
 
     <script async type="module">
         import { loadArtists, theDayWhenIReadTheVideoMeters } from "/js/artists.js?v=1.0.4-beta.1"
+        import { doHistogram } from '/histogram.js??v=1.0.4-beta.1'
 
         document.getElementById("go-back").addEventListener("click", () => {
             window.location = document.referrer
@@ -202,6 +209,19 @@
             const bodyContent = template(sorted)
             theBody.innerHTML = bodyContent
             document.getElementById('performersCount').innerHTML = sorted.length
+            const rect = document.getElementById('histoWrapper').getBoundingClientRect()
+            const loadArtistsPromise = () => new Promise((resolve) => {
+                resolve(theArtists)
+            })
+            doHistogram({
+                loadArtists: loadArtistsPromise,
+                idWrapper: 'histoWrapper',
+                widthWrapper: rect.width,
+                heightWrapper: 300,
+                key: "duration",
+                formatKey: (k) => k,
+            })
+
 
         })
 
