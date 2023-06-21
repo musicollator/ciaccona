@@ -10,7 +10,7 @@
 - firstname: Amandine
   lastname: Beyer
   instrument: Baroque Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 00Baroque_Violin
   ▶:
     id: GXI2w1R8LbA
     views: 41821
@@ -1208,4 +1208,110 @@
     published: Nov 18, 2020 
     collected: Jun 8, 2023
 
+- firstname: Justin
+  lastname: Ball
+  instrument: Marimba
+  instrumentCategory: 09Marimba
+  fullnameNospaceLowercaseNodiacritics: justinball 
+  timingsFile: JustinBall-e6klWhemkOg.js
+  ▶:
+    id: e6klWhemkOg
+    views: 804
+    published: Aug 6, 2021
+    collected: Jun 21, 2023
 
+- firstname:  Marie
+  lastname: Leonhardt
+  instrument: Baroque Violin
+  instrumentCategory: 00Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: marieleonhardt 
+  timingsFile: MarieLeonhardt-oPxlPkfv0NU.js
+  ▶:
+    id: oPxlPkfv0NU
+    views: 11313
+    published: Nov 7, 2018
+    collected: Jun 21, 2023
+
+- firstname: Santiago
+  lastname: Cañón Valencia
+  instrument: Cello
+  instrumentCategory: 01Violin
+  fullnameNospaceLowercaseNodiacritics: santiagocanonvalencia
+  timingsFile: SantiagoCañónValencia-qGvCmzEIqFE.js
+  ▶:
+    id: qGvCmzEIqFE
+    views: 82642
+    published: Mar 22, 2018
+    collected: Jun 21, 2023
+
+- firstname: Janine
+  lastname: Jansen
+  instrument: Violin
+  instrumentCategory: 01Violin
+  fullnameNospaceLowercaseNodiacritics: janinejansen 
+  timingsFile: JanineJansen-SrZPIbIbYag.js
+  ▶:
+    id: SrZPIbIbYag
+    views: 293828
+    published: Jul 12, 2012
+    collected: Jun 21, 2023
+
+- firstname: Tanya
+  lastname: Anisimova 
+  instrument: Cello
+  instrumentCategory: 01Violin
+  fullnameNospaceLowercaseNodiacritics: tanyaanisimova 
+  timingsFile: TanyaAnisimova-TxoApYOGe6c.js
+  ▶:
+    id: TxoApYOGe6c
+    views: 241403
+    published: Nov 8, 2012
+    collected: Jun 21, 2023
+
+- firstname: Ivry
+  lastname: Gitlis
+  instrument: Violin
+  instrumentCategory: 01Violin
+  fullnameNospaceLowercaseNodiacritics: ivrygitlis 
+  timingsFile: IvryGitlis-bh8pKgwapSA.js
+  ▶:
+    id: bh8pKgwapSA
+    views: 736865  
+    published: Jul 1, 2011
+    collected: Jun 21, 2023
+
+- firstname: Henryk
+  lastname: Szeryng
+  instrument: Violin
+  instrumentCategory: 01Violin
+  fullnameNospaceLowercaseNodiacritics: henrykszeryng 
+  timingsFile: HenrykSzeryng-5UcVW3Mmn2U.js
+  ▶:
+    id: 5UcVW3Mmn2U
+    views: 21947
+    published: Nov 21, 2018
+    collected: Jun 21, 2023
+
+- firstname: Boris
+  lastname: Begelman
+  instrument: Baroque Violin
+  instrumentCategory: 00Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: borisbegelman 
+  timingsFile: BorisBegelman-NXgawycHnQM.js
+  ▶:
+    id: NXgawycHnQM
+    views: 6400
+    published: Aug 9, 2022
+    collected: Jun 21, 2023
+
+- firstname: Alan
+  lastname: Mearns
+  instrument: Guitar
+  instrumentCategory: 04Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: alanmearns
+  timingsFile: AlanMearns-8xA3ZDdwA8Y.js
+  ▶:
+    id: 8xA3ZDdwA8Y
+    views: 36867
+    published: Jun 7, 2022
+    collected: Jun 21, 2023
