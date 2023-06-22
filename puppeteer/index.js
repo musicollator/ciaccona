@@ -47,6 +47,7 @@ const puppeteer = require('puppeteer');
         //'ksenijakomljenovic',
         //'lisajacobs',
         //'lizaferschtman',
+        'marieleonhardt',
         //'martafemenia',
         //'martinbaker',
         //'michaelleontchik',
@@ -54,7 +55,7 @@ const puppeteer = require('puppeteer');
         //'miguelrincon',
         //'mikastoltzman',
         //'moranwasser',
-        'nemanjaradulovic',
+        //'nemanjaradulovic',
         //'petrapolackova',
         //'polinaosetinskaya',
         //'rachellellenwong',
@@ -72,7 +73,7 @@ const puppeteer = require('puppeteer');
 
     const cookies = [{
         name: 'scoreDisplay',
-        value: 'firstBar', // 'fullScore',
+        value: 'fullScore', // 'firstBar', // 
         domain: 'localhost'
     }, {
         name: 'scoreInBricks',
@@ -169,7 +170,7 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'hidden'
                     )
-                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // , #theContainerCol, div.plyr__controls
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, #theContainerCol') // , #theContainerCol, div.plyr__controls
 
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
                 for (let playerControl of playerControls)  {
