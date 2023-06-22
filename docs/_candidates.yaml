@@ -1742,3 +1742,63 @@
     views: 2603  
     published: Oct 1, 2014  
     collected: Jun 22, 2023
+    
+- firstname: Rustam
+  lastname: Komachkov
+  instrument: 
+  instrumentCategory: 
+  fullnameNospaceLowercaseNodiacritics: rustamkomachkov
+  timingsFile: RustamKomachkov-LAzSp_qBr-Q.js
+  ▶:
+    id: LAzSp_qBr-Q
+    views: 76469  
+    published: Jan 30, 2014
+    collected: Jun 22, 2023
+
+- firstname: Nikola
+  lastname: Karageorgiev
+  instrument: 
+  instrumentCategory: 
+  fullnameNospaceLowercaseNodiacritics: nikolakarageorgiev
+  timingsFile: NikolaKarageorgiev-9arkmymJ0gQ.js
+  ▶:
+    id: 9arkmymJ0gQ
+    views: 3364  
+    published: May 20, 2016
+    collected: Jun 22, 2023
+
+- firstname: Alexei 
+  lastname: Romanenko
+  instrument: 
+  instrumentCategory: 
+  fullnameNospaceLowercaseNodiacritics: alexeiromanenko
+  timingsFile: AlexeiRomanenko-x04z4N2hYR0.js
+  ▶:
+    id: x04z4N2hYR0
+    views: 1860 
+    published:  Mar 1, 2021
+    collected: Jun 22, 2023
+
+- firstname: Marie-Astrid 
+  lastname: Hulot
+  instrument: 
+  instrumentCategory: 
+  fullnameNospaceLowercaseNodiacritics: marieastridhulot
+  timingsFile: MarieAstridHulot-NrMqjKfp4Nk.js
+  ▶:
+    id: NrMqjKfp4Nk
+    views: 9987 
+    published: Dec 3, 2022
+    collected: Jun 22, 2023
+
+- firstname: Goran 
+  lastname: Sollscher
+  instrument: 
+  instrumentCategory: 
+  fullnameNospaceLowercaseNodiacritics: goransollscher
+  timingsFile: GoranSollscher-a1wLt9Q3KR4.js
+  ▶:
+    id: a1wLt9Q3KR4
+    views: 1707  
+    published: Feb 8, 2018
+    collected: Jun 22, 2023
