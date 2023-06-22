@@ -13,6 +13,7 @@ class Coerce {
         'augustamckay',
         'aviavital',
         'bellahristova',
+        'borisbegelman',
         'chiaramassini',
         'christiantetzlaff',
         'christopherahn',
