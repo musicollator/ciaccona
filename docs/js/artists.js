@@ -3,6 +3,8 @@ import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
 import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
 
 const theDayWhenIReadTheVideoMeters = moment('2023-06-05T00:00:00Z')
+const now = moment()
+
 class Artist {
     constructor(a) {
         lodashMerge(this, a)
@@ -35,9 +37,15 @@ class Artist {
             if (vid.collected) {
                 collected = moment(vid.collected)
             }
-            vid.duration = collected.diff(vid.publishedMoment)
+
+            {
+                const duration = collected.diff(vid.publishedMoment)
+                const durationMoment = moment.duration(duration)
+                vid.viewsPerMonth = Math.floor(vid.views / durationMoment.asMonths())
+            }
+            
+            vid.duration = now.diff(vid.publishedMoment)
             vid.durationMoment = moment.duration(vid.duration)
-            vid.viewsPerMonth = Math.floor(vid.views / vid.durationMoment.asMonths())
         }
     }
 }

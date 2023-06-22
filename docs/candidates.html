@@ -184,7 +184,7 @@
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
-<td class="since" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{humanize v.durationMoment}}</td>
+<td class="since" data-timestamp="{{dateFormat v.publishedMoment "YYMMDD"}}">{{humanize v.durationMoment}}</td>
 <td class="yt        text-center"><a 
     href={{#if v.youtubeTrueUrl}}{{v.youtubeTrueUrl}}{{else}}{{v.youtubeUrl}}{{/if}}
     target={{fullnameNospaceLowercaseNodiacritics}}>
@@ -204,6 +204,7 @@
     import { loadArtists } from "/js/artists.js?v=1.0.4-beta.2"
 
     const theDayWhenIReadTheVideoMeters = moment('2023-05-28T00:00:00Z')
+    const now = moment()
 
     class Candidate {
         constructor(a) {
@@ -228,9 +229,14 @@
 
             if (true) { // calc viewsPerMonth ?
                 let collected = theDayWhenIReadTheVideoMeters
-                vid.duration = collected.diff(vid.publishedMoment)
+                {
+                    const duration = collected.diff(vid.publishedMoment)
+                    const durationMoment = moment.duration(duration)
+                    vid.viewsPerMonth = Math.floor(vid.views / durationMoment.asMonths())
+                }
+
+                vid.duration = now.diff(vid.publishedMoment)
                 vid.durationMoment = moment.duration(vid.duration)
-                vid.viewsPerMonth = Math.floor(vid.views / vid.durationMoment.asMonths())
             }
             this.views = vid.views
             this.viewsPerMonth = vid.viewsPerMonth
