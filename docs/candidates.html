@@ -18,8 +18,8 @@
     <meta name="author" content="Christophe Thiebaud">
 
     <!-- HTML Meta Tags -->
-    <title>Ciaccona - Candidates</title>
-    <meta name="description" content="Candidates to be included in the application">
+    <title>Ciaccona - Performers & Candidates</title>
+    <meta name="description" content="Performers plus Candidates to be included in the application">
 
     <!-- https://realfavicongenerator.net/ -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -37,7 +37,7 @@
     <meta property="og:url" content="https://ciaccona.cthiebaud.com/candidates.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Ciaccona - Candidates">
-    <meta property="og:description" content="Candidates to be included in the application">
+    <meta property="og:description" content="Performers plus Candidates to be included in the application">
     <meta property="og:image" content="https://ciaccona.cthiebaud.com/screenshots/candidates.jpg" />
     <meta property="og:image:url" content="https://ciaccona.cthiebaud.com/screenshots/candidates.jpg" />
     <meta property="og:image:type" content="image/jpeg" />
@@ -50,7 +50,7 @@
     <meta property="twitter:domain" content="ciaccona.cthiebaud.com">
     <meta property="twitter:url" content="https://ciaccona.cthiebaud.com/candidates.html">
     <meta name="twitter:title" content="Ciaccona - Candidates">
-    <meta name="twitter:description" content="Candidates to be included in the application">
+    <meta name="twitter:description" content="Performers plus Candidates to be included in the application">
     <meta name="twitter:image" content="https://ciaccona.cthiebaud.com/screenshots/candidates.jpg">
 
     <!-- Include Handlebars from a CDN -->
@@ -59,6 +59,13 @@
     <link rel="stylesheet" href="/lib/bootstrap-5.2.3.min.css">
 
     <link rel="stylesheet" href="performers.css?v=1.0.4-beta.2">
+
+    <style>
+        tr.performer th,
+        tr.performer td {
+            color: gray !important;
+        }
+    </style>
 
 </head>
 
@@ -143,7 +150,7 @@
             </button>
 
         </div>
-        <h1><span id="candidatesCount"></span> Candidates</h1>
+        <h1><span id="candidatesCount"></span> Performers & Candidates</h1>
     </header>
     <div id="candContainerRow" class="row" style="">
         <div id="candContainerCol" class="col">
@@ -178,7 +185,7 @@
 
 
 <script id="candidate-template" type="text/x-handlebars-template">{{#each this}}        
-<tr>
+<tr class="{{clazz}}">
 <!-- th class="rownum">{{@index }}</!-->
 <th class="name" data-lastname="{{reverseFullname}}" style="{{blockedStyle}}" title="{{blockedBy}}">{{reverseFullname}}</th>
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
@@ -281,19 +288,24 @@
 
         const candidatesAsJSONObject = jsYaml.load(candidatesAsYAMLText)
         candidatesAsJSONObject.forEach((c) => {
-            candidates.push(new Candidate(c))
+            const perf = new Candidate(c)
+            perf.clazz = 'candidate'
+            candidates.push(perf)
         })
-
-        candidates.sort((a, b) => a.reverseFullname.localeCompare(b.reverseFullname))
-        const bodyContent = template(candidates)
-        theBody.innerHTML = bodyContent
-        document.getElementById('candidatesCount').innerHTML = candidates.length
-        console.log('# candidates', candidates.length)
 
         loadArtists().then((theArtists) => {
             theArtists.artists.forEach(a => {
-                candidates.push(new Candidate(a))
+                const perf = new Candidate(a)
+                perf.clazz = 'performer'
+                candidates.push(perf)
             })
+
+            candidates.sort((a, b) => a.reverseFullname.localeCompare(b.reverseFullname))
+            const bodyContent = template(candidates)
+            theBody.innerHTML = bodyContent
+            document.getElementById('candidatesCount').innerHTML = candidates.length
+            console.log('# candidates', candidates.length)
+
             const rect = document.getElementById('histoWrapper').getBoundingClientRect()
             doHistogram({
                 idWrapper: 'histoWrapper',
