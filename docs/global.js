@@ -30,6 +30,7 @@ class Coerce {
         'ksenijakomljenovic',
         'lisajacobs',
         'lizaferschtman',
+        'marieleonhardt',
         'martafemenia',
         'martinbaker',
         'michaelleontchik',
