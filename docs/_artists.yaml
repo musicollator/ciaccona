@@ -854,11 +854,22 @@
   instrument: 00Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: marieleonhardt 
   timingsFile: MarieLeonhardt-oPxlPkfv0NU.js
-  workInProgress: false
   ▶:
     id: oPxlPkfv0NU
     views: 11313
     published: Nov 7, 2018
     collected: Jun 21, 2023
     length: 13′06″
+
+- firstname: Boris
+  lastname: Begelman
+  instrument: 00Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: borisbegelman 
+  timingsFile: BorisBegelman-NXgawycHnQM.js
+  workInProgress: false
+  ▶:
+    id: NXgawycHnQM
+    views: 6400
+    published: Aug 9, 2022
+    collected: Jun 21, 2023
 

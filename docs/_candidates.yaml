@@ -1280,18 +1280,6 @@
     published: Nov 21, 2018
     collected: Jun 21, 2023
 
-- firstname: Boris
-  lastname: Begelman
-  instrument: Baroque Violin
-  instrumentCategory: 00Baroque_Violin
-  fullnameNospaceLowercaseNodiacritics: borisbegelman 
-  timingsFile: BorisBegelman-NXgawycHnQM.js
-  ▶:
-    id: NXgawycHnQM
-    views: 6400
-    published: Aug 9, 2022
-    collected: Jun 21, 2023
-
 - firstname: Alan
   lastname: Mearns
   instrument: Guitar
