@@ -1,7 +1,7 @@
 - firstname: Alon
   lastname: Sariel
   instrument: Mandolin
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: Uy3FUwJpCAQ
     views: 27735
@@ -10,7 +10,7 @@
 - firstname: Amandine
   lastname: Beyer
   instrument: Baroque Violin
-  instrumentCategory: 00Baroque_Violin
+  instrumentCategory: 000Baroque_Violin
   ▶:
     id: GXI2w1R8LbA
     views: 41821
@@ -19,7 +19,7 @@
 - firstname: Anabel
   lastname: Montesinos
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: N_WTmnh0Zqw
     views: 8413
@@ -28,7 +28,7 @@
 - firstname: Arabella
   lastname: Steinbacher
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: 0TzJ_ZxRImY
     views: 17515
@@ -37,7 +37,7 @@
 - firstname: Eduard
   lastname: Schmieder
   instrument: String Orchestra
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: vgZBEAa2iA4
     views: 9409
@@ -46,7 +46,7 @@
 - firstname: Arturo Benedetti
   lastname: Michelangeli
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: wCMK-HyMG0M
     views: 9409
@@ -55,7 +55,7 @@
 - firstname: Aubree
   lastname: Oliverson
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: qaRA6hC19KY
     views: 3702
@@ -64,7 +64,7 @@
 - firstname: Aya
   lastname: Hamada
   instrument: Harpsichord
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: eABZwIPmrbY
     views: 5540
@@ -73,7 +73,7 @@
 - firstname: Violinists
   lastname: Fourteen
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: _eQd95VFpI8
     views: 174612
@@ -82,7 +82,7 @@
 - firstname: David
   lastname: Russell
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: fprDySEWI-s
     views: 363
@@ -91,7 +91,7 @@
 - firstname: David
   lastname: Russell
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: r9aClPbLiA4
     views: 4630
@@ -109,7 +109,7 @@
 - firstname: Saxophone Project
   lastname: Eastman
   instrument: Saxophone
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: Qn5YZLJ0QBw
     views: 101001
@@ -118,7 +118,7 @@
 - firstname: Edin
   lastname: Karamazov
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: CkskQMKBRjU
     views: 24119
@@ -127,7 +127,7 @@
 - firstname: Elise
   lastname: Liu
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: tT46qnLyp2g
     views: 1827
@@ -136,7 +136,7 @@
 - firstname: Enrico
   lastname: Bottelli
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: fps504EKniA
     views: 4905
@@ -144,8 +144,8 @@
 
 - firstname: Trio
   lastname: Eroica
-  instrument: Piano Violin Cello
-  instrumentCategory: 03Ensemble
+  instrument: Violin, Cello & Piano
+  instrumentCategory: 030Ensemble
   ▶:
     id: KtgrvUqb650
     views: 11705
@@ -153,8 +153,8 @@
 
 - firstname: Trio
   lastname: Eroica
-  instrument: Piano Violin Cello
-  instrumentCategory: 03Ensemble
+  instrument: Violin, Cello & Piano
+  instrumentCategory: 030Ensemble
   ▶:
     id: 5yqpUcg6q14
     views: 5169
@@ -163,7 +163,7 @@
 - firstname: Fernando
   lastname: Cordella
   instrument: Harpsichord
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: oxk8Caw6fuk
     views: 3550
@@ -172,7 +172,7 @@
 - firstname: Franz
   lastname: Silvestri
   instrument: Harpsichord
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: EZREQegRDYk
     views: 2489
@@ -181,7 +181,7 @@
 - firstname: Gioconda
   lastname: De Vito
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: fjb-ReyPzwQ
     views: 1411
@@ -190,7 +190,7 @@
 - firstname: Greta
   lastname: Medini
   instrument: Viola
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: 9dDALcfTkxw
     views: 53310
@@ -199,7 +199,7 @@
 - firstname: Hina
   lastname: Maeda
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: e-TS-BaAR0Y
     views: 26049
@@ -208,7 +208,7 @@
 - firstname: Isaac
   lastname: Stern
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: 1zvRWFD_1_M
     views: 464671
@@ -217,7 +217,7 @@
 - firstname: Itzhak
   lastname: Perlman
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: VfwVim0EybY
     views: 118111
@@ -226,7 +226,7 @@
 - firstname: Itzhak
   lastname: Perlman
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   blockedBy: https://www.nikita-ventures.com
   ▶:
     id: qtyTaE7LvVs
@@ -236,7 +236,7 @@
 - firstname: Iva
   lastname: Miletic
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: AXh2fxYmakw
     views: 43
@@ -245,7 +245,7 @@
 - firstname: Jean
   lastname: Geoffroy
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: 7Xcs_OXicls
     views: 8000
@@ -254,7 +254,7 @@
 - firstname: Johann Sebastian
   lastname: Paetsch
   instrument: Cello
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: Hx-mGrlQmvM
     views: 2048
@@ -263,7 +263,7 @@
 - firstname: Jose Miguel
   lastname: Moreno
   instrument: Lute
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: Sdi1kf0mfi8
     views: 36377
@@ -281,7 +281,7 @@
 - firstname: Keren
   lastname: Satkin
   instrument: Flute
-  instrumentCategory: 08Flute
+  instrumentCategory: 080Woodwinds
   ▶:
     id: PBKCGWul2zU
     views: 7009
@@ -290,7 +290,7 @@
 - firstname: Knut Erik
   lastname: Sundquist
   instrument: Electric Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: kSEQcitQNO4
     views: 17769
@@ -299,7 +299,7 @@
 - firstname: Kyrill
   lastname: Rybakov
   instrument: Clarinet
-  instrumentCategory: 08Flute
+  instrumentCategory: 080Woodwinds
   ▶:
     id: McHYHdLKzCQ
     views: 3867
@@ -308,7 +308,7 @@
 - firstname: Lara
   lastname: Saliba
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: Yt0ovieceFs
     views: 18088
@@ -317,7 +317,7 @@
 - firstname: Manuel
   lastname: Barrueco
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: v4LUzZYLNN4
     views: 25786
@@ -326,7 +326,7 @@
 - firstname: Marco
   lastname: Caiazza
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: myYByJ_yIR4
     views: 21921
@@ -335,7 +335,7 @@
 - firstname: Marco
   lastname: Serino
   instrument: Violin & Voices
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: i-vtSWEs5aQ
     views: 13072
@@ -344,7 +344,7 @@
 - firstname: Nathan
   lastname: Milstein
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: _TgqnzU1ZQk
     views: 62099
@@ -353,7 +353,7 @@
 - firstname: Nathan
   lastname: Milstein
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: Szu-ui-fnzs
     views: 75117
@@ -362,7 +362,7 @@
 - firstname: Olivier
   lastname: Penin
   instrument: Organ
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: SfS14rpl0OI
     views: 121461
@@ -371,7 +371,7 @@
 - firstname: Polina
   lastname: Osetinskaya
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: qoYaxJWb42s
     views: 61870
@@ -380,7 +380,7 @@
 - firstname: Psychedelic
   lastname: Rock
   instrument: Electric Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: n1AHJCVDU4Y
     views: 47471
@@ -389,7 +389,7 @@
 - firstname: Sanel
   lastname: Redzic
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: BtT9cEipTos
     views: 273592
@@ -398,7 +398,7 @@
 - firstname:
   lastname: Seiai Pipers
   instrument: Recorder
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: gOuCjwIMR2c
     views: 3136
@@ -407,7 +407,7 @@
 - firstname: Svetlin
   lastname: Roussev
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: gUxcoixiVCI
     views: 4650
@@ -416,7 +416,7 @@
 - firstname: Tatiana
   lastname: Daubek
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: LV025VdWatA
     views: 237
@@ -425,7 +425,7 @@
 - firstname: Thomas
   lastname: Dunford
   instrument: Lute
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: AuY3KTm9HoE
     views: 5173
@@ -443,7 +443,7 @@
 - firstname: Viktoria
   lastname: Mullova
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: omOnU8R4Kyc
     views: 70656
@@ -452,7 +452,7 @@
 - firstname: Vincent
   lastname: van Amsterdam
   instrument: Accordion
-  instrumentCategory: 10Accordion
+  instrumentCategory: 100Accordion
   ▶:
     id: azNF_OCkhoc
     views: 1537
@@ -461,7 +461,7 @@
 - firstname: Yehudi
   lastname: Menuhin
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: Nunk9fRaZZs
     views: 22563
@@ -470,7 +470,7 @@
 - firstname: Luosha
   lastname: Fang
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: ocaRkvVDO8w
     views: 648
@@ -479,7 +479,7 @@
 - firstname: Emmanuele
   lastname: Baldini
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: NQPuaWt7mqE
     views: 2387
@@ -488,7 +488,7 @@
 - firstname: Uto
   lastname: Ughi
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: jhX9G-LcoXo
     views: 127577
@@ -497,7 +497,7 @@
 - firstname: Hopkinson
   lastname: Smith
   instrument: Lute
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: LtjtuljFPa8
     views: 357393
@@ -506,7 +506,7 @@
 - firstname: Nicanor
   lastname: Zabaleta
   instrument: Harp
-  instrumentCategory: 06Harp
+  instrumentCategory: 060Harp
   ▶:
     id: YW6Ab3ZuFhQ
     views: 59305
@@ -515,7 +515,7 @@
 - firstname: Anastasiya
   lastname: Petryshak
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: e99D0gnqG-c
     views: 233441
@@ -524,7 +524,7 @@
 - firstname: Mika
   lastname: Stoltzman
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: YOu5y_vyJr0
     views: 555
@@ -533,7 +533,7 @@
 - firstname: Mika
   lastname: Stoltzman
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: QaFgKp7Qvzw
     views: 4633
@@ -542,7 +542,7 @@
 - firstname: Mika
   lastname: Stoltzman
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: MLX0Px_UtwI
     views: 522
@@ -551,7 +551,7 @@
 - firstname: Marc
   lastname: Bouchkov
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: qTrEfvDqm2E
     views: 116854
@@ -560,7 +560,7 @@
 - firstname: Jascha
   lastname: Heifetz
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: vhOaS_Cy8_8
     views: 234832
@@ -569,7 +569,7 @@
 - firstname: Chinatsu
   lastname: Takeda
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: BKIsy7ot0Uo
     views: 20021
@@ -578,7 +578,7 @@
 - firstname: Antal
   lastname: Zalai
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: yNHZJElYD7o
     views: 15708
@@ -587,7 +587,7 @@
 - firstname: James
   lastname: Ehnes
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: xjYQlmpS69k
     views: 437824
@@ -596,7 +596,7 @@
 - firstname: Jonathan
   lastname: Scott
   instrument: Organ
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: vRkh2ZrBHI8
     views: 61385
@@ -605,7 +605,7 @@
 - firstname: Ilya
   lastname: Gringolts
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: 96xjMoYADBY
     views: 13044
@@ -614,7 +614,7 @@
 - firstname: Gidon
   lastname: Kremer
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: DBJPVnJ8m-Y
     views: 909386
@@ -623,7 +623,7 @@
 - firstname: Matt
   lastname: Palmer
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: z9ZgONrHtmI
     views: 91289
@@ -632,7 +632,7 @@
 - firstname: Liza
   lastname: Ferschtman
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: m_GJBDQegYk
     views: 64243
@@ -641,7 +641,7 @@
 - firstname: Piotr
   lastname: Pakhomkin
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: --E3k28veVc
     views: 33319
@@ -650,7 +650,7 @@
 - firstname: Lawrence
   lastname: Power
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: AiUeOt4ekaE
     views: 40076
@@ -659,7 +659,7 @@
 - firstname: Peter
   lastname: Schmidt
   instrument: Cello
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: JJU_OFD83lw
     views: 65579
@@ -668,7 +668,7 @@
 - firstname: Zia
   lastname: Hyunsu Shi
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: 1wPFp0Q8Kb8
     views: 134389
@@ -677,7 +677,7 @@
 - firstname: Georg
   lastname: Gulyas
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: 8Ap3YDBxmqA
     views: 73431
@@ -686,7 +686,7 @@
 - firstname: Tengyue
   lastname: Zhang
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: V2Yjid0FWQQ
     views: 148347
@@ -695,7 +695,7 @@
 - firstname: Amandine
   lastname: Beyer
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: yCSx3SoODeA
     views: 13536
@@ -704,7 +704,7 @@
 - firstname: Kanahi
   lastname: Yamashita
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: d1_b_Isdelw
     views: 132108
@@ -713,7 +713,7 @@
 - firstname: Léo
   lastname: Brouwer
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: B2JWj8Yc8T8
     views: 1305
@@ -722,7 +722,7 @@
 - firstname: Laura
   lastname: Lootens
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   ▶:
     id: Khya87ICUec
     views: 8576
@@ -731,7 +731,7 @@
 - firstname: Davide
   lastname: Alogna
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: wdLVNjHXGow
     views: 8206
@@ -740,7 +740,7 @@
 - firstname: Gürzenich-Orchester
   lastname: Köln
   instrument: Violas
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: 6pUAUt3R1lM
     views: 2455
@@ -749,7 +749,7 @@
 - firstname: Avi
   lastname: Avital
   instrument: Mandolin
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   blockedBy: https://www.nikita-ventures.com/
   ▶:
     id: AI56MpTFxso
@@ -759,7 +759,7 @@
 - firstname: Denis
   lastname: Petrunin
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: BzQi4mG__Tg
     views: 94289
@@ -768,7 +768,7 @@
 - firstname: Mariam
   lastname: Batsashvili
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: OaKe2K_i_cY
     views: 45246
@@ -777,7 +777,7 @@
 - firstname: Valentina
   lastname: Lisitsa
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: sOFflFiLlT8
     views: 952537
@@ -786,7 +786,7 @@
 - firstname: François
   lastname: Dumont
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: A-VJpDsKcJE
     views: 4925
@@ -795,7 +795,7 @@
 - firstname: James
   lastname: Rhode
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: pZ82pECqiUg
     views: 632458
@@ -804,7 +804,7 @@
 - firstname: Beatrice
   lastname: Berrut
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: LU0SPcznjxk
     views: 111488
@@ -813,7 +813,7 @@
 - firstname: Virna
   lastname: Kljaković
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: ixGv5CQky8s
     views: 133827
@@ -822,7 +822,7 @@
 - firstname: Thierry
   lastname: Châtelain
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   ▶:
     id: RKc7kr-wpDk
     views: 1226
@@ -831,7 +831,7 @@
 - firstname: Conrado
   lastname: Moya
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: e6y4P1FbUwo
     views: 9186
@@ -840,7 +840,7 @@
 - firstname: Nikolay
   lastname: Ivanov
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   ▶:
     id: qnvMotBjJrk
     views: 35252
@@ -849,7 +849,7 @@
 - firstname: Violinist
   lastname: Paris Street
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   ▶:
     id: eA-dvnSO_rQ
     views: 65123
@@ -858,7 +858,7 @@
 - firstname: Leopold
   lastname: Stokowski
   instrument: Symphony Orchestra
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: NEUYq5t-cCM
     views: 243897
@@ -867,7 +867,7 @@
 - firstname: Brian
   lastname: Thornton
   instrument: Cellos
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   ▶:
     id: NGBU2DOL-yQ
     views: 331241
@@ -876,7 +876,7 @@
 - firstname: Genzoh
   lastname: Takehisa
   instrument: Fortepiano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   flag: 🇯🇵
   blockedBy: video owner
   ▶:
@@ -890,7 +890,7 @@
 - firstname: Evgeny
   lastname: Kissin
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: evgenykissin
   ▶:
     id: KHYW76fuNKU
@@ -901,7 +901,7 @@
 - firstname: Jean
   lastname: Rondeau
   instrument: Harpsichord
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: jeanrondeau
   ▶:
     id: szuOj_rpXAs
@@ -912,7 +912,7 @@
 - firstname: Arno
   lastname: Bornkamp
   instrument: Saxophone
-  instrumentCategory: 08Flute
+  instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: arnobornkamp
   ▶:
     id: UbFWcm3TYMw
@@ -923,7 +923,7 @@
 - firstname: Andrés
   lastname: Segovia
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: andressegovia
   ▶:
     id: IDJiKL6sHAY
@@ -934,7 +934,7 @@
 - firstname: John
   lastname: Williams
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: johnwilliams
   ▶:
     id: e4pVx9zOQV8
@@ -942,10 +942,10 @@
     published: May 3, 2015
     collected: Jun 3, 2023
 
-- firstname:  Seiji
+- firstname: Seiji
   lastname: Ozawa
   instrument: Symphony Orchestra
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: seijiozawa
   completeName: Transcription Hideo Saito · Boston Symphony Orchestra · Seiji Ozawa
   ▶:
@@ -954,10 +954,10 @@
     published: Jul 23, 2018
     collected: Jun 3, 2023
 
-- firstname:  Nobuya
+- firstname: Nobuya
   lastname: Sugawa
   instrument: Saxophone
-  instrumentCategory: 08Flute
+  instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: nobuyasugawa
   ▶:
     id: SWrgkqOVU6s
@@ -968,7 +968,7 @@
 - firstname: Hélène
   lastname: Grimaud
   instrument: Piano
-  instrumentCategory: 05Keyboard
+  instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: helenegrimaud
   blockedBy: https://www.nikita-ventures.com
   ▶:
@@ -976,10 +976,10 @@
     views: 1448673
     published: Sep 16, 2020
 
-- firstname:  Mari
+- firstname: Mari
   lastname: Samuelsen
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: marisamuelsen
   ▶:
     id: BFCmT1BJYxo
@@ -987,10 +987,10 @@
     published: Jun 6, 2019
     collected: Jun 4, 2023
 
-- firstname:  Leonid
+- firstname: Leonid
   lastname: Zheleznyj
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: leonidzheleznyj
   ▶:
     id: qXNb_7dGNWA
@@ -998,10 +998,10 @@
     published: Oct 18, 2020
     collected: Jun 4, 2023
 
-- firstname:  Alexis
+- firstname: Alexis
   lastname: Cárdenas
   instrument: Violin, Cello, Harpsichord & Lute
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: alexiscardenas
   ▶:
     id: V44xoTfzVf4
@@ -1009,10 +1009,10 @@
     published: Dec 4, 2022
     collected: Jun 4, 2023
 
-- firstname:  Saria
+- firstname: Saria
   lastname: Convertino
   instrument: Accordion
-  instrumentCategory: 10Accordion
+  instrumentCategory: 100Accordion
   fullnameNospaceLowercaseNodiacritics: sariaconvertino
   ▶:
     id: dwZWKeODH90
@@ -1020,10 +1020,10 @@
     published: Jul 15, 2015
     collected: Jun 4, 2023
 
-- firstname:  Nicholas
+- firstname: Nicholas
   lastname: DiEugenio
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: nicholasdieugenio
   ▶:
     id: JnQyAq00dek
@@ -1031,10 +1031,10 @@
     published: Oct 9, 2020
     collected: Jun 4, 2023
 
-- firstname:  Vaclav 
+- firstname: Vaclav
   lastname: Navrat
   instrument: Baroque Violin
-  instrumentCategory: 00Baroque_Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: vaclavnavrat
   ▶:
     id: 7ePBzdMEBCU
@@ -1042,10 +1042,10 @@
     published: May 5, 2016
     collected: Jun 5, 2023
 
-- firstname:  Hiro     
+- firstname: Hiro
   lastname: Kurosaki
   instrument: Baroque Violin
-  instrumentCategory: 00Baroque_Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: hirokurosaki
   qwe: HiroKurosaki-hSpoxkKtfAw.js
   ▶:
@@ -1054,10 +1054,10 @@
     published: Sep 4, 2020
     collected: Jun 5, 2023
 
-- firstname:  Ida      
+- firstname: Ida
   lastname: Haendel
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: idahaendel
   timingsFile: IdaHaendel-W4P9bAT0Z6E.js
   ▶:
@@ -1066,10 +1066,10 @@
     published: Aug 23, 2020
     collected: Jun 6, 2023
 
-- firstname:  Sigiswald       
+- firstname: Sigiswald
   lastname: Kuijken
   instrument: Baroque Violin
-  instrumentCategory: 00Baroque_Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: sigiswaldkuijken
   timingsFile: SigiswaldKuijken-CjnkFLmatfM.js
   ▶:
@@ -1078,10 +1078,10 @@
     published: Jul 1, 2011
     collected: Jun 6, 2023
 
-- firstname:  Gregory        
+- firstname: Gregory
   lastname: Maytan
   instrument: Violin & Voices
-  instrumentCategory: 03Ensemble
+  instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: gregorymaytan
   timingsFile: GregoryMaytan-z6SaA3vaGfU.js
   ▶:
@@ -1090,10 +1090,10 @@
     published: Nov 17, 2016
     collected: Jun 6, 2023
 
-- firstname:  Eiko        
+- firstname: Eiko
   lastname: Kano
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: eikokano
   timingsFile: EikoKano-rIALcdiGTqU.js
   ▶:
@@ -1105,7 +1105,7 @@
 - firstname: Adélaïde
   lastname: Ferrière
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: adelaideferriere
   timingsFile: AdélaïdeFerrière-3LnnE8akdHc.js
   ▶:
@@ -1117,7 +1117,7 @@
 - firstname: Mark
   lastname: Boseman
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: markboseman
   timingsFile: MarkBoseman-ykxBL4hHm8k.js
   ▶:
@@ -1126,10 +1126,10 @@
     published: Jul 18, 2014
     collected: Jun 6, 2023
 
-- firstname: Hansol 
+- firstname: Hansol
   lastname: Choi
   instrument: Marimba
-  instrumentCategory: 09Marimba
+  instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: hansolchoi
   timingsFile: HansolChoi-yD4B2PkadxA.js
   ▶:
@@ -1138,35 +1138,35 @@
     published: Jul 13, 2013
     collected: Jun 6, 2023
 
-- firstname: Yiu 
-  lastname: Kwong Chung 
+- firstname: Yiu
+  lastname: Kwong Chung
   instrument: Marimba
-  instrumentCategory: 09Marimba
-  fullnameNospaceLowercaseNodiacritics: yiukwongchung 
+  instrumentCategory: 090Marimba
+  fullnameNospaceLowercaseNodiacritics: yiukwongchung
   timingsFile: YiuKwongChung-zjqlHhkKIfM.js
   ▶:
     id: zjqlHhkKIfM
-    views: 1891 
+    views: 1891
     published: Sep 7, 2016
     collected: Jun 6, 2023
 
-- firstname: Tobias  
+- firstname: Tobias
   lastname: Gasser
   instrument: Marimba
-  instrumentCategory: 09Marimba
-  fullnameNospaceLowercaseNodiacritics: tobiasgasser 
+  instrumentCategory: 090Marimba
+  fullnameNospaceLowercaseNodiacritics: tobiasgasser
   timingsFile: TobiasGasser-b9IH4wfoTdY.js
   ▶:
     id: b9IH4wfoTdY
     views: 511
-    published: Jul 14, 2021 
+    published: Jul 14, 2021
     collected: Jun 6, 2023
 
-- firstname: Elissa   
+- firstname: Elissa
   lastname: Cassini
   instrument: Violin
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: elissacassini 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: elissacassini
   timingsFile: ElissaCassini-_kuvSeYgtR8.js
   ▶:
     id: _kuvSeYgtR8
@@ -1174,45 +1174,45 @@
     published: Sep 24, 2017
     collected: Jun 6, 2023
 
-- firstname: Lara     
+- firstname: Lara
   lastname: Boschkor
   instrument: Violin
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: laraboschkor 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: laraboschkor
   timingsFile: LaraBoschkor-IsW1ma33eVw.js
   ▶:
     id: IsW1ma33eVw
-    views: 3738 
+    views: 3738
     published: Jul 29, 2017
     collected: Jun 6, 2023
 
-- firstname: Dave 
+- firstname: Dave
   lastname: Grossman
   instrument: Electric Bass
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: davegrossman
   ▶:
     id: 1nZutjH-lUA
-    views: 2781 
+    views: 2781
     published: Jul 14, 2013
     collected: Jun 8, 2023
 
-- firstname: Silvian  
+- firstname: Silvian
   lastname: Dmitry
   instrument: Cello
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: silviandmitry
   ▶:
     id: iMzU3up7pMs
     views: 6160
-    published: Nov 18, 2020 
+    published: Nov 18, 2020
     collected: Jun 8, 2023
 
 - firstname: Justin
   lastname: Ball
   instrument: Marimba
-  instrumentCategory: 09Marimba
-  fullnameNospaceLowercaseNodiacritics: justinball 
+  instrumentCategory: 090Marimba
+  fullnameNospaceLowercaseNodiacritics: justinball
   timingsFile: JustinBall-e6klWhemkOg.js
   ▶:
     id: e6klWhemkOg
@@ -1223,7 +1223,7 @@
 - firstname: Santiago
   lastname: Cañón Valencia
   instrument: Cello
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: santiagocanonvalencia
   timingsFile: SantiagoCañónValencia-qGvCmzEIqFE.js
   ▶:
@@ -1235,8 +1235,8 @@
 - firstname: Janine
   lastname: Jansen
   instrument: Violin
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: janinejansen 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: janinejansen
   timingsFile: JanineJansen-SrZPIbIbYag.js
   ▶:
     id: SrZPIbIbYag
@@ -1245,10 +1245,10 @@
     collected: Jun 21, 2023
 
 - firstname: Tanya
-  lastname: Anisimova 
+  lastname: Anisimova
   instrument: Cello
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: tanyaanisimova 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: tanyaanisimova
   timingsFile: TanyaAnisimova-TxoApYOGe6c.js
   ▶:
     id: TxoApYOGe6c
@@ -1259,20 +1259,20 @@
 - firstname: Ivry
   lastname: Gitlis
   instrument: Violin
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: ivrygitlis 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: ivrygitlis
   timingsFile: IvryGitlis-bh8pKgwapSA.js
   ▶:
     id: bh8pKgwapSA
-    views: 736865  
+    views: 736865
     published: Jul 1, 2011
     collected: Jun 21, 2023
 
 - firstname: Henryk
   lastname: Szeryng
   instrument: Violin
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: henrykszeryng 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: henrykszeryng
   timingsFile: HenrykSzeryng-5UcVW3Mmn2U.js
   ▶:
     id: 5UcVW3Mmn2U
@@ -1283,7 +1283,7 @@
 - firstname: Alan
   lastname: Mearns
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: alanmearns
   timingsFile: AlanMearns-8xA3ZDdwA8Y.js
   ▶:
@@ -1296,7 +1296,7 @@
   lastname: Salas
   completeName: Alicia Salas, Avri Levitan, Jose García, Julia Lorenzo
   instrument: Viola
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: aliciasalas
   timingsFile: AliciaSalas-OqGEssj4pPE.js
   ▶:
@@ -1305,11 +1305,11 @@
     published: Dec 22, 2022
     collected: Jun 22, 2023
 
-- firstname: Simon 
+- firstname: Simon
   lastname: Streuff
   instrument: Violin
-  instrumentCategory: 01Violin
-  fullnameNospaceLowercaseNodiacritics: simonstreuff 
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: simonstreuff
   timingsFile: SimonStreuff-_FJujJDLacA.js
   ▶:
     id: _FJujJDLacA
@@ -1317,10 +1317,10 @@
     published: Aug 9, 2015
     collected: Jun 22, 2023
 
-- firstname: Joseph 
+- firstname: Joseph
   lastname: Szigeti
   instrument: Violin
-  instrumentCategory: 01Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: josephszigeti
   timingsFile: JosephSzigeti-DNU4E1ziE8M.js
   ▶:
@@ -1332,7 +1332,7 @@
 - firstname: Thibault
   lastname: Cauvin
   instrument: Guitar
-  instrumentCategory: 04Plucked_Strings
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: thibaultcauvin
   timingsFile: ThibaultCauvin
   ▶:
@@ -1341,22 +1341,22 @@
     published: Feb 16, 2023
     collected: Jun 22, 2023
 
-- firstname: Jens 
+- firstname: Jens
   lastname: Korndoerfer
-  instrument: 
-  instrumentCategory: 
+  instrument: Organ
+  instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: jenskorndoerfer
-  timingsFile: JensKorndoerfer-Jens Korndoerfer.js
+  timingsFile: JensKorndoerfer-ofnm01lkEUk.js
   ▶:
-    id: Jens Korndoerfer
+    id: ofnm01lkEUk
     views: 104102
-    published: Mar 23, 2014 
+    published: Mar 23, 2014
     collected: Jun 22, 2023
 
-- firstname: Kyung Wha 
+- firstname: Kyung Wha
   lastname: Chung
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: kyungwhachung
   timingsFile: KyungWhaChung-11Zc9O6Oi54.js
   ▶:
@@ -1365,10 +1365,10 @@
     published: Oct 26, 2021
     collected: Jun 22, 2023
 
-- firstname: Kyung Wha 
+- firstname: Kyung Wha
   lastname: Chung
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: kyungwhachung
   timingsFile: KyungWhaChung-663tj-4m3SY.js
   ▶:
@@ -1377,10 +1377,10 @@
     published: Jan 14, 2017
     collected: Jun 22, 2023
 
-- firstname: Johnny 
+- firstname: Johnny
   lastname: Gandelsman
-  instrument: 
-  instrumentCategory: 
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: johnnygandelsman
   timingsFile: JohnnyGandelsman-cGmUrUwEn5k.js
   ▶:
@@ -1389,83 +1389,83 @@
     published: Feb 22, 2013
     collected: Jun 22, 2023
 
-- firstname: Julian 
+- firstname: Julian
   lastname: Bream
-  instrument: 
-  instrumentCategory: 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: julianbream
   timingsFile: JulianBream-jUA0ZXrUwF8.js
   ▶:
     id: jUA0ZXrUwF8
     views: 8145
-    published: Jun 28, 2022 
+    published: Jun 28, 2022
     collected: Jun 22, 2023
 
-- firstname: Ania 
+- firstname: Ania
   lastname: Filochowska
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: aniafilochowska
   timingsFile: AniaFilochowska-YL5zwzJ6pXw.JS
   ▶:
     id: YL5zwzJ6pXw
-    views: 4232  
+    views: 4232
     published: Apr 11, 2019
     collected: Jun 22, 2023
 
-- firstname: Roxane 
+- firstname: Roxane
   lastname: Radoux
-  instrument: 
-  instrumentCategory: 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: roxaneradoux
   timingsFile: RoxaneRadoux-jqEwtMsK3MA.js
   ▶:
     id: jqEwtMsK3MA
-    views: 10319  
-    published: May 10, 2022 
+    views: 10319
+    published: May 10, 2022
     collected: Jun 22, 2023
 
-- firstname: Nikki and Kaitlin 
+- firstname: Nikki and Kaitlin
   lastname: Pet
-  instrument: 
-  instrumentCategory: 
+  instrument: Oboe & Clarinet
+  instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: nikkiandkaitlinpet
-  timingsFile:  NikkiAndKaitlinPet-lo8opJA9nNA.js
+  timingsFile: NikkiAndKaitlinPet-lo8opJA9nNA.js
   ▶:
     id: lo8opJA9nNA
-    views: 920  
+    views: 920
     published: Oct 2, 2021
     collected: Jun 22, 2023
 
-- firstname: Anika 
+- firstname: Anika
   lastname: Hutschreuther
-  instrument: 
-  instrumentCategory: 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: anikahutschreuther
   timingsFile: Anika Hutschreuther-EJd9cSDaZCc.js
   ▶:
     id: EJd9cSDaZCc
-    views: 11590  
-    published: Oct 18, 2022 
+    views: 11590
+    published: Oct 18, 2022
     collected: Jun 22, 2023
 
 - firstname: Max
   lastname: Zorin
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: maxzorin
   timingsFile: MaxZorin-_LRw93MLfiM.js
   ▶:
     id: _LRw93MLfiM
-    views: 584  
+    views: 584
     published: May 5, 2014
     collected: Jun 22, 2023
 
 - firstname: Aaron
-  lastname: Rosand 
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics: aaronrosand 
+  lastname: Rosand
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: aaronrosand
   timingsFile: AaronRosand-hlKUTeCPY54.js
   ▶:
     id: hlKUTeCPY54
@@ -1473,22 +1473,22 @@
     published: Mar 9, 2015
     collected: Jun 22, 2023
 
-- firstname: Pascal 
+- firstname: Pascal
   lastname: Mencarelli
-  instrument: 
-  instrumentCategory: 
+  instrument: Piano
+  instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: pascalmencarelli
-  timingsFile: PascalMencarelli-Pascal Mencarelli.js
+  timingsFile: PascalMencarelli-z9XMNPz3Xs4.js
   ▶:
-    id: Pascal Mencarelli
+    id: z9XMNPz3Xs4
     views: 248
     published: Mar 6, 2023
     collected: Jun 22, 2023
-    
-- firstname: Marc 
+
+- firstname: Marc
   lastname: Teicholz
-  instrument: 
-  instrumentCategory: 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: marcteicholz
   timingsFile: MarcTeicholz-S3Ka7t6SBVg.js
   ▶:
@@ -1498,84 +1498,81 @@
     collected: Jun 22, 2023
 
 - firstname: Nemanja
-  lastname: Radulović 
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics: nemanjaradulovic 
+  lastname: Radulović
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: nemanjaradulovic
   timingsFile: NemanjaRadulović-PHgtLbLdwEE.js
   ▶:
     id: PHgtLbLdwEE
     views: 24057
     published: Jul 24, 2018
     collected: Jun 22, 2023
-    
-- firstname: Oguzhan 
-  lastname: Kayal
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics: oguzhankayal
-  timingsFile: OguzhanKayal-Oguzhan Kayal.js
+
+- firstname: Oguzhan
+  lastname: Kayali
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: oguzhankayali
+  timingsFile: OguzhanKayali-2Z5-sup6WcY.js
   ▶:
-    id: Oguzhan Kayal
+    id: 2Z5-sup6WcY
     views: 22956
     published: Nov 21, 2018
     collected: Jun 22, 2023
-    
-    
-- firstname: Rakhi 
+
+- firstname: Rakhi
   lastname: Singh
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: rakhisingh
   timingsFile: RakhiSingh-uteVrWelAGo.js
   ▶:
     id: uteVrWelAGo
-    views: 967  
+    views: 967
     published: Oct 31, 2019
     collected: Jun 22, 2023
-    
-- firstname: Denis 
+
+- firstname: Denis
   lastname: Bouriakov
-  instrument: 
-  instrumentCategory: 
+  instrument: Flute
+  instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: denisbouriakov
   timingsFile: DenisBouriakov-faxKHWER5ac.js
   ▶:
     id: faxKHWER5ac
-    views: 11978  
+    views: 11978
     published: Aug 24, 2018
     collected: Jun 22, 2023
-    
-- firstname: Emily 
+
+- firstname: Emily
   lastname: Sun
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: emilysun
   timingsFile: EmilySun-hfVAqFEEkdI.js
   ▶:
     id: hfVAqFEEkdI
-    views: 10591  
+    views: 10591
     published: Nov 24, 2020
     collected: Jun 22, 2023
-    
-    
+
 - firstname: Nadja
   lastname: Zwiener
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: nadjazwiener
   timingsFile: NadjaZwiener-AogMCZhFaEM.js
   ▶:
     id: AogMCZhFaEM
     views: 5766
-    published: May 21, 2020 
+    published: May 21, 2020
     collected: Jun 22, 2023
-    
-    
-- firstname: Laure 
+
+- firstname: Laure
   lastname: Chan
-  instrument: 
-  instrumentCategory: 
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: laurechan
   timingsFile: LaureChan-dOjHZnHA4OI.js
   ▶:
@@ -1583,36 +1580,35 @@
     views: 659
     published: Mar 21, 2021
     collected: Jun 22, 2023
-    
-    
-- firstname: Sayaka  
-  lastname: Shoji 
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics: sayakashoji 
+
+- firstname: Sayaka
+  lastname: Shoji
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: sayakashoji
   timingsFile: SayakaShoji-sU9lrF4h52w.js
   ▶:
     id: sU9lrF4h52w
-    views: 99057  
+    views: 99057
     published: Oct 1, 2017
     collected: Jun 22, 2023
-    
-- firstname: Laure 
+
+- firstname: Laure
   lastname: Chan
-  instrument: 
-  instrumentCategory: 
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: laurechan
   timingsFile: LaureChan-mDuSQtY7ctw.js
   ▶:
     id: mDuSQtY7ctw
-    views: 178 
+    views: 178
     published: Apr 5, 2020
     collected: Jun 22, 2023
 
-- firstname: Fumiaki 
+- firstname: Fumiaki
   lastname: Miura
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: fumiakimiura
   timingsFile: FumiakiMiura-bhBOE4EmH0A.js
   ▶:
@@ -1620,24 +1616,24 @@
     views: 43242
     published: Aug 25, 2020
     collected: Jun 22, 2023
-    
-- firstname: Jonah 
+
+- firstname: Jonah
   lastname: Kim
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics: jonahkim 
+  instrument: Cello
+  instrumentCategory: 018Cello
+  fullnameNospaceLowercaseNodiacritics: jonahkim
   timingsFile: JonahKim-VuhUz6JgEak.js
   ▶:
     id: VuhUz6JgEak
-    views: 76925  
+    views: 76925
     published: Sep 11, 2020
     collected: Jun 22, 2023
 
-- firstname: Patricia  
+- firstname: Patricia
   lastname: Kopatchinskaja
   completeName: Patricia Kopatchinskaja & Anthony Romaniuk
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin & Harpsichord
+  instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: patriciakopatchinskaja
   timingsFile: PatriciaKopatchinskaja-wYUop589yNg.js
   ▶:
@@ -1646,10 +1642,10 @@
     published: Feb 1, 2017
     collected: Jun 22, 2023
 
-- firstname: Charlie 
+- firstname: Charlie
   lastname: Siem
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: charliesiem
   timingsFile: CharlieSiem-pClLjafQTSU.js
   ▶:
@@ -1657,11 +1653,11 @@
     views: 1485
     published: May 22, 2023
     collected: Jun 22, 2023
-    
-- firstname: Alexi 
+
+- firstname: Alexi
   lastname: Kenney
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: alexikenney
   timingsFile: AlexiKenney-I85Jmocdfms.js
   ▶:
@@ -1669,11 +1665,11 @@
     views: 30022
     published: Mar 16, 2016
     collected: Jun 22, 2023
-    
-- firstname: Lana 
+
+- firstname: Lana
   lastname: Trotovsek
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: lanatrotovsek
   timingsFile: LanaTrotovsek-a9L1GJ1ucq8.js
   ▶:
@@ -1681,112 +1677,123 @@
     views: 4520
     published: Jul 1, 2020
     collected: Jun 22, 2023
-    
-- firstname: Edson 
+
+- firstname: Edson
   lastname: Lopes
-  instrument: 
-  instrumentCategory: 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: edsonlopes
   timingsFile: EdsonLopes-9AKC6e96pno.js
   ▶:
     id: 9AKC6e96pno
-    views: 102871  
+    views: 102871
     published: Jun 2, 2019
     collected: Jun 22, 2023
-    
-    
-- firstname: Frédéric 
+
+- firstname: Frédéric
   lastname: Moreau
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: fredericmoreau
   timingsFile: FrédéricMoreau-vafugI50mqU.js
   ▶:
     id: vafugI50mqU
     views: 2442
     published: Feb 14, 2019
-    collected: Jun 22, 2023    
-    
-- firstname:  Lara 
-  lastname:  St. John
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics:  larastjohn
-  timingsFile:  LaraStJohn-Usf7cn7JTGs.js
+    collected: Jun 22, 2023
+
+- firstname: Lara
+  lastname: St. John
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: larastjohn
+  timingsFile: LaraStJohn-Usf7cn7JTGs.js
   ▶:
     id: Usf7cn7JTGs
-    views: 51841  
+    views: 51841
     published: Feb 20, 2018
     collected: Jun 22, 2023
-    
-- firstname:  Lara 
-  lastname:  St. John
-  instrument: 
-  instrumentCategory: 
-  fullnameNospaceLowercaseNodiacritics:  larastjohn
-  timingsFile:  LaraStJohn-CNx20rsNaQc.js
+
+- firstname: Lara
+  lastname: St. John
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: larastjohn
+  timingsFile: LaraStJohn-CNx20rsNaQc.js
   ▶:
     id: CNx20rsNaQc
-    views: 2603  
-    published: Oct 1, 2014  
+    views: 2603
+    published: Oct 1, 2014
     collected: Jun 22, 2023
-    
+
 - firstname: Rustam
   lastname: Komachkov
-  instrument: 
-  instrumentCategory: 
+  instrument: Cello
+  instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: rustamkomachkov
   timingsFile: RustamKomachkov-LAzSp_qBr-Q.js
   ▶:
     id: LAzSp_qBr-Q
-    views: 76469  
+    views: 76469
     published: Jan 30, 2014
     collected: Jun 22, 2023
 
 - firstname: Nikola
   lastname: Karageorgiev
-  instrument: 
-  instrumentCategory: 
+  instrument: Cello
+  instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: nikolakarageorgiev
   timingsFile: NikolaKarageorgiev-9arkmymJ0gQ.js
   ▶:
     id: 9arkmymJ0gQ
-    views: 3364  
+    views: 3364
     published: May 20, 2016
     collected: Jun 22, 2023
 
-- firstname: Alexei 
+- firstname: Alexei
   lastname: Romanenko
-  instrument: 
-  instrumentCategory: 
+  instrument: Cello
+  instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: alexeiromanenko
   timingsFile: AlexeiRomanenko-x04z4N2hYR0.js
   ▶:
     id: x04z4N2hYR0
-    views: 1860 
-    published:  Mar 1, 2021
+    views: 1860
+    published: Mar 1, 2021
     collected: Jun 22, 2023
 
-- firstname: Marie-Astrid 
+- firstname: Marie-Astrid
   lastname: Hulot
-  instrument: 
-  instrumentCategory: 
+  instrument: Violin
+  instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: marieastridhulot
   timingsFile: MarieAstridHulot-NrMqjKfp4Nk.js
   ▶:
     id: NrMqjKfp4Nk
-    views: 9987 
+    views: 9987
     published: Dec 3, 2022
     collected: Jun 22, 2023
 
-- firstname: Goran 
+- firstname: Goran
   lastname: Sollscher
-  instrument: 
-  instrumentCategory: 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: goransollscher
   timingsFile: GoranSollscher-a1wLt9Q3KR4.js
   ▶:
     id: a1wLt9Q3KR4
-    views: 1707  
+    views: 1707
     published: Feb 8, 2018
     collected: Jun 22, 2023
+
+- firstname: Fahmi
+  lastname: Alqhai
+  instrument: Viola da gamba
+  instrumentCategory: 005ViolaDaGamba
+  fullnameNospaceLowercaseNodiacritics: fahmialqhai
+  timingsFile: FahmiAlqhai-DHeLLVbKw7k.js
+  ▶:
+    id: DHeLLVbKw7k
+    views: 3273
+    published: Jan 5, 2017
+    collected: Jun 23, 2023

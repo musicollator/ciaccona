@@ -33,9 +33,12 @@ function doHistogram(configParam) {
             const marginBottom = 30;
             const marginLeft = 40;
 
+            const [min, max] = d3.extent(data.map(d => d[config.key])); 
+            const thresholds = d3.range(min, max, (max - min) / config.thresholds); 
+
             // Bin the data.
             const bins = d3.bin()
-                .thresholds(config.thresholds)
+                .thresholds(thresholds)
                 .value((d) => d[config.key])
                 (data);
 

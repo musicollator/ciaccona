@@ -8,17 +8,20 @@ import { loadArtists } from "/js/artists.js?v=1.0.4-beta.2"
 const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/artists/${a}/${a}-${v}.webp')`
 
 const iconMap = {
-    '00Baroque_Violin': 'violin',
-    '01Violin': 'violin',
-    '02Double_Bass': 'violin',
-    '03Ensemble': 'violin',
-    '04Plucked_Strings': 'ukulele',
-    '05Keyboard': 'keyboard',
-    '06Harp': 'harp',
-    '07Cimbalom': 'cimbalom',
-    '08Flute': 'flute',
-    '09Marimba': 'xylophone',
-    '10Accordion': 'accordion',
+    '000Baroque_Violin': 'violin',
+    '005ViolaDaGamba' : 'violin',
+    '010Violin': 'violin',
+    '012Viola': 'violin',
+    '018Cello': 'violin',
+    '020Double_Bass': 'violin',
+    '030Ensemble': 'violin',
+    '040Plucked_Strings': 'ukulele',
+    '050Keyboard': 'keyboard',
+    '060Harp': 'harp',
+    '070Cimbalom': 'cimbalom',
+    '080Woodwinds': 'flute',
+    '090Marimba': 'xylophone',
+    '100Accordion': 'accordion',
 }
 
 const templateDivider = (instrumentKey, instrumentDisplayName) => `
@@ -99,7 +102,7 @@ function generateData() {
         const name = a.completeName ?? a.fullname
         const artistFullnameNoBreakingSpaces = name.replaceAll(/\s/gi, '&#xA0;' /* No-Break Space */);
         const datum = {
-            instrument: a.instrument,
+            instrument: a.instrumentCategory,
             i: vi,
             a: a.fullnameNospaceLowercaseNodiacritics,
             v: v,
@@ -119,7 +122,7 @@ loadArtists().then(putainDeArtists => {
         list.querySelectorAll('.list-item').forEach(E => E.remove())
 
         arrayOfArtists = putainDeArtists.artists.sort((a, b) => {
-            if (a.instrument === b.instrument) {
+            if (a.instrumentCategory === b.instrumentCategory) {
                 if (a.lastname === '自分') {
                     return 1
                 } else if (b.lastname === '自分') {
@@ -128,7 +131,7 @@ loadArtists().then(putainDeArtists => {
                     return a.lastname.localeCompare(b.lastname)
                 }
             }
-            return a.instrument.localeCompare(b.instrument)
+            return a.instrumentCategory.localeCompare(b.instrumentCategory)
         })
 
         data = generateData()
