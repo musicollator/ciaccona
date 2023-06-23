@@ -924,10 +924,24 @@
   facebookPost:
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid0Y3PjVJM8dzzLp45xF8c9dYMQiSJcKiawHiHPbVP4Jq7TrK7c3vaSsdxdZGu1HDKKl
     sort: 48
-  workInProgress: false
   ▶:
     id: NXgawycHnQM
     views: 6400
     published: Aug 9, 2022
     collected: Jun 21, 2023
     length: 11′18″
+
+- firstname: Patricia
+  lastname: Kopatchinskaja
+  completeName: Patricia Kopatchinskaja & Anthony Romaniuk
+  instrument: Violin & Harpsichord
+  instrumentCategory: 030Ensemble
+  fullnameNospaceLowercaseNodiacritics: patriciakopatchinskaja
+  timingsFile: PatriciaKopatchinskaja-wYUop589yNg.js
+  workInProgress: false
+  ▶:
+    id: wYUop589yNg
+    views: 24426
+    published: Feb 1, 2017
+    collected: Jun 22, 2023
+

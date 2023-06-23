@@ -40,6 +40,7 @@ class Coerce {
         'mikastoltzman',
         'moranwasser',
         'nemanjaradulovic',
+        'patriciakopatchinskaja',
         'petrapolackova',
         'polinaosetinskaya',
         'rachellellenwong',
