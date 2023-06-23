@@ -116,6 +116,4 @@ function loadArtists() {
     })
 }
 
-let theArtist
-
-export { loadArtists, theArtist, theDayWhenIReadTheVideoMeters }
+export { loadArtists, theDayWhenIReadTheVideoMeters }
