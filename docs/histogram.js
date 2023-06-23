@@ -21,7 +21,7 @@ function doHistogram(configParam) {
 
     lodashMerge(config, configParam)
 
-    document.getElementById(config.idWrapper).append(dothed3(config.durations,config. putainDeArtistsArtists))
+    document.getElementById(config.idWrapper).append(dothed3(config.durations, config.putainDeArtistsArtists))
 
     function dothed3(data, artists) {
         {
@@ -33,8 +33,14 @@ function doHistogram(configParam) {
             const marginBottom = 30;
             const marginLeft = 40;
 
-            const [min, max] = d3.extent(data.map(d => d[config.key])); 
-            const thresholds = d3.range(min, max, (max - min) / config.thresholds); 
+            let thresholds
+            if (config.bin) {
+                thresholds = d3.range(config.bin.min, config.bin.max, config.bin.width);
+            } else {
+                const [min, max] = d3.extent(data.map(d => d[config.key]));
+                const binWidth = config.binWidth ?? (max - min) / config.thresholds
+                thresholds = d3.range(min, max, binWidth);
+            }
 
             // Bin the data.
             const bins = d3.bin()
@@ -73,6 +79,7 @@ function doHistogram(configParam) {
             // Add the x-axis and label.
             svg.append("g")
                 .attr("transform", `translate(0,${height - marginBottom})`)
+
                 .call(d3.axisBottom(x).ticks(width / 60).tickSizeOuter(0).tickFormat(
                     (d, i) => config.formatKey(d)
                 ))
@@ -81,7 +88,8 @@ function doHistogram(configParam) {
                     .attr("y", marginBottom - 4)
                     .attr("fill", "currentColor")
                     .attr("text-anchor", "end")
-                    .text(`${config.key} →`));
+                    .text(`${config.key} →`))
+                ;
 
             // Add the y-axis and label, and remove the domain line.
             svg.append("g")
