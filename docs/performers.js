@@ -1,3 +1,24 @@
+const sortMoiAlwaysLast = (a, b) => {
+    let ret
+    if (typeof a.reverseFullname !== 'undefined') a = a.reverseFullname
+    if (typeof b.reverseFullname !== 'undefined') b = b.reverseFullname
+    if (a.startsWith('自分')) ret = -1
+    else if (b.startsWith('自分')) ret = 1
+    else ret = a.localeCompare(b)
+    // console.log(a, b, ret)
+    return ret
+}
+const sortMoiAlwaysFirst = (a, b) => {
+    let ret
+    if (typeof a.reverseFullname !== 'undefined') a = a.reverseFullname
+    if (typeof b.reverseFullname !== 'undefined') b = b.reverseFullname
+    if (a.startsWith('自分')) ret = 1
+    else if (b.startsWith('自分')) ret = -1
+    else ret = a.localeCompare(b)
+    // console.log(a, b, ret)
+    return ret
+}
+
 window.onload = function () {
     document.getElementById('name').classList.add('sorted_desc')
     document.querySelectorAll('th.sortable').forEach((element) => { // Table headers

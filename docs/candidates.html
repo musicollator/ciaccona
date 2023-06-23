@@ -125,9 +125,7 @@
 
     </script>
 
-
     <!-- The JS SDK Login Button -->
-
 
     <!-- Load the JS SDK asynchronously -->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
@@ -187,7 +185,15 @@
 <script id="candidate-template" type="text/x-handlebars-template">{{#each this}}        
 <tr class="{{clazz}}">
 <!-- th class="rownum">{{@index }}</!-->
-<th class="name" data-lastname="{{reverseFullname}}" style="{{blockedStyle}}" title="{{blockedBy}}">{{reverseFullname}}</th>
+<th class="name" data-lastname="{{reverseFullname}}" style="{{blockedStyle}}" title="{{blockedBy}}">
+    {{#if performer}}    
+        <a href="{{thisUrl}}" target="{{fullnameNospaceLowercaseNodiacritics}}">
+            {{reverseFullname}}
+        </a>
+    {{else}}
+        {{reverseFullname}}
+    {{/if}}
+</th>
 <td class="views     text-end" data-number="{{v.views}}">{{numberFormat v.views}}</td>
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
@@ -288,15 +294,16 @@
 
         const candidatesAsJSONObject = jsYaml.load(candidatesAsYAMLText)
         candidatesAsJSONObject.forEach((c) => {
-            const perf = new Candidate(c)
-            perf.clazz = 'candidate'
-            candidates.push(perf)
+            const cand = new Candidate(c)
+            cand.clazz = 'candidate'
+            candidates.push(cand)
         })
 
         loadArtists().then((theArtists) => {
             theArtists.artists.forEach(a => {
                 const perf = new Candidate(a)
                 perf.clazz = 'performer'
+                perf.performer = true
                 candidates.push(perf)
             })
 
@@ -313,7 +320,7 @@
                 formatKey: (k) => {
                     return k
                 },
-                thresholds: 160,
+                thresholds: 200,
                 durations: candidates,
             })
         })
