@@ -314,13 +314,17 @@
             console.log('# candidates', candidates.length)
 
             const rect = document.getElementById('histoWrapper').getBoundingClientRect()
+
+            const formatViewsPerMonthTick = (d) => {
+                return String(Math.floor(d / 1000)) + 'k'
+                }
+
             doHistogram({
                 idWrapper: 'histoWrapper',
                 key: "viewsPerMonth",
-                formatKey: (k) => {
-                    return k
-                },
-                thresholds: 160,
+                formatKey: d => d,
+                formatTick: formatViewsPerMonthTick,
+                thresholds: 240,
                 durations: candidates,
             })
         })

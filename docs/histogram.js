@@ -3,7 +3,7 @@ import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
 
 const formatDuration = (d) => {
     const dur = moment.duration(d)
-    const lengthAsAString = `${dur.minutes()}′${dur.seconds()}″`
+    const lengthAsAString = `${String(dur.minutes()).padStart(2, '0')}′${String(dur.seconds()).padStart(2, '0')}″`
     // console.log(d, lengthAsAString)
     return lengthAsAString
 }
@@ -13,6 +13,7 @@ function doHistogram(configParam) {
     const config = {
         key: "duration",
         formatKey: k => formatDuration(k),
+        formatTick: k => formatDuration(k),
         idWrapper: "body",
         widthWrapper: 900,
         heightWrapper: 500,
@@ -79,17 +80,21 @@ function doHistogram(configParam) {
             // Add the x-axis and label.
             svg.append("g")
                 .attr("transform", `translate(0,${height - marginBottom})`)
-
-                .call(d3.axisBottom(x).ticks(width / 60).tickSizeOuter(0).tickFormat(
-                    (d, i) => config.formatKey(d)
-                ))
+                .call(d3.axisBottom(x)
+                    .ticks(32)
+                    .tickSizeOuter(0)
+                    .tickFormat(
+                        (d, i) => config.formatTick(d)
+                    )
+                )
                 .call((g) => g.append("text")
                     .attr("x", width)
                     .attr("y", marginBottom - 4)
                     .attr("fill", "currentColor")
                     .attr("text-anchor", "end")
                     .text(`${config.key} →`))
-                ;
+                .selectAll("text")
+                .attr("transform", "translate(-12,12) rotate(-65)");
 
             // Add the y-axis and label, and remove the domain line.
             svg.append("g")
