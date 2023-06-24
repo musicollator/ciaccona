@@ -694,8 +694,9 @@
 
 - firstname: Amandine
   lastname: Beyer
-  instrument: Violin
-  instrumentCategory: 010Violin
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
+  blockedBy: https://www.nikita-ventures.com/,wahrscheinlich
   ▶:
     id: yCSx3SoODeA
     views: 13536
@@ -1779,8 +1780,22 @@
   instrumentCategory: 005ViolaDaGamba
   fullnameNospaceLowercaseNodiacritics: fahmialqhai
   timingsFile: FahmiAlqhai-DHeLLVbKw7k.js
+  flag: 🇪🇸
   ▶:
     id: DHeLLVbKw7k
     views: 3273
     published: Jan 5, 2017
     collected: Jun 23, 2023
+
+- firstname: Amandine & Laurence
+  lastname: Beyer
+  instrument: Baroque Violin & Piano
+  instrumentCategory: 030Ensemble
+  fullnameNospaceLowercaseNodiacritics: amandinelaurencebeyer
+  timingsFile: AmandineLaurenceBeyer-He1A6_wuvhM.js
+  flag: 🇫🇷
+  ▶:
+    id: He1A6_wuvhM
+    views: 793  
+    published: Oct 16, 2022
+    collected: Jun 24, 2023
