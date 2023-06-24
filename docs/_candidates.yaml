@@ -1799,3 +1799,120 @@
     views: 793  
     published: Oct 16, 2022
     collected: Jun 24, 2023
+
+- firstname: Maxime 
+  lastname: Venguerov
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: maximevenguerov
+  timingsFile: MaximeVenguerov-fwDCdmD7Nao.js
+  flag: 🇮🇱
+  ▶:
+    id: fwDCdmD7Nao
+    views: 206891
+    published: May 9, 2011
+    collected: Jun 24, 2023
+
+- firstname: Julian 
+  lastname: Walder
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: julianwalder
+  timingsFile: JulianWalder-a-RuZkPtp2Q.js
+  flag: 🇦🇹
+  ▶:
+    id: a-RuZkPtp2Q
+    views: 277
+    published: Jan 24, 2023
+    collected: Jun 24, 2023
+
+- firstname: Leonid 
+  lastname: Kogan
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: leonidkogan
+  timingsFile: LeonidKogan-SWIr2lQdzms.js
+  flag: 🇺🇦
+  ▶:
+    id: SWIr2lQdzms
+    views: 13917
+    published: Jun 20, 2020
+    collected: Jun 24, 2023
+
+- firstname: Leonid 
+  lastname: Kogan
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: leonidkogan
+  timingsFile: LeonidKogan-nxuiPqeIJwU.js
+  flag: 🇺🇦
+  ▶:
+    id: nxuiPqeIJwU
+    views: 131942
+    published: Mar 16, 2014
+    collected: Jun 24, 2023
+
+- firstname: Leonidas 
+  lastname: Kavakos
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: leonidaskavakos
+  timingsFile: LeonidasKavakos-AtA5DbswJ90.js
+  flag: 🇬🇷
+  ▶:
+    id: AtA5DbswJ90
+    views: 7381
+    published: Feb 3, 2022
+    collected: Jun 24, 2023
+
+- firstname: Alina
+  lastname: Ibragimova
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: alinaibragimova
+  timingsFile: AlinaIbragimova-557OWzYkHv8.js
+  flag: 🇷🇺
+  ▶:
+    id: 557OWzYkHv8
+    views: 17552  
+    published: Feb 18, 2020
+    collected: Jun 24, 2023
+
+- firstname: Arthur
+  lastname: Grumiaux
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: arthurgrumiaux
+  timingsFile: ArthurGrumiaux-J73XbfR_cIEjs
+  flag: 🇧🇪
+  ▶:
+    id: J73XbfR_cIE
+    views: 1816
+    published: May 16, 2018
+    collected: Jun 24, 2023
+
+- firstname: Nicola 
+  lastname: Benedetti
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: nicolabenedetti
+  timingsFile: NicolaBenedetti-m1-Si874NWw.js
+  flag: 🇬🇧
+  ▶:
+    id: m1-Si874NWw
+    views: 131799  
+    published: May 6, 2013
+    collected: Jun 24, 2023
+
+- firstname: Frank Peter
+  lastname: Zimmermann
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: frankpeterzimmermann
+  timingsFile: FrankPeterZimmermann-gbUrFuBycg4.js
+  flag: 🇩🇪
+  ▶:
+    id: gbUrFuBycg4
+    views: 57777
+    published: Oct 26, 2014
+    collected: Jun 24, 2023

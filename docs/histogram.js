@@ -51,6 +51,7 @@ function doHistogram(configParam) {
                     .domain(d3.extent(data.map(d => d[config.key])))
                     .range([marginLeft, width - marginRight])
                     .nice()
+                // Bin the data.
                 bins = d3.bin()
                     .domain(xScaleHist.domain())
                     .thresholds(xScaleHist.ticks())
@@ -58,18 +59,23 @@ function doHistogram(configParam) {
                     (data);
             } else {
                 // Bin the data.
+                let min, max
+                if (config.bin) {
+                    min = config.bin.min
+                    max = config.bin.max
+                } else {
+                    [min, max] = d3.extent(data.map(d => d[config.key]));
+                }
                 bins = d3.bin()
+                    .domain([min, max])
                     .thresholds(thresholds)
                     .value((d) => d[config.key])
                     (data);
                 xScaleHist = d3.scaleLinear()
                     .domain([bins[0].x0, bins[bins.length - 1].x1])
                     .range([marginLeft, width - marginRight])
-                    .nice()
             }
             const x = xScaleHist
-
-
 
             // Declare the y (vertical position) scale.
             const y = d3.scaleLinear()
@@ -89,7 +95,9 @@ function doHistogram(configParam) {
                 .selectAll()
                 .data(bins)
                 .join("rect")
-                .attr("x", (d) => x(d.x0) + 1)
+                .attr("x", (d) => {
+                    return x(d.x0) + 1
+                })
                 .attr("width", (d) => x(d.x1) - x(d.x0) - 1)
                 .attr("y", (d) => y(d.length))
                 .attr("height", (d) => y(0) - y(d.length));
@@ -98,7 +106,7 @@ function doHistogram(configParam) {
             svg.append("g")
                 .attr("transform", `translate(0,${height - marginBottom})`)
                 .call(d3.axisBottom(x)
-                    .ticks(64)
+                    .ticks(48)
                     .tickSizeOuter(0)
                     .tickFormat(
                         (d, i) => config.formatTick(d)
