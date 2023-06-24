@@ -2014,3 +2014,42 @@
     views: 57781
     published: Oct 26, 2014
     collected: Jun 24, 2023
+
+- firstname: Monica
+  lastname: Huggett
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: monicahuggett
+  timingsFile: MonicaHuggett-856249Nu5x0.js
+  flag: 🇬🇧
+  ▶:
+    id: 856249Nu5x0
+    views: 4078
+    published: Sep 23, 2014
+    collected: Jun 24, 2023
+
+- firstname: Francisco
+  lastname: Fullana
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: franciscofullana
+  timingsFile: FranciscoFullana-hePETAzh2n0.js
+  flag: 🇪🇸
+  ▶:
+    id: hePETAzh2n0
+    views: 205
+    published: Aug 24, 2020
+    collected: Jun 24, 2023
+
+- firstname: Ruggiero Ricci
+  lastname: Ruggiero Ricci
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: ruggieroricci
+  timingsFile: RuggieroRicci-KD5lURYKm_c.js
+  flag: 🇺🇸
+  ▶:
+    id: KD5lURYKm_c
+    views: 377  
+    published: Oct 7, 2021
+    collected: Jun 24, 2023
