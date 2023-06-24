@@ -2,7 +2,7 @@ import jsYaml from 'https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/+esm'
 import lodashMerge from 'https://cdn.jsdelivr.net/npm/lodash.merge@4.6.2/+esm'
 import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
 
-const theDayWhenIReadTheVideoMeters = moment('2023-06-05T00:00:00Z')
+const theDayWhenIReadTheVideoMeters = moment('2023-06-24T00:00:00Z')
 const now = moment()
 
 class Artist {
