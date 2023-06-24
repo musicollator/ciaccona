@@ -938,8 +938,11 @@
   instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: patriciakopatchinskaja
   timingsFile: PatriciaKopatchinskaja-wYUop589yNg.js
-  workInProgress: false
+  facebookPost:
+    url: https://www.facebook.com/ciacconabwv004/posts/pfbid02As773uaqg2LZHfdDbapWLogmUJ3PeFpGcoaq2NVSvFKWbT8xMcG3TvYzrjt9CtVvl
+    sort: 49
   flag: 🇲🇩
+  workInProgress: false
   ▶:
     id: wYUop589yNg
     views: 24426
