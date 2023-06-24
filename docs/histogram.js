@@ -43,16 +43,33 @@ function doHistogram(configParam) {
                 thresholds = d3.range(min, max, binWidth);
             }
 
-            // Bin the data.
-            const bins = d3.bin()
-                .thresholds(thresholds)
-                .value((d) => d[config.key])
-                (data);
-
             // Declare the x (horizontal position) scale.
-            const x = d3.scaleLinear()
-                .domain([bins[0].x0, bins[bins.length - 1].x1])
-                .range([marginLeft, width - marginRight])
+            let xScaleHist
+            let bins
+            if (config.log) {
+                xScaleHist = d3.scaleLog()
+                    .domain(d3.extent(data.map(d => d[config.key])))
+                    .range([marginLeft, width - marginRight])
+                    .nice()
+                bins = d3.bin()
+                    .domain(xScaleHist.domain())
+                    .thresholds(xScaleHist.ticks())
+                    .value((d) => d[config.key])
+                    (data);
+            } else {
+                // Bin the data.
+                bins = d3.bin()
+                    .thresholds(thresholds)
+                    .value((d) => d[config.key])
+                    (data);
+                xScaleHist = d3.scaleLinear()
+                    .domain([bins[0].x0, bins[bins.length - 1].x1])
+                    .range([marginLeft, width - marginRight])
+                    .nice()
+            }
+            const x = xScaleHist
+
+
 
             // Declare the y (vertical position) scale.
             const y = d3.scaleLinear()
@@ -81,7 +98,7 @@ function doHistogram(configParam) {
             svg.append("g")
                 .attr("transform", `translate(0,${height - marginBottom})`)
                 .call(d3.axisBottom(x)
-                    .ticks(32)
+                    .ticks(64)
                     .tickSizeOuter(0)
                     .tickFormat(
                         (d, i) => config.formatTick(d)

@@ -316,8 +316,12 @@
             const rect = document.getElementById('histoWrapper').getBoundingClientRect()
 
             const formatViewsPerMonthTick = (d) => {
-                return String(Math.floor(d / 1000)) + 'k'
+                if (d >= 1000) {
+                    return String(Math.floor(d / 1000)) + 'k'
+                } else {
+                    return d
                 }
+            }
 
             doHistogram({
                 idWrapper: 'histoWrapper',
@@ -326,6 +330,7 @@
                 formatTick: formatViewsPerMonthTick,
                 thresholds: 240,
                 durations: candidates,
+                log: true
             })
         })
     }).catch((error) => {
