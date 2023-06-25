@@ -13,7 +13,7 @@
         body {
             width: 100vw;
             height: 100vh;
-            margin: 4rem 0;
+            margin: 0;
             background-color: transparent;
         }
 
@@ -88,6 +88,10 @@
             transform-origin: var(--toXleft) var(--toY);
             left: 0;
         }
+
+        table tr td {
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -96,29 +100,31 @@
         <table class="table">
             <tr>
                 <td>
-                    ESC shuffle puzzle
+                    <button type="button" class="btn btn-light" data-key="Escape">&#x238B;</button> shuffle puzzle
                 </td>
                 <td>
-                    &rightarrow; next variation
+                    <button type="button" class="btn btn-light" data-key="ArrowRight">&rightarrow;</button> next variation
                 </td>
                 <td>
-                    &uparrow; next performer
+                    <button type="button" class="btn btn-light" data-key="ArrowDown">&downarrow;</button> next performer
                 </td>
             </tr>
             <tr>
                 <td>
-                    &#x23CE; solve puzzle
+                    <button type="button" class="btn btn-light" data-key="Enter">&#x23CE;</button> solve puzzle
                 </td>
                 <td>
-                    &leftarrow; previous variation
+                    <button type="button" class="btn btn-light" data-key="ArrowLeft">&leftarrow;</button> previous variation
                 </td>
                 <td>
-                    &downarrow; previous performer
+                    <button type="button" class="btn btn-light" data-key="ArrowUp">&uparrow;</button> previous performer
                 </td>
             </tr>
         </table>
-        <div id="var" class="text-center"></div>
-        <div id="art" class="text-center"></div>
+        <div style="width:100%">
+            <h2 id="var" style="float:left"></h2>
+            <h2 id="art" style="float:right"></h2>
+        </div>
         <div id="thePuzzle" class="d-flex flex-column">
             <div id="gutter-sizer" class="gutter-sizer" style="width: 2px"></div>
         </div>
@@ -276,10 +282,14 @@
         let shuffledV = shuffleArray(Array.from(Array(_.xn * _.yn), (_, index) => index + 1))
         let theArtists
         const doIt = (artists) => {
-            theArtists = artists
-            const array = coerceArtist ? artists.artists : shuffleArray(artists.artists)
+            
+            const array = artists.artists
+
             let i = 0
             array.forEach(a => {
+                if (coerceArtist === a.fullnameNospaceLowercaseNodiacritics) {
+                    document.getElementById('art').innerHTML = a.reverseFullname
+                }
                 if (i < _.xn * _.yn) {
                     let xi = i % _.xn
                     let yi = Math.floor(i / _.xn)
@@ -304,7 +314,11 @@
 
         }
 
-        loadArtists().then(doIt)
+        loadArtists().then((artists) => {
+            artists.sortByAttribute('reverseFullname')
+            theArtists = artists
+            doIt(theArtists)
+        })
 
         var pckry = new packeryLayout(thePuzzle, {
             itemSelector: '.colonne',
@@ -341,11 +355,12 @@
             });
         }
 
-        const handleEsc = (event) => {
+        const handleKeyboard = (event) => {
             const isCombinedKey = (event.ctrlKey || event.altKey || event.shiftKey);
             if (isCombinedKey) {
                 return
             } else {
+                let coerceA = undefined
                 switch (event.key) {
                     case 'Escape':
                         if (!shuffled) toggleShuffleTiles()
@@ -368,13 +383,16 @@
                         }
                     case 'ArrowUp':
                         if (event.key === 'ArrowUp') {
-                            coerceArtist = theArtists.getNextArtist(coerceArtist).fullnameNospaceLowercaseNodiacritics
+                            coerceA = theArtists.getPreviousArtist(coerceArtist)
                         }
                     case 'ArrowDown':
                         if (event.key === 'ArrowDown') {
-                            coerceArtist = theArtists.getPreviousArtist(coerceArtist).fullnameNospaceLowercaseNodiacritics
+                            coerceA = theArtists.getNextArtist(coerceArtist)
                         }
-                        document.getElementById('art').innerHTML = coerceArtist
+                        if (coerceA) {
+                            coerceArtist = coerceA.fullnameNospaceLowercaseNodiacritics
+                            document.getElementById('art').innerHTML = coerceA.reverseFullname
+                        } 
                         document.getElementById('var').innerHTML = coerceVariation
                         shuffled = false
 
@@ -390,7 +408,14 @@
                 }
             }
         }
-        document.addEventListener('keydown', handleEsc);
+        document.addEventListener('keydown', handleKeyboard)
+
+        document.querySelectorAll('button').forEach(B => B.addEventListener('click', e => {
+            console.log(e.currentTarget.innerHTML)
+            e.key = e.currentTarget.dataset.key
+            handleKeyboard(e)
+        }))
+
     </script>
 </body>
 

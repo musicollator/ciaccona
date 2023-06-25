@@ -14,6 +14,7 @@ class Artist {
         this.fullnameNospace = this.fullname.replace(/\s/gi, '')
         // https://stackoverflow.com/a/37511463/1070215
         this.fullnameNospaceLowercaseNodiacritics = this.fullnameNospace.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')
+        this.reverseFullname = [a.lastname, a.firstname].filter(Boolean).join(', ');
 
         this.thisUrl = `/video/${this.fullnameNospaceLowercaseNodiacritics}.html`
         this.social = `https://www.facebook.com/sharer/sharer.php?u=https://ciaccona.cthiebaud.com${this.thisUrl}`
@@ -43,7 +44,7 @@ class Artist {
                 const durationMoment = moment.duration(duration)
                 vid.viewsPerMonth = Math.floor(vid.views / durationMoment.asMonths())
             }
-            
+
             vid.duration = now.diff(vid.publishedMoment)
             vid.durationMoment = moment.duration(vid.duration)
         }
@@ -68,14 +69,21 @@ class Artists {
     }
     getNextArtist = (fnnslcnd) => {
         const thisA = this.#mapFullnameNospaceLowercaseNodiacritics2Artist.get(fnnslcnd)
-        return this.artists[thisA.index + 1 % this.artists.length]
+        return this.artists[(thisA.index + 1) % this.artists.length]
     }
     getPreviousArtist = (fnnslcnd) => {
         const thisA = this.#mapFullnameNospaceLowercaseNodiacritics2Artist.get(fnnslcnd)
         return this.artists[(thisA.index + this.artists.length - 1) % this.artists.length]
     }
     size = () => this.artists.length
-    sort = (f) => this.artists.sort(f)
+    sortByAttribute = (attr) => {
+        this.artists.sort((a, b) => {
+            return a[attr].localeCompare(b[attr])
+        })
+        let i = 0
+        this.artists.forEach(a => a.index = i++)
+        return this.artists
+    }
 }
 
 let ARTISTS = undefined
