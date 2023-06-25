@@ -92,7 +92,31 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-xxl">
+        <table class="table">
+            <tr>
+                <td>
+                    ESC shuffle puzzle
+                </td>
+                <td>
+                    &rightarrow; next variation
+                </td>
+                <td>
+                    &uparrow; next performer
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &#x23CE; solve puzzle
+                </td>
+                <td>
+                    &leftarrow; previous variation
+                </td>
+                <td>
+                    &downarrow; previous performer
+                </td>
+            </tr>
+        </table>
         <div id="var" class="text-center"></div>
         <div id="art" class="text-center"></div>
         <div id="thePuzzle" class="d-flex flex-column">
@@ -343,11 +367,11 @@
                             }
                         }
                     case 'ArrowUp':
-                        if (event.key === 'ArrowUp') { 
+                        if (event.key === 'ArrowUp') {
                             coerceArtist = theArtists.getNextArtist(coerceArtist).fullnameNospaceLowercaseNodiacritics
                         }
                     case 'ArrowDown':
-                        if (event.key === 'ArrowDown') { 
+                        if (event.key === 'ArrowDown') {
                             coerceArtist = theArtists.getPreviousArtist(coerceArtist).fullnameNospaceLowercaseNodiacritics
                         }
                         document.getElementById('art').innerHTML = coerceArtist

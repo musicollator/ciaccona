@@ -248,10 +248,10 @@ loadArtists().then(putainDeArtists => {
                 if (typeof coerce.variation !== 'undefined') {
                     coerce.variation = undefined
                 } else { 
-                    /*
+                    
                     coerce.variation = event.currentTarget.parentNode.dataset.variation
-                    coerce.artist = undefined
-                    */
+                    // coerce.artist = undefined
+                    
                     if (typeof coerce.artist !== 'undefined') {
                         let whereDoIGo = `/puzzle?a=${arrayOfArtistsFiltered[coerce.artist].fullnameNospaceLowercaseNodiacritics}&v=${ event.currentTarget.parentNode.dataset.variation}`
                         window.location = whereDoIGo
