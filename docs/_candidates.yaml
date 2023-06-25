@@ -72,11 +72,13 @@
   lastname: Hamada
   instrument: Harpsichord
   instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: ayahamada
+  timingsFile: AyaHamada-9iGUVeoEZjg.js
   ▶:
-    id: eABZwIPmrbY
-    views: 5550
-    published: May 3, 2016
-    collected: Jun 24, 2023
+    id: 9iGUVeoEZjg
+    views: 3274
+    published: Aug 21, 2017
+    collected: Jun 25, 2023
 
 - firstname: Violinists
   lastname: Fourteen

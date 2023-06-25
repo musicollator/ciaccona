@@ -942,7 +942,6 @@
     url: https://www.facebook.com/ciacconabwv004/posts/pfbid02As773uaqg2LZHfdDbapWLogmUJ3PeFpGcoaq2NVSvFKWbT8xMcG3TvYzrjt9CtVvl
     sort: 49
   flag: 🇲🇩
-  workInProgress: false
   ▶:
     id: wYUop589yNg
     views: 24440
@@ -950,3 +949,16 @@
     collected: Jun 24, 2023
     length: 14′04″
 
+- firstname: Aya
+  lastname: Hamada
+  instrument: Harpsichord
+  instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: ayahamada
+  timingsFile: AyaHamada-eABZwIPmrbY.js
+  workInProgress: false
+  ▶:
+    id: eABZwIPmrbY
+    views: 5551
+    published: May 3, 2016
+    collected: Jun 25, 2023
+    length: 14′04″
