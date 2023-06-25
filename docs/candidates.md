@@ -38,7 +38,7 @@ RogerDugland-QWERTYUIOP.js
 file content must be:
 
 ```
-var <javascriptized youtube video id> = {
+var javascriptized_youtube_video_id = {
     bars: [
     ]
 }
