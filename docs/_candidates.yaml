@@ -231,7 +231,7 @@
 - firstname: Greta
   lastname: Medini
   instrument: Viola
-  instrumentCategory: 010Violin
+  instrumentCategory: 012Viola
   ▶:
     id: 9dDALcfTkxw
     views: 53488
@@ -2323,4 +2323,216 @@
     id: lQ6TxReaRJs
     views: 9324
     published: Oct 11, 2014
+    collected: Jun 26, 2023
+
+- firstname: Francesca
+  lastname: Dego
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: francescadego
+  timingsFile: FrancescaDego-ud-wqXOS3tg.js
+  flag: 🇮🇹
+  ▶: 
+    id: ud-wqXOS3tg
+    views: 34468
+    published: May 26, 2015
+    collected: Jun 26, 2023
+
+- firstname: Ray
+  lastname: Chen
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: raychen
+  timingsFile: RayChen-feOSKJiKCJs.js
+  flag: 🇹🇼
+  ▶: 
+    id: feOSKJiKCJs
+    views: 43694  
+    published: Sep 21, 2014
+    collected: Jun 26, 2023
+
+- firstname: Annie
+  lastname: Yim
+  instrument: Piano
+  instrumentCategory: 050Keyboard 
+  fullnameNospaceLowercaseNodiacritics: annieyim
+  timingsFile: AnnieYim-s9Q3y3fOHXQ.js
+  flag: 🇭🇰
+  ▶: 
+    id: s9Q3y3fOHXQ
+    views: 189
+    published: Nov 26, 2020
+    collected: Jun 26, 2023
+
+- firstname: Jan 
+  lastname: Schmolck 
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: janschmolck 
+  timingsFile: JanSchmolck-T32XaOWLSCU.js
+  flag: _
+  ▶: 
+    id: T32XaOWLSCU
+    views: 1244
+    published: Dec 1, 2020 
+    collected: Jun 26, 2023
+
+- firstname: Salvatore
+  lastname: Accardo
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: salvatoreaccardo
+  timingsFile: SalvatoreAccardo-e_tdwhfOBvQ.js
+  flag: 🇮🇹
+  ▶: 
+    id: e_tdwhfOBvQ
+    views: 973  
+    published: May 24, 2014
+    collected: Jun 26, 2023
+    still: true
+
+- firstname: Svetoslav
+  lastname: Costoff
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings 
+  fullnameNospaceLowercaseNodiacritics: svetoslavcostoff
+  timingsFile: SvetoslavCostoff-Zso9wxQC-kw.js
+  flag: 🇧🇬 
+  ▶: 
+    id: Zso9wxQC-kw
+    views: 20314  
+    published: Mar 1, 2020
+    collected: Jun 26, 2023
+
+- firstname: Yuri
+  lastname: Liberzon
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings 
+  fullnameNospaceLowercaseNodiacritics: YuriLiberzon
+  timingsFile: YuriLiberzon-Do_DG6USGRQ.js
+  flag: 🇷🇺🇮🇱
+  ▶: 
+    id: Do_DG6USGRQ
+    views: 441  
+    published: Aug 6, 2017
+    collected: Jun 26, 2023
+
+- firstname: San Francisco Conservatory of Music 
+  lastname: Clarinet Faculty
+  completeName: Cary Bell, Luis Baez, Jeff Anderle & Jerome Simas
+  arrangment: Kyle Hovatter 
+  instrument: Clarinets (4)
+  instrumentCategory: 080Woodwinds
+  fullnameNospaceLowercaseNodiacritics: sanfranciscoconservatoryofmusicclarinetfaculty
+  timingsFile: SanFranciscoConservatoryOfMusicClarinetFaculty-RDXxGqxYOyE.js
+  flag: 🇺🇸
+  ▶: 
+    id: RDXxGqxYOyE
+    views: 2303
+    published: Mar 14, 2019
+    collected: Jun 26, 2023
+
+- firstname: Yu-Chen
+  lastname: Hsiao
+  instrument: Marimba
+  instrumentCategory: 090Marimba 
+  fullnameNospaceLowercaseNodiacritics: yuchenhsiao
+  timingsFile: YuChenHsiao-7w__bt34n7g.js
+  flag: 🇨🇳
+  ▶: 
+    id: 7w__bt34n7g
+    views: 137
+    published: Sep 2, 2020
+    collected: Jun 26, 2023
+
+- firstname: Lionel
+  lastname: Tertis
+  instrument: Viola
+  instrumentCategory: 012Viola
+  fullnameNospaceLowercaseNodiacritics: lioneltertis
+  timingsFile: LionelTertis-tm74b8ne2aU.js
+  flag: 🇬🇧
+  ▶: 
+    id: tm74b8ne2aU
+    views: 2086
+    published: Nov 14, 2014
+    collected: Jun 26, 2023
+
+- firstname: Sergio
+  lastname: Pallottelli
+  instrument: Flute
+  instrumentCategory: 080Woodwinds
+  fullnameNospaceLowercaseNodiacritics: sergiopallottelli
+  timingsFile: SergioPallottelli-GoQGdo9yb9M.js
+  flag: 🇮🇹
+  ▶: 
+    id: GoQGdo9yb9M
+    views: 421
+    published: Apr 28, 2021
+    collected: Jun 26, 2023
+
+- firstname: Mayumi
+  lastname: Kanagawa
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: mayumikanagawa
+  timingsFile: MayumiKanagawa-SrIZRPjoGNQ.js
+  flag: 🇯🇵
+  ▶: 
+    id: SrIZRPjoGNQ
+    views: 2513
+    published: Feb 10, 2020
+    collected: Jun 26, 2023
+
+- firstname: Bernard
+  lastname: Salles
+  instrument: Double Basses (4) & Octobass
+  completeName: Bernard Salles, Thierry Barbé, Alberto Bocini, Cédric Carlier, Bernard Cazauran & Nicola Moneta
+  instrumentCategory: 030Ensemble
+  fullnameNospaceLowercaseNodiacritics: bernardsalles
+  timingsFile: BernardSalles-vTqv6ICeGEk.js
+  flag: 🇫🇷
+  ▶: 
+    id: vTqv6ICeGEk
+    views: 189649
+    published: Feb 15, 2015
+    collected: Jun 26, 2023
+
+- firstname: Dmitri
+  lastname: Berlinsky
+  instrument: Violin
+  instrumentCategory: 010Violin 
+  fullnameNospaceLowercaseNodiacritics: dmitriberlinsky
+  timingsFile: DmitriBerlinsky-p-b3AUjpp7c.js
+  flag: 🇷🇺
+  ▶: 
+    id: p-b3AUjpp7c
+    views: 938
+    published: Feb 8, 2022
+    collected: Jun 26, 2023
+
+- firstname: Carmelo 
+  lastname: de los Santos
+  instrument: Violin
+  instrumentCategory: 010Violin 
+  fullnameNospaceLowercaseNodiacritics: carmelodelossantos
+  timingsFile: CarmeloDeLosSantos-BqIA4JigmJM.js
+  flag: 🇧🇷
+  ▶: 
+    id: BqIA4JigmJM
+    views: 88796  
+    published: Apr 23, 2013
+    collected: Jun 26, 2023
+
+- firstname: Noé Inui 
+  lastname: Noé Inui 
+  instrument: Violin & Voices
+  instrumentCategory: 030Ensemble
+  fullnameNospaceLowercaseNodiacritics: noeinui 
+  timingsFile: NoéInui-aUpso6xEPeU.js
+  flag: 🇩🇪🇬🇷🇯🇵
+  ▶: 
+    id: aUpso6xEPeU
+    views: 4284  
+    published: Apr 19, 2020
     collected: Jun 26, 2023
