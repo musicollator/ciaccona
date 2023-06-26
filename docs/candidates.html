@@ -171,7 +171,11 @@
                             <img src="svg/YouTube_social_white_square_(2017)_white_middle.svg" style="width: 22px; height:22px;">
                             <span></span>
                         </th>
-                        <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
+                        <th scope="col" class="still text-start sortable">
+                            <img src="svg/picture-svgrepo-com.svg" style="width: 22px; height:22px;">
+                            <span style="width: 25px;"></span>
+                        </th>
+                    <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
                     </tr>
                 </thead>
                 <tbody id="theBody">
@@ -203,6 +207,12 @@
     target={{fullnameNospaceLowercaseNodiacritics}}>
         {{#if v.trueId}}{{v.trueId}}{{else}}{{v.id}}{{/if}}
     </a></td>
+<td class="still text-center">
+    {{#if v.still}}
+    <img src="svg/check-box-svgrepo-com.svg" style="width: 20px; height:20px;">
+    {{else}}
+    &nbsp;{{/if}}
+</td>
 <td class="instrument text-end">{{instrument}}</td>
 </tr>{{/each}}</script>
 
@@ -226,6 +236,7 @@
             // https://stackoverflow.com/a/32906951/1070215
             this.fullname = [a.firstname, a.lastname].filter(Boolean).join(' ');
             this.fullnameNospace = this.fullname.replace(/\s/gi, '')
+            this.fullnameNospaceLowercaseNodiacritics = this.fullnameNospace.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, '')
             this.reverseFullname = [a.lastname, a.firstname].filter(Boolean).join(', ');
             const vid = this['▶']
             vid.youtubeUrl = `https://youtu.be/${vid.id}`
@@ -299,6 +310,8 @@
             candidates.push(cand)
         })
 
+        console.log('# candidates', candidates.length)
+
         loadArtists().then((theArtists) => {
             theArtists.artists.forEach(a => {
                 const perf = new Candidate(a)
@@ -311,7 +324,6 @@
             const bodyContent = template(candidates)
             theBody.innerHTML = bodyContent
             document.getElementById('candidatesCount').innerHTML = candidates.length
-            console.log('# candidates', candidates.length)
 
             const rect = document.getElementById('histoWrapper').getBoundingClientRect()
 

@@ -37,6 +37,7 @@
     views: 17560
     published: Aug 23, 2013
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Eduard
   lastname: Schmieder
@@ -57,6 +58,7 @@
     views: 55431
     published: Jan 27, 2013
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Aubree
   lastname: Oliverson
@@ -121,6 +123,7 @@
     views: 4871
     published: Oct 14, 2021
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Didier
   lastname: François
@@ -261,6 +264,7 @@
     views: 122165
     published: Sep 11, 2014
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Itzhak
   lastname: Perlman
@@ -302,6 +306,7 @@
     views: 2120
     published: Feb 1, 2018
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Jose Miguel
   lastname: Moreno
@@ -312,6 +317,7 @@
     views: 36394
     published: Apr 2, 2011
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Juan Luis
   lastname: Orozco
@@ -572,6 +578,7 @@
     views: 358172
     published: Jun 4, 2012
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Nicanor
   lastname: Zabaleta
@@ -974,6 +981,7 @@
     views: 245608
     published: Jun 4, 2012
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Brian
   lastname: Thornton
@@ -1009,6 +1017,7 @@
     views: 137940
     published: Feb 13, 2017
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Jean
   lastname: Rondeau
@@ -1020,6 +1029,7 @@
     views: 62202
     published: Dec 20, 2014
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Arno
   lastname: Bornkamp
@@ -1031,6 +1041,7 @@
     views: 5067
     published: May 14, 2020
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Andrés
   lastname: Segovia
@@ -1042,6 +1053,7 @@
     views: 77571
     published: Feb 7, 2019
     collected: Jun 24, 2023
+    still: true
 
 - firstname: John
   lastname: Williams
@@ -1065,6 +1077,7 @@
     views: 2260
     published: Jul 23, 2018
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Nobuya
   lastname: Sugawa
@@ -1099,6 +1112,7 @@
     views: 13477
     published: Jun 6, 2019
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Leonid
   lastname: Zheleznyj
@@ -1154,6 +1168,7 @@
     views: 1580
     published: May 5, 2016
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Hiro
   lastname: Kurosaki
@@ -1166,6 +1181,7 @@
     views: 341
     published: Sep 4, 2020
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Ida
   lastname: Haendel
@@ -1190,6 +1206,7 @@
     views: 31645
     published: Jul 1, 2011
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Gregory
   lastname: Maytan
@@ -1392,6 +1409,7 @@
     views: 22008
     published: Nov 21, 2018
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Alan
   lastname: Mearns
@@ -1408,8 +1426,8 @@
 - firstname: Alicia
   lastname: Salas
   completeName: Alicia Salas, Avri Levitan, Jose García, Julia Lorenzo
-  instrument: Viola
-  instrumentCategory: 010Violin
+  instrument: Violas (4)
+  instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: aliciasalas
   timingsFile: AliciaSalas-OqGEssj4pPE.js
   ▶:
@@ -1441,6 +1459,7 @@
     views: 23965
     published: Feb 16, 2020
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Thibault
   lastname: Cauvin
@@ -1612,8 +1631,8 @@
 
 - firstname: Nemanja
   lastname: Radulović
-  instrument: Violin
-  instrumentCategory: 010Violin
+  instrument: Violin & Strings
+  instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: nemanjaradulovic
   timingsFile: NemanjaRadulović-PHgtLbLdwEE.js
   ▶:
@@ -1621,6 +1640,7 @@
     views: 24083
     published: Jul 24, 2018
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Oguzhan
   lastname: Kayali
@@ -1801,6 +1821,7 @@
     views: 2449
     published: Feb 14, 2019
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Lara
   lastname: St. John
@@ -1825,6 +1846,7 @@
     views: 2606
     published: Oct 1, 2014
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Rustam
   lastname: Komachkov
@@ -1837,6 +1859,7 @@
     views: 76487
     published: Jan 30, 2014
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Nikola
   lastname: Karageorgiev
@@ -1885,6 +1908,7 @@
     views: 1712
     published: Feb 8, 2018
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Fahmi
   lastname: Alqhai
@@ -1898,6 +1922,7 @@
     views: 3277
     published: Jan 5, 2017
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Amandine & Laurence
   lastname: Beyer
@@ -1963,6 +1988,7 @@
     views: 131942
     published: Mar 16, 2014
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Leonidas 
   lastname: Kavakos
@@ -2055,8 +2081,8 @@
     published: Aug 24, 2020
     collected: Jun 24, 2023
 
-- firstname: Ruggiero Ricci
-  lastname: Ruggiero Ricci
+- firstname: Ruggiero
+  lastname: Ricci
   instrument: Violin
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: ruggieroricci
@@ -2067,6 +2093,7 @@
     views: 377  
     published: Oct 7, 2021
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Daniel 
   lastname: Rivera
@@ -2139,4 +2166,5 @@
     views: 774  
     published: Feb 6, 2015
     collected: Jun 24, 2023
+    still: true
 
