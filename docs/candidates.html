@@ -152,8 +152,29 @@
     </header>
     <div id="candContainerRow" class="row" style="">
         <div id="candContainerCol" class="col">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" id="histoWrapper">
+                    </div>
+                    <div class="carousel-item" id="histoWrapper2">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
             <table id="theTable" class="table table-fit table-responsive table-striped table-hover table-sm ">
-                <caption style="width:100%" class="caption-top" id="histoWrapper"></caption>
+                <caption style="width:100%" class="caption-top">
+                </caption>
                 <thead>
                     <tr style="font-size:smaller">
                         <!-- th scope="col" id="rownum" class="rownum">#</!-->
@@ -342,6 +363,15 @@
 
             doHistogram({
                 idWrapper: 'histoWrapper',
+                key: "viewsPerMonth",
+                formatKey: d => d,
+                formatTick: formatViewsPerMonthTick,
+                thresholds: 240,
+                durations: candidates,
+                log: false
+            })
+            doHistogram({
+                idWrapper: 'histoWrapper2',
                 key: "viewsPerMonth",
                 formatKey: d => d,
                 formatTick: formatViewsPerMonthTick,
