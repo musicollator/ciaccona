@@ -175,7 +175,11 @@
                             <img src="svg/picture-svgrepo-com.svg" style="width: 22px; height:22px;">
                             <span style="width: 25px;"></span>
                         </th>
-                    <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
+                        <th scope="col" class="instrument text-start  sortable">Instr.<span></span></th>
+                        <th scope="col" class="flag      text-start  sortable">&nbsp;
+                            <img src="svg/earth-svgrepo-com.svg" style="width: 22px; height:22px;">
+                            <span style="width: 25px;"></span>
+                        </th>
                     </tr>
                 </thead>
                 <tbody id="theBody">
@@ -214,6 +218,7 @@
     &nbsp;{{/if}}
 </td>
 <td class="instrument text-end">{{instrument}}</td>
+<td class="flag text-center">{{flag}}</td>
 </tr>{{/each}}</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
