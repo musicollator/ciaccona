@@ -99,6 +99,7 @@
   lastname: Fourteen
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: ★
   ▶:
     id: _eQd95VFpI8
     views: 176301
@@ -130,6 +131,7 @@
   lastname: François
   instrument: Nyckelharpa
   instrumentCategory: 11Nyckelharpa
+  flag: 🇩🇪
   ▶:
     id: 0v56JcmKzNU
     views: 12761
@@ -138,8 +140,10 @@
 
 - firstname: Saxophone Project
   lastname: Eastman
+  arrangement: Matthew Evans
   instrument: Saxophone
   instrumentCategory: 030Ensemble
+  flag: 🇺🇸
   ▶:
     id: Qn5YZLJ0QBw
     views: 101422
@@ -181,6 +185,7 @@
   lastname: Eroica
   instrument: Violin, Cello & Piano
   instrumentCategory: 030Ensemble
+  flag: 🇺🇸
   ▶:
     id: KtgrvUqb650
     views: 11715
@@ -191,6 +196,7 @@
   lastname: Eroica
   instrument: Violin, Cello & Piano
   instrumentCategory: 030Ensemble
+  flag: 🇺🇸
   ▶:
     id: 5yqpUcg6q14
     views: 5209
@@ -222,6 +228,7 @@
   lastname: De Vito
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇮🇹
   ▶:
     id: fjb-ReyPzwQ
     views: 1436
@@ -294,6 +301,7 @@
   lastname: Geoffroy
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇫🇷
   ▶:
     id: 7Xcs_OXicls
     views: 8170
@@ -511,6 +519,7 @@
   lastname: Dunford
   instrument: Lute
   instrumentCategory: 040Plucked_Strings
+  flag: 🇫🇷
   ▶:
     id: AuY3KTm9HoE
     views: 5286
@@ -561,6 +570,7 @@
   lastname: Fang
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇨🇳
   ▶:
     id: ocaRkvVDO8w
     views: 665
@@ -695,6 +705,7 @@
   lastname: Ehnes
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇺🇸
   ▶:
     id: xjYQlmpS69k
     views: 440395
@@ -715,6 +726,7 @@
   lastname: Gringolts
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇷🇺
   ▶:
     id: 96xjMoYADBY
     views: 13264
@@ -745,6 +757,7 @@
   lastname: Ferschtman
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇳🇱
   ▶:
     id: m_GJBDQegYk
     views: 64563
@@ -792,9 +805,10 @@
     collected: Jun 24, 2023
 
 - firstname: Georg
-  lastname: Gulyas
+  lastname: Gulyás
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇸🇪
   ▶:
     id: 8Ap3YDBxmqA
     views: 73809
@@ -923,6 +937,7 @@
   lastname: Dumont
   instrument: Piano
   instrumentCategory: 050Keyboard
+  flag: 🇫🇷
   ▶:
     id: A-VJpDsKcJE
     views: 4943
@@ -1127,6 +1142,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: helenegrimaud
   blockedBy: https://www.nikita-ventures.com
+  flag: 🇫🇷
   ▶:
     id: dOHiI_5yycU
     views: 1479232
@@ -1185,6 +1201,7 @@
   instrument: Violin
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: nicholasdieugenio
+  flag: 🇺🇸
   ▶:
     id: JnQyAq00dek
     views: 443
@@ -1222,6 +1239,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: idahaendel
   timingsFile: IdaHaendel-W4P9bAT0Z6E.js
+  flag: 🇵🇱
   ▶:
     id: W4P9bAT0Z6E
     views: 15518
@@ -1271,6 +1289,7 @@
   instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: adelaideferriere
   timingsFile: AdélaïdeFerrière-3LnnE8akdHc.js
+  flag: 🇫🇷
   ▶:
     id: 3LnnE8akdHc
     views: 8539
@@ -1321,6 +1340,7 @@
   instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: tobiasgasser
   timingsFile: TobiasGasser-b9IH4wfoTdY.js
+  flag: "?"
   ▶:
     id: b9IH4wfoTdY
     views: 520
@@ -1358,17 +1378,19 @@
   instrument: Electric Bass
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: davegrossman
+  flag: 🇺🇸
   ▶:
     id: 1nZutjH-lUA
     views: 2790
     published: Jul 14, 2013
     collected: Jun 24, 2023
 
-- firstname: Silvian
-  lastname: Dmitry
+- firstname: Dmitry
+  lastname: Silvian
   instrument: Cello
   instrumentCategory: 010Violin
-  fullnameNospaceLowercaseNodiacritics: silviandmitry
+  fullnameNospaceLowercaseNodiacritics: dmitrysilvian
+  flag: 🇺🇦
   ▶:
     id: iMzU3up7pMs
     views: 6297
@@ -1432,6 +1454,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: ivrygitlis
   timingsFile: IvryGitlis-bh8pKgwapSA.js
+  flag: 🇫🇷🇮🇱
   ▶:
     id: bh8pKgwapSA
     views: 737258
@@ -1559,6 +1582,7 @@
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: johnnygandelsman
   timingsFile: JohnnyGandelsman-cGmUrUwEn5k.js
+  flag: 🇷🇺
   ▶:
     id: cGmUrUwEn5k
     views: 32087
@@ -1585,6 +1609,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: aniafilochowska
   timingsFile: AniaFilochowska-YL5zwzJ6pXw.JS
+  flag: 🇵🇱
   ▶:
     id: YL5zwzJ6pXw
     views: 4235
@@ -2370,7 +2395,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: janschmolck 
   timingsFile: JanSchmolck-T32XaOWLSCU.js
-  flag: _
+  flag: "?"
   ▶: 
     id: T32XaOWLSCU
     views: 1244
@@ -2420,7 +2445,7 @@
 - firstname: San Francisco Conservatory of Music 
   lastname: Clarinet Faculty
   completeName: Cary Bell, Luis Baez, Jeff Anderle & Jerome Simas
-  arrangment: Kyle Hovatter 
+  arrangement: Kyle Hovatter 
   instrument: Clarinets (4)
   instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: sanfranciscoconservatoryofmusicclarinetfaculty
