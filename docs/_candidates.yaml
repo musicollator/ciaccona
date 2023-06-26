@@ -443,7 +443,7 @@
 
 - firstname:
   lastname: Seiai Pipers
-  instrument: Recorder
+  instrument: Recorders (4)
   instrumentCategory: 030Ensemble
   ▶:
     id: gOuCjwIMR2c
@@ -824,7 +824,7 @@
 
 - firstname: Gürzenich-Orchester
   lastname: Köln
-  instrument: Violas
+  instrument: Violas (4)
   instrumentCategory: 030Ensemble
   ▶:
     id: 6pUAUt3R1lM
@@ -965,7 +965,7 @@
 
 - firstname: Brian
   lastname: Thornton
-  instrument: Cellos
+  instrument: Cellos (4)
   instrumentCategory: 030Ensemble
   ▶:
     id: NGBU2DOL-yQ
@@ -1889,7 +1889,7 @@
 
 - firstname: Amandine & Laurence
   lastname: Beyer
-  instrument: Baroque Violin & Piano
+  instrument: Violin & Piano
   instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: amandinelaurencebeyer
   timingsFile: AmandineLaurenceBeyer-He1A6_wuvhM.js
@@ -2055,3 +2055,64 @@
     views: 377  
     published: Oct 7, 2021
     collected: Jun 24, 2023
+
+- firstname: Daniel 
+  lastname: Rivera
+  instrument: Piano
+  instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: danielrivera
+  timingsFile: DanielRivera-x3TbtVLUNd4.js
+  ▶:
+    id: x3TbtVLUNd4
+    views: 1859
+    published: Mar 15, 2014
+    collected: Jun 25, 2023 
+
+- firstname: Igor 
+  lastname: Levit 
+  instrument: Piano
+  instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: igorlevit 
+  timingsFile: IgorLevit-L8fG7x8tiAA.js
+  ▶:
+    id: L8fG7x8tiAA
+    views: 114449  
+    published: Feb 14, 2012
+    collected: Jun 25, 2023 
+
+- firstname: Alexandre
+  lastname: Kantorow
+  instrument: Piano
+  instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: alexandrekantorow
+  timingsFile: AlexandreKantorow-61R33cW6mDw.js
+  ▶:
+    id: 61R33cW6mDw
+    views: 1557  
+    published: Nov 11, 2021
+    collected: Jun 25, 2023 
+
+- firstname: Fumito
+  lastname: Nunoya
+  instrument: Marimba
+  instrumentCategory: 090Marimba
+  fullnameNospaceLowercaseNodiacritics: fumitonunoya
+  timingsFile: FumitoNunoya-3A9vAPmvm38.js
+  ▶:
+    id: 3A9vAPmvm38
+    views: 9789  
+    published: Jul 30, 2018
+    collected: Jun 25, 2023 
+
+- firstname: Mika
+  lastname: Stoltzman
+  instrument: Marimba
+  instrumentCategory: 090Marimba
+  fullnameNospaceLowercaseNodiacritics: mikastoltzman
+  timingsFile: MikaStoltzman-uWwQNXwDSRA.js
+  ▶:
+    id: uWwQNXwDSRA
+    views: 3643 
+    published: Oct 3, 2020
+    collected: Jun 25, 2023
+
