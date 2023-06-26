@@ -105,6 +105,10 @@
                                 <img src="svg/YouTube_social_white_square_(2017)_white_middle.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
+                            <th scope="col" class="still text-start sortable">
+                                <img src="svg/picture-svgrepo-com.svg" style="width: 22px; height:22px;">
+                                <span style="width: 25px;"></span>
+                            </th>
                             <th scope="col" class="fb        text-start  sortable" style="width: 50px;">
                                 <img src="svg/info-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span style="width: 25px;"></span>
@@ -134,6 +138,12 @@
     target={{fullnameNospaceLowercaseNodiacritics}}>
         {{#if v.trueId}}{{v.trueId}}{{else}}{{v.id}}{{/if}}
     </a></td>
+<td class="still text-center">
+    {{#if v.still}}
+    <img src="svg/check-box-svgrepo-com.svg" style="width: 20px; height:20px;">
+    {{else}}
+    &nbsp;{{/if}}
+</td>
 <td class="fb        text-center"  data-number="{{#if facebookPost}}{{numberFormat facebookPost.sort}}{{else}}-1{{/if}}">
     {{#if facebookPost}}<sup>{{facebookPost.sort}}</sup>&nbsp;<a href={{facebookPost.url}} target=FB><img src="svg/external-link-svgrepo-com.svg"></a>
     {{else}}
@@ -227,7 +237,7 @@
                     durations: durations,
                     putainDeArtistsArtists: theArtists.artists,
                     bin: {
-                        min:  640000,
+                        min: 640000,
                         max: 1100000,
                         width: 10000,
                     }

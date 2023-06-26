@@ -88,11 +88,15 @@ tbody > tr > td.flag {
 
 tbody > tr > td.published,
 tbody > tr > td.since,
-tbody > tr > th.name  {
+tbody > tr > td.name  {
   white-space: nowrap;
 }
 
 tbody > tr > td.since {
+  font-style: italic;
+}
+
+tbody > tr > td.still {
   font-style: italic;
 }
 

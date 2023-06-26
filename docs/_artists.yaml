@@ -687,6 +687,7 @@
     length: 12′10″
     pitch: 273.9
     a4: 410.5
+    still: true
     
 - firstname: Jean 
   lastname: Rondeau
@@ -913,6 +914,7 @@
     published: Nov 7, 2018
     collected: Jun 24, 2023
     length: 13′06″
+    still: true
 
 - firstname: Boris
   lastname: Begelman
