@@ -80,6 +80,18 @@
     published: Aug 21, 2017
     collected: Jun 25, 2023
 
+- firstname: Aya
+  lastname: Hamada
+  instrument: Harpsichord
+  instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: ayahamada
+  timingsFile: AyaHamada-w0-sbdnIXDo.js
+  ▶:
+    id: w0-sbdnIXDo
+    views: 8
+    published: Feb 2, 2023
+    collected: Jun 25, 2023
+
 - firstname: Violinists
   lastname: Fourteen
   instrument: Violin
@@ -2115,4 +2127,16 @@
     views: 3643 
     published: Oct 3, 2020
     collected: Jun 25, 2023
+
+- firstname: Ingrid
+  lastname: Matthews
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: ingridmatthews
+  timingsFile: IngridMatthews-yLeUaPAU9Ws.js
+  ▶:
+    id: yLeUaPAU9Ws
+    views: 774  
+    published: Feb 6, 2015
+    collected: Jun 24, 2023
 
