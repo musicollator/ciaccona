@@ -459,6 +459,18 @@
     published: Aug 2, 2011
     collected: Jun 24, 2023
 
+- firstname: Sanel
+  lastname: Redzic
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: sanelredzic
+  timingsFile: SanelRedzic-Hymeyfown0A.js
+  ▶:
+    id: Hymeyfown0A
+    views: 773864
+    published: Sep 16, 2016
+    collected: Jun 26, 2023
+
 - firstname:
   lastname: Seiai Pipers
   instrument: Recorders (4)
@@ -589,6 +601,7 @@
     views: 59473
     published: May 17, 2013
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Anastasiya
   lastname: Petryshak
@@ -820,6 +833,7 @@
     views: 1351
     published: Aug 29, 2020
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Laura
   lastname: Lootens
@@ -1065,6 +1079,7 @@
     views: 4983
     published: May 3, 2015
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Seiji
   lastname: Ozawa
@@ -1472,6 +1487,7 @@
     views: 8251
     published: Feb 16, 2023
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Jens
   lastname: Korndoerfer
@@ -1532,6 +1548,7 @@
     views: 8165
     published: Jun 28, 2022
     collected: Jun 24, 2023
+    still: true
 
 - firstname: Ania
   lastname: Filochowska
@@ -1692,8 +1709,8 @@
 
 - firstname: Nadja
   lastname: Zwiener
-  instrument: Violin
-  instrumentCategory: 010Violin
+  instrument: Barique Violin
+  instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: nadjazwiener
   timingsFile: NadjaZwiener-AogMCZhFaEM.js
   ▶:
