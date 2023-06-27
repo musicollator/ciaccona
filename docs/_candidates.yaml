@@ -2,6 +2,7 @@
   lastname: Sariel
   instrument: Mandolin
   instrumentCategory: 040Plucked_Strings
+  flag: 🇮🇱
   ▶:
     id: Uy3FUwJpCAQ
     views: 27949
@@ -23,6 +24,7 @@
   lastname: Montesinos
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇪🇸
   ▶:
     id: N_WTmnh0Zqw
     views: 9433
@@ -33,6 +35,7 @@
   lastname: Steinbacher
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇩🇪
   ▶:
     id: 0TzJ_ZxRImY
     views: 17560
@@ -44,6 +47,7 @@
   lastname: Schmieder
   instrument: String Orchestra
   instrumentCategory: 030Ensemble
+  flag: 🇺🇦
   ▶:
     id: vgZBEAa2iA4
     views: 9652
@@ -54,6 +58,7 @@
   lastname: Michelangeli
   instrument: Piano
   instrumentCategory: 050Keyboard
+  flag: 🇮🇹
   ▶:
     id: wCMK-HyMG0M
     views: 55431
@@ -65,6 +70,7 @@
   lastname: Oliverson
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇺🇸
   ▶:
     id: qaRA6hC19KY
     views: 3765
@@ -77,6 +83,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: ayahamada
   timingsFile: AyaHamada-9iGUVeoEZjg.js
+  flag: 🇯🇵
   ▶:
     id: 9iGUVeoEZjg
     views: 3274
@@ -89,6 +96,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: ayahamada
   timingsFile: AyaHamada-w0-sbdnIXDo.js
+  flag: 🇯🇵
   ▶:
     id: w0-sbdnIXDo
     views: 8
@@ -110,6 +118,7 @@
   lastname: Russell
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🏴󠁧󠁢󠁳󠁣󠁴󠁿
   ▶:
     id: fprDySEWI-s
     views: 370
@@ -120,6 +129,7 @@
   lastname: Russell
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🏴󠁧󠁢󠁳󠁣󠁴󠁿
   ▶:
     id: r9aClPbLiA4
     views: 4871
@@ -154,6 +164,7 @@
   lastname: Karamazov
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇧🇦
   ▶:
     id: CkskQMKBRjU
     views: 24149
@@ -164,6 +175,7 @@
   lastname: Liu
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇭🇰
   ▶:
     id: tT46qnLyp2g
     views: 1835
@@ -218,6 +230,7 @@
   lastname: Silvestri
   instrument: Harpsichord
   instrumentCategory: 050Keyboard
+  flag: 🇮🇹
   ▶:
     id: EZREQegRDYk
     views: 2556
@@ -239,6 +252,7 @@
   lastname: Medini
   instrument: Viola
   instrumentCategory: 012Viola
+  flag: 🇮🇹
   ▶:
     id: 9dDALcfTkxw
     views: 53488
@@ -249,6 +263,7 @@
   lastname: Maeda
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇯🇵
   ▶:
     id: e-TS-BaAR0Y
     views: 27068
@@ -259,6 +274,7 @@
   lastname: Stern
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇵🇱
   ▶:
     id: 1zvRWFD_1_M
     views: 465008
@@ -269,6 +285,7 @@
   lastname: Perlman
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇮🇱
   ▶:
     id: VfwVim0EybY
     views: 122165
@@ -281,6 +298,7 @@
   instrument: Violin
   instrumentCategory: 010Violin
   blockedBy: https://www.nikita-ventures.com
+  flag: 🇮🇱
   ▶:
     id: qtyTaE7LvVs
     views: 1562546
@@ -291,6 +309,7 @@
   lastname: Miletic
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇷🇸
   ▶:
     id: AXh2fxYmakw
     views: 75
@@ -312,6 +331,7 @@
   lastname: Paetsch
   instrument: Cello
   instrumentCategory: 010Violin
+  flag: 🇺🇸
   ▶:
     id: Hx-mGrlQmvM
     views: 2120
@@ -323,6 +343,7 @@
   lastname: Moreno
   instrument: Lute
   instrumentCategory: 040Plucked_Strings
+  flag: 🇪🇸
   ▶:
     id: Sdi1kf0mfi8
     views: 36394
@@ -334,6 +355,7 @@
   lastname: Orozco
   instrument: Nyckelharpa
   instrumentCategory: 11Nyckelharpa
+  flag: 🇪🇸
   ▶:
     id: LIj6ER-PBD8
     views: 117
@@ -344,6 +366,7 @@
   lastname: Satkin
   instrument: Flute
   instrumentCategory: 080Woodwinds
+  flag: 🇺🇸
   ▶:
     id: PBKCGWul2zU
     views: 7063
@@ -354,6 +377,7 @@
   lastname: Sundquist
   instrument: Electric Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇳🇴
   ▶:
     id: kSEQcitQNO4
     views: 18569
@@ -364,6 +388,7 @@
   lastname: Rybakov
   instrument: Clarinet
   instrumentCategory: 080Woodwinds
+  flag: 🇷🇺
   ▶:
     id: McHYHdLKzCQ
     views: 3992
@@ -374,6 +399,7 @@
   lastname: Saliba
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇦🇺
   ▶:
     id: Yt0ovieceFs
     views: 18478
@@ -406,6 +432,7 @@
   lastname: Serino
   instrument: Violin & Voices
   instrumentCategory: 030Ensemble
+  flag: 🇮🇹
   ▶:
     id: i-vtSWEs5aQ
     views: 13301
@@ -416,6 +443,7 @@
   lastname: Milstein
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇷🇺
   ▶:
     id: _TgqnzU1ZQk
     views: 64101
@@ -426,6 +454,7 @@
   lastname: Milstein
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇷🇺
   ▶:
     id: Szu-ui-fnzs
     views: 75925
@@ -436,6 +465,7 @@
   lastname: Penin
   instrument: Organ
   instrumentCategory: 050Keyboard
+  flag: 🇫🇷
   ▶:
     id: SfS14rpl0OI
     views: 122279
@@ -446,6 +476,7 @@
   lastname: Osetinskaya
   instrument: Piano
   instrumentCategory: 050Keyboard
+  flag: 🇷🇺
   ▶:
     id: qoYaxJWb42s
     views: 63671
@@ -454,8 +485,9 @@
 
 - firstname: Psychedelic
   lastname: Rock
-  instrument: Electric Guitar
+  instrument: Electric Guitar, Bass and Drums
   instrumentCategory: 040Plucked_Strings
+  flag: "?"
   ▶:
     id: n1AHJCVDU4Y
     views: 47903
@@ -463,9 +495,10 @@
     collected: Jun 24, 2023
 
 - firstname: Sanel
-  lastname: Redzic
+  lastname: Redžić
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇧🇦
   ▶:
     id: BtT9cEipTos
     views: 273735
@@ -473,11 +506,12 @@
     collected: Jun 24, 2023
 
 - firstname: Sanel
-  lastname: Redzic
+  lastname: Redžić
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: sanelredzic
   timingsFile: SanelRedzic-Hymeyfown0A.js
+  flag: 🇧🇦
   ▶:
     id: Hymeyfown0A
     views: 773864
@@ -486,8 +520,10 @@
 
 - firstname:
   lastname: Seiai Pipers
+  arrangement: Ichiro Nodaïra
   instrument: Recorders (4)
   instrumentCategory: 030Ensemble
+  flag: 🇯🇵
   ▶:
     id: gOuCjwIMR2c
     views: 3173
@@ -498,6 +534,7 @@
   lastname: Roussev
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇧🇬
   ▶:
     id: gUxcoixiVCI
     views: 4750
@@ -530,6 +567,7 @@
   lastname: Torbjorn
   instrument: Nyckelharpa
   instrumentCategory: 11Nyckelharpa
+  flag: 🇸🇪
   ▶:
     id: dpB2nRpCuVk
     views: 34664
@@ -540,6 +578,7 @@
   lastname: Mullova
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇷🇺
   ▶:
     id: omOnU8R4Kyc
     views: 72157
@@ -550,6 +589,7 @@
   lastname: van Amsterdam
   instrument: Accordion
   instrumentCategory: 100Accordion
+  flag: 🇳🇱
   ▶:
     id: azNF_OCkhoc
     views: 1700
@@ -560,6 +600,7 @@
   lastname: Menuhin
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇬🇧
   ▶:
     id: Nunk9fRaZZs
     views: 25120
@@ -592,6 +633,7 @@
   lastname: Ughi
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇮🇹
   ▶:
     id: jhX9G-LcoXo
     views: 128121
@@ -602,6 +644,7 @@
   lastname: Smith
   instrument: Lute
   instrumentCategory: 040Plucked_Strings
+  flag: 🇺🇸
   ▶:
     id: LtjtuljFPa8
     views: 358172
@@ -613,6 +656,7 @@
   lastname: Zabaleta
   instrument: Harp
   instrumentCategory: 060Harp
+  flag: 🇪🇸
   ▶:
     id: YW6Ab3ZuFhQ
     views: 59473
@@ -624,6 +668,7 @@
   lastname: Petryshak
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇺🇦
   ▶:
     id: e99D0gnqG-c
     views: 234446
@@ -634,6 +679,7 @@
   lastname: Stoltzman
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇯🇵
   ▶:
     id: YOu5y_vyJr0
     views: 564
@@ -644,6 +690,7 @@
   lastname: Stoltzman
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇯🇵
   ▶:
     id: QaFgKp7Qvzw
     views: 4645
@@ -654,6 +701,7 @@
   lastname: Stoltzman
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇯🇵
   ▶:
     id: MLX0Px_UtwI
     views: 534
@@ -675,6 +723,7 @@
   lastname: Heifetz
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇱🇹
   ▶:
     id: vhOaS_Cy8_8
     views: 245591
@@ -685,6 +734,7 @@
   lastname: Takeda
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇯🇵
   ▶:
     id: BKIsy7ot0Uo
     views: 20211
@@ -695,6 +745,7 @@
   lastname: Zalai
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇭🇺
   ▶:
     id: yNHZJElYD7o
     views: 16056
@@ -716,6 +767,7 @@
   lastname: Scott
   instrument: Organ
   instrumentCategory: 050Keyboard
+  flag: 🏴󠁧󠁢󠁥󠁮󠁧󠁿
   ▶:
     id: vRkh2ZrBHI8
     views: 64299
@@ -737,6 +789,7 @@
   lastname: Kremer
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇷🇺
   ▶:
     id: DBJPVnJ8m-Y
     views: 912479
@@ -747,6 +800,7 @@
   lastname: Palmer
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇺🇸
   ▶:
     id: z9ZgONrHtmI
     views: 91451
@@ -768,6 +822,7 @@
   lastname: Pakhomkin
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇷🇺
   ▶:
     id: --E3k28veVc
     views: 33610
@@ -778,6 +833,7 @@
   lastname: Power
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇬🇧
   ▶:
     id: AiUeOt4ekaE
     views: 40585
@@ -788,16 +844,18 @@
   lastname: Schmidt
   instrument: Cello
   instrumentCategory: 010Violin
+  flag: 🇩🇪
   ▶:
     id: JJU_OFD83lw
     views: 65778
     published: Oct 4, 2012
     collected: Jun 24, 2023
 
-- firstname: Zia
-  lastname: Hyunsu Shi
+- firstname: Zia Hyunsu
+  lastname: Shin
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: 🇰🇷
   ▶:
     id: 1wPFp0Q8Kb8
     views: 135734
@@ -819,6 +877,7 @@
   lastname: Zhang
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇨🇳
   ▶:
     id: V2Yjid0FWQQ
     views: 149295
@@ -841,6 +900,7 @@
   lastname: Yamashita
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇯🇵
   ▶:
     id: d1_b_Isdelw
     views: 133939
@@ -863,6 +923,7 @@
   lastname: Lootens
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
+  flag: 🇧🇪🇩🇪
   ▶:
     id: Khya87ICUec
     views: 8902
@@ -882,8 +943,11 @@
 
 - firstname: Gürzenich-Orchester
   lastname: Köln
+  completeName: Öykü Canpolat, Eva-Maria Wilms, Martina Horejsi & Annegret Klingel
+  arrangement: Ichido Nodaira
   instrument: Violas (4)
   instrumentCategory: 030Ensemble
+  flag: 🇩🇪
   ▶:
     id: 6pUAUt3R1lM
     views: 2493
@@ -906,6 +970,7 @@
   lastname: Petrunin
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇷🇺
   ▶:
     id: BzQi4mG__Tg
     views: 94687
@@ -927,6 +992,7 @@
   lastname: Lisitsa
   instrument: Piano
   instrumentCategory: 050Keyboard
+  flag: 🇺🇦
   ▶:
     id: sOFflFiLlT8
     views: 956524
@@ -948,6 +1014,7 @@
   lastname: Rhode
   instrument: Piano
   instrumentCategory: 050Keyboard
+  flag: 🇬🇧
   ▶:
     id: pZ82pECqiUg
     views: 633455
@@ -969,6 +1036,7 @@
   lastname: Kljaković
   instrument: Piano
   instrumentCategory: 050Keyboard
+  flag: 🇭🇷
   ▶:
     id: ixGv5CQky8s
     views: 134295
@@ -990,6 +1058,7 @@
   lastname: Moya
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇪🇸
   ▶:
     id: e6y4P1FbUwo
     views: 9414
@@ -1000,6 +1069,7 @@
   lastname: Ivanov
   instrument: Marimba
   instrumentCategory: 090Marimba
+  flag: 🇧🇬
   ▶:
     id: qnvMotBjJrk
     views: 36033
@@ -1010,6 +1080,7 @@
   lastname: Paris Street
   instrument: Violin
   instrumentCategory: 010Violin
+  flag: "?"
   ▶:
     id: eA-dvnSO_rQ
     views: 65261
@@ -1020,6 +1091,7 @@
   lastname: Stokowski
   instrument: Symphony Orchestra
   instrumentCategory: 030Ensemble
+  flag: 🇬🇧
   ▶:
     id: NEUYq5t-cCM
     views: 245608
@@ -1029,8 +1101,10 @@
 
 - firstname: Brian
   lastname: Thornton
+  completeName: Brian Thornton, Jennifer Son, Jared Blajian & Melissa Kraut
   instrument: Cellos (4)
   instrumentCategory: 030Ensemble
+  flag: 🇺🇸
   ▶:
     id: NGBU2DOL-yQ
     views: 332525
@@ -1056,6 +1130,7 @@
   instrument: Piano
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: evgenykissin
+  flag: 🇷🇺
   ▶:
     id: KHYW76fuNKU
     views: 137940
@@ -1068,6 +1143,7 @@
   instrument: Harpsichord
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: jeanrondeau
+  flag: 🇫🇷
   ▶:
     id: szuOj_rpXAs
     views: 62202
@@ -1093,6 +1169,7 @@
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: andressegovia
+  flag: 🇪🇸
   ▶:
     id: IDJiKL6sHAY
     views: 77571
@@ -1105,6 +1182,7 @@
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: johnwilliams
+  flag: 🇦🇺
   ▶:
     id: e4pVx9zOQV8
     views: 4983
@@ -1118,6 +1196,7 @@
   instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: seijiozawa
   completeName: Transcription Hideo Saito · Boston Symphony Orchestra · Seiji Ozawa
+  flag: 🇯🇵
   ▶:
     id: Qm07s4EIBi4
     views: 2260
@@ -1130,6 +1209,7 @@
   instrument: Saxophone
   instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: nobuyasugawa
+  flag: 🇯🇵
   ▶:
     id: SWrgkqOVU6s
     views: 21459
@@ -1154,6 +1234,7 @@
   instrument: Violin
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: marisamuelsen
+  flag: 🇳🇴
   ▶:
     id: BFCmT1BJYxo
     views: 13477
@@ -1166,6 +1247,7 @@
   instrument: Violin
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: leonidzheleznyj
+  flag: 🇷🇺
   ▶:
     id: qXNb_7dGNWA
     views: 12934
@@ -1213,6 +1295,7 @@
   instrument: Baroque Violin
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: vaclavnavrat
+  flag: 🇨🇿
   ▶:
     id: 7ePBzdMEBCU
     views: 1580
@@ -1225,7 +1308,8 @@
   instrument: Baroque Violin
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: hirokurosaki
-  qwe: HiroKurosaki-hSpoxkKtfAw.js
+  timingsFile: HiroKurosaki-hSpoxkKtfAw.js
+  flag: 🇯🇵
   ▶:
     id: hSpoxkKtfAw
     views: 341
@@ -1252,6 +1336,7 @@
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: sigiswaldkuijken
   timingsFile: SigiswaldKuijken-CjnkFLmatfM.js
+  flag: 🇧🇪
   ▶:
     id: CjnkFLmatfM
     views: 31645
@@ -1265,6 +1350,7 @@
   instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: gregorymaytan
   timingsFile: GregoryMaytan-z6SaA3vaGfU.js
+  flag: 🇸🇪
   ▶:
     id: z6SaA3vaGfU
     views: 595
@@ -1277,6 +1363,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: eikokano
   timingsFile: EikoKano-rIALcdiGTqU.js
+  flag: 🇯🇵
   ▶:
     id: rIALcdiGTqU
     views: 1846
@@ -1322,12 +1409,13 @@
     published: Jul 13, 2013
     collected: Jun 24, 2023
 
-- firstname: Yiu
-  lastname: Kwong Chung
+- firstname: Yiu-kwong
+  lastname: Chung
   instrument: Marimba
   instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: yiukwongchung
   timingsFile: YiuKwongChung-zjqlHhkKIfM.js
+  flag: 🇹🇼
   ▶:
     id: zjqlHhkKIfM
     views: 1899
@@ -1340,7 +1428,7 @@
   instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: tobiasgasser
   timingsFile: TobiasGasser-b9IH4wfoTdY.js
-  flag: "?"
+  flag: 🇩🇪
   ▶:
     id: b9IH4wfoTdY
     views: 520
@@ -1429,6 +1517,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: janinejansen
   timingsFile: JanineJansen-SrZPIbIbYag.js
+  flag: 🇳🇱
   ▶:
     id: SrZPIbIbYag
     views: 293861
@@ -1467,6 +1556,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: henrykszeryng
   timingsFile: HenrykSzeryng-5UcVW3Mmn2U.js
+  flag: 🇵🇱
   ▶:
     id: 5UcVW3Mmn2U
     views: 22008
@@ -1480,6 +1570,7 @@
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: alanmearns
   timingsFile: AlanMearns-8xA3ZDdwA8Y.js
+  flag: 🏴󠁧󠁢󠁮󠁩󠁲󠁿
   ▶:
     id: 8xA3ZDdwA8Y
     views: 36940
@@ -1493,6 +1584,7 @@
   instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: aliciasalas
   timingsFile: AliciaSalas-OqGEssj4pPE.js
+  flag: 🇪🇸
   ▶:
     id: OqGEssj4pPE
     views: 190 
@@ -1505,6 +1597,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: simonstreuff
   timingsFile: SimonStreuff-_FJujJDLacA.js
+  flag: 🇩🇪
   ▶:
     id: _FJujJDLacA
     views: 6584
@@ -1517,6 +1610,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: josephszigeti
   timingsFile: JosephSzigeti-DNU4E1ziE8M.js
+  flag: 🇭🇺
   ▶:
     id: DNU4E1ziE8M
     views: 23965
@@ -1544,6 +1638,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: jenskorndoerfer
   timingsFile: JensKorndoerfer-ofnm01lkEUk.js
+  flag: 🇩🇪
   ▶:
     id: ofnm01lkEUk
     views: 104138
@@ -1622,6 +1717,7 @@
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: roxaneradoux
   timingsFile: RoxaneRadoux-jqEwtMsK3MA.js
+  flag: 🇫🇷
   ▶:
     id: jqEwtMsK3MA
     views: 10322
@@ -1634,6 +1730,7 @@
   instrumentCategory: 080Woodwinds
   fullnameNospaceLowercaseNodiacritics: nikkiandkaitlinpet
   timingsFile: NikkiAndKaitlinPet-lo8opJA9nNA.js
+  flag: 🇺🇸
   ▶:
     id: lo8opJA9nNA
     views: 927
@@ -1646,6 +1743,7 @@
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: anikahutschreuther
   timingsFile: Anika Hutschreuther-EJd9cSDaZCc.js
+  flag: 🇩🇪
   ▶:
     id: EJd9cSDaZCc
     views: 11599
@@ -1658,6 +1756,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: maxzorin
   timingsFile: MaxZorin-_LRw93MLfiM.js
+  flag: 🇮🇱
   ▶:
     id: _LRw93MLfiM
     views: 585
@@ -1670,6 +1769,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: aaronrosand
   timingsFile: AaronRosand-hlKUTeCPY54.js
+  flag: 🇺🇸
   ▶:
     id: hlKUTeCPY54
     views: 12073
@@ -1682,6 +1782,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: pascalmencarelli
   timingsFile: PascalMencarelli-z9XMNPz3Xs4.js
+  flag: 🇫🇷
   ▶:
     id: z9XMNPz3Xs4
     views: 250
@@ -1694,6 +1795,7 @@
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: marcteicholz
   timingsFile: MarcTeicholz-S3Ka7t6SBVg.js
+  flag: 🇺🇸
   ▶:
     id: S3Ka7t6SBVg
     views: 174026
@@ -1706,6 +1808,7 @@
   instrumentCategory: 030Ensemble
   fullnameNospaceLowercaseNodiacritics: nemanjaradulovic
   timingsFile: NemanjaRadulović-PHgtLbLdwEE.js
+  flag: 🇷🇸
   ▶:
     id: PHgtLbLdwEE
     views: 24083
@@ -1732,6 +1835,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: rakhisingh
   timingsFile: RakhiSingh-uteVrWelAGo.js
+  flag: 🏴󠁧󠁢󠁷󠁬󠁳󠁿
   ▶:
     id: uteVrWelAGo
     views: 972
@@ -1757,6 +1861,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: emilysun
   timingsFile: EmilySun-hfVAqFEEkdI.js
+  flag: 🇦🇺
   ▶:
     id: hfVAqFEEkdI
     views: 10609
@@ -1769,6 +1874,7 @@
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: nadjazwiener
   timingsFile: NadjaZwiener-AogMCZhFaEM.js
+  flag: 🇩🇪
   ▶:
     id: AogMCZhFaEM
     views: 5787
@@ -1794,6 +1900,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: sayakashoji
   timingsFile: SayakaShoji-sU9lrF4h52w.js
+  flag: 🇯🇵
   ▶:
     id: sU9lrF4h52w
     views: 99139
@@ -1819,6 +1926,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: fumiakimiura
   timingsFile: FumiakiMiura-bhBOE4EmH0A.js
+  flag: 🇯🇵
   ▶:
     id: bhBOE4EmH0A
     views: 43290
@@ -1831,6 +1939,7 @@
   instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: jonahkim
   timingsFile: JonahKim-VuhUz6JgEak.js
+  flag: 🇰🇷
   ▶:
     id: VuhUz6JgEak
     views: 76998
@@ -1843,6 +1952,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: charliesiem
   timingsFile: CharlieSiem-pClLjafQTSU.js
+  flag: 🇬🇧
   ▶:
     id: pClLjafQTSU
     views: 1515
@@ -1868,6 +1978,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: lanatrotovsek
   timingsFile: LanaTrotovsek-a9L1GJ1ucq8.js
+  flag: 🇸🇮
   ▶:
     id: a9L1GJ1ucq8
     views: 4522
@@ -1880,6 +1991,7 @@
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: edsonlopes
   timingsFile: EdsonLopes-9AKC6e96pno.js
+  flag: 🇧🇷
   ▶:
     id: 9AKC6e96pno
     views: 102926
@@ -1892,6 +2004,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: fredericmoreau
   timingsFile: FrédéricMoreau-vafugI50mqU.js
+  flag: 🇫🇷
   ▶:
     id: vafugI50mqU
     views: 2449
@@ -1905,6 +2018,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: larastjohn
   timingsFile: LaraStJohn-Usf7cn7JTGs.js
+  flag: 🇨🇦
   ▶:
     id: Usf7cn7JTGs
     views: 51853
@@ -1917,6 +2031,7 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: larastjohn
   timingsFile: LaraStJohn-CNx20rsNaQc.js
+  flag: 🇨🇦
   ▶:
     id: CNx20rsNaQc
     views: 2606
@@ -1930,6 +2045,7 @@
   instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: rustamkomachkov
   timingsFile: RustamKomachkov-LAzSp_qBr-Q.js
+  flag: 🇷🇺
   ▶:
     id: LAzSp_qBr-Q
     views: 76487
@@ -1943,6 +2059,7 @@
   instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: nikolakarageorgiev
   timingsFile: NikolaKarageorgiev-9arkmymJ0gQ.js
+  flag: 🇨🇿
   ▶:
     id: 9arkmymJ0gQ
     views: 3366
@@ -1955,6 +2072,7 @@
   instrumentCategory: 018Cello
   fullnameNospaceLowercaseNodiacritics: alexeiromanenko
   timingsFile: AlexeiRomanenko-x04z4N2hYR0.js
+  flag: 🇷🇺
   ▶:
     id: x04z4N2hYR0
     views: 1883
@@ -1967,18 +2085,20 @@
   instrumentCategory: 010Violin
   fullnameNospaceLowercaseNodiacritics: marieastridhulot
   timingsFile: MarieAstridHulot-NrMqjKfp4Nk.js
+  flag: 🇫🇷
   ▶:
     id: NrMqjKfp4Nk
     views: 10047
     published: Dec 3, 2022
     collected: Jun 24, 2023
 
-- firstname: Goran
-  lastname: Sollscher
+- firstname: Göran
+  lastname: Söllscher
   instrument: Guitar
   instrumentCategory: 040Plucked_Strings
   fullnameNospaceLowercaseNodiacritics: goransollscher
-  timingsFile: GoranSollscher-a1wLt9Q3KR4.js
+  timingsFile: GöranSöllscher-a1wLt9Q3KR4.js
+  flag: 🇸🇪
   ▶:
     id: a1wLt9Q3KR4
     views: 1712
@@ -2177,6 +2297,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: danielrivera
   timingsFile: DanielRivera-x3TbtVLUNd4.js
+  flag: 🇦🇷
   ▶:
     id: x3TbtVLUNd4
     views: 1859
@@ -2189,6 +2310,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: igorlevit 
   timingsFile: IgorLevit-L8fG7x8tiAA.js
+  flag: 🇷🇺
   ▶:
     id: L8fG7x8tiAA
     views: 114449  
@@ -2201,6 +2323,7 @@
   instrumentCategory: 050Keyboard
   fullnameNospaceLowercaseNodiacritics: alexandrekantorow
   timingsFile: AlexandreKantorow-61R33cW6mDw.js
+  flag: 🇫🇷
   ▶:
     id: 61R33cW6mDw
     views: 1557  
@@ -2213,6 +2336,7 @@
   instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: fumitonunoya
   timingsFile: FumitoNunoya-3A9vAPmvm38.js
+  flag: 🇯🇵
   ▶:
     id: 3A9vAPmvm38
     views: 9789  
@@ -2225,6 +2349,7 @@
   instrumentCategory: 090Marimba
   fullnameNospaceLowercaseNodiacritics: mikastoltzman
   timingsFile: MikaStoltzman-uWwQNXwDSRA.js
+  flag: 🇯🇵
   ▶:
     id: uWwQNXwDSRA
     views: 3643 
@@ -2237,6 +2362,7 @@
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: ingridmatthews
   timingsFile: IngridMatthews-yLeUaPAU9Ws.js
+  flag: 🇺🇸
   ▶:
     id: yLeUaPAU9Ws
     views: 774  
