@@ -2687,3 +2687,57 @@
     views: 4284  
     published: Apr 19, 2020
     collected: Jun 26, 2023
+
+- firstname: Ginevra 
+  lastname: Petrucci
+  instrument: Flute
+  instrumentCategory: 080Woodwinds
+  fullnameNospaceLowercaseNodiacritics: ginevrapetrucci
+  timingsFile: GinevraPetrucci-EpmaZZfw8W0.js
+  flag: 🇮🇹
+  ▶:
+    id: EpmaZZfw8W0
+    views: 770
+    published: Jan 12, 2022
+    collected: Jun 28, 2023
+
+- firstname: Solomon  
+  lastname: Silber 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: solomonsilber 
+  timingsFile: SolomonSilber-Yvs2Ndkk2yg.js
+  flag: 🇺🇸
+  ▶:
+    id: Yvs2Ndkk2yg
+    views: 21521
+    published: Dec 9, 2013
+    collected: Jun 28, 2023
+
+- firstname: Nicola   
+  lastname: Hall 
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: nicolahall 
+  timingsFile: NicolaHall-7lPO_IaHcNI.js
+  flag: 🇬🇧
+  ▶:
+    id: 7lPO_IaHcNI
+    views: 15688
+    published: Mar 23, 2012
+    collected: Jun 28, 2023
+    still: true
+
+- firstname: Nicolò
+  lastname: Spera
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: nicolospera 
+  timingsFile: NicolòSpera-THuC6Q8-YcQ.js
+  flag: 🇮🇹
+  ▶:
+    id: THuC6Q8-YcQ
+    views: 21056
+    published: Dec 11, 2020
+    collected: Jun 28, 2023
+    still: true
