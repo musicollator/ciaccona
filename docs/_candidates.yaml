@@ -2938,3 +2938,102 @@
     collected: Jul 9, 2023
     still: false
 
+- firstname: Enrico Onofri
+  lastname: Enrico Onofri
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: enricoonofri
+  timingsFile: EnricoOnofri-rCTinl95wKE.js
+  flag: 🇮🇹
+  ▶:
+    id: rCTinl95wKE
+    views: 9679
+    published: Jan 23, 2017
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Joshua Bell 
+  lastname: Joshua Bell 
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: joshuabell
+  timingsFile: JoshuaBell-myXOrVv-fNk.js
+  flag: 🇺🇸
+  ▶:
+    id: myXOrVv-fNk
+    views: 363004
+    published: Jun 12, 2014
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Giuliano Carmignola
+  lastname: Giuliano Carmignola
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: giulianocarmignola
+  timingsFile: GiulianoCarmignola-l7_5RKUYA0M.js
+  flag: 🇮🇹
+  ▶:
+    id: l7_5RKUYA0M
+    views: 21482
+    published: Oct 25, 2018
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Shlomo Mintz
+  lastname: Shlomo Mintz
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: shlomomintz
+  timingsFile: ShlomoMintz-niC1gQRZaoY.js
+  flag: 🇮🇱
+  ▶:
+    id: niC1gQRZaoY
+    views: 4180
+    published: Dec 12, 2018
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Gordan Nikolić
+  lastname: Gordan Nikolić
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: GordanNikolić
+  timingsFile: GordanNikolić-1IMOCQ_YxxY.js
+  flag: 🇷🇸
+  ▶:
+    id: 1IMOCQ_YxxY
+    views: 7110  
+    published: Dec 11, 2015
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Giuseppe
+  lastname: Anedda
+  instrument: Mandolin
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: giuseppeanedda
+  timingsFile: GiuseppeAnedda-GP2_kBKC9jU.js
+  flag: 🇮🇹
+  ▶:
+    id: GP2_kBKC9jU
+    views: 67865
+    published: Nov 13, 2011
+    collected: Jun 24, 2023
+    still: false
+
+- firstname: Daniil Trifonov
+  lastname: Daniil Trifonov
+  arrangement: Brahms
+  instrument: Piano
+  instrumentCategory: 050Keyboard
+  fullnameNospaceLowercaseNodiacritics: daniiltrifonov
+  timingsFile: DaniilTrifonov-Ljb5MvKv0Hw.js
+  flag: 🇷🇺
+  ▶:
+    id: Ljb5MvKv0Hw
+    views: 71138
+    published: Aug 29, 2020
+    collected: Jul 9, 2023
+    still: false
+
