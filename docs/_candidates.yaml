@@ -1870,7 +1870,7 @@
 
 - firstname: Nadja
   lastname: Zwiener
-  instrument: Barique Violin
+  instrument: Baroque Violin
   instrumentCategory: 000Baroque_Violin
   fullnameNospaceLowercaseNodiacritics: nadjazwiener
   timingsFile: NadjaZwiener-AogMCZhFaEM.js
@@ -2741,3 +2741,200 @@
     published: Dec 11, 2020
     collected: Jun 28, 2023
     still: true
+
+- firstname: Yong
+  lastname: Ma
+  instrument: Flute
+  instrumentCategory: 080Woodwinds
+  fullnameNospaceLowercaseNodiacritics: yongma 
+  timingsFile: YongMa-KxH78FZIdVE.js
+  flag: 🇨🇳
+  ▶:
+    id: KxH78FZIdVE
+    views: 12963
+    published: May 22, 2016
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Daniel 
+  lastname: Stepner
+  instrument: Baroque Violin  
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: danielstepner 
+  timingsFile: DanielStepner-xN5R838xl8g.js
+  flag: 🇺🇸
+  ▶:
+    id: xN5R838xl8g
+    views: 24,596 views  
+    published: Feb 14, 2018
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Carlos & Iñaki
+  lastname: Mena & Alberdi
+  instrument: Countertenor & Accordion 
+  instrumentCategory: 030Ensemble
+  fullnameNospaceLowercaseNodiacritics: carlosmenainakialberdi
+  timingsFile: -TWJj1-XNnKQ.js
+  flag: 🇪🇸
+  ▶:
+    id: TWJj1-XNnKQ
+    views: 122
+    published: May 21, 2023 
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Justina 
+  lastname: Auškelytė Rossi
+  instrument: Violin
+  instrumentCategory: 010Violin 
+  fullnameNospaceLowercaseNodiacritics: justinaauskelyterossi
+  timingsFile: JustinaAuškelytėRossi-c2d_8OKo63A.js
+  flag: 🇱🇹
+  ▶:
+    id: c2d_8OKo63A
+    views: 544
+    published: Sep 27, 2020
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Duilio 
+  lastname: Galfetti
+  instrument: Baroque Violin (Fretted)
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: duiliogalfetti 
+  timingsFile: DuilioGalfetti-rpLrUhS6saQ.js
+  flag: 🇨🇭
+  ▶:
+    id: rpLrUhS6saQ
+    views: 6824
+    published: Mar 8, 2014
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Fulvio & Riccardo
+  lastname: Fulvio & Zadra
+  instrument: Violin % Piano
+  instrumentCategory: 030Ensemble
+  fullnameNospaceLowercaseNodiacritics: fulviolucianiriccardozadra 
+  timingsFile: FulvioLucianiRiccardoZadra-s1lDq3XRNsM.js
+  flag: 🇮🇹
+  ▶:
+    id: s1lDq3XRNsM
+    views: 1258  
+    published: Jan 21, 2012
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Christian 
+  lastname: Kim
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: christiankim 
+  timingsFile: ChristianKim-oZHgLqmwVO0.js
+  flag: 🇩🇪🇰🇷
+  ▶:
+    id: oZHgLqmwVO0
+    views: 75240
+    published: Jul 24, 2014
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Petra
+  lastname: Poláčková
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: petrapolackova
+  timingsFile: PetraPolackova-Hxkdjgnu40Q.js
+  flag: 🇨🇿
+  ▶:
+    id: Hxkdjgnu40Q
+    views: 124148
+    published: Dec 10, 2011
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Narciso 
+  lastname: Yepes
+  instrument: Guitar
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics:  narcisoyepes
+  timingsFile: NarcisoYepes-WJlteSsxrks.js
+  flag: 🇪🇸
+  ▶:
+    id: WJlteSsxrks
+    views: 15164
+    published: Apr 4, 2020
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Gil 
+  lastname: Shaham
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: gilshaham 
+  timingsFile: GilShaham-jMrLnjp1O_g.js
+  flag: 🇮🇱
+  ▶:
+    id: jMrLnjp1O_g
+    views: 210740
+    published: May 19, 2011
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Hélène  
+  lastname: Schmitt
+  instrument: Baroque Violin
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: heleneschmitt 
+  timingsFile: HélèneSchmitt-a4fb3fXJj3s.js
+  flag: 🇫🇷
+  ▶:
+    id: a4fb3fXJj3s
+    views: 1416
+    published: Mar 30, 2016
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Florian 
+  lastname: Donderer
+  instrument: Violin
+  instrumentCategory: 010Violin 
+  fullnameNospaceLowercaseNodiacritics: floriandonderer
+  timingsFile: FlorianDonderer-UeRRw6xkAwI.js
+  flag: 🇩🇪
+  ▶:
+    id: UeRRw6xkAwI
+    views: 4347
+    published: Mar 3, 2016
+    collected: Jul 9, 2023
+    still: false
+
+- firstname: Roberto
+  lastname: Vallesi
+  instrument: Shoulder Cello
+  instrumentCategory: 000Baroque_Violin
+  fullnameNospaceLowercaseNodiacritics: robertovallesi
+  timingsFile: RobertoVallesi-R3eN5k8_3s4.js
+  flag: 🇮🇹
+  ▶:
+    id: R3eN5k8_3s4
+    views: 250  
+    published: Jan 14, 2023
+    collected: Jul 9, 2023
+    still: true
+
+- firstname: Mayoko 
+  lastname: Kirioka
+  instrument: Clarinet
+  instrumentCategory: 080Woodwinds
+  fullnameNospaceLowercaseNodiacritics: mayokokirioka
+  timingsFile: MayokoKirioka-yNat9zDeeDQ.js
+  flag: 🇯🇵
+  ▶:
+    id: yNat9zDeeDQ
+    views: 2153
+    published: Jul 31, 2021
+    collected: Jul 9, 2023
+    still: false
+
