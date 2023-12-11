@@ -49,7 +49,7 @@ class Coerce {
         'rachelpodger',
         'raphaellasmits',
         'shunsukesato',
-        'sigiswaldkuijken',
+        /* 'sigiswaldkuijken', */ // youtube account terminated
         'theoould',
         'veronikaeberle',
         'veroniquederaedemaeker',
