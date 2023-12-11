@@ -20,6 +20,7 @@ class Coerce {
         'christopherahn',
         'christophethiebaud',
         'clara-jumikang',
+        'dominikwagner',
         'fernandocordella',
         'florentinginot',
         'genzohtakehisa',
