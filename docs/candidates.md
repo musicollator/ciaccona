@@ -146,6 +146,8 @@ convert to jpg (I use export from preview app on mac), the original png may be d
 
 open `/video/<fullnameNospaceLowercaseNodiacritics>.html` page with facebook debugger
 
+e.g. https://ciaccona.cthiebaud.com/video/dominikwagner.html
+
 https://developers.facebook.com/tools/debug/
 
 for convenience, copy full url from link in performers.html page
@@ -158,24 +160,14 @@ https://www.facebook.com/ciacconabwv004/
 e.g.
 
 ```
-New performer #40, Avi Avital (@aviavital).
+New performer #51, Dominik Wagner.
 
-Another video of Avi Avital's Chaconne is available on YouTube, with much better sound and video quality. Unfortunately, an obscure digital rights management company has banned the video from being embedded in an app, so I had to fall back on this one, which is in any case an excellent performance, in a more intimate, more relaxed, setting. Perhaps the presence of the audience gives the other video a touch of extra tension and drama.
+More about Dominik Wagner:
+https://dominikemanuelwagner.com/
 
-Direct link to the Ciaccona in the other video: https://www.youtube.com/watch?v=AI56MpTFxso&t=974s
+#dominikwagner #BWV1004 #jsbach #ciaccona #chaconne
 
-here is also the Deutsche Grammophon recording, albeit without video: https://youtu.be/g4JKEZ91B8g
-
-More about Avi Avital:
-https://www.aviavital.com/
-https://en.wikipedia.org/wiki/Avi_Avital
-https://www.facebook.com/aviavital
-https://www.youtube.com/aviavital
-https://twitter.com/aviavital
-
-#aviavital #BWV1004 #jsbach #ciaccona #chaconne
-
-https://ciaccona.cthiebaud.com/video/aviavital.html
+https://ciaccona.cthiebaud.com/video/dominikwagner.html
 ```
 
 add announcement data to `_artists.yaml`
