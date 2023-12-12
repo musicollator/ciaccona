@@ -32,57 +32,58 @@ const puppeteer = require('puppeteer');
         // 'ayahamada',
         // 'bellahristova',
         // 'borisbegelman',
+        'charlottespruit',
         // 'chiaramassini',
         // 'christiantetzlaff',
         // 'christopherahn',
         // 'clara-jumikang',
         // '自分',
-        //   'dominikwagner',
+        // 'dominikwagner',
         // 'fernandocordella',
         // 'florentinginot',
         // 'genzohtakehisa',
         // 'gustavleonhardt',
-        //'hilaryhahn',
-        //'isabellefaust',
-        //'jeannelamon',
+        // 'hilaryhahn',
+        // 'isabellefaust',
+        // 'jeannelamon',
         // 'jeanrondeau',
-        //'juliafischer',
-        //'ksenijakomljenovic',
-        //'lisajacobs',
-        //'lizaferschtman',
+        // 'juliafischer',
+        // 'ksenijakomljenovic',
+        // 'lisajacobs',
+        // 'lizaferschtman',
         // 'marieleonhardt',
-        //'martafemenia',
-        //'martinbaker',
-        //'michaelleontchik',
-        //'midorigoto',
-        //'miguelrincon',
-        //'mikastoltzman',
-        //'moranwasser',
-        //'nemanjaradulovic',
-        'paolatalamini',
-        //'petrapolackova',
+        // 'martafemenia',
+        // 'martinbaker',
+        // 'michaelleontchik',
+        // 'midorigoto',
+        // 'miguelrincon',
+        // 'mikastoltzman',
+        // 'moranwasser',
+        // 'nemanjaradulovic',
+        // 'paolatalamini',
+        // 'petrapolackova',
         // 'patriciakopatchinskaja',
-        //'polinaosetinskaya',
-        //'rachellellenwong',
-        //'rachelpodger',
-        //'raphaellasmits',
+        // 'polinaosetinskaya',
+        // 'rachellellenwong',
+        // 'rachelpodger',
+        // 'raphaellasmits',
         // 'shunsukesato',
-        //'sigiswaldkuijken',
+        // 'sigiswaldkuijken',
         // 'theoould',
-        //'veronikaeberle',
-        //'veroniquederaedemaeker',
-        //'virginierobilliard',
-        //'vonhansen',
-        //'yunpark',
+        // 'veronikaeberle',
+        // 'veroniquederaedemaeker',
+        // 'virginierobilliard',
+        // 'vonhansen',
+        // 'yunpark',
     ]
 
     const cookies = [{
         name: 'scoreDisplay',
-        value: 'fullScore', // 'firstBar', // 
+        value: 'firstBar', // 'fullScore', // 
         domain: 'localhost'
     }, {
         name: 'scoreInBricks',
-        value: 'allBricks', //'selectedBrick', //
+        value: 'selectedBrick', // 'allBricks', // 
         domain: 'localhost'
     }]
 
@@ -175,11 +176,11 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'hidden'
                     )
-                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // , #theContainerCol, div.plyr__controls
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, div.plyr__controls') // , #theContainerCol, div.plyr__controls
 
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
                 for (let playerControl of playerControls) {
-                    //hover on each element handle
+                    // hover on each element handle
                     await playerControl.hover(); 
 
                     console.log('waiting for çaJoue event')
@@ -191,33 +192,10 @@ const puppeteer = require('puppeteer');
                     await page.screenshot({
                         path: path
                     });
-
-                    // Dispose of handle
-                    await element.dispose();
-
-                    // resolveVariation(true)
                 }
+                // Dispose of handle
+                await element.dispose();
             }
-            /*
-        }
-        let i = 0
-        const promiseVariations = new Promise(async (resolveVariation, rejectVariation) => {
-
-            async function myFunc(performer) {
-
-            console.log(`myFunc(${performer})`)
-
-            myFunc(performer)
-        });
-        await promiseVariations.then(async (result) => {
-            console.log('promiseVariations then', p)
-            return result
-        }).catch(error => {
-            console.log(error)
-            throw error
-        })
-        */
-
             console.log('now we should go to next performer, or no ?', p)
         }
         console.log('finito with performers. resolving promisePerformers')
