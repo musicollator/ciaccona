@@ -15,6 +15,7 @@ class Coerce {
         'ayahamada',
         'bellahristova',
         'borisbegelman',
+        'charlottespruit',
         'chiaramassini',
         'christiantetzlaff',
         'christopherahn',
