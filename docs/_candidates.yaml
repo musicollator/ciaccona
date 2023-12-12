@@ -3128,3 +3128,17 @@
     views: 7226
     published: Oct 11, 2022
     collected: Dec 12, 2023
+
+- firstname: Sophie    
+  lastname: Till
+  instrument: Violin
+  instrumentCategory: 0010Violin
+  fullnameNospaceLowercaseNodiacritics: sophietill
+  timingsFile: SophieTill-7GN95bJla38.js
+  flag: 🇺🇸
+  workInProgress: true
+  ▶:
+    id: 7GN95bJla38
+    views: 4442
+    published: Jun 22, 2022
+    collected: Dec 12, 2023
