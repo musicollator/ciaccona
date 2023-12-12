@@ -125,7 +125,7 @@
 
     <script id="artist-template" type="text/x-handlebars-template">{{#each this}}        
 <tr>
-<th class="name" data-lastname="{{reverseFullname}}"><span style="font-style: monospace; font-weight: normal;">{{plusOneZeroPad @index}}</span> <a href={{thisUrl}}>{{hideMe reverseFullname}}</a></th>
+<th class="name" data-lastname="{{reverseFullname}}"><span class="index">{{plusOneZeroPad @index}}</span> <a href={{thisUrl}}>{{hideMe reverseFullname}}</a></th>
 <td class="flag text-center">{{flag}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
 <td class="since">{{humanize v.durationMoment}}</td>

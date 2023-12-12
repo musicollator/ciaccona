@@ -77,6 +77,12 @@ tbody > tr > td.yt {
   white-space: nowrap;
 }
 
+.index {
+  font-family: var(--bs-font-monospace) !important;
+  font-weight: normal;
+  font-size: smaller;
+}
+
 tbody > tr > td.fb img {
   width: 20px;
   height: 20px;
