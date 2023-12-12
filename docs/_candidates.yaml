@@ -3100,3 +3100,17 @@
     views: 272
     published: Mar 5, 2023
     collected: Dec 12, 2023
+
+- firstname: Ayaka  
+  lastname: Uchio
+  instrument: Violin
+  instrumentCategory: 0010Violin
+  fullnameNospaceLowercaseNodiacritics: ayakauchio
+  timingsFile: AyakaUchio-nHur3eNNxHM.js
+  flag: 🇯🇵
+  workInProgress: true
+  ▶:
+    id: nHur3eNNxHM
+    views: 97
+    published: Jun 4, 2023
+    collected: Dec 12, 2023
