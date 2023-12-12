@@ -256,7 +256,7 @@
     import { doHistogram } from '/histogram.js??v=1.0.4-beta.2'
     import { loadArtists } from "/js/artists.js?v=1.0.4-beta.2"
 
-    const theDayWhenIReadTheVideoMeters = moment('2023-05-28T00:00:00Z')
+    const theDayWhenIReadTheVideoMeters = moment('2023-12-12T00:00:00Z')
     const now = moment()
 
     class Candidate {
@@ -286,7 +286,10 @@
                 {
                     const duration = collected.diff(vid.publishedMoment)
                     const durationMoment = moment.duration(duration)
-                    vid.viewsPerMonth = Math.floor(vid.views / durationMoment.asMonths())
+                    vid.viewsPerMonth = Math.round(vid.views / durationMoment.asMonths())
+                    if (vid.viewsPerMonth <= 0) {
+                        console.log(`OUILLE: ${this.fullname} has ${vid.viewsPerMonth} views per month?!`)
+                    }
                 }
 
                 vid.duration = now.diff(vid.publishedMoment)

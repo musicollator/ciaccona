@@ -43,6 +43,9 @@ class Artist {
                 const duration = collected.diff(vid.publishedMoment)
                 const durationMoment = moment.duration(duration)
                 vid.viewsPerMonth = Math.floor(vid.views / durationMoment.asMonths())
+                if (vid.viewsPerMonth <= 0) {
+                    console.log(`OUILLE: ${this.fullname} has ${vid.viewsPerMonth} views per month?!`)
+                }
             }
 
             vid.duration = now.diff(vid.publishedMoment)

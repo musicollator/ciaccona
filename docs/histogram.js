@@ -18,6 +18,7 @@ function doHistogram(configParam) {
         widthWrapper: 900,
         heightWrapper: 500,
         thresholds: 40,
+        log: false,
     }
 
     lodashMerge(config, configParam)
@@ -46,9 +47,17 @@ function doHistogram(configParam) {
             // Declare the x (horizontal position) scale.
             let xScaleHist
             let bins
+            let min, max
+            if (config.bin) {
+                min = config.bin.min
+                max = config.bin.max
+            } else {
+                [min, max] = d3.extent(data.map(d => d[config.key]));
+            }
+            if (min <= 0) min = 1
             if (config.log) {
                 xScaleHist = d3.scaleLog()
-                    .domain(d3.extent(data.map(d => d[config.key])))
+                    .domain([min, max])
                     .range([marginLeft, width - marginRight])
                     .nice()
                 // Bin the data.
@@ -59,13 +68,6 @@ function doHistogram(configParam) {
                     (data);
             } else {
                 // Bin the data.
-                let min, max
-                if (config.bin) {
-                    min = config.bin.min
-                    max = config.bin.max
-                } else {
-                    [min, max] = d3.extent(data.map(d => d[config.key]));
-                }
                 bins = d3.bin()
                     .domain([min, max])
                     .thresholds(thresholds)
