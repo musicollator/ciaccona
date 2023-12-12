@@ -37,7 +37,7 @@ const puppeteer = require('puppeteer');
         // 'christopherahn',
         // 'clara-jumikang',
         // '自分',
-           'dominikwagner',
+        //   'dominikwagner',
         // 'fernandocordella',
         // 'florentinginot',
         // 'genzohtakehisa',
@@ -59,6 +59,7 @@ const puppeteer = require('puppeteer');
         //'mikastoltzman',
         //'moranwasser',
         //'nemanjaradulovic',
+        'paolatalamini',
         //'petrapolackova',
         // 'patriciakopatchinskaja',
         //'polinaosetinskaya',
@@ -77,11 +78,11 @@ const puppeteer = require('puppeteer');
 
     const cookies = [{
         name: 'scoreDisplay',
-        value: 'firstBar', // 'fullScore', // 
+        value: 'fullScore', // 'firstBar', // 
         domain: 'localhost'
     }, {
         name: 'scoreInBricks',
-        value: 'selectedBrick', // allBricks
+        value: 'allBricks', //'selectedBrick', //
         domain: 'localhost'
     }]
 
@@ -177,9 +178,9 @@ const puppeteer = require('puppeteer');
                 }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // , #theContainerCol, div.plyr__controls
 
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
-                for (let playerControl of playerControls)  {
+                for (let playerControl of playerControls) {
                     //hover on each element handle
-                    await playerControl.hover();
+                    await playerControl.hover(); 
 
                     console.log('waiting for çaJoue event')
                     await waitForEvent('çaJoue', 2)

@@ -84,9 +84,9 @@ if test is ok, remove the workInProgress property
 
 add `<fullnameNospaceLowercaseNodiacritics>` (e.g. `rogerdugland`) to global.js (preferably in the alphabetical order, but ordering is not mandatory)
 
-update line ~28 of index-early replace e.g. 46 below by the number of artists in artists.yaml minus one (the one left apart is 自分)
+update line ~28 of index-early replace e.g. 51 below by the number of artists in artists.yaml minus one (the one left apart is 自分)
 ```
- document.documentElement.style.setProperty(-lipc', `${1 + Math.floor(50 / listItemsPerRow)}`)
+ document.documentElement.style.setProperty('--lipc', `${1 + Math.floor(51 / listItemsPerRow)}`)
 ```
 
 at this point, you may push to github and deploy, everything should work, but the next elements are needed to complete the work.
