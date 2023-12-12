@@ -3057,3 +3057,17 @@
     pitch: 282.6
     a4: 424
   🕸: "https://lapetitebande.be/en/"
+
+- firstname: João Carlos 
+  lastname: Victor
+  instrument: Guitar
+  instrumentCategory: 0040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: joaocarlosvictor
+  timingsFile: JoãoCarlosVictor-zaWlEIPRrXQ.js
+  flag: "?"
+  workInProgress: true
+  ▶:
+    id: zaWlEIPRrXQ
+    views: 22
+    published: Dec 7, 2023
+    collected: Dec 12, 2023
