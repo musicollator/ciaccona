@@ -3086,3 +3086,17 @@
     views: 700
     published: Sep 28, 2023
     collected: Dec 12, 2023
+
+- firstname: Nodoka 
+  lastname: Mitsumoto
+  instrument: Violin
+  instrumentCategory: 0010Violin
+  fullnameNospaceLowercaseNodiacritics: nodokamitsumoto
+  timingsFile: NodokaMitsumoto-4mJ1CEqznlo.js
+  flag: 🇯🇵
+  workInProgress: true
+  ▶:
+    id: 4mJ1CEqznlo
+    views: 272
+    published: Mar 5, 2023
+    collected: Dec 12, 2023
