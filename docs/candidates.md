@@ -160,14 +160,18 @@ https://www.facebook.com/ciacconabwv004/
 e.g.
 
 ```
-New performer #51, Dominik Wagner.
+New performer #52, Charlotte Spruit.
 
-More about Dominik Wagner:
-https://dominikemanuelwagner.com/
+Video published on Youtube the Dec 4, 2023.
 
-#dominikwagner #BWV1004 #jsbach #ciaccona #chaconne
+More about Charlotte Spruit:
+https://www.charlottespruit.com/
+https://www.facebook.com/charlotte.spruit.28
+https://www.instagram.com/charlottespruit/
 
-https://ciaccona.cthiebaud.com/video/dominikwagner.html
+#charlottespruit #BWV1004 #jsbach #ciaccona #chaconne
+
+https://ciaccona.cthiebaud.com/video/charlottespruit.html
 ```
 
 add announcement data to `_artists.yaml`
