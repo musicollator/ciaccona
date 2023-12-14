@@ -159,6 +159,8 @@
         import createTimings from "/js/timings.js?v=1.0.4-beta.2"
         import { doHistogram } from '/histogram.js??v=1.0.4-beta.2'
         import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
+        import fileSaver from 'https://cdn.jsdelivr.net/npm/file-saver@2.0.5/+esm'
+        import { formatMilliseconds } from "/js/utils.js?v=1.0.4-beta.2"
 
         document.getElementById("go-back").addEventListener("click", () => {
             window.location = document.referrer
@@ -190,6 +192,7 @@
         const source = document.getElementById("artist-template").innerHTML;
         const template = Handlebars.compile(source);
 
+        const lines = []
         loadArtists().then((theArtists) => {
             theArtists.artists.forEach(a => {
                 a.reverseFullname = [a.lastname, a.firstname].filter(Boolean).join(', ');
@@ -216,21 +219,43 @@
                                 duration: artistAndTimings.duration.asMilliseconds(),
                                 views: artistAndTimings['▶'].views,
                                 viewsPerMonth: artistAndTimings['▶'].viewsPerMonth,
-                                pitch: artistAndTimings['▶'].a4
+                                pitch: artistAndTimings['▶'].a4,
                             }
                         )
                         const mean = duration.asMilliseconds() / i
                         const meanDuration = moment.duration(mean)
                         const lengthAsAString = `${duration.hours()}h${duration.minutes()}m${duration.seconds()}s`
                         const meanAsAString = `${meanDuration.hours()}h${meanDuration.minutes()}m${meanDuration.seconds()}s`
-                        console.log(duration.asSeconds(), lengthAsAString, '| mean:', meanDuration.asMilliseconds(), meanAsAString)
+                        // console.log(duration.asSeconds(), lengthAsAString, '| mean:', meanDuration.asMilliseconds(), meanAsAString)
+                        const bar256time = Math.floor(artistAndTimings.bars[256].duration.asMilliseconds())
+                        const end = Math.floor(bar256time + 12000)
+                        const line = `yt-dlp -i "${artistAndTimings.v.youtubeUrl}" --download-section "*${formatMilliseconds(bar256time)}-${formatMilliseconds(end)}" --force-keyframes-at-cuts -o "vids/${artistAndTimings.fullnameNospaceLowercaseNodiacritics}"`
+                        lines.push(line)
                     }))
 
                 } catch (error) {
                     console.log('ignore error', error)
                 }
             })
-            Promise.allSettled(promises).then(([result]) => {
+            Promise.allSettled(promises).then((results) => {
+
+                results.forEach((result) => {
+                    if (result.status === 'rejected') {
+                      console.error('Error:', result.reason);
+                      // Handle the error as needed
+                    }
+                });
+
+                /* {
+                    // console.log(lines)
+                    const blob = new Blob([lines.join('\n')], { type: "text/plain;charset=utf-8" });
+                    const path = `___grab_vids.sh`
+                    setTimeout(() => {
+                        fileSaver.saveAs(blob, path);
+                        console.log('[recording] saved to', path)
+                    }, 200)
+                } */              
+
                 const rect = document.getElementById('histoWrapper').getBoundingClientRect()
                 doHistogram({
                     idWrapper: 'histoWrapper',

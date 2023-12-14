@@ -86,15 +86,15 @@ class Timings {
         if (true) { // calc length ?
             if (256 <= this.bars.length) {
                 // get duration of first variation 
-                console.log('var 0', this.bars[0].m.format())
+                // console.log('var 0', this.bars[0].m.format())
                 const lastvarbar = codec.variation2bar(codec.variationsCount - 1)
-                console.log('var 0', this.bars[0].m.format(), 'last var bar', lastvarbar, this.bars[lastvarbar].m.format())
+                // console.log('var 0', this.bars[0].m.format(), 'last var bar', lastvarbar, this.bars[lastvarbar].m.format())
                 // from 0 to 256 bar :
                 const from0to256 = this.bars[lastvarbar].m.diff(this.bars[0].m)
-                const lastD = 3 * (from0to256 / 256)
+                const lastD = Math.floor(2 * (from0to256 / 256))
                 this.duration = moment.duration(from0to256 + lastD)
                 this.lengthAsAString = `${this.duration.minutes()}′${this.duration.seconds()}″`
-                console.log('duration is roughly', this.lengthAsAString)
+                // console.log('duration is roughly', this.lengthAsAString)
             }
         }
     }
