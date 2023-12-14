@@ -3119,7 +3119,7 @@
   lastname: Weng
   instrument: Violin
   instrumentCategory: 0010Violin
-  fullnameNospaceLowercaseNodiacritics: QingzhuWeng
+  fullnameNospaceLowercaseNodiacritics: qingzhuweng
   timingsFile: QingzhuWeng-8APFTH7s8c4.js
   flag: 🇨🇳
   workInProgress: true
@@ -3142,3 +3142,137 @@
     views: 4442
     published: Jun 22, 2022
     collected: Dec 12, 2023
+
+- firstname: Áron    
+  lastname: Dóbisz
+  instrument: Organ
+  instrumentCategory: 050Keyboard 
+  fullnameNospaceLowercaseNodiacritics: arondobisz
+  timingsFile: ÁronDóbisz-7wdjHgoWjhg.js
+  flag: 🇭🇺
+  workInProgress: true
+  ▶:
+    id: 7wdjHgoWjhg
+    views: 4274
+    published: May 14, 2021
+    collected: Dec 14, 2023
+
+- firstname: Greg    
+  lastname: Ewer
+  instrument: Violin
+  instrumentCategory: 0010Violin
+  fullnameNospaceLowercaseNodiacritics: gregewer
+  timingsFile: GregEwer-o5IkdN9ghuE.js
+  flag: 🇺🇸
+  workInProgress: true
+  ▶:
+    id: o5IkdN9ghuE
+    views: 41390
+    published: Jan 9, 2012
+    collected: Dec 14, 2023
+
+- firstname: Liza
+  lastname: Ferschtman
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: lizaferschtman
+  timingsFile: LizaFerschtman-m_GJBDQegYk.js
+  flag: 🇳🇱
+  ▶:
+    id: m_GJBDQegYk
+    views: 66575
+    published: May 14, 2014
+    collected: Dec 14, 2023
+
+- firstname: Ririko 
+  lastname: Takagi
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: ririkotakagi
+  timingsFile: RirikoTakagi-5GXaX2MiDvc.js
+  flag: 🇯🇵
+  ▶:
+    id: 5GXaX2MiDvc
+    views: 51475
+    published: Nov 16, 2022
+    collected: Dec 14, 2023
+
+- firstname: Clara
+  lastname: Moellman
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: claramoellman
+  timingsFile: ClaraMoellman-sPZaVpONOCo.js
+  flag: 🇺🇸
+  ▶:
+    id: sPZaVpONOCo
+    views: 2100
+    published: Jun 17, 2023 
+    collected: Dec 14, 2023
+
+- firstname: Cristina
+  lastname: Cordero
+  instrument: Viola
+  instrumentCategory: 012Viola
+  fullnameNospaceLowercaseNodiacritics: cristinacordero
+  timingsFile: CristinaCordero-iLRcwSvPOcE.js
+  flag: 🇪🇸
+  ▶:
+    id: iLRcwSvPOcE
+    views: 72115
+    published: Feb 17, 2019
+    collected: Dec 14, 2023
+
+- firstname: Pascal
+  lastname: Ormancey
+  instrument: Viola da gamba
+  instrumentCategory: 005ViolaDaGamba
+  fullnameNospaceLowercaseNodiacritics: pascalormancey
+  timingsFile: PascalOrmancey-T7GvIRag8cE.js
+  flag: 🇧🇪
+  ▶:
+    id: T7GvIRag8cE
+    views: 4532
+    published: Jan 15, 2020
+    collected: Dec 14, 2023
+
+- firstname: Joaquín
+  lastname: Clerch
+  instrument: Guitar
+  instrumentCategory: 0040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: joaquínclerch
+  timingsFile: JoaquínClerch-skJ3vD8SfHI.js
+  flag: 🇨🇺
+  workInProgress: true
+  ▶:
+    id: skJ3vD8SfHI
+    views: 42073
+    published: Jul 8, 2023
+    collected: Dec 14, 2023
+
+- firstname: Jinjoo
+  lastname: Cho
+  instrument: Violin
+  instrumentCategory: 010Violin
+  fullnameNospaceLowercaseNodiacritics: jinjoocho
+  timingsFile: JinjooCho-MZ1VkV_MtpA.js
+  flag: 🇰🇷
+  ▶:
+    id: MZ1VkV_MtpA
+    views: 7049
+    published: Apr 12, 2023
+    collected: Dec 14, 2023
+
+- firstname: Mandolin
+  lastname: Princess
+  instrument: Mandolin
+  instrumentCategory: 040Plucked_Strings
+  fullnameNospaceLowercaseNodiacritics: mandolinprincess
+  timingsFile: MandolinPrincess-BSLmaDCmunY.js
+  flag: "?"
+  ▶:
+    id: BSLmaDCmunY
+    views: 28158
+    published: Sep 2, 2021
+    collected: Jun 24, 2023
+
