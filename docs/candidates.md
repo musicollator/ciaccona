@@ -157,21 +157,24 @@ for convenience, copy full url from link in performers.html page
 
 https://www.facebook.com/ciacconabwv004/
 
+
+
 e.g.
 
 ```
-New performer #52, Charlotte Spruit.
+New performer #53, Claudio Constantini.
 
-Video published on Youtube the Dec 4, 2023.
+Video published on Youtube on Nov 23, 2023.
 
-More about Charlotte Spruit:
-https://www.charlottespruit.com/
-https://www.facebook.com/charlotte.spruit.28
-https://www.instagram.com/charlottespruit/
+More about Claudio Constantini:
+https://www.claudioconstantini.com/
+https://www.facebook.com/claudioconstantinimusic
+https://instagram.com/constantini_music/
+https://www.youtube.com/c/Constantinimusic
 
-#charlottespruit #BWV1004 #jsbach #ciaccona #chaconne
+#claudioconstantini #BWV1004 #jsbach #ciaccona #chaconne
 
-https://ciaccona.cthiebaud.com/video/charlottespruit.html
+https://ciaccona.cthiebaud.com/video/claudioconstantini.html
 ```
 
 add announcement data to `_artists.yaml`
