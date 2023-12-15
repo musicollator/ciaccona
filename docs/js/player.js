@@ -29,7 +29,7 @@ function horzScrollScore(variation, currentTime) {
     }
     const thisStartBar = config.artistAndTimings.bars[curr]
     const nextStartBar = config.artistAndTimings.bars[next]
-    console.log('thisStartBar', thisStartBar, 'nextStartBar', nextStartBar)
+    // console.log('thisStartBar', thisStartBar, 'nextStartBar', nextStartBar)
     if (!thisStartBar || !nextStartBar) {
         return -1
     }
@@ -243,7 +243,7 @@ export default function createPlayer(selector, ignore_all_events) {
             })
             // https://developers.google.com/youtube/iframe_api_reference#onStateChange
             _plyer.on('statechange', (event) => {
-                console.log("Plyr statechange event", event.detail.code, event.detail.plyr.embed.playerInfo)
+                // console.log("Plyr statechange event", event.detail.code, event.detail.plyr.embed.playerInfo)
 
                 if (event.detail.code === -1) {
                     const url = new URL(event.detail.plyr.embed.playerInfo.videoUrl)
