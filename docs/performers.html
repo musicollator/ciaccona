@@ -226,7 +226,8 @@
                         const meanDuration = moment.duration(mean)
                         const lengthAsAString = `${duration.hours()}h${duration.minutes()}m${duration.seconds()}s`
                         const meanAsAString = `${meanDuration.hours()}h${meanDuration.minutes()}m${meanDuration.seconds()}s`
-                        // console.log(duration.asSeconds(), lengthAsAString, '| mean:', meanDuration.asMilliseconds(), meanAsAString)
+                        const artistAndTimingsDurationAString = `${artistAndTimings.duration.hours()}h${artistAndTimings.duration.minutes()}m${artistAndTimings.duration.seconds()}s`
+                        console.log(artistObject.fullname, artistAndTimings.duration.asMilliseconds(), artistAndTimingsDurationAString)
                         const bar256time = Math.floor(artistAndTimings.bars[256].duration.asMilliseconds())
                         const end = Math.floor(bar256time + 12000)
                         const line = `yt-dlp -i "${artistAndTimings.v.youtubeUrl}" --download-section "*${formatMilliseconds(bar256time)}-${formatMilliseconds(end)}" --force-keyframes-at-cuts -o "vids/${artistAndTimings.fullnameNospaceLowercaseNodiacritics}"`
