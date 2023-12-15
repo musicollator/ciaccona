@@ -32,11 +32,12 @@ const puppeteer = require('puppeteer');
         // 'ayahamada',
         // 'bellahristova',
         // 'borisbegelman',
-        'charlottespruit',
+        // 'charlottespruit',
         // 'chiaramassini',
         // 'christiantetzlaff',
         // 'christopherahn',
         // 'clara-jumikang',
+        'claudioconstantini',
         // '自分',
         // 'dominikwagner',
         // 'fernandocordella',
@@ -176,7 +177,7 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'hidden'
                     )
-                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, div.plyr__controls') // , #theContainerCol, div.plyr__controls
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // , #theContainerCol, div.plyr__controls
 
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
                 for (let playerControl of playerControls) {
