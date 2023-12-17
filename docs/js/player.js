@@ -321,6 +321,10 @@ export default function createPlayer(selector, ignore_all_events) {
             })
         }
 
+        _plyer.on('error', event => {
+            console.log("ERROR", event)
+        });
+
         _plyer.on('ready', (event) => {
             console.log("Plyr ready event, initialized=", initialized)
 

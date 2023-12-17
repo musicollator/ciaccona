@@ -1,5 +1,5 @@
 // https://github.com/js-cookie/js-cookie
-import jsCookie from 'https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/+esm'
+import jsCookie from 'https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/+esm'
 
 function getCookie(cookieName) {
     const value = jsCookie.get(cookieName)

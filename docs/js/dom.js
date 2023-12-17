@@ -257,7 +257,8 @@ const Ω = {
 
         (e => {
             if (e) e.addEventListener('click', () => {
-                config.autoplay = !config.autoplay
+                const newAutplay = !config.autoplay
+                config.autoplay = newAutplay
             })
         })(document?.getElementById('autoplayChecked'));
 

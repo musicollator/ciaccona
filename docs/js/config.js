@@ -91,10 +91,10 @@ class Config {
         return this.#autoplay
     }
     set autoplay(autoplay) {
-        if (autoplay && (autoplay === 'false' || autoplay === false)) {
-            autoplay = false
-        } else {
+        if (autoplay && (autoplay === 'true' || autoplay === true)) {
             autoplay = true
+        } else {
+            autoplay = false
         }
 
         if (autoplay !== this.#autoplay) {
@@ -103,8 +103,7 @@ class Config {
                 if (this.#autoplay === true) {
                     removeCookie('autoplay')
                 } else {
-                    const in10Minutes = 1 / 144;
-                    setCookie('autoplay', 'false', in10Minutes)
+                    setCookie('autoplay', 'false')
                 }
             }
         }
