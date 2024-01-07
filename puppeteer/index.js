@@ -23,6 +23,7 @@ const puppeteer = require('puppeteer');
     const performers = [
         // 'adelaideferriere',
         // 'adolfbusch',
+          'alexandrarichardson',
         // 'amandinebeyer',
         // 'andreadevitis',
         // 'anneleenlenaerts',
@@ -37,7 +38,7 @@ const puppeteer = require('puppeteer');
         // 'christiantetzlaff',
         // 'christopherahn',
         // 'clara-jumikang',
-        'claudioconstantini',
+        // 'claudioconstantini',
         // '自分',
         // 'dominikwagner',
         // 'fernandocordella',
@@ -85,6 +86,10 @@ const puppeteer = require('puppeteer');
     }, {
         name: 'scoreInBricks',
         value: 'selectedBrick', // 'allBricks', // 
+        domain: 'localhost'
+    }, {
+        name: 'autoplay',
+        value: 'false', // 'true', // 
         domain: 'localhost'
     }]
 

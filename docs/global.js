@@ -6,6 +6,7 @@ class Coerce {
 
         'adelaideferriere',
         'adolfbusch',
+        'alexandrarichardson',
         'amandinebeyer',
         'andreadevitis',
         'anneleenlenaerts',
