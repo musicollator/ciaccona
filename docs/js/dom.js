@@ -2,6 +2,7 @@ import animejs from '/lib/anime-3.2.1.es.min.js'
 import config from "/js/config.js?v=1.0.4-beta.2"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.4-beta.2"
 import brickClickHandler from "/js/brickClickHandler.js?v=1.0.4-beta.2"
+import { showPlayer, hidePlayer} from "/js/playerSingleton.js?v=1.0.4-beta.2"
 
 const Ω = {
     animateUnveilScores: () => {
@@ -264,7 +265,7 @@ const Ω = {
 
         (e => {
             if (e) {
-                
+
                 const bs = generateElement('<div id="bach_signature" target="_bach_signature">&nbsp;</div>')
                 e.insertBefore(bs, e.querySelector('.select-variation'));
                 bs.style.cursor = 'pointer'
@@ -401,7 +402,38 @@ const Ω = {
             config.offcanvasElementBootstrapped.show()
         }))
 
-    }
+    },
+
+    setSwipe: () => {
+        const theContainerRow = document.getElementById("theContainer")
+        const hammertime = new Hammer(theContainerRow)
+
+        const offcanvas = (showOrHide) => {
+
+            if (config.offcanvasElementBootstrapped) {
+                if (showOrHide === 'show') {
+                    config.offcanvasElementBootstrapped.show();
+                } else if (showOrHide === 'hide') {
+                    config.offcanvasElementBootstrapped.hide();
+                }
+            }
+        }
+
+        hammertime.on('swiperight', function () {
+            console.log("swiperight on theContainer")
+            if (document.getElementById('playerWrapper').style.visibility === 'visible') {
+                hidePlayer()
+            } else {
+                offcanvas('show')
+            }
+        });
+        hammertime.on('swipeleft', function () {
+            console.log("swipeleft on theContainer")
+            showPlayer()
+        });
+        return
+
+    },
 }
 
 

@@ -9,7 +9,7 @@ const bg = (a, v) => `url('https://musicollator.github.io/ciaccona-stationary/ar
 
 const iconMap = {
     '000Baroque_Violin': 'violin',
-    '005ViolaDaGamba' : 'violin',
+    '005ViolaDaGamba': 'violin',
     '010Violin': 'violin',
     '012Viola': 'violin',
     '018Cello': 'violin',
@@ -138,8 +138,8 @@ loadArtists().then(putainDeArtists => {
 
         const instrumentsCount = new Map()
         let previousInstrument = "_"
-        let accordeonItem 
-        let accordeonBody 
+        let accordeonItem
+        let accordeonBody
         data.forEach(d => {
             instrumentsCount.set(d.instrument, (instrumentsCount.get(d.instrument) || 0) + 1)
             if (d.instrument !== previousInstrument) {
@@ -230,8 +230,16 @@ loadArtists().then(putainDeArtists => {
             })
 
             document.querySelectorAll('#dismiss-offcanvas').forEach(element => element.addEventListener('click', (event) => {
-                config.offcanvasElementBootstrapped.hide()
+                // config.offcanvasElementBootstrapped.hide()
             }))
+
+            const list = document.getElementById('list')
+            const hammertime = new Hammer(list)
+            hammertime.on('swipeleft', function () {
+                console.log("swipeleft on artists list")
+                config.offcanvasElementBootstrapped.hide()
+            });
+
         }
 
         setEventListeners()

@@ -10,28 +10,9 @@ document.getElementById('version').innerHTML = ver
 
 const about = new Ω.About()
 
-// tidyfication of menu items
-/*
-document.querySelectorAll('#videos-menu span.c').forEach((e) => e.innerHTML = "")
-if (fullnameNospaceLowercaseNodiacritics) {
-    const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics="${fullnameNospaceLowercaseNodiacritics}"]`)
-    if (menuItem) {
-        menuItem.classList.add('disabled')
-        menuItem.querySelector(`span.c`).innerHTML = "&#10004;&nbsp;"
-    }
-    const theContainerCol = document.getElementById('theContainerCol')
-    if (theContainerCol) theContainerCol.classList.add('push2right')
-} else {
-    const menuItem = document.querySelector(`#videos-menu a[data-name-no-space-lowercase-no-diacritics=""]`)
-    if (menuItem) {
-        menuItem.classList.add('disabled')
-        menuItem.querySelector('span.c').innerHTML = "&#10004;&nbsp;"
-    }
-}
-*/
-
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 createColoredBadges('grid');
+Ω.setSwipe()
 Ω.setPuzzleClickHandlers()
 Ω.showScoreDisplay()
 Ω.showScoreInBricks()

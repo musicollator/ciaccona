@@ -12,7 +12,16 @@ function regardeDeTousTesYeux() {
             event.preventDefault()
             const isPlayerVisible = togglePlayer()            
         })
-    })(document.querySelector('.artist#badge-artist #eye'))
+    })(document.querySelector('.artist#badge-artist #eye'));
+
+    (playerWrapper => {
+        if (!playerWrapper) return undefined;
+        const hammertime = new Hammer(playerWrapper)
+        hammertime.on('swiperight', function () {
+            console.log("swiperight on theContainerCol")
+            hidePlayer()
+        });
+    })(document.getElementById('theContainerCol'))    
 }
 
 function togglePlayer() {
