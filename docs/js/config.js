@@ -91,10 +91,10 @@ class Config {
         return this.#autoplay
     }
     set autoplay(autoplay) {
-        if (autoplay && (autoplay === 'true' || autoplay === true)) {
-            autoplay = true
-        } else {
+        if (autoplay && (autoplay === 'false' || autoplay === false)) {
             autoplay = false
+        } else {
+            autoplay = true
         }
 
         if (autoplay !== this.#autoplay) {
