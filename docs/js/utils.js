@@ -161,29 +161,29 @@ function generateElement(html) {
         throw Error('more or less than 1 element !!!!')
     }
     return template.content.children[0];
-  }
+}
 
-  function formatMilliseconds(milliseconds) {
+function formatMilliseconds(milliseconds) {
     // Ensure input is a non-negative number
     if (typeof milliseconds !== 'number' || milliseconds < 0) {
-      return 'Invalid input';
+        return 'Invalid input';
     }
-  
+
     // Calculate hours, minutes, seconds, and milliseconds
     const hours = Math.floor(milliseconds / 3600000);
     const minutes = Math.floor((milliseconds % 3600000) / 60000);
     const seconds = Math.floor((milliseconds % 60000) / 1000);
     const remainingMilliseconds = milliseconds % 1000;
-  
+
     // Format the time string
     const formattedTime = `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}:${padZero(remainingMilliseconds, 3)}`;
-  
-    return formattedTime;
-  }
-  
-  // Helper function to pad zeros
-  function padZero(value, length = 2) {
-    return value.toString().padStart(length, '0');
-  }  
 
-export { getCookie, setCookie, removeCookie, shuffleArray, binaryRangeSearch, normalizeVraiment, logFunc, theTrickToViewportUnitsOnMobile, generateElement, formatMilliseconds};
+    return formattedTime;
+}
+
+// Helper function to pad zeros
+function padZero(value, length = 2) {
+    return value.toString().padStart(length, '0');
+}
+
+export { getCookie, setCookie, removeCookie, shuffleArray, binaryRangeSearch, normalizeVraiment, logFunc, theTrickToViewportUnitsOnMobile, generateElement, formatMilliseconds };

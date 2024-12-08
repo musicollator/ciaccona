@@ -1,4 +1,4 @@
-import animejs from '/lib/anime-3.2.1.es.min.js'
+import animejs from '/lib/anime-3.2.2.es.min.js'
 import config from "/js/config.js?v=1.0.4-beta.2"
 import { shuffleArray, generateElement } from "/js/utils.js?v=1.0.4-beta.2"
 import brickClickHandler from "/js/brickClickHandler.js?v=1.0.4-beta.2"
