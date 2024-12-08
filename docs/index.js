@@ -44,7 +44,7 @@ const template = (datum) => `
         </div>
     </div>
     <div class="select-variation flex-shrink-1 d-flex flex-column justify-content-evenly" 
-        style="width: ${typeof datum.artist.index === 'undefined' ? '100%' : '3rem'}; height: 100%; overflow: visible;">
+        style="width: ${typeof datum.artist.index === 'undefined' ? '100%' : '3rem'}; height: 150%; overflow: visible;">
         <a class="puzzle-limited" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 id="gb-puzzle${datum.variation}-svg" 

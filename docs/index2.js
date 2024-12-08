@@ -75,7 +75,7 @@ const template = (data) => `
              ${data.lastname}
         </div>
     </div>
-    <div class="select-variation flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 100%; ">
+    <div class="select-variation flex-shrink-1 d-flex flex-column justify-content-evenly" style="width: 3rem; height: 150%; ">
         <a class="puzzle-limited" href="#" title="Pin or unpin ${data.pinUnpinVariationTitle}">
             <svg xmlns="http://www.w3.org/2000/svg" 
                 id="gb-puzzle${data.v}-svg" 
