@@ -86,7 +86,7 @@ add `<fullnameNospaceLowercaseNodiacritics>` (e.g. `rogerdugland`) to global.js 
 
 update line ~28 of index-early replace e.g. 51 below by the number of artists in artists.yaml minus one (the one left apart is 自分)
 ```
- document.documentElement.style.setProperty('--lipc', `${1 + Math.floor(51 / listItemsPerRow)}`)
+ document.documentElement.style.setProperty('--lipc', `${1 + Math.floor(55 / listItemsPerRow)}`)
 ```
 
 at this point, you may push to github and deploy, everything should work, but the next elements are needed to complete the work.

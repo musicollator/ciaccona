@@ -25,7 +25,7 @@ function calcItemWidth() {
 
     document.documentElement.style.setProperty('--gs', `${gutter_sizer * 100}%`)
     document.documentElement.style.setProperty('--lipr', `${listItemsPerRow}`)
-    document.documentElement.style.setProperty('--lipc', `${1 + Math.floor(54 / listItemsPerRow)}`)
+    document.documentElement.style.setProperty('--lipc', `${1 + Math.floor(55 / listItemsPerRow)}`)
     document.documentElement.style.setProperty('--liw', `${listItemPercentageWidth}%`)
     document.documentElement.style.setProperty('--lih', `${listItemsHeight}px`)
     document.documentElement.style.setProperty('--2liw', `${listItemDoublPercentageWidth}%`)

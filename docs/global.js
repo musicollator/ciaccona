@@ -38,6 +38,7 @@ class Coerce {
         'marieleonhardt',
         'martafemenia',
         'martinbaker',
+        'mayakimura',
         'michaelleontchik',
         'midorigoto',
         'miguelrincon',
