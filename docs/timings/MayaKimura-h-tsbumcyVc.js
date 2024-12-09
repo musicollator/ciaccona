@@ -1,5 +1,6 @@
 var h_tsbumcyVc = {
     offset: { minutes: 0, seconds: 5 },
+    start: "2023-12-09T00:00:05.0Z",
     bars: [
         {
           "i": 1,

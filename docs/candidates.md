@@ -146,7 +146,7 @@ convert to jpg (I use export from preview app on mac), the original png may be d
 
 open `/video/<fullnameNospaceLowercaseNodiacritics>.html` page with facebook debugger
 
-e.g. https://ciaccona.cthiebaud.com/video/laurinephelut.html
+e.g. https://ciaccona.cthiebaud.com/video/mayakimura.html
 
 https://developers.facebook.com/tools/debug/
 
