@@ -49,12 +49,13 @@ const puppeteer = require('puppeteer');
         // 'jeannelamon',
         // 'jeanrondeau',
         // 'ksenijakomljenovic',
-            'laurinephelut',
+        // 'laurinephelut',
         // 'lisajacobs',
         // 'lizaferschtman',
         // 'marieleonhardt',
         // 'martafemenia',
         // 'martinbaker',
+           'mayakimura',
         // 'michaelleontchik',
         // 'midorigoto',
         // 'miguelrincon',
@@ -181,7 +182,7 @@ const puppeteer = require('puppeteer');
                     document.querySelectorAll(sel).forEach(
                         e => e.style.visibility = 'hidden'
                     )
-                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu, #theContainerCol, div.plyr__controls') // , #theContainerCol, div.plyr__controls
+                }, '.my-nav, #videos-menu, #badge-variation, #badge-artist, #config-menu') // , #theContainerCol, div.plyr__controls
 
                 const playerControls = await page.$$('#playerWrapper > div > div.plyr__controls');
                 for (let playerControl of playerControls) {
@@ -189,7 +190,7 @@ const puppeteer = require('puppeteer');
                     await playerControl.hover(); 
 
                     console.log('waiting for çaJoue event')
-                    await waitForEvent('çaJoue', 2)
+                    await waitForEvent('çaJoue', 10)
 
                     // Capture screenshot
                     const path = `artists/${performer}/${performer}-${variation}.png`
