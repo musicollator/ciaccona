@@ -162,19 +162,20 @@ https://www.facebook.com/ciacconabwv004/
 e.g.
 
 ```
-New performer #53, Claudio Constantini.
+New performer #55, Maya Kimura.
 
-Video published on Youtube on Nov 23, 2023.
+Video published on Youtube on Jan 17, 2024.
 
-More about Claudio Constantini:
-https://www.claudioconstantini.com/
-https://www.facebook.com/claudioconstantinimusic
-https://instagram.com/constantini_music/
-https://www.youtube.com/c/Constantinimusic
+More about Maya Kimura:
+https://kimuramaya.com/
+https://www.instagram.com/kimuramaya/
+https://www.facebook.com/kimusickoto/
+https://www.youtube.com/@kimusickoto
 
-#claudioconstantini #BWV1004 #jsbach #ciaccona #chaconne
 
-https://ciaccona.cthiebaud.com/video/claudioconstantini.html
+#mayakimura #BWV1004 #jsbach #ciaccona #chaconne
+
+https://ciaccona.cthiebaud.com/video/mayakimura.html
 ```
 
 add announcement data to `_artists.yaml`
