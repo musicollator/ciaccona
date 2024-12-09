@@ -17,7 +17,6 @@ const puppeteer = require('puppeteer');
         'christiantetzlaff',
         'hilaryhahn',
         'isabellefaust',
-        'juliafischer',
         'rachelpodger',
     ]
     const performers = [
@@ -49,7 +48,6 @@ const puppeteer = require('puppeteer');
         // 'isabellefaust',
         // 'jeannelamon',
         // 'jeanrondeau',
-        // 'juliafischer',
         // 'ksenijakomljenovic',
         // 'lisajacobs',
         // 'lizaferschtman',
