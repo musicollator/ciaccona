@@ -97,7 +97,26 @@ class Timings {
                 // console.log('duration is roughly', this.lengthAsAString)
             }
         }
+
+        this.variance = this.calculateVariance(); 
     }
+
+    calculateVariance() {
+        if (this.bars.length < 2) return null;
+
+        // Calculate intervals between bars
+        const intervals = this.bars
+            .slice(1)
+            .map((bar, index) => this.bar2time(bar) - this.bar2time(this.bars[index]));
+
+        // Compute mean of intervals
+        const mean = intervals.reduce((sum, val) => sum + val, 0) / intervals.length;
+
+        // Compute variance
+        const variance = intervals.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / intervals.length;
+
+        return variance;
+    }    
 }
 
 function createTimings(artistObject) {
@@ -110,7 +129,7 @@ function createTimings(artistObject) {
 
         const timingsURL = artistObject['▶'].timingsUrl
         const javascriptizedId = artistObject['▶'].javascriptizedId
-        console.log('script loading', timingsURL)
+        // console.log('script loading', timingsURL)
 
         fetch(timingsURL, { cache: "no-store" }).then((response) => {
             if (!response.ok) {

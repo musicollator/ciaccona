@@ -93,12 +93,16 @@
                                 Monthly
                                 <span style="float: right;"></span>
                             </th>
-                            <th scope="col" class="length    text-start  sortable" style="min-width: 4rem;">
-                                <img src="svg/metronome-svgrepo-com.svg" style="width: 22px; height:22px;">
+                            <th scope="col" class="length    text-start  sortable" style="min-width: 4rem;"> 
+                                <img src="svg/stopwatch-3-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
                             <th scope="col" class="herz      text-start  sortable" style="min-width: 4rem;">
                                 <img src="svg/diapason-svgrepo-com.svg" style="width: 22px; height:22px;">
+                                <span></span>
+                            </th>
+                            <th scope="col" class="variance  text-start sortable">
+                                <img src="svg/metronome-svgrepo-com.svg" style="width: 22px; height:22px;">
                                 <span></span>
                             </th>
                             <th scope="col" class="yt        text-center">
@@ -124,7 +128,7 @@
 
 
     <script id="artist-template" type="text/x-handlebars-template">{{#each this}}        
-<tr>
+<tr id="{{fullnameNospaceLowercaseNodiacritics}}">
 <th class="name" data-lastname="{{reverseFullname}}"><span class="index">{{plusOneZeroPad @index}}</span> <a href={{thisUrl}}>{{hideMe reverseFullname}}</a></th>
 <td class="flag text-center">{{flag}}</td>
 <td class="published text-end" data-timestamp="{{dateFormat v.publishedMoment "YYMM"}}">{{dateFormat v.publishedMoment "MMMM YYYY"}}</td>
@@ -133,6 +137,7 @@
 <td class="monthly   text-end" data-number="{{v.viewsPerMonth}}">{{numberFormat v.viewsPerMonth}}</td>
 <td class="length    text-center">{{v.length}}</td>
 <td class="herz      text-center">{{v.a4}}<span style="font-size:10pt;">hz</span></td>
+<td class="variance  text-end">{{variance}}</td> 
 <td class="yt        text-center"><a 
     href={{#if v.youtubeTrueUrl}}{{v.youtubeTrueUrl}}{{else}}{{v.youtubeUrl}}{{/if}}
     target={{fullnameNospaceLowercaseNodiacritics}}>
@@ -193,7 +198,8 @@
         const template = Handlebars.compile(source);
 
         const lines = []
-        loadArtists().then((theArtists) => {
+        loadArtists().then(async (theArtists) => {
+
             theArtists.artists.forEach(a => {
                 a.reverseFullname = [a.lastname, a.firstname].filter(Boolean).join(', ');
                 a.v = a['▶']
@@ -211,6 +217,14 @@
                 try {
                     promises.push(createTimings(artistObject).then((artistAndTimings) => {
 
+                        console.log(`Variance for ${artistObject.fullname}:`, artistAndTimings.variance);
+
+                        const varianceTd = document.querySelector(`#${artistObject.fullnameNospaceLowercaseNodiacritics} .variance`);
+                        const nonBreakingSpace = '\u00A0';
+                        if (varianceTd) {
+                           varianceTd.textContent = nonBreakingSpace+artistAndTimings.variance.toFixed(2);
+                        }                        
+
                         // console.log(artistAndTimings.duration)
                         duration.add(artistAndTimings.duration)
                         durations.push(
@@ -227,7 +241,7 @@
                         const lengthAsAString = `${duration.hours()}h${duration.minutes()}m${duration.seconds()}s`
                         const meanAsAString = `${meanDuration.hours()}h${meanDuration.minutes()}m${meanDuration.seconds()}s`
                         const artistAndTimingsDurationAString = `${artistAndTimings.duration.hours()}h${artistAndTimings.duration.minutes()}m${artistAndTimings.duration.seconds()}s`
-                        console.log(artistObject.fullname, artistAndTimings.duration.asMilliseconds(), artistAndTimingsDurationAString)
+                        // console.log(artistObject.fullname, artistAndTimings.duration.asMilliseconds(), artistAndTimingsDurationAString)
                         const bar256time = Math.floor(artistAndTimings.bars[256].duration.asMilliseconds())
                         const end = Math.floor(bar256time + 12000)
                         const line = `yt-dlp -i "${artistAndTimings.v.youtubeUrl}" --download-section "*${formatMilliseconds(bar256time)}-${formatMilliseconds(end)}" --force-keyframes-at-cuts -o "vids/${artistAndTimings.fullnameNospaceLowercaseNodiacritics}"`
