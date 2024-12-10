@@ -162,20 +162,19 @@ https://www.facebook.com/ciacconabwv004/
 e.g.
 
 ```
-New performer #55, Maya Kimura.
+New performer #55, Laurine Phélut.
 
-Video published on Youtube on Jan 17, 2024.
+Video published on Youtube on Jun 22, 2020.
 
-More about Maya Kimura:
-https://kimuramaya.com/
-https://www.instagram.com/kimuramaya/
-https://www.facebook.com/kimusickoto/
-https://www.youtube.com/@kimusickoto
+More about Laurine Phélut:
+http://www.laurinephelut.fr/
+https://www.youtube.com/@classicalguitar-passion
+https://open.spotify.com/artist/2oK2RQBv4xshG5I2K1YsXh
+https://www.instagram.com/laurine_phelut_guitar
 
+#laurinephelut #BWV1004 #jsbach #ciaccona #chaconne
 
-#mayakimura #BWV1004 #jsbach #ciaccona #chaconne
-
-https://ciaccona.cthiebaud.com/video/mayakimura.html
+https://ciaccona.cthiebaud.com/video/laurinephelut.html
 ```
 
 add announcement data to `_artists.yaml`
