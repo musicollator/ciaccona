@@ -3,6 +3,7 @@ import moment from 'https://cdn.jsdelivr.net/npm/moment@2.29.4/+esm'
 import config from "/js/config.js?v=1.0.4-beta.2"
 import codec from "/js/structure.js?v=1.0.4-beta.2"
 import { binaryRangeSearch } from "/js/utils.js?v=1.0.4-beta.2"
+import fileSaver from 'https://cdn.jsdelivr.net/npm/file-saver@2.0.5/+esm'
 
 class Timings {
 
@@ -10,7 +11,10 @@ class Timings {
         if (bar == null || barIndex == null) {
             throw new Error(bar, typeof bar, barIndex, typeof barIndex)
         }
-        if (typeof bar["Time Recorded"] !== 'undefined') {
+        if (typeof bar.t !== 'undefined') {
+            bar.duration = moment.duration(bar.t*1000)
+            bar.m = moment(0).add(bar.duration)
+        } else if (typeof bar["Time Recorded"] !== 'undefined') {
             if (bar.m == null) {
                 bar.m = moment(bar["Time Recorded"])
             }
@@ -21,9 +25,8 @@ class Timings {
             if (this.adjust) {
                 bar.duration.subtract(this.adjust)
             }
-        } else if (typeof bar.t !== 'undefined') {
-            bar.duration = moment.duration(bar.t*1000)
-            bar.m = moment(0).add(bar.duration)
+            // Add the 't' attribute
+            bar.t = bar.duration.asSeconds();            
         }
         bar.index = barIndex
         bar.variation = codec.bar2variation(bar.index)
@@ -101,6 +104,17 @@ class Timings {
         this.variance = this.calculateVariance(); 
     }
 
+    removeOutliersUsingStdDev(intervals, threshold = 4) {
+        const mean = intervals.reduce((sum, val) => sum + val, 0) / intervals.length;
+        const variance = intervals.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / intervals.length;
+        const stdDev = Math.sqrt(variance);
+    
+        const lowerBound = mean - threshold * stdDev;
+        const upperBound = mean + threshold * stdDev;
+    
+        return intervals.filter(value => value >= lowerBound && value <= upperBound);
+    }    
+
     calculateVariance() {
         if (this.bars.length < 2) return null;
 
@@ -109,15 +123,36 @@ class Timings {
             .slice(1)
             .map((bar, index) => this.bar2time(bar) - this.bar2time(this.bars[index]));
 
+        const filteredIntervals = this.removeOutliersUsingStdDev(intervals);            
+
         // Compute mean of intervals
-        const mean = intervals.reduce((sum, val) => sum + val, 0) / intervals.length;
+        const mean = filteredIntervals.reduce((sum, val) => sum + val, 0) / filteredIntervals.length;
 
         // Compute variance
-        const variance = intervals.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / intervals.length;
+        const variance = filteredIntervals.reduce((sum, val) => sum + Math.pow(val - mean, 2), 0) / filteredIntervals.length;
 
         return variance;
     }    
 }
+
+function saveTimingsToFile(artistObject) {
+    const filename = `${artistObject.fullnameNospaceLowercaseNodiacritics}-timings.json`;
+
+    // Recalculate `i` to be sequential and filter after recalculating
+    const recalculatedBars = artistObject.timings.bars.map((bar, index) => ({
+        i: index, // Recalculate `i` to be truly incremental
+        t: bar.t
+    })).filter(bar => bar.i <= 257); // Filter out bars where recalculated `i > 257`
+
+    // Create the data to save
+    const filteredData = { bars: recalculatedBars };
+    const timingsData = JSON.stringify(filteredData, null, 2); // Pretty-print JSON
+
+    // Save as a JSON file
+    const blob = new Blob([timingsData], { type: "application/json" });
+    fileSaver.saveAs(blob, filename);
+}
+
 
 function createTimings(artistObject) {
     return new Promise((resolve, reject) => {
@@ -141,6 +176,10 @@ function createTimings(artistObject) {
             const data = eval(javascriptizedId)
             artistObject.timings = new Timings(artistObject, data)
             config.artistAndTimings = artistObject.timings
+
+            // Save the timings to a file
+            // saveTimingsToFile(artistObject);
+
             resolve(artistObject.timings)
         }).catch((error) => {
             console.log("script loading error", timingsURL, error);
