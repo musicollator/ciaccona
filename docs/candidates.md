@@ -93,7 +93,7 @@ at this point, you may push to github and deploy, everything should work, but th
 
 ## 4. generate `<fullnameNospaceLowercaseNodiacritics>.html` 
 
-this file contains facebook and twitter open graph infoss
+this file contains facebook open graph info
 
 edit `/video/_template.html`, filter the loop over the artists to keep only `<fullnameNospaceLowercaseNodiacritics>`, e.g. `rogerdugland`
 
